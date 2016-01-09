@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013-2014
+# Maciej Przybecki <maciej.przybecki@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-07-03 01:54-0400\n"
+"PO-Revision-Date: 2014-07-03 05:54+0000\n"
+"Last-Translator: I Robot\n"
+"Language-Team: Polish (http://www.transifex.com/projects/p/owncloud/language/pl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pl\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ajax/external.php:17
+msgid "Server to server sharing is not enabled on this server"
+msgstr ""
+
+#: ajax/external.php:47
+msgid "Couldn't add remote share"
+msgstr "Nie można dodać zdalnego folderu"
+
+#: appinfo/app.php:33 js/app.js:34
+msgid "Shared with you"
+msgstr "Współdzielony z Tobą"
+
+#: appinfo/app.php:42 js/app.js:53
+msgid "Shared with others"
+msgstr "Współdzielony z innymi"
+
+#: appinfo/app.php:51 js/app.js:72
+msgid "Shared by link"
+msgstr "Współdzielony linkiem"
+
+#: js/app.js:35
+msgid "No files have been shared with you yet."
+msgstr "Nie ma jeszcze żadnych plików współdzielonych z Tobą"
+
+#: js/app.js:54
+msgid "You haven't shared any files yet."
+msgstr "Nie współdzielisz jeszcze żadnych plików."
+
+#: js/app.js:73
+msgid "You haven't shared any files by link yet."
+msgstr "Nie współdzielisz jeszcze żadnych plików linkiem"
+
+#: js/external.js:45 js/external.js:48
+msgid "Add {name} from {owner}@{remote}"
+msgstr "Dodaj {name} z {owner}@{remote}"
+
+#: js/external.js:46 js/external.js:49
+msgid "Add Share"
+msgstr ""
+
+#: js/external.js:49 templates/authenticate.php:10
+#: templates/authenticate.php:12
+msgid "Password"
+msgstr "Hasło"
+
+#: js/public.js:203
+msgid "No ownCloud installation found at {remote}"
+msgstr "Nie znaleziono instalacji ownCloud na {remote}"
+
+#: js/public.js:204
+msgid "Invalid ownCloud url"
+msgstr "Błędny adres URL"
+
+#: js/share.js:146
+msgid "Shared by {owner}"
+msgstr "Udostępnione przez {owner}"
+
+#: js/sharedfilelist.js:128
+msgid "Shared by"
+msgstr "Udostępniane przez"
+
+#: templates/authenticate.php:4
+msgid "This share is password-protected"
+msgstr "Udział ten jest chroniony hasłem"
+
+#: templates/authenticate.php:7
+msgid "The password is wrong. Try again."
+msgstr "To hasło jest niewłaściwe. Spróbuj ponownie."
+
+#: templates/list.php:16
+msgid "Name"
+msgstr "Nazwa"
+
+#: templates/list.php:20
+msgid "Share time"
+msgstr "Czas współdzielenia"
+
+#: templates/part.404.php:3
+msgid "Sorry, this link doesn’t seem to work anymore."
+msgstr "Przepraszamy ale wygląda na to, że ten link już nie działa."
+
+#: templates/part.404.php:4
+msgid "Reasons might be:"
+msgstr "Możliwe powody:"
+
+#: templates/part.404.php:6
+msgid "the item was removed"
+msgstr "element został usunięty"
+
+#: templates/part.404.php:7
+msgid "the link expired"
+msgstr "link wygasł"
+
+#: templates/part.404.php:8
+msgid "sharing is disabled"
+msgstr "Udostępnianie jest wyłączone"
+
+#: templates/part.404.php:10
+msgid "For more info, please ask the person who sent this link."
+msgstr "Aby uzyskać więcej informacji proszę poprosić osobę, która wysłał ten link."
+
+#: templates/public.php:20
+msgid "Add to your ownCloud"
+msgstr ""
+
+#: templates/public.php:23
+msgid "Save"
+msgstr "Zapisz"
+
+#: templates/public.php:28
+msgid "Download"
+msgstr "Pobierz"
+
+#: templates/public.php:59
+#, php-format
+msgid "Download %s"
+msgstr "Pobierz %s"
+
+#: templates/public.php:63
+msgid "Direct link"
+msgstr "Bezpośredni link"
+
+#: templates/settings-admin.php:3
+msgid "Remote Shares"
+msgstr ""
+
+#: templates/settings-admin.php:7
+msgid "Allow other instances to mount public links shared from this server"
+msgstr ""
+
+#: templates/settings-admin.php:11
+msgid "Allow users to mount public link shares"
+msgstr "Zezwalaj użytkownikom na montowanie publicznych linków"

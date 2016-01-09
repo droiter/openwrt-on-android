@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<info>
+	<id>documents</id>
+	<name>Documents</name>
+	<description>An ownCloud app to work with office documents</description>
+	<licence>AGPL</licence>
+	<author>Frank Karlitschek</author>
+	<requiremin>6.0</requiremin>
+	<requiremax>7.0</requiremax>
+	<shipped>true</shipped>
+	<default_enable/>
+	<public>
+		<documents>public.php</documents>
+	</public>
+	<ocsid>166045</ocsid>
+</info>

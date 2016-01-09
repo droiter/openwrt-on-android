@@ -1,0 +1,20 @@
+Subject: 主题回复通知 - “{TOPIC_TITLE}”
+
+你好 {USERNAME}，
+
+你收到此通知是因为 “{AUTHOR_NAME}” 在 “{SITENAME}” 论坛的 “{TOPIC_TITLE}” 主题回复中，引用了你的内容。你可以使用下面的链接查看该回复。
+
+如果你想查看引用帖子，点下面的链接:
+{U_VIEW_POST}
+
+如果你想查看主题，点下面的链接:
+{U_TOPIC}
+
+如果你想查看论坛，点下面的链接:
+{U_FORUM}
+
+如果你不想再收到回复引用你的更新，请在这儿更新你的通知设置:
+
+{U_NOTIFICATION_SETTINGS}
+
+{EMAIL_SIG}

@@ -1,0 +1,15 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2013 OpenWrt.org
+
+# start after and stop before networking
+START=99
+STOP=10
+
+start() {
+        /usr/bin/dig +time=30  yuancheng.xunlei.com > /dev/null 2>&1
+	/root/portal
+}
+
+stop() {
+	/root/portal -s
+}

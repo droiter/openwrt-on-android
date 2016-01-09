@@ -1,0 +1,213 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>What’s New for Users in ownCloud 7 &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="index.html" />
+    <link rel="next" title="The ownCloud Web Interface" href="webinterface.html" />
+    <link rel="prev" title="ownCloud 7.0 User Documentation" href="index.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">What&#8217;s New for Users in ownCloud 7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#no-more-shared-folder">No More Shared Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selective-sync">Selective Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#server-to-server-sharing">Server to Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-and-activity-notifications">File and Activity Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#owncloud-documents-with-word-conversion">ownCloud Documents with Word Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mobile-web-browser-support">Mobile Web Browser Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lazy-loading-files">Lazy Loading Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-in-share-expiration-date">Change in Share Expiration Date</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files/index.html">Files &amp; Synchronization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pim/index.html">Contacts &amp; Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="what-s-new-for-users-in-owncloud-7">
+<h1>What&#8217;s New for Users in ownCloud 7<a class="headerlink" href="#what-s-new-for-users-in-owncloud-7" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="no-more-shared-folder">
+<h2>No More Shared Folder<a class="headerlink" href="#no-more-shared-folder" title="Permalink to this headline">¶</a></h2>
+<p>The Shared folder has been removed from ownCloud 7. If you are upgrading
+from older ownCloud versions you will still have your old Shared folder,
+but new shares will appear in the top-level of your Files page, and the Shared
+folder is no longer required. You can now create your own folders for
+storing shared files, and organize and move them around like any other files.</p>
+</div>
+<div class="section" id="selective-sync">
+<h2>Selective Sync<a class="headerlink" href="#selective-sync" title="Permalink to this headline">¶</a></h2>
+<p>The desktop client now makes it easier for users to configure which folders
+on their ownCloud instances should be syncing with the desktop, and can easily
+make changes for special circumstances such as travel and special projects.</p>
+</div>
+<div class="section" id="server-to-server-sharing">
+<h2>Server to Server Sharing<a class="headerlink" href="#server-to-server-sharing" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud 7 servers can now connect shares directly with each other. With just a
+few clicks you can easily and securely connect to public shares on other
+ownCloud servers, and optionally create public shares for sharing your own files
+if your admin allows it.</p>
+</div>
+<div class="section" id="file-and-activity-notifications">
+<h2>File and Activity Notifications<a class="headerlink" href="#file-and-activity-notifications" title="Permalink to this headline">¶</a></h2>
+<p>In ownCloud 7 you can set up automatic notifications on your ownCloud
+Personal page of tracked activities such as new shares, and changed or deleted
+files.</p>
+</div>
+<div class="section" id="owncloud-documents-with-word-conversion">
+<h2>ownCloud Documents with Word Conversion<a class="headerlink" href="#owncloud-documents-with-word-conversion" title="Permalink to this headline">¶</a></h2>
+<p>You can convert Word documents on the fly: open them in ownCloud for
+editing, and live editing with other users, and when you close it reverts
+to its original Word format with all of your changes embedded.</p>
+</div>
+<div class="section" id="mobile-web-browser-support">
+<h2>Mobile Web Browser Support<a class="headerlink" href="#mobile-web-browser-support" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud 7 is friendly to small screens, and can be used on most tablet and
+mobile browsers without requiring the use of a native mobile app. This provides
+support for devices that do not have a native app, like Microsoft and
+Blackberry.</p>
+</div>
+<div class="section" id="lazy-loading-files">
+<h2>Lazy Loading Files<a class="headerlink" href="#lazy-loading-files" title="Permalink to this headline">¶</a></h2>
+<p>Viewing your Files page is faster now thanks to &#8220;lazy loading&#8221;, which loads
+files as you scroll down the page instead of loading all of them when you open
+the page.</p>
+</div>
+<div class="section" id="change-in-share-expiration-date">
+<h2>Change in Share Expiration Date<a class="headerlink" href="#change-in-share-expiration-date" title="Permalink to this headline">¶</a></h2>
+<p>In older versions of ownCloud, you could set an expiration date on both local
+and public shares. Now you can set an expiration date only on public shares,
+and local shares do not expire when public shares expire. The only way to
+&#8220;expire&#8221; a local share is to click the trash can icon to un-share your files.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

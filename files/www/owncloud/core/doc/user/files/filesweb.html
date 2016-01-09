@@ -1,0 +1,389 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Accessing your Files Using the Web Interface &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Files &amp; Synchronization" href="index.html" />
+    <link rel="next" title="Accessing ownCloud Files Using WebDAV" href="files.html" />
+    <link rel="prev" title="Files &amp; Synchronization" href="index.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Files &amp; Synchronization</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Accessing your Files Using the Web Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#previewing-files">Previewing Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#navigating-inside-your-owncloud">Navigating Inside Your ownCloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overlay-icons-show-sharing-status">Overlay Icons Show Sharing Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-or-uploading-files-and-directories">Creating or Uploading Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#selecting-files-or-folders">Selecting Files or Folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filtering-the-file-application-view">Filtering the File Application View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#moving-files">Moving Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-files-locally">Sharing Files Locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-public-share">Creating a Public Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#change-in-share-expiration-date">Change in Share Expiration Date</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">Accessing ownCloud Files Using WebDAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versioncontrol.html">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_to_server_using.html">Using Server-to-Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deletedfiles.html">Managing Deleted Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync.html">Desktop Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encrypting Your ownCloud Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quota.html">Storage Quota</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring_big_file_upload.html">Managing Big Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pim/index.html">Contacts &amp; Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="accessing-your-files-using-the-web-interface">
+<h1>Accessing your Files Using the Web Interface<a class="headerlink" href="#accessing-your-files-using-the-web-interface" title="Permalink to this headline">¶</a></h1>
+<p>You can access your ownCloud files with the ownCloud web interface and create,
+preview, edit, delete, share, and re-share files. Your ownCloud administrator
+has the option to disable these features, so if any of them are missing on your
+system ask your server administrator.</p>
+<div class="figure">
+<img alt="../_images/users-files.png" src="../_images/users-files.png" />
+</div>
+<p>ownCloud version 7 can display thumbnail previews for image files, MP3 covers,
+and text files, if this enabled by your server administrator. Hover your cursor
+over a file or folder to expose the controls for the following operations:</p>
+<dl class="docutils">
+<dt>Pencil icon</dt>
+<dd>Rename a file or folder. This does not alter the filename on the original
+document.</dd>
+<dt>Download</dt>
+<dd>Download the file to your computer.</dd>
+<dt>Versions</dt>
+<dd>Displays older versions, if there are any, and you can revert to an older
+file version.</dd>
+<dt>Edit</dt>
+<dd>The Edit button appears on files that are editable inside ownCloud, in the
+Documents app. Supported file formats are <tt class="docutils literal"><span class="pre">.odt</span></tt>, <tt class="docutils literal"><span class="pre">.doc</span></tt>, and <tt class="docutils literal"><span class="pre">.docx</span></tt>.</dd>
+<dt>Share</dt>
+<dd>Share the file or folder with a group or other users, and create public
+shares with hyperlinks.</dd>
+<dt>Trash</dt>
+<dd>Delete the selected file or folder, or unshare a shared file or folder.</dd>
+</dl>
+<div class="section" id="previewing-files">
+<h2>Previewing Files<a class="headerlink" href="#previewing-files" title="Permalink to this headline">¶</a></h2>
+<p>You can display uncompressed text files, OpenDocument files, videos, and image files in
+the ownCloud embedded viewers  by clicking on the file name. There may be other file types
+you can preview if your ownCloud administrator has enabled them. If ownCloud cannot
+display a file, it starts a download process and downloads the file to your computer.</p>
+<p>Video streaming by the native ownCloud video player depends on your Web browser and the
+video format. If your ownCloud administrator has enabled video streaming, and it doesn&#8217;t
+work in your Web browser, it may be a browser issue.</p>
+</div>
+<div class="section" id="navigating-inside-your-owncloud">
+<h2>Navigating Inside Your ownCloud<a class="headerlink" href="#navigating-inside-your-owncloud" title="Permalink to this headline">¶</a></h2>
+<p>Navigating through folders in ownCloud is as simple as clicking on a folder to
+open it and using the back button on your browser to move to a previous level.
+ownCloud also provides a navigation bar at the top of the Files field for quick
+navigation.</p>
+<div class="figure">
+<img alt="../_images/oc_filesweb_navigate.png" src="../_images/oc_filesweb_navigate.png" />
+<p class="caption"><strong>Navigation bar</strong></p>
+</div>
+<p>The navigation bar functions as a &#8220;breadcrumb&#8221; locator.  It displays your
+current directory and enables you to migrate back to one of the upper
+directories or, using the home icon, to navigate back into your root folder.</p>
+</div>
+<div class="section" id="overlay-icons-show-sharing-status">
+<h2>Overlay Icons Show Sharing Status<a class="headerlink" href="#overlay-icons-show-sharing-status" title="Permalink to this headline">¶</a></h2>
+<p>Any folder that has been shared is marked with the <tt class="docutils literal"><span class="pre">Shared</span></tt> overlay icon.
+Public link shares are marked with a chain link. Un-shared folders are blank.</p>
+<div class="figure">
+<img alt="../_images/users-overlays.png" src="../_images/users-overlays.png" />
+</div>
+<p>If your ownCloud server is the Enterprise edition, you may also have access to
+Sharepoint and Windows Network Drive file shares. These also have special
+overlay icons, and a red plugin means you have to enter a login to
+get access to the share.</p>
+<div class="figure">
+<img alt="../_images/users-overlays-win-net-drive.png" src="../_images/users-overlays-win-net-drive.png" />
+</div>
+<div class="figure">
+<img alt="../_images/users-overlays-sharepoint.png" src="../_images/users-overlays-sharepoint.png" />
+</div>
+</div>
+<div class="section" id="creating-or-uploading-files-and-directories">
+<h2>Creating or Uploading Files and Directories<a class="headerlink" href="#creating-or-uploading-files-and-directories" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud enables you to create new files or folders directly in an ownCloud
+folder by clicking on the <em>New</em> button in the Files app.</p>
+<div class="figure">
+<img alt="../_images/oc_filesweb_new.png" src="../_images/oc_filesweb_new.png" />
+<p class="caption"><strong>New button options</strong></p>
+</div>
+<p>The <em>New</em> button provides the following three options from which to choose:</p>
+<dl class="docutils">
+<dt>Text file</dt>
+<dd>Creates a simple text file and adds the file to your current folder.</dd>
+<dt>Folder</dt>
+<dd>Creates a new folder in the current folder.</dd>
+<dt>From link</dt>
+<dd>Downloads a file from a URL that you type or copy into the form field, and
+places it into the current folder.</dd>
+<dt>Up arrow</dt>
+<dd>The upward-point arrow is for uploading files from your computer into
+ownCloud.</dd>
+</dl>
+<p>You can also upload files by dragging and dropping them from your file manager.</p>
+</div>
+<div class="section" id="selecting-files-or-folders">
+<h2>Selecting Files or Folders<a class="headerlink" href="#selecting-files-or-folders" title="Permalink to this headline">¶</a></h2>
+<p>You can select one or more files or folders by clicking on the small thumbnails
+or icons that represent them. When you select a file or folder, a small
+checkbox is populated with a check to indicate that it is selected.  To select
+all files in the current directory, you can click on the checkbox located at
+the top of the Files app field, above the first file or folder on the list.</p>
+<p>If you select multiple files, you can delete all of the selected files or
+download them as a ZIP file by using the <tt class="docutils literal"><span class="pre">Delete</span></tt> or <tt class="docutils literal"><span class="pre">Download</span></tt> buttons at
+the top right side of the Files app field.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the <tt class="docutils literal"><span class="pre">Download</span></tt> button is not visible, the administrator has
+disabled this feature.  Contact your administrator for further guidance.</p>
+</div>
+</div>
+<div class="section" id="filtering-the-file-application-view">
+<h2>Filtering the File Application View<a class="headerlink" href="#filtering-the-file-application-view" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud enables you to view files in the File Application View using filter
+options located in the Apps Information Field. This feature enables you to
+quickly and easily view and manage files based on their share status.</p>
+<p>You can click on any of the filter options to view the files as follows:</p>
+<dl class="docutils">
+<dt>All files</dt>
+<dd>The default view; displays all files that you have access to.</dd>
+<dt>Shared with you</dt>
+<dd>Displays all files shared with you by another user or group.</dd>
+<dt>Shared with others</dt>
+<dd>Displays all files that you have shared with other users or groups.</dd>
+<dt>Shared by link</dt>
+<dd>Displays all files that are shared by you via public link.</dd>
+<dt>External Storage</dt>
+<dd>Files that you have access to on external storage devices and services such
+as Dropbox, Google, and Amazon S3.</dd>
+</dl>
+</div>
+<div class="section" id="moving-files">
+<h2>Moving Files<a class="headerlink" href="#moving-files" title="Permalink to this headline">¶</a></h2>
+<p>Using the ownCloud web interface, you can move files and folders by dragging
+and dropping them into any directory.</p>
+</div>
+<div class="section" id="sharing-files-locally">
+<h2>Sharing Files Locally<a class="headerlink" href="#sharing-files-locally" title="Permalink to this headline">¶</a></h2>
+<p>When enabled by your administrator, you can share files or folders on ownCloud
+with a local user, group, or any person online with a public link. Shared files
+and folders are labeled with the triangular share icon, and the status <em>Shared</em>
+in the file or folder row.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Shared folder has been removed from new installations of ownCloud
+7. Shares now appear in the top level of your file tree on your Files page.
+If you are upgrading from older ownCloud versions you will still have your
+old Shared folder. Your server administrator has the option to change this in
+the server&#8217;s <tt class="docutils literal"><span class="pre">config.php</span></tt> file with the <tt class="docutils literal"><span class="pre">'share_folder'</span> <span class="pre">=&gt;</span></tt> directive.</p>
+</div>
+<p>To create a local share with other users or groups on your ownCloud server:</p>
+<ol class="arabic simple">
+<li>Hover your cursor over an item on the Files page</li>
+<li>Click the <strong>Share</strong> icon</li>
+</ol>
+<p>The Share dialog box opens to show the following options:</p>
+<div class="figure">
+<img alt="../_images/users-share-local.png" src="../_images/users-share-local.png" />
+<p class="caption"><strong>Share dialog box</strong></p>
+</div>
+<p>Type the name of the user or group that you want to share with. If you want to
+share with more than one, you have to create each share separately. Check the
+permissions you want the user or group to have, and optionally send them an
+email notification.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Users must enter their email addresses on their Personal pages for
+email notifications to work</p>
+</div>
+<p>Your new share appears on user&#8217;s Files pages marked with a Share icon, and the
+name of the file owner.</p>
+<div class="figure">
+<img alt="../_images/users-share-local2.png" src="../_images/users-share-local2.png" />
+<p class="caption"><strong>Shared file</strong></p>
+</div>
+<p>When you want to revoke a share, simply click the Trashcan icon next to the
+name of the appropriate user or group in the Shared dialog.</p>
+</div>
+<div class="section" id="creating-a-public-share">
+<h2>Creating a Public Share<a class="headerlink" href="#creating-a-public-share" title="Permalink to this headline">¶</a></h2>
+<p>You can share files outside of your organization with people who are not users
+on your ownCloud server by creating a public share link. Open the Share dialog
+and check Share Link.</p>
+<div class="figure">
+<img alt="../_images/users-share-public.png" src="../_images/users-share-public.png" />
+<p class="caption"><strong>Public share box</strong></p>
+</div>
+<p>This creates a public URL that anyone can use to access the share; just send them the
+link and all they have to do is click and it opens in their Web browser. You
+have the options to send an email notification, protect it with a password, and put an
+expiration date on it. Your ownCloud administrator has the option to require passwords and
+expiration dates.</p>
+<p>For security reasons, some files shared via public link do not open in the recipient&#8217;s
+Web browser. Image files such as PNG and JPG are rendered as previews, and users
+must click the Download button to fetch the original files. The following screenshot shows
+how a JPG appears; it&#8217;s not really the full file, but a reduced-size preview.</p>
+<div class="figure">
+<img alt="../_images/users-share-public2.jpg" src="../_images/users-share-public2.jpg" />
+</div>
+<p>PDF files will appear as previews if the PDF Viewer app in ownCloud is enabled, and if
+the recipient&#8217;s Web browser is configured to display PDFs.</p>
+<p>Text documents, such as ODT, DOC, and other text formats may be downloaded and are not
+previewed.</p>
+<div class="figure">
+<img alt="../_images/users-share-public3.jpg" src="../_images/users-share-public3.jpg" />
+</div>
+<p>Video files will play in the recipient&#8217;s browser if the Video Viewer app is enabled on
+the ownCloud server, and the recipient has the appropriate browser configuration and
+codecs.</p>
+</div>
+<div class="section" id="change-in-share-expiration-date">
+<h2>Change in Share Expiration Date<a class="headerlink" href="#change-in-share-expiration-date" title="Permalink to this headline">¶</a></h2>
+<p>In older versions of ownCloud, you could set an expiration date on both local
+and public shares. Now you can set an expiration date only on public shares,
+and local shares do not expire when public shares expire. The only way to
+&#8220;expire&#8221; a local share is to click the trash can icon to un-share your files.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

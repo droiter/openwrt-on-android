@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Chen-An Yeh <chnjsn1221@gmail.com>, 2013
+# Donahue Chuang, 2012
+# Pellaeon Lin <nfsmwlin@gmail.com>, 2013
+# Flymok <transifex@flymok.net>, 2014
+# ywang <ywang1007@gmail.com>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-25 06:35-0400\n"
+"PO-Revision-Date: 2014-06-25 03:00+0000\n"
+"Last-Translator: Flymok <transifex@flymok.net>\n"
+"Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/owncloud/language/zh_TW/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: appinfo/app.php:36 js/gallery.js:127
+msgid "Pictures"
+msgstr "圖片"
+
+#: js/public.js:23
+msgid "Picture view"
+msgstr "檢視圖片"
+
+#: js/slideshow.js:337
+msgid "Error loading slideshow template"
+msgstr "載入投影片檢視樣板時發生錯誤"
+
+#: templates/index.php:4 templates/index.php:5
+msgid "Share"
+msgstr "分享"
+
+#: templates/index.php:11
+msgid ""
+"No pictures found! If you upload pictures in the files app, they will be "
+"displayed here."
+msgstr "找不到圖片! 您使用檔案app上傳的圖片，將會展示在這裡。"
+
+#: templates/public.php:9
+#, php-format
+msgid "shared by %s"
+msgstr "由 %s 分享"
+
+#: templates/public.php:20
+msgid "File list"
+msgstr "檔案列表"

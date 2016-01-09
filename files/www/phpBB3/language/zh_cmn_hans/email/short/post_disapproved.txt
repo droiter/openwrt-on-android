@@ -1,0 +1,11 @@
+Subject: 帖子未批准 - “{POST_SUBJECT}”
+
+你好 {USERNAME}，
+
+你收到此通知是因为你在 “{SITENAME}” 的帖子 “{POST_SUBJECT}” 未被版主或管理员批准。
+
+下面是未批准的原因:
+
+{REASON}
+
+{EMAIL_SIG}

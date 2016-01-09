@@ -1,0 +1,375 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Encryption Configuration &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Configuration" href="index.html" />
+    <link rel="next" title="Configuring External Storage (GUI)" href="external_storage_configuration_gui.html" />
+    <link rel="prev" title="Email Configuration" href="email_configuration.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="activity_configuration.html">Configuring the Activity App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antivirus_configuration.html">Configuring the ClamAV Antivirus Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatic_configuration.html">Automatic Configuration Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background_jobs_configuration.html">Defining Background Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="big_file_upload_configuration.html">Uploading big files &gt; 512MB (as set by default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collaborative_documents_configuration.html">Configuring the Collaborative Documents App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_sample_php_parameters.html">Config.php Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_client_configuration.html">Custom Client Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database_configuration.html">Database Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_configuration.html">Email Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Encryption Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-the-encryption-app">Enabling the Encryption App</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-encrypted-files">Sharing Encrypted Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decrypting-encrypted-files">Decrypting Encrypted Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enabling-a-file-recovery-key">Enabling a File Recovery Key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files-not-encrypted">Files Not Encrypted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap-and-other-external-user-back-ends">LDAP and Other External User Back-ends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#missing-requirements-message-on-windows-servers">&#8220;Missing requirements&#8221; Message on Windows Servers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration_gui.html">Configuring External Storage (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration.html">Configuring External Storage (Configuration File)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_sites.html">Linking External Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_sharing_configuration.html">File Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files_locking_enabling.html">Files Locking App Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harden_server.html">Hardening and Security Guidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js_css_asset_management_configuration.html">JavaScript and CSS Asset Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledgebase_configuration.html">Knowledge Base Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_configuration.html">Language Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging_configuration.html">Logging Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occ_command.html">Using the occ Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_tips.html">Performance Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="previews_configuration.html">Previews Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_proxy_configuration.html">Reverse Proxy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search_configuration.html">Enabling Full-Text Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_to_server_configuration.html">Configuring Server-to-Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serving_static_files_configuration.html">Serving Static Files for Better Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty_php_configuration.html">Using Third Party PHP Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ftp_smb_imap.html">User Authentication with IMAP, SMB, and FTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap.html">User Authentication with LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap_cleanup.html">LDAP User Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_configuration.html">User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset_admin_password.html">Resetting a Lost Admin Password</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="encryption-configuration">
+<h1>Encryption Configuration<a class="headerlink" href="#encryption-configuration" title="Permalink to this headline">¶</a></h1>
+<p>ownCloud includes a server-side encryption application. The Encryption app
+encrypts all files stored on the ownCloud server, and all files on remote
+storage that is connected to your ownCloud server. Encryption and decryption are
+performed on the ownCloud server. All files sent to remote storage (for example
+Dropbox and Google Drive) will be encrypted by the ownCloud server, and upon
+retrieval, decrypted before serving them to you and anyone you have shared them
+with.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Encrypting files increases their size by roughly 35%, so you must take this into
+account when you are provisioning storage and setting storage quotas. User&#8217;s quotas are
+based on the unencrypted file size, and not the encrypted file size.</p>
+</div>
+<p>When files on external storage are encrypted in ownCloud, you cannot share them
+directly from the external storage services, but only through ownCloud sharing
+because the key to decrypt the data never leaves the ownCloud server.</p>
+<p>The main purpose of the Encryption app is to protect users&#8217; files on remote
+storage, and to do it easily and seamlessly from within ownCloud.</p>
+<p>The Encryption app generates a strong encryption key, which is unlocked by
+user&#8217;s passwords. So your users don&#8217;t need to track an extra password, but
+simply log in as they normally do.</p>
+<p>Encryption is applied server-wide; it cannot be applied to selected users or
+files.</p>
+<p>The Encryption app encrypts only the contents of files, and not filenames and
+folder structures.</p>
+<p>You should regularly backup all encryption keys to prevent permanent data loss.
+The encryption keys are stored in following folders:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">data/owncloud_private_key</span></tt></dt>
+<dd>Recovery key, if enabled, and public share key</dd>
+<dt><tt class="docutils literal"><span class="pre">data/public-keys</span></tt></dt>
+<dd>Public keys for all users</dd>
+<dt><tt class="docutils literal"><span class="pre">data/&lt;user&gt;/files_encryption</span></tt></dt>
+<dd>Users&#8217; private keys and all other keys necessary to decrypt the users&#8217; files</dd>
+<dt><tt class="docutils literal"><span class="pre">data/files_encryption</span></tt></dt>
+<dd>private keys and all other keys necessary to decrypt the files stored on a
+system wide external storage</dd>
+</dl>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Encryption keys are stored only on the ownCloud server, eliminating
+exposure of your data to third party storage providers. The encryption app
+does <strong>not</strong> protect your data if your ownCloud server is compromised, and it
+does not prevent ownCloud administrators from reading user&#8217;s files. This
+would require client-side encryption, which this app does not provide. If
+your ownCloud server is not connected to any external storage services then
+it is better to  use other encryption tools, such as file-level or
+whole-disk encryption. Read
+<a class="reference external" href="https://owncloud.org/blog/how-owncloud-uses-encryption-to-protect-your-data/">How ownCloud uses encryption to protect your data</a>
+for more information.</p>
+</div>
+<div class="section" id="enabling-the-encryption-app">
+<h2>Enabling the Encryption App<a class="headerlink" href="#enabling-the-encryption-app" title="Permalink to this headline">¶</a></h2>
+<p>The Encryption app is bundled with ownCloud, so first go to your Apps page to
+enable it.</p>
+<div class="figure">
+<img alt="../_images/encryption1.png" src="../_images/encryption1.png" />
+</div>
+<p>After you click the <tt class="docutils literal"><span class="pre">Enable</span></tt> button you must log out, and then log back in.
+If you continue to work without logging out, you&#8217;ll see a yellow banner at
+the top of your Files page that warns you &#8220;Encryption App is enabled but your
+keys are not initialized, please log-out and log-in again.&#8221;</p>
+<div class="figure">
+<img alt="../_images/encryption2.png" src="../_images/encryption2.png" />
+</div>
+<p>When you log out and then log back in, your encryption keys are initialized and
+your files are encrypted. This is a one-time process, and it will take a few
+minutes depending on how many files you have.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The more files you have, the longer the initial encryption will take. It is better to
+activate the encryption app after a new ownCloud installation, to avoid possible timeouts.</p>
+</div>
+<div class="figure">
+<img alt="../_images/encryption3.png" src="../_images/encryption3.png" />
+</div>
+<p>When the encryption process is complete you&#8217;ll be returned to your default
+ownCloud page. Every user will go through this process when they log in after
+you enable encryption, and each user will get unique encryption keys. Users can change
+their passwords whenever they want on their Personal pages, and ownCloud will update
+their encryption keys automatically.</p>
+</div>
+<div class="section" id="sharing-encrypted-files">
+<h2>Sharing Encrypted Files<a class="headerlink" href="#sharing-encrypted-files" title="Permalink to this headline">¶</a></h2>
+<p>Only users who have private encryption keys have access to shared encrypted files and
+folders. Users who have not yet created their private encryption keys will not have access
+to encrypted shared files; they will see folders and filenames, but will not be able to
+open or download the files. They will see a yellow warning banner that says &#8220;Encryption
+App is enabled but your keys are not initialized, please log-out and log-in again.&#8221;</p>
+<p>Share owners may need to re-share files after encryption is enabled; users trying to
+access the share will see a message advising them to ask the share owner to re-share the
+file with them. For individual shares, un-share and re-share the file. For group shares,
+share with any individuals who can&#8217;t access the share. This updates the encryption, and
+then the share owner can remove the individual shares.</p>
+<div class="figure">
+<img alt="../_images/encryption9.png" src="../_images/encryption9.png" />
+</div>
+</div>
+<div class="section" id="decrypting-encrypted-files">
+<h2>Decrypting Encrypted Files<a class="headerlink" href="#decrypting-encrypted-files" title="Permalink to this headline">¶</a></h2>
+<p>You have the option of changing your mind and disabling the Encryption app.
+Just click its Disable button on the Apps page, and when you go to your Files
+page you&#8217;ll see the yellow banner warning &#8220;Encryption was disabled but your
+files are still encrypted. Please go to your personal settings to decrypt your
+files&#8221;.</p>
+<div class="figure">
+<img alt="../_images/encryption4.png" src="../_images/encryption4.png" />
+</div>
+<p>Go to your Personal page and enter your password in the Encryption removal form, and your
+files will all be decrypted.</p>
+<div class="figure">
+<img alt="../_images/encryption5.png" src="../_images/encryption5.png" />
+</div>
+<p>Your users will also have to follow this step to decrypt their files. If
+something goes wrong with decryption, click the <tt class="docutils literal"><span class="pre">Restore</span> <span class="pre">Encryption</span> <span class="pre">Keys</span></tt>
+button to re-encrypt your files, and then review your logfile to see what
+happened.</p>
+</div>
+<div class="section" id="enabling-a-file-recovery-key">
+<h2>Enabling a File Recovery Key<a class="headerlink" href="#enabling-a-file-recovery-key" title="Permalink to this headline">¶</a></h2>
+<p>If you lose your ownCloud password, then you lose access to your encrypted files. If one
+of your users loses their ownCloud password their files are unrecoverable. You cannot
+reset their password in the normal way; you&#8217;ll see a yellow banner warning &#8220;Please provide
+an admin recovery password, otherwise all user data will be lost&#8221;.</p>
+<p>To avoid all this, create a Recovery Key. Go to the Encryption section of your
+Admin page and set a recovery key password.</p>
+<div class="figure">
+<img alt="../_images/encryption6.png" src="../_images/encryption6.png" />
+</div>
+<p>Then your users have the option of enabling password recovery on their Personal
+pages. If they do not do this, then the Recovery Key won&#8217;t work for them.</p>
+<div class="figure">
+<img alt="../_images/encryption7.png" src="../_images/encryption7.png" />
+</div>
+<p>For users who have enabled password recovery, give them a new password and recover access
+to their encrypted files by supplying the Recovery Key on the Users page.</p>
+<div class="figure">
+<img alt="../_images/encryption8.png" src="../_images/encryption8.png" />
+</div>
+</div>
+<div class="section" id="files-not-encrypted">
+<h2>Files Not Encrypted<a class="headerlink" href="#files-not-encrypted" title="Permalink to this headline">¶</a></h2>
+<p>Only the data in your files is encrypted, and not the filenames or folder
+structures. These files are never encrypted:</p>
+<ul class="simple">
+<li>Old files in the trash bin.</li>
+<li>Image thumbnails from the Gallery app.</li>
+<li>Previews from the Files app.</li>
+<li>The search index from the full text search app.</li>
+<li>Third-party app data</li>
+</ul>
+<p>There may be other files that are not encrypted; only files that are exposed to
+third-party storage providers are guaranteed to be encrypted.</p>
+</div>
+<div class="section" id="ldap-and-other-external-user-back-ends">
+<h2>LDAP and Other External User Back-ends<a class="headerlink" href="#ldap-and-other-external-user-back-ends" title="Permalink to this headline">¶</a></h2>
+<p>If you use an external user back-end, such as an LDAP or Samba server, and you change a
+user&#8217;s password on the back-end, the user will be prompted to change their ownCloud login
+to match on their next ownCloud login. The user will need both their old and new passwords
+to do this. If you have enabled the Recovery Key then you can change a user&#8217;s password in
+the ownCloud Users panel to match their back-end password, and then, of course, notify the
+user and give them their new password.</p>
+</div>
+<div class="section" id="missing-requirements-message-on-windows-servers">
+<h2>&#8220;Missing requirements&#8221; Message on Windows Servers<a class="headerlink" href="#missing-requirements-message-on-windows-servers" title="Permalink to this headline">¶</a></h2>
+<p>If you get a &#8220;Missing requirements&#8221; error message when you enable encryption on
+a Windows server, enter the absolute location of your openSSL configuration file in
+<tt class="docutils literal"><span class="pre">config.php</span></tt>:</p>
+<div class="highlight-python"><pre>'openssl' =&gt; array(
+    'config' =&gt; 'C:\path\to\openssl.cnf',
+),</pre>
+</div>
+<p>For example, in a typical installation on a 64-bit Windows 7 system it looks like this:</p>
+<div class="highlight-python"><pre>'openssl' =&gt; array(
+    'config' =&gt; 'C:\OpenSSL-Win64\openssl.cnf',
+),</pre>
+</div>
+<p>There are many ways to configure OpenSSL, so be sure to verify your correct file
+location.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

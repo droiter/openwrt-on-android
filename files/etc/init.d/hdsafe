@@ -1,0 +1,38 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+#set -x
+START=10
+STOP=98
+
+start() {
+   cat /proc/cpuinfo
+}
+
+stop() {
+	sync
+        unbindsd
+}
+
+unbindsd() {
+        #for YSD in /dev/sd?; do
+        #    echo /usr/bin/sdparm -C stop /sdb #$YSD
+        #done
+
+        #/usr/bin/sdparm -C stop /dev/sdb
+
+        for YSD in /sys/block/sd*; do
+            if [ $(/bin/cat $YSD/size) -gt 600000000 ]; then
+                #echo /usr/bin/sdparm -C stop /dev/$(basename $YSD) >> /sdcard/xx.0
+                /usr/bin/sdparm -C stop /dev/$(basename $YSD)
+                YSD_LINK=$(/usr/bin/readlink -f $YSD)
+                for YUSBPORT in $YSD/device/driver/*; do
+                    YNAME=$(basename $YUSBPORT)
+                    #if [ "$YNAME" != "bind" -a "$YNAME" != "unbind" -a "$YNAME" != "uevent" ]; then
+                    if [ $(/usr/bin/readlink -f $YUSBPORT) = $(dirname $(dirname $YSD_LINK) ) ]; then
+                       #echo $YNAME $YSD/device/driver/unbind >> /sdcard/xx.0
+                       echo $YNAME > $YSD/device/driver/unbind
+                    fi
+                done
+            fi
+        done
+}

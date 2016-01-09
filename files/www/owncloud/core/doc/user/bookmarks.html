@@ -1,0 +1,207 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using the Bookmarks App &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="index.html" />
+    <link rel="next" title="Setting Your Preferences" href="userpreferences.html" />
+    <link rel="prev" title="Collaborative Document Editing" href="documents.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files/index.html">Files &amp; Synchronization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pim/index.html">Contacts &amp; Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Using the Bookmarks App</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-main-interface">The main interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-a-bookmark">Add a bookmark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edit-delete-a-bookmark">Edit/Delete a bookmark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search">Search</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-bookmarklet">The Bookmarklet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="using-the-bookmarks-app">
+<h1>Using the Bookmarks App<a class="headerlink" href="#using-the-bookmarks-app" title="Permalink to this headline">¶</a></h1>
+<p>If you want to add a bookmark to the Bookmarks application,
+you can either use the main interface or the bookmarklet.</p>
+<div class="section" id="the-main-interface">
+<h2>The main interface<a class="headerlink" href="#the-main-interface" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="add-a-bookmark">
+<h3>Add a bookmark<a class="headerlink" href="#add-a-bookmark" title="Permalink to this headline">¶</a></h3>
+<p>In the bookmark application, enter a URL into the top-left area of the content section. After adding an address, click on the pencil button to edit fields for the given address.
+The main ownCloud bookmark interface contains 3 fields at the top where
+you can enter the website address (or URL), the title of your bookmark, and
+a set of tags separated from each other by a space.</p>
+<div class="figure">
+<img alt="_images/bookmark_addurl.png" src="_images/bookmark_addurl.png" />
+<p class="caption">Adding a bookmark manually</p>
+</div>
+<p>In this example, we have added the page <cite>http://wikipedia.org</cite> with the title &#8220;Wikipedia&#8221;
+and some tags describing what Wikipedia is for an easier search later on.</p>
+</div>
+<div class="section" id="edit-delete-a-bookmark">
+<h3>Edit/Delete a bookmark<a class="headerlink" href="#edit-delete-a-bookmark" title="Permalink to this headline">¶</a></h3>
+<p>You also have the possibility to edit or delete a bookmark.</p>
+<p>To edit a bookmark, hover over the bookmark and click on the pencil icon.
+The bookmark details will then be filled into the 3 fields at the top of the screen.
+Modify your bookmark to your needs then click the save button to persist the change.</p>
+<p>To delete a bookmark, hover over the bookmark and click the cross icon.</p>
+</div>
+<div class="section" id="search">
+<h3>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h3>
+<p>If you click on a tag, ownCloud will only display the bookmarks that
+are described with this tag.</p>
+<p>You can also use the search bar of ownCloud in the top right of your screen.</p>
+<p>Simply click on the &#8220;Bookmarks&#8221; menu in the sidebar to come back to
+the default view.</p>
+</div>
+</div>
+<div class="section" id="the-bookmarklet">
+<h2>The Bookmarklet<a class="headerlink" href="#the-bookmarklet" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/bookmark_setting.png" src="_images/bookmark_setting.png" />
+<p class="caption">Bookmarklet link</p>
+</div>
+<p>The creator of this app understands that people won&#8217;t want to
+open the ownCloud boorkmarks page to add a bookmark every time they see a cool site.
+This is why they have made this cool &#8220;bookmarklet&#8221;.</p>
+<p>A bookmarklet is small button that you can drag and drop in your bookmarks.
+The next time you see a cool new site, click on this special bookmark
+to add the site to your ownCloud bookmarks.</p>
+<p>To find this bookmark, click on the gear button at the bottom of the bookmarks app.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

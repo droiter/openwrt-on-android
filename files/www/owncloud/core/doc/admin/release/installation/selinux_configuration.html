@@ -1,0 +1,226 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SELinux Configuration &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Installation" href="index.html" />
+    <link rel="next" title="Configuration" href="../configuration/index.html" />
+    <link rel="prev" title="Yaws Configuration" href="yaws_configuration.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux_installation.html">Preferred Linux Installation Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_installation.html">ownCloud Appliances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps_management_installation.html">Installing and Managing Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hiawatha_configuration.html">Hiawatha Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_wizard.html">Installation Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lighttpd_configuration.html">Lighttpd Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos_installation.html">Mac OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nginx_configuration.html">Nginx Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others_installation.html">Other Installation Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source_installation.html">Manual Installation on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ucs_installation.html">Univention Corporate Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_installation.html">Windows 7 and Windows Server 2008</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaws_configuration.html">Yaws Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">SELinux Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#allow-access-to-a-remote-database">Allow access to a remote database</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#allow-access-to-ldap-server">Allow access to LDAP server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#allow-access-to-remote-network">Allow access to remote network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#allow-access-to-smtp-sendmail">Allow access to SMTP/sendmail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="selinux-configuration">
+<span id="selinux-config-label"></span><h1>SELinux Configuration<a class="headerlink" href="#selinux-configuration" title="Permalink to this headline">¶</a></h1>
+<p>When you have SELinux enabled on your Linux distribution, you may run into
+permissions problems after a new ownCloud installation, and see <tt class="docutils literal"><span class="pre">permission</span>
+<span class="pre">denied</span></tt> errors in your ownCloud logs.</p>
+<p>The following settings should work for most SELinux systems that use the
+default distro profiles. Run these commands as root, and remember to adjust the filepaths
+in these examples for your installation:</p>
+<div class="highlight-python"><pre>semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/owncloud/data'
+restorecon '/var/www/html/owncloud/data'
+semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/owncloud/config'
+restorecon '/var/www/html/owncloud/config'
+semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/owncloud/apps'
+restorecon '/var/www/html/owncloud/apps'</pre>
+</div>
+<p>If you uninstall ownCloud you need to remove the ownCloud directory labels. To do
+this execute the following commands as root after uninstalling ownCloud:</p>
+<div class="highlight-python"><pre>semanage fcontext -d -t httpd_sys_rw_content_t '/var/www/html/owncloud/data'
+restorecon '/var/www/html/owncloud/data'
+semanage fcontext -d -t httpd_sys_rw_content_t '/var/www/html/owncloud/config'
+restorecon '/var/www/html/owncloud/config'
+semanage fcontext -d -t httpd_sys_rw_content_t '/var/www/html/owncloud/apps'
+restorecon '/var/www/html/owncloud/apps'</pre>
+</div>
+<p>If you have customized SELinux policies and these examples do not work, you must give the
+HTTP server write access to these directories:</p>
+<div class="highlight-python"><pre>/var/www/html/owncloud/data
+/var/www/html/owncloud/config
+/var/www/html/owncloud/apps</pre>
+</div>
+<div class="section" id="allow-access-to-a-remote-database">
+<h2>Allow access to a remote database<a class="headerlink" href="#allow-access-to-a-remote-database" title="Permalink to this headline">¶</a></h2>
+<p>An additional setting is needed if your installation is connecting to a remote database:</p>
+<div class="highlight-python"><pre>setsebool -P httpd_can_network_connect_db on</pre>
+</div>
+</div>
+<div class="section" id="allow-access-to-ldap-server">
+<h2>Allow access to LDAP server<a class="headerlink" href="#allow-access-to-ldap-server" title="Permalink to this headline">¶</a></h2>
+<p>Use this setting to allow LDAP connections:</p>
+<div class="highlight-python"><pre>setsebool -P httpd_can_connect_ldap on</pre>
+</div>
+</div>
+<div class="section" id="allow-access-to-remote-network">
+<h2>Allow access to remote network<a class="headerlink" href="#allow-access-to-remote-network" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud requires access to remote networks for functionalities such as Server-to-Server sharing, external storages or
+the app store. To allow this access use the following setting:</p>
+<div class="highlight-python"><pre>setsebool -P httpd_can_network_connect on</pre>
+</div>
+</div>
+<div class="section" id="allow-access-to-smtp-sendmail">
+<h2>Allow access to SMTP/sendmail<a class="headerlink" href="#allow-access-to-smtp-sendmail" title="Permalink to this headline">¶</a></h2>
+<p>If you want to allow ownCloud to send out e-mail notifications via sendmail you need
+to use the following setting:</p>
+<div class="highlight-python"><pre>setsebool -P httpd_can_sendmail on</pre>
+</div>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

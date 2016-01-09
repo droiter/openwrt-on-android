@@ -1,0 +1,318 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Serving Static Files for Better Performance &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Configuration" href="index.html" />
+    <link rel="next" title="Using Third Party PHP Components" href="thirdparty_php_configuration.html" />
+    <link rel="prev" title="Configuring Server-to-Server Sharing" href="server_to_server_configuration.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="activity_configuration.html">Configuring the Activity App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antivirus_configuration.html">Configuring the ClamAV Antivirus Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatic_configuration.html">Automatic Configuration Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background_jobs_configuration.html">Defining Background Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="big_file_upload_configuration.html">Uploading big files &gt; 512MB (as set by default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collaborative_documents_configuration.html">Configuring the Collaborative Documents App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_sample_php_parameters.html">Config.php Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_client_configuration.html">Custom Client Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database_configuration.html">Database Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_configuration.html">Email Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption_configuration.html">Encryption Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration_gui.html">Configuring External Storage (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration.html">Configuring External Storage (Configuration File)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_sites.html">Linking External Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_sharing_configuration.html">File Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files_locking_enabling.html">Files Locking App Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harden_server.html">Hardening and Security Guidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js_css_asset_management_configuration.html">JavaScript and CSS Asset Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledgebase_configuration.html">Knowledge Base Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_configuration.html">Language Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging_configuration.html">Logging Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occ_command.html">Using the occ Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_tips.html">Performance Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="previews_configuration.html">Previews Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_proxy_configuration.html">Reverse Proxy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search_configuration.html">Enabling Full-Text Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_to_server_configuration.html">Configuring Server-to-Server Sharing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Serving Static Files for Better Performance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apache2-x-sendfile">Apache2 (X-Sendfile)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lighttpd-x-sendfile2">LigHTTPd (X-Sendfile2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nginx-x-accel-redirect">Nginx (X-Accel-Redirect)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-to-check-if-it-s-working">How to check if it&#8217;s working?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty_php_configuration.html">Using Third Party PHP Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ftp_smb_imap.html">User Authentication with IMAP, SMB, and FTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap.html">User Authentication with LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap_cleanup.html">LDAP User Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_configuration.html">User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset_admin_password.html">Resetting a Lost Admin Password</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="serving-static-files-for-better-performance">
+<h1>Serving Static Files for Better Performance<a class="headerlink" href="#serving-static-files-for-better-performance" title="Permalink to this headline">¶</a></h1>
+<p>Since ownCloud 5 it is possible to let web servers handle static file serving.
+This should generally improve performance (web servers are optimized for this) and in some cases permits controlled
+file serving (i.e. pause and resume downloads).</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This feature can currently only be activated for local files, i.e. files inside the <strong>data/</strong> directory and local mounts.  It also does not work with the Encryption App enabled.
+Controlled file serving <strong>does not work for generated zip files</strong>. This is due to zip files being generated and streamed back directly to the client.</p>
+</div>
+<div class="section" id="apache2-x-sendfile">
+<h2>Apache2 (X-Sendfile)<a class="headerlink" href="#apache2-x-sendfile" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to let Apache handle static file serving via <a class="reference external" href="https://tn123.org/mod_xsendfile/">mod_xsendfile</a>.</p>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<p>On Debian and Ubuntu systems use:</p>
+<div class="highlight-bash"><div class="highlight"><pre>apt-get install libapache2-mod-xsendfile
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h3>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h3>
+<p>Configuration of mod_xsendfile for ownCloud depends on its version.
+For versions below 0.10 (Debian squeeze ships with 0.9)</p>
+<div class="highlight-xml"><pre>&lt;Directory /var/www/owncloud&gt;
+    ...
+    SetEnv MOD_X_SENDFILE_ENABLED 1
+    XSendFile On
+    XSendFileAllowAbove On
+&lt;/Directory&gt;</pre>
+</div>
+<p>For versions &gt;=0.10 (e.g. Ubuntu 12.10)</p>
+<div class="highlight-xml"><pre>&lt;Directory /var/www/owncloud&gt;
+    ...
+    SetEnv MOD_X_SENDFILE_ENABLED 1
+    XSendFile On
+    XSendFilePath /home/valerio
+&lt;/Directory&gt;</pre>
+</div>
+<ul class="simple">
+<li><strong>SetEnv MOD_X_SENDFILE_ENABLED</strong>: tells ownCloud scripts that they should add the X-Sendfile header when serving files</li>
+<li><strong>XSendFile</strong>: enables web server handling of X-Sendfile headers (and therefore file serving) for the specified Directory</li>
+<li><strong>XSendFileAllowAbove (&lt;0.10)</strong>: enables file serving through web server on path outside the specified Directory. This is needed for configured local mounts which may reside outside data directory</li>
+<li><strong>XSendFilePath (&gt;=0.10)</strong>: a white list of paths that the web server is allowed to serve outside of the specified Directory. Other paths which correspond to local mounts should be configured here as well. For a more in-depth documentation of this directive refer to mod_xsendfile website linked above</li>
+</ul>
+</div>
+</div>
+<div class="section" id="lighttpd-x-sendfile2">
+<h2>LigHTTPd (X-Sendfile2)<a class="headerlink" href="#lighttpd-x-sendfile2" title="Permalink to this headline">¶</a></h2>
+<p>LigHTTPd uses similar headers to Apache2, apart from the fact that it does not handle partial downloads in the same way
+Apache2 does. For this reason, a different method is used for LigHTTPd.</p>
+<div class="section" id="id1">
+<h3>Installation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>X-Sendfile and X-Sendfile2 are supported by default in LigHTTPd and no additional operation should be needed to install it.</p>
+</div>
+<div class="section" id="id2">
+<h3>Configuration<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Your server configuration should include the following statements:</p>
+<div class="highlight-python"><pre>fastcgi.server          = ( ".php" =&gt; ((
+   ...
+   "allow-x-send-file" =&gt; "enable",
+   "bin-environment" =&gt; (
+      "MOD_X_SENDFILE2_ENABLED" =&gt; "1",
+   ),
+)))</pre>
+</div>
+<ul class="simple">
+<li><strong>allow-x-send-file</strong>: enables LigHTTPd to use X-Sendfile and X-Sendfile2 headers to serve files</li>
+<li><strong>bin-environment</strong>: is used to parse MOD_X_SENDFILE2_ENABLED to the ownCloud backend, to make it use the X-Sendfile and X-Sendfile2 headers in it&#8217;s response</li>
+</ul>
+</div>
+</div>
+<div class="section" id="nginx-x-accel-redirect">
+<h2>Nginx (X-Accel-Redirect)<a class="headerlink" href="#nginx-x-accel-redirect" title="Permalink to this headline">¶</a></h2>
+<p>Nginx supports handling of static files differently from Apache. Documentation can be found in the Nginx Wiki
+section <a class="reference external" href="http://wiki.nginx.org/XSendfile">Mod X-Sendfile</a> and section <a class="reference external" href="http://wiki.nginx.org/X-accel">X-Accell</a>.
+The header used by Nginx is X-Accel-Redirect.</p>
+<div class="section" id="id3">
+<h3>Installation<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>X-Accel-Redirect is supported by default in Nginx and no additional operation should be needed to install it.</p>
+</div>
+<div class="section" id="id4">
+<h3>Configuration<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Configuration is similar to Apache:</p>
+<div class="highlight-python"><pre>location ~ \.php(?:$|/) {
+    ...
+    fastcgi_param MOD_X_ACCEL_REDIRECT_ENABLED on;
+}
+
+location ^~ /data {
+    internal;
+    # Set 'alias' if not using the default 'datadirectory'
+    #alias /path/to/non-default/datadirectory;
+
+#    LOCAL-MOUNT-NAME should match "Folder name" and 'alias' value should match "Configuration"
+#    A 'Local' External Storage Mountpoint available to a single user
+#    location /data/USER/files/LOCAL-FS-MOUNT-NAME {
+#        alias /path/to/local-mountpoint;
+#    }
+
+#    A 'Local' External Storage Mountpoint available to mulitple users
+#    location ~ ^/data/(?:USER1|USER2)/files/LOCAL-FS-MOUNT-NAME/(.+)$ {
+#        alias /path/to/local-mountpoint/$1;
+#    }
+
+#    A 'Local' External Storage Mountpoint available to all users
+#    location ~ ^/data/[^/]+/files/LOCAL-FS-MOUNT-NAME/(.+)$ {
+#        alias /path/to/local-mountpoint/$1;
+#    }
+
+}</pre>
+</div>
+<ul class="simple">
+<li><strong>fastcgi_param MOD_X_ACCEL_REDIRECT_ENABLED</strong> ~ Tells ownCloud scripts that they should add the X-Accel-Redirect header when serving files.</li>
+<li><strong>/data</strong> ~ The ownCloud data directory.  Any &#8216;Local&#8217; External Storage Mounts must also have nested locations here.<ul>
+<li>set alias if you are using a non-default data directory</li>
+<li><strong>/data/USER/files/LOCAL-MOUNT-NAME</strong> ~ a local external storage mount available to a single user</li>
+<li><strong>~ ^/data/(?:USER1|USER2)/files/LOCAL-MOUNT-NAME/(.+)$</strong> ~ a local external storage mount available to multiple users</li>
+<li><strong>~ ^/data/[^/]+/files/LOCAL-MOUNT-NAME/(.+)$</strong> ~ a local external storage mount available to all users</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="how-to-check-if-it-s-working">
+<h2>How to check if it&#8217;s working?<a class="headerlink" href="#how-to-check-if-it-s-working" title="Permalink to this headline">¶</a></h2>
+<p>You are still able to download stuff via the web interface and single, local file downloads can be paused and resumed.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

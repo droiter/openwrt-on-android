@@ -1,0 +1,241 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Converting From SQLite to MySQL, MariaDB, or PostgreSQL &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Maintenance" href="index.html" />
+    <link rel="next" title="Issues and Troubleshooting" href="../issues/index.html" />
+    <link rel="prev" title="Migrating ownCloud Installations" href="migrating.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Maintenance</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="enable_maintenance.html">Maintenance Mode Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backing up ownCloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="update.html">Updating ownCloud with the Updater App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgrade.html">Upgrading Your ownCloud Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restore.html">Restoring ownCloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrating.html">Migrating ownCloud Installations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Converting From SQLite to MySQL, MariaDB, or PostgreSQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-the-conversion">Running the Conversion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conversion-options">Conversion Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unconvertible-tables">Unconvertible Tables</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="converting-from-sqlite-to-mysql-mariadb-or-postgresql">
+<h1>Converting From SQLite to MySQL, MariaDB, or PostgreSQL<a class="headerlink" href="#converting-from-sqlite-to-mysql-mariadb-or-postgresql" title="Permalink to this headline">¶</a></h1>
+<p>You can convert a SQLite database to a more performing MySQL, MariaDB or
+PostgreSQL database with the ownCloud command line tool <tt class="docutils literal"><span class="pre">occ</span></tt>, which first
+appeared in ownCloud version 7.0.0. You must have ownCloud 7 to perform this
+conversion. SQLite is sufficient for testing and for very small installations,
+but for production servers with multiple users it is better to use MySQL,
+MariaDB or PostgreSQL.</p>
+<p>Please see <a class="reference internal" href="../configuration/occ_command.html"><em>Using the occ Command</em></a> for more information on using
+the <tt class="docutils literal"><span class="pre">occ</span></tt> command.</p>
+<div class="section" id="running-the-conversion">
+<h2>Running the Conversion<a class="headerlink" href="#running-the-conversion" title="Permalink to this headline">¶</a></h2>
+<p>First set up the new database, in these examples called &#8220;new_db_name&#8221;. In your
+ownCloud root folder call:</p>
+<div class="highlight-bash"><div class="highlight"><pre>php occ db:convert-type <span class="o">[</span>options<span class="o">]</span> <span class="nb">type </span>username hostname database
+</pre></div>
+</div>
+<p>The available values for the <tt class="docutils literal"><span class="pre">type</span></tt> parameter are:</p>
+<ul class="simple">
+<li>mysql (for MySQL or MariaDB)</li>
+<li>pgsql (for PostgreSQL)</li>
+</ul>
+</div>
+<div class="section" id="conversion-options">
+<h2>Conversion Options<a class="headerlink" href="#conversion-options" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">--port=&quot;3306&quot;</span></tt>  Your database port (optional, specify the port if it is a
+non-standard port).</li>
+<li><tt class="docutils literal"><span class="pre">username</span></tt>  A database admin user.</li>
+<li><tt class="docutils literal"><span class="pre">--password=&quot;mysql_user_password&quot;</span></tt> The database admin password, if there is
+one.</li>
+<li><tt class="docutils literal"><span class="pre">--clear-schema</span></tt>  Clear the schema in the new DB (optional).</li>
+<li><tt class="docutils literal"><span class="pre">--all-apps</span></tt>  By default, tables for enabled apps are converted. Use this
+option to convert tables of deactivated apps.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The converter searches for apps in your configured app folders and
+uses the schema definitions in the apps to create the new table. So
+the tables of removed apps will not be converted even with the option
+<tt class="docutils literal"><span class="pre">--all-apps</span></tt></p>
+</div>
+<p>This example converts the SQLite DB and tables for all installed apps to
+MySQL/MariaDB:</p>
+<div class="highlight-bash"><div class="highlight"><pre>php occ db:convert-type --all-apps mysql oc_mysql_user 127.0.0.1 new_db_name
+</pre></div>
+</div>
+<p>To complete the conversion, type <tt class="docutils literal"><span class="pre">yes</span></tt> when prompted <tt class="docutils literal"><span class="pre">Continue</span> <span class="pre">with</span> <span class="pre">the</span>
+<span class="pre">conversion?</span></tt> On success the converter will automatically configure the new
+database in your ownCloud configuration in <tt class="docutils literal"><span class="pre">config.php</span></tt>.</p>
+</div>
+<div class="section" id="unconvertible-tables">
+<h2>Unconvertible Tables<a class="headerlink" href="#unconvertible-tables" title="Permalink to this headline">¶</a></h2>
+<p>After conversion some obsolete database tables may be left over. The converter
+will tell you what these are:</p>
+<div class="highlight-bash"><div class="highlight"><pre>The following tables will not be converted:
+oc_permissions
+...
+</pre></div>
+</div>
+<p>You can ignore these tables.
+Here is a list of known old tables:</p>
+<ul class="simple">
+<li>oc_calendar_calendars</li>
+<li>oc_calendar_objects</li>
+<li>oc_calendar_share_calendar</li>
+<li>oc_calendar_share_event</li>
+<li>oc_fscache</li>
+<li>oc_log</li>
+<li>oc_media_albums</li>
+<li>oc_media_artists</li>
+<li>oc_media_sessions</li>
+<li>oc_media_songs</li>
+<li>oc_media_users</li>
+<li>oc_permissions</li>
+<li>oc_queuedtasks</li>
+<li>oc_sharing</li>
+</ul>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

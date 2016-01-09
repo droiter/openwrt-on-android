@@ -1,0 +1,22 @@
+<?php $TRANSLATIONS = array(
+"Sunday" => "Нядзеля",
+"Monday" => "Панядзелак",
+"Tuesday" => "Аўторак",
+"Wednesday" => "Серада",
+"Thursday" => "Чацвер",
+"Friday" => "Пятніца",
+"Saturday" => "Субота",
+"January" => "Студзень",
+"February" => "Люты",
+"March" => "Сакавік",
+"April" => "Красавік",
+"May" => "Май",
+"June" => "Чэрвень",
+"July" => "Ліпень",
+"August" => "Жнівень",
+"September" => "Верасень",
+"October" => "Кастрычнік",
+"November" => "Лістапад",
+"December" => "Снежань",
+"Advanced" => "Дасведчаны"
+);

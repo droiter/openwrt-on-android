@@ -1,0 +1,486 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using the Calendar App &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Contacts &amp; Calendar" href="index.html" />
+    <link rel="next" title="iOS - Synchronize iPhone/iPad" href="sync_ios.html" />
+    <link rel="prev" title="Using the Contacts App" href="contacts.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">Files &amp; Synchronization</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contacts &amp; Calendar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contacts.html">Using the Contacts App</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using the Calendar App</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-calendar">Creating a New Calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-calendar-settings">Managing Calendar Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#synchronizing-calendars-using-caldav">Synchronizing Calendars Using CalDAV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-events">Creating Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sharing-events">Sharing Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exporting-and-importing-events">Exporting and Importing Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleting-an-event">Deleting an Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#special-caldav-urls">Special CalDAV URLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calendar-app-faq">Calendar App FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sync_ios.html">iOS - Synchronize iPhone/iPad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_osx.html">Synchronizing with OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_thunderbird.html">Thunderbird - Synchronize Addressbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_kde.html">Synchronizing with KDE SC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="using-the-calendar-app">
+<h1>Using the Calendar App<a class="headerlink" href="#using-the-calendar-app" title="Permalink to this headline">¶</a></h1>
+<p>The ownCloud Calendar app enables you to create and edit events, synchronize to
+other calendars you might use, and create new, personalized calendars.</p>
+<p>By default, when you access the Calendar app for the first time, you get a
+&#8220;Personal&#8221; calendar that you can use or modify as you like.</p>
+<div class="figure">
+<img alt="../_images/calendar_default.png" src="../_images/calendar_default.png" />
+<p class="caption"><strong>Calendar app (default)</strong></p>
+</div>
+<p>The Calendar app contains the following fields and controls:</p>
+<ul class="simple">
+<li>Calendar Date Field &#8211; Provides the current date or enables you to select a
+date that you want to view.</li>
+<li>Calendar View Options &#8211; Enables you to choose between a day, week, or month
+view for the main Calendar app window.  Also provides a quick jump button to
+access the current day (Today).</li>
+<li>Calendar Selection &#8211; Enables you to choose the calendar that you want to view.</li>
+<li>Calendar Controls &#8211; Provides controls for each individual calendar.  These
+controls include sharing, obtaining an external URL link to the calendar, an
+export function, an edit function, and a delete (trash) button.</li>
+<li>Calendar Settings &#8211; Provides access to the calendar-specific settings.  These
+settings include the calendar timezone selection, time format selection, week
+start day, cache setting, primary CalDAV address, and iOS/OS X CalDAV address
+settings.</li>
+</ul>
+<div class="section" id="creating-a-new-calendar">
+<h2>Creating a New Calendar<a class="headerlink" href="#creating-a-new-calendar" title="Permalink to this headline">¶</a></h2>
+<p>The ownCloud Calendar app enables you to create new calendars for work or other
+activities that you want to keep separated.  You can manage each calendar
+separately.</p>
+<p>To create a new calendar:</p>
+<ol class="arabic simple">
+<li>Access the Calendar app.</li>
+<li>Click the <tt class="docutils literal"><span class="pre">+</span> <span class="pre">New</span> <span class="pre">Calendar</span></tt> field.</li>
+</ol>
+<blockquote>
+<div>A dialog opens to enable you to create a new calendar.</div></blockquote>
+<div class="figure">
+<img alt="../_images/calendar_create_new.png" src="../_images/calendar_create_new.png" />
+<p class="caption"><strong>New calendar</strong></p>
+</div>
+<ol class="arabic simple" start="3">
+<li>Specify a name for the new calendar.</li>
+<li>(Optional) Specify a color for the new calendar.</li>
+<li>Click the blue checkbox.</li>
+</ol>
+<blockquote>
+<div>The Calendar app creates a new calendar using the name and color specified.</div></blockquote>
+</div>
+<div class="section" id="managing-calendar-settings">
+<h2>Managing Calendar Settings<a class="headerlink" href="#managing-calendar-settings" title="Permalink to this headline">¶</a></h2>
+<p>The Calendar app settings provides global configuration that applies to all
+calendars that you have created in the Calendar app.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/calendar_settings.png" src="../_images/calendar_settings.png" />
+<p class="caption"><strong>Calendar app settings</strong></p>
+</div>
+</div></blockquote>
+<p>In the Calendar app settings, you can modify the following:</p>
+<ul class="simple">
+<li>Timezone &#8211; Provides an alphabetical listing of all available countries
+categorized by continent.</li>
+<li>Time format &#8211; Provides the option of using 24 hour or 12 hour time format.</li>
+<li>Start day &#8211; Provides the option of starting the calendar week on Monday,
+Sunday, or Saturday.</li>
+<li>Primary CalDAV address &#8211; Provides the primary CalDAV link URL.</li>
+<li>iOS/OS X CalDAV address &#8211; Provides the iOS/OS X CalDAV link URL.</li>
+</ul>
+</div>
+<div class="section" id="synchronizing-calendars-using-caldav">
+<h2>Synchronizing Calendars Using CalDAV<a class="headerlink" href="#synchronizing-calendars-using-caldav" title="Permalink to this headline">¶</a></h2>
+<p><em>Calendaring Extensions to WebDAV</em>, referred to as <em>CalDAV</em>, enables clients to
+access scheduling information on remote servers. As an extension to WebDAV,
+CalDAV (defined by RFC 4791) uses the iCalendar format to manage calendar data.
+CalDAV enables multiple clients to access the same information for use in
+cooperative planning and information sharing.</p>
+<p>The Calendar app provides both the Primary CalDAV address and the iOS/OSX CalDAV
+address.  Using these addresses, you can use CalDAV-compatible programs (for
+example, Kontact, Evolution, or Mozilla Thunderbird with the Lightning Add-on)
+using the address provided.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Lightning Add-on doesn&#8217;t support using multiple accounts on a single
+server as a default. You need to set <tt class="docutils literal"><span class="pre">calendar.network.multirealm</span></tt> to <tt class="docutils literal"><span class="pre">true</span></tt>
+in the Config Editor of Mozilla Thunderbird to be able to use multiple accounts.</p>
+</div>
+<div class="section" id="getting-the-caldav-link">
+<h3>Getting the CalDAV link<a class="headerlink" href="#getting-the-caldav-link" title="Permalink to this headline">¶</a></h3>
+<p>The GUI of ownCloud provides you the needed links which can be used in your CalDAV-compatible
+program. Open up the Calendar App and use the <img alt="caldavlink" src="../_images/calendar_caldav_icon.png" /> icon next to the calendar name as
+shown in the figure below:</p>
+<div class="figure">
+<img alt="../_images/calendar_caldav_link.png" src="../_images/calendar_caldav_link.png" />
+</div>
+<p>Furthermore you can get the Primary CalDAV address as well as the iOS/OS X CalDAV address by
+using the <img alt="gear" src="../_images/gear.png" /> icon on the bottom left of the Calendar app as shown in the figure below:</p>
+<div class="figure">
+<img alt="../_images/calendar_caldav_ios.png" src="../_images/calendar_caldav_ios.png" />
+</div>
+</div>
+</div>
+<div class="section" id="creating-events">
+<h2>Creating Events<a class="headerlink" href="#creating-events" title="Permalink to this headline">¶</a></h2>
+<p>The Calendar app enables you to create new events.</p>
+<p>To create a new event:</p>
+<ol class="arabic">
+<li><p class="first">Click a date in the month view or a time in either the week or day views.</p>
+<p>The <tt class="docutils literal"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">new</span> <span class="pre">event</span></tt> dialog box opens.</p>
+<div class="figure">
+<img alt="../_images/calendar_create_event.png" src="../_images/calendar_create_event.png" />
+<p class="caption"><strong>Create a new event dialog box</strong></p>
+</div>
+</li>
+<li><p class="first">Specify a title for the event.</p>
+</li>
+<li><p class="first">Specify a date and time duration for the event.</p>
+</li>
+<li><p class="first">(Optional) Provide advanced option details.  These details can include the
+event location, the event category, and an event description.</p>
+<div class="figure">
+<img alt="../_images/calendar_create_event.png" src="../_images/calendar_create_event.png" />
+<p class="caption"><strong>Create a new event dialog box</strong></p>
+</div>
+</li>
+<li><p class="first">(Optional) Click the Repeating tab to define any repeat settings for the event.</p>
+<div class="figure">
+<img alt="../_images/calendar_create_event_repeat.png" src="../_images/calendar_create_event_repeat.png" />
+<p class="caption"><strong>Event Repeating tab</strong></p>
+</div>
+<p>The Repeating tab provides the option of not repeating the event(default) or
+repeating the event daily, weekly, every weekday, biweekly, monthly, or yearly.
+In addition, by selecting the <tt class="docutils literal"><span class="pre">Advanced</span></tt> button in the Repeating tab, each
+repeat option provides different levels of customization to better define your
+repeat requirements for the event.</p>
+<p>The following table helps to define the options for each repeat rule:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><p class="first last">Repeat Rule</p>
+</th>
+<th class="head"><p class="first last">Options</p>
+</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><p class="first last">Does not repeat</p>
+</td>
+<td><p class="first last">n/a</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first last">Daily</p>
+</td>
+<td><p class="first last">Interval - Interval at which the event is repeated
+End - never, by occurrences, by date</p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first last">Weekly</p>
+</td>
+<td><p class="first last">Select weekdays - Weekday(s) on which the event is repeated
+Interval - Interval at which the event is repeated
+End - never, by occurrences, by date</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first last">Every Weekday</p>
+</td>
+<td><p class="first last">Interval - Interval at which the event is repeated
+End - never, by occurrences, by date</p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first last">Bi-Weekly</p>
+</td>
+<td><p class="first last">Interval - Interval at which the event is repeated
+End - never, by occurrences, by date</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p class="first last">Monthly</p>
+</td>
+<td><p class="first last">Day choice &#8211; by monthday or by weekday
+Events week of month - Weekday selection only; week of month on which event occurs
+Select weekdays - Weekday(s) on which the event is repeated
+Interval - Interval at which the event is repeated
+End - never, by occurrences, by date</p>
+</td>
+</tr>
+<tr class="row-even"><td><p class="first last">Yearly</p>
+</td>
+<td><p class="first last">Date option - by event&#8217;s date, by year days, by week number, by day and month
+Interval - Interval at which the event is repeated
+End - never, by occurrences, by date</p>
+</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you choose all days (Monday through Friday) in the weekview menu,
+the repeating option automatically sets the repeat rule to &#8220;every weekday.&#8221; If
+you can divide the interval of the weekview by two, the repeating option
+automatically sets the repeat rule to &#8220;Bi-Weekly&#8221;.</p>
+</div>
+</div>
+<div class="section" id="sharing-events">
+<h2>Sharing Events<a class="headerlink" href="#sharing-events" title="Permalink to this headline">¶</a></h2>
+<p>Once an event has been saved, a new tab appears for the event that enables you
+to share it.</p>
+<div class="figure">
+<img alt="../_images/calendar_create_event_share.png" src="../_images/calendar_create_event_share.png" />
+<p class="caption"><strong>Event Share tab</strong></p>
+</div>
+<p>The options available in the Share tab include the following:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Share</span> <span class="pre">with</span> <span class="pre">user</span> <span class="pre">or</span> <span class="pre">group</span></tt> field &#8211; Enables you to specify users or groups with whom you want to
+share the event.</li>
+<li>Share visibility pulldown menu &#8211; Enables you to specify the level of
+information that is shared.  The possible levels include:<ul>
+<li>Show full event &#8211; Displays full event details to those with whom the
+event is shared.</li>
+<li>Show only busy &#8211; Displays only that you are busy during this event; no
+event details are provided.</li>
+<li>Hide event &#8211; Hides the event from the users or groups specified.</li>
+</ul>
+</li>
+</ul>
+<p>To share an event:</p>
+<ol class="arabic">
+<li><p class="first">Specify the users or groups with whom you want to share (or hide) the event.</p>
+</li>
+<li><p class="first">Define the level of visibility that you want the users or groups to have.</p>
+</li>
+<li><p class="first">(Optional) Click the <tt class="docutils literal"><span class="pre">Send</span> <span class="pre">Email</span></tt> button to share the event details using an email.</p>
+</li>
+<li><p class="first">Click the <tt class="docutils literal"><span class="pre">Save</span> <span class="pre">event</span></tt> button to save your changes.</p>
+<p>The Calendar app saves and closes the event window.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="exporting-and-importing-events">
+<h2>Exporting and Importing Events<a class="headerlink" href="#exporting-and-importing-events" title="Permalink to this headline">¶</a></h2>
+<p>The Calendar app enables you to export and import event or entire calendars to
+or from other calendars.</p>
+<div class="section" id="exporting-events-and-calendar">
+<h3>Exporting Events and Calendar<a class="headerlink" href="#exporting-events-and-calendar" title="Permalink to this headline">¶</a></h3>
+<div class="figure">
+<img alt="../_images/event_export.png" src="../_images/event_export.png" />
+<p class="caption"><strong>Exporting an event</strong></p>
+</div>
+<p>You can export either a single event or an entire calendar. If you want to export
+a single event, click on the event, select &#8220;Advanced&#8221; and press the &#8220;Export Event&#8221; button in the bottom left
+corner. If you want to export an entire calendar, use the <img alt="download" src="../_images/download.png" /> icon next to the calendar name as
+shown in the figure below:</p>
+<div class="figure">
+<img alt="../_images/calendar_export.png" src="../_images/calendar_export.png" />
+<p class="caption"><strong>Exporting calendar</strong></p>
+</div>
+</div>
+<div class="section" id="importing-events">
+<h3>Importing Events<a class="headerlink" href="#importing-events" title="Permalink to this headline">¶</a></h3>
+<div class="figure">
+<img alt="../_images/calendar_import.png" src="../_images/calendar_import.png" />
+<p class="caption"><strong>Importing events</strong></p>
+</div>
+<p>You can import your calendar as an iCal file using the Files app. The Calendar app
+enables you to import the calendar into a new calendar or into an already existing calendar.</p>
+<p>To import your calendar, click the calendar file to open the import dialog.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If the progress bar does not work properly, the folder
+<tt class="docutils literal"><span class="pre">apps/calendar/import_tmp/</span></tt> might not have write permission.</p>
+</div>
+</div>
+</div>
+<div class="section" id="deleting-an-event">
+<h2>Deleting an Event<a class="headerlink" href="#deleting-an-event" title="Permalink to this headline">¶</a></h2>
+<p>The Calendar app enables you to delete any event that you create.  To delete a
+calendar event:</p>
+<ol class="arabic">
+<li><p class="first">Click the event in the Calendar app.</p>
+<p>The Edit event dialog box opens.</p>
+<div class="figure">
+<img alt="../_images/calendar_edit_event.png" src="../_images/calendar_edit_event.png" />
+<p class="caption"><strong>Edit event dialog box</strong></p>
+</div>
+</li>
+<li><p class="first">Click the <tt class="docutils literal"><span class="pre">Delete</span> <span class="pre">event</span></tt> button.</p>
+<p>The Calendar app deletes the event.</p>
+</li>
+</ol>
+</div>
+<div class="section" id="special-caldav-urls">
+<h2>Special CalDAV URLs<a class="headerlink" href="#special-caldav-urls" title="Permalink to this headline">¶</a></h2>
+<p>Additionally the Calendar app is providing two URLs for special functions:</p>
+<p><strong>Export calendar as an .ics file</strong></p>
+<blockquote>
+<div><a class="reference external" href="https://ADDRESS/remote.php/caldav/calendars/USERNAME/CALENDARNAME?export">https://ADDRESS/remote.php/caldav/calendars/USERNAME/CALENDARNAME?export</a></div></blockquote>
+<p><strong>Your contacts&#8217; birthdays</strong></p>
+<blockquote>
+<div><a class="reference external" href="https://ADDRESS/remote.php/caldav/calendars/USERNAME/contact_birthdays">https://ADDRESS/remote.php/caldav/calendars/USERNAME/contact_birthdays</a></div></blockquote>
+</div>
+<div class="section" id="calendar-app-faq">
+<h2>Calendar App FAQ<a class="headerlink" href="#calendar-app-faq" title="Permalink to this headline">¶</a></h2>
+<p><strong>Question:</strong> Why does the Calendar app request my current location?</p>
+<div class="figure">
+<img alt="../_images/calendar_newtimezone1.png" src="../_images/calendar_newtimezone1.png" />
+<p class="caption"><strong>Timezone set notification</strong></p>
+</div>
+<p><strong>Answer:</strong> The calendar needs your current position to detect your timezone.
+Without the correct timezone, a time offset exists between the events in the
+ownCloud calendar and the desktop calendar to which you are synchronizing. You
+can also set the timezone manually in the personal settings.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

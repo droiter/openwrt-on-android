@@ -1,0 +1,231 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using Server-to-Server Sharing &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Files &amp; Synchronization" href="index.html" />
+    <link rel="next" title="Managing Deleted Files" href="deletedfiles.html" />
+    <link rel="prev" title="Version Control" href="versioncontrol.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Files &amp; Synchronization</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="filesweb.html">Accessing your Files Using the Web Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">Accessing ownCloud Files Using WebDAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versioncontrol.html">Version Control</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using Server-to-Server Sharing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-new-share">Creating a New Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connecting-to-a-remote-share">Connecting to a Remote Share</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="deletedfiles.html">Managing Deleted Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync.html">Desktop Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encrypting Your ownCloud Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quota.html">Storage Quota</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring_big_file_upload.html">Managing Big Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pim/index.html">Contacts &amp; Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="using-server-to-server-sharing">
+<h1>Using Server-to-Server Sharing<a class="headerlink" href="#using-server-to-server-sharing" title="Permalink to this headline">¶</a></h1>
+<p>ownCloud 7 introduces a powerful new feature, server-to-server sharing.  With
+just a few clicks you can easily access shares from other ownCloud 7 servers,
+link them to your account, and create your own shares. This feature enables you
+to:</p>
+<ul class="simple">
+<li>Selectively share files or directories.</li>
+<li>Combine two private clouds into a single public cloud.</li>
+<li>Eliminate the need to create user accounts on multiple ownCloud servers.</li>
+<li>View files in a Web browser or ownCloud client.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Server-to-server sharing requires that both servers are running
+versions of ownCloud that support this feature; currently this is ownCloud 7.</p>
+</div>
+<div class="section" id="creating-a-new-share">
+<h2>Creating a New Share<a class="headerlink" href="#creating-a-new-share" title="Permalink to this headline">¶</a></h2>
+<p>Server-to-server sharing is enabled on new or upgraded ownCloud 7 installations
+by default. (See &#8220;Configuring Server-to-Server Sharing&#8221; in the Administrators
+Manual.) Follow these steps to create a new share:</p>
+<p>1. Go to your <tt class="docutils literal"><span class="pre">Files</span></tt> page and hover your cursor over the file or directory
+you want to share to expose your administration options. Check the <tt class="docutils literal"><span class="pre">Share</span>
+<span class="pre">Link</span></tt> checkbox to create the share, and to expose all of your sharing options.</p>
+<p>2. Set any options that you want to apply to your new share: send an email
+notification, add password protection, allow users to upload files to the share,
+or set an expiration date. If you check <strong>Allow Public Upload</strong> then other
+users can overwrite, rename and delete files in the share.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/s2s-create_public_share.png" src="../_images/s2s-create_public_share.png" />
+</div>
+</div></blockquote>
+<p>And that&#8217;s all there is to it. Your new public share is labeled with a chain
+link. If you do not protect it with a password, it is visible to anyone who has
+the URL. (ownCloud server admins have the option of requiring users to set
+passwords on shares in <tt class="docutils literal"><span class="pre">Admin</span> <span class="pre">&gt;</span> <span class="pre">Sharing.</span></tt>)</p>
+</div>
+<div class="section" id="connecting-to-a-remote-share">
+<h2>Connecting to a Remote Share<a class="headerlink" href="#connecting-to-a-remote-share" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Open the share link in your Web browser.</p>
+<div class="figure">
+<img alt="../_images/s2s-connect-to-remote-share.png" src="../_images/s2s-connect-to-remote-share.png" />
+</div>
+</li>
+</ol>
+<p>2. Click the <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">ownCloud</span></tt> button, and enter the URL of your ownCloud
+server. If you are not already logged in you will get a login window.</p>
+<p>3. After logging in you will see a dialogue asking you <tt class="docutils literal"><span class="pre">&quot;Do</span> <span class="pre">you</span> <span class="pre">want</span> <span class="pre">to</span> <span class="pre">add</span> <span class="pre">the</span>
+<span class="pre">remote</span> <span class="pre">share</span> <span class="pre">[share</span> <span class="pre">name]</span> <span class="pre">from</span> <span class="pre">[remote</span> <span class="pre">server</span> <span class="pre">name]?&quot;</span></tt></p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/s2s-add-remote-share.png" src="../_images/s2s-add-remote-share.png" />
+</div>
+</div></blockquote>
+<p>4. Click the <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">Remote</span> <span class="pre">Share</span></tt> button, and enjoy your new share. It is marked
+with a share icon, and the name of the share&#8217;s owner and originating server.</p>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/s2s-remote-share-labeled.png" src="../_images/s2s-remote-share-labeled.png" />
+</div>
+</div></blockquote>
+<p>Remove your linked share anytime by clicking the trash can icon. This only
+unlinks the share, and does not delete any files.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

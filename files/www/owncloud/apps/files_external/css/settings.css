@@ -1,0 +1,60 @@
+td.status > span {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	vertical-align: text-bottom;
+}
+
+td.mountPoint, td.backend { width:160px; }
+td.remove>img { visibility:hidden; padding-top:7px; }
+tr:hover>td.remove>img { visibility:visible; cursor:pointer; }
+#addMountPoint>td { border:none; }
+#addMountPoint>td.applicable { visibility:hidden; }
+
+#selectBackend {
+	margin-left: -10px;
+	width: 150px;
+}
+
+#externalStorage td.configuration,
+#externalStorage td.backend {
+	white-space: normal;
+}
+
+#externalStorage td.configuration input.added  {
+	margin-right: 6px;
+}
+
+#externalStorage label > input[type="checkbox"] {
+	margin-right: 3px;
+}
+
+#externalStorage td.applicable div.chzn-container {
+	position: relative;
+	top: 3px;
+}
+
+
+#externalStorage td.status .success {
+	border-radius: 50%;
+}
+
+#userMountingBackends {
+	padding-left: 25px;
+}
+
+#body-settings .select2-results .select2-result-label {
+	height: 32px;
+	padding: 3px;
+}
+.select2-results .select2-result-label .avatardiv {
+	display:inline-block;
+}
+.select2-results .select2-result-label .avatardiv + span {
+	margin-left: 10px;
+}
+.select2-results .select2-result-label .avatardiv[data-type="group"] + span {
+	vertical-align: top;
+	top: 6px;
+	position: relative;
+}

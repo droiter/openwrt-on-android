@@ -1,0 +1,9 @@
+Subject: 重新激活您的帐户
+
+你好 {USERNAME}，
+
+您在 “{SITENAME}” 的帐户正处于未激活状态，原因可能是您修改了自己的资料。 要重新激活它，请点击如下链接：
+
+{U_ACTIVATE}
+
+{EMAIL_SIG}

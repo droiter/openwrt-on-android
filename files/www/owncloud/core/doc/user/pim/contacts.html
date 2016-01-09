@@ -1,0 +1,484 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Using the Contacts App &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Contacts &amp; Calendar" href="index.html" />
+    <link rel="next" title="Using the Calendar App" href="calendar.html" />
+    <link rel="prev" title="Contacts &amp; Calendar" href="index.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">Files &amp; Synchronization</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contacts &amp; Calendar</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Using the Contacts App</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#adding-contacts">Adding Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#managing-address-books">Managing Address Books</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-an-address-book">Adding an Address Book</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#synchronizing-address-books">Synchronizing Address Books</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#special-carddav-urls">Special CardDAV URLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Using the Calendar App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_ios.html">iOS - Synchronize iPhone/iPad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_osx.html">Synchronizing with OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_thunderbird.html">Thunderbird - Synchronize Addressbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_kde.html">Synchronizing with KDE SC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="using-the-contacts-app">
+<h1>Using the Contacts App<a class="headerlink" href="#using-the-contacts-app" title="Permalink to this headline">¶</a></h1>
+<p>The ownCloud Contacts app is similar to other mobile contact applications, but
+with more functionality.  When you first access the Contacts app, a default
+address book becomes available.</p>
+<div class="figure">
+<img alt="../_images/contacts_empty.png" src="../_images/contacts_empty.png" />
+<p class="caption"><strong>Contacts app (empty)</strong></p>
+</div>
+<p>In the Apps Information field for the Contacts app, you can choose to create a
+new contact or a new group.  This field also enables you to filter your contacts
+based on grouped or ungrouped contacts.</p>
+<div class="section" id="adding-contacts">
+<h2>Adding Contacts<a class="headerlink" href="#adding-contacts" title="Permalink to this headline">¶</a></h2>
+<p>You can add contacts using one of the following methods:</p>
+<ul class="simple">
+<li>Import contacts using a Variant Call Format (VCF) file</li>
+<li>Add contacts manually</li>
+</ul>
+<div class="section" id="importing-contacts">
+<h3>Importing Contacts<a class="headerlink" href="#importing-contacts" title="Permalink to this headline">¶</a></h3>
+<p>The fastest way to add contacts is through the use of a Variant Call Format
+(VCF) file.</p>
+<p>To import contacts using a VCF file:</p>
+<ol class="arabic simple">
+<li>At the bottom of the Contacts app information field, locate the gear button.</li>
+</ol>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/contact_bottombar.png" src="../_images/contact_bottombar.png" />
+<p class="caption"><strong>Contact settings gear button</strong></p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Click the gear button. The Contacts app upload field opens.</li>
+</ol>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/contact_uploadbutton.png" src="../_images/contact_uploadbutton.png" />
+<p class="caption"><strong>Contacts app upload field</strong></p>
+</div>
+</div></blockquote>
+<p>3. Choose an address book to which you want to import contacts by clicking the
+checkbox next to the address book.</p>
+<p>4. Select one of the options from the Import pulldown menu.  These options
+include the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Automatic format &#8211; Any VCF file. ownCloud determines the file format and
+imports accordingly.</li>
+<li>Gmail CSV &#8211; The comma-separated values file from your Gmail account.</li>
+<li>Outlook CSV &#8211; The comma-separated values file from your Outlook account.</li>
+<li>Thunderbird CSV &#8211; The comma-separated values file from your Thunderbird
+account.</li>
+<li>Yahoo CSV &#8211; The comma-separated values file from your Yahoo account.</li>
+<li>PHPLdapAdmin Idif Export &#8211; The export record from your LDAP configuration.</li>
+<li>Gmail VCard &#8211; The VCard files from your Gmail account.</li>
+<li>Standard VCard &#8211; The VCard files from your Standard account.</li>
+<li>Yahoo VCard  &#8211; The VCard files from your Yahoo account.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>Click the upload arrow to the right of the import option that you select.</li>
+</ol>
+<blockquote>
+<div>An Upload File window opens.</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>Navigate to the appropriate file on your system and select it for upload.</li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can upload files individually or, by selecting multiple files
+using the CTRL button and selecting them, you can upload multiple files at
+one time.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>Once you have selected the appropriate files, click the <cite>Open`</cite> button.</li>
+</ol>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/contact_vcfpick.jpg" src="../_images/contact_vcfpick.jpg" />
+<p class="caption"><strong>Selecting VCF files</strong></p>
+<div class="legend">
+The interface automatically places your contacts into ownCloud.</div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="creating-contacts-manually">
+<h3>Creating Contacts Manually<a class="headerlink" href="#creating-contacts-manually" title="Permalink to this headline">¶</a></h3>
+<p>The Contacts app enables you to create contacts manually.</p>
+<p>To create a new contact:</p>
+<ol class="arabic">
+<li><p class="first">Click the <tt class="docutils literal"><span class="pre">+New</span> <span class="pre">contact</span></tt> option in the Contacts information field.</p>
+<p>An empty new contact configuration opens in the Application View field.</p>
+</li>
+</ol>
+<blockquote>
+<div><div class="figure">
+<img alt="../_images/contact_new.png" src="../_images/contact_new.png" />
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Specify the new contact information as follows:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>Name &#8211; The name of the contact.  This field provides the option of
+specifying added information for the user by clicking the pen button to the
+right of the Name field.</li>
+<li>Organization &#8211; The organization for the contact.</li>
+<li>Email &#8211; The email address for the contact. This field defaults to the work
+email address for the contact.  However, you can specify a different email
+designation by clicking the <tt class="docutils literal"><span class="pre">Work</span></tt> designation to the left of the email
+field.</li>
+<li>Phone &#8211; The phone number for the contact. This field defaults to the home
+phone number for the contact.  However, you can specify a different phone
+designation by clicking the <tt class="docutils literal"><span class="pre">Home</span></tt> designation to the left of the phone
+field.</li>
+<li>Address &#8211; The address for the contact. This field defaults to the work
+address for the contact.  However, you can specify a different address
+designation by clicking the <tt class="docutils literal"><span class="pre">Work</span></tt> designation to the left of the address
+field.</li>
+<li>Notes &#8211; Any notes you want to add about the contact.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The Email, Phone, and Address fields provide the option of
+specifying a contact method as &#8220;preferred.&#8221;</p>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="editing-contact-information">
+<h3>Editing Contact Information<a class="headerlink" href="#editing-contact-information" title="Permalink to this headline">¶</a></h3>
+<p>The Contacts app enables you to edit or remove contact information.</p>
+<p>To edit contact information:</p>
+<ol class="arabic simple">
+<li>Navigate to the specific contact that you want to modify.</li>
+<li>Select the information in the field that you want to edit.</li>
+<li>Make your modifications.</li>
+</ol>
+<blockquote>
+<div>Changes that you make to any contact information are implemented immediately.</div></blockquote>
+</div>
+<div class="section" id="removing-contact-information">
+<h3>Removing Contact Information<a class="headerlink" href="#removing-contact-information" title="Permalink to this headline">¶</a></h3>
+<p>The Contacts app enables you to remove contact information.</p>
+<p>To remove contact information:</p>
+<ol class="arabic simple">
+<li>Navigate to the specific contact that you want to modify.</li>
+<li>Locate the contact information field that you want to remove.</li>
+<li>Click the trash bin to the right of the contact information.</li>
+</ol>
+<blockquote>
+<div>Changes that you make to any contact information are implemented immediately.</div></blockquote>
+</div>
+<div class="section" id="defining-a-contact-avatar">
+<h3>Defining a Contact Avatar<a class="headerlink" href="#defining-a-contact-avatar" title="Permalink to this headline">¶</a></h3>
+<p>By default, new contacts receive a letter avatar (picture) of &#8220;U&#8221; (for &#8220;User&#8221;).</p>
+<div class="figure">
+<img alt="../_images/contact_picture_default.png" src="../_images/contact_picture_default.png" />
+<p class="caption"><strong>Contact picture (default)</strong></p>
+</div>
+<p>When you specify the name of a contact, the avatar reflects the name by adopting
+the first letter of the name you provide.  For example, if you were to specify
+the name of &#8220;Frederick,&#8221; the avatar would dynamically change to &#8220;F&#8221; for that
+contact.  If you provide multiple contacts with the same name, or with names
+that start with the same first letter, the avatar uses the same letter but
+changes color to indicate the difference.</p>
+<div class="figure">
+<img alt="../_images/contact_picture.png" src="../_images/contact_picture.png" />
+<p class="caption"><strong>Contact picture (dynamic change)</strong></p>
+</div>
+</div>
+<div class="section" id="customizing-an-avatar">
+<h3>Customizing an Avatar<a class="headerlink" href="#customizing-an-avatar" title="Permalink to this headline">¶</a></h3>
+<p>In addition to dynamically altering the avatar for each contact, the Contacts
+app enables you to customize the avatar. You can specify an avatar in one of the
+two following ways:</p>
+<ul class="simple">
+<li>Upload new image &#8211; By selecting this option, ownCloud opens a File Upload
+window.  You can choose a new image by navigating to the image, selecting it,
+and clicking <tt class="docutils literal"><span class="pre">Open</span></tt>.</li>
+<li>Select image from Files &#8211; By selecting this option, ownCloud opens the Files
+dialog on the ownCloud server.  You can choose an image by navigating to the image
+in the ownCloud directory, selecting it, and clicking <tt class="docutils literal"><span class="pre">Choose.</span></tt></li>
+</ul>
+</div>
+<div class="section" id="cropping-an-avatar-image">
+<h3>Cropping an Avatar Image<a class="headerlink" href="#cropping-an-avatar-image" title="Permalink to this headline">¶</a></h3>
+<p>After you have selected an image for your contact, the Contacts app enables you
+to crop the picture.</p>
+<div class="figure">
+<img alt="../_images/contact_crop.jpg" src="../_images/contact_crop.jpg" />
+<p class="caption"><strong>Cropping contact image</strong></p>
+</div>
+<p>To crop the image:</p>
+<ol class="arabic simple">
+<li>Move the image crop box to the desired location and resize the box any way
+you like.</li>
+<li>Click <tt class="docutils literal"><span class="pre">Crop</span> <span class="pre">Picture</span></tt> in the crop image dialog box.</li>
+</ol>
+<blockquote>
+<div>The Contacts app crops the image and replaces whatever image was originally
+used for the contact.</div></blockquote>
+</div>
+</div>
+<div class="section" id="managing-address-books">
+<h2>Managing Address Books<a class="headerlink" href="#managing-address-books" title="Permalink to this headline">¶</a></h2>
+<p>Clicking on the settings (gear) button at the bottom of the Apps Information
+field provides access to the Contact app settings. This field shows all
+available address books, certain options for each address book, and enables you
+to create new address books.</p>
+<div class="figure">
+<img alt="../_images/contacts_settings.png" src="../_images/contacts_settings.png" />
+<p class="caption"><strong>Contacts settings</strong></p>
+</div>
+<p>The Contacts settings enables you to share, export, edit, and delete address
+books.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Hover your cursor over each icon to see a brief pop-up description.</p>
+</div>
+</div>
+<div class="section" id="adding-an-address-book">
+<h2>Adding an Address Book<a class="headerlink" href="#adding-an-address-book" title="Permalink to this headline">¶</a></h2>
+<p>To add an address book:</p>
+<ol class="arabic simple">
+<li>Click the <tt class="docutils literal"><span class="pre">+</span> <span class="pre">Add</span> <span class="pre">Address</span> <span class="pre">Book</span></tt> option in the Contacts settings field.</li>
+</ol>
+<blockquote>
+<div><p>A field opens requesting you to enter a display name for the new address book.</p>
+<div class="figure">
+<img alt="../_images/contact_address_book_add.png" src="../_images/contact_address_book_add.png" />
+<p class="caption"><strong>Adding an address book</strong></p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Specify a display name for the address book.</li>
+<li>Click the checkbox icon to create the new address book.</li>
+</ol>
+</div>
+<div class="section" id="synchronizing-address-books">
+<h2>Synchronizing Address Books<a class="headerlink" href="#synchronizing-address-books" title="Permalink to this headline">¶</a></h2>
+<p>One of the most important features in any contact application is the ability to
+keep it in sync.  The ownCloud Contacts app enables you to sync your address
+books to external devices that use the Android or Apple iOS operating systems.</p>
+<div class="section" id="synchronizing-with-android">
+<h3>Synchronizing With Android<a class="headerlink" href="#synchronizing-with-android" title="Permalink to this headline">¶</a></h3>
+<p>To synchronize with an Android device:</p>
+<ol class="arabic simple">
+<li>Install CardDAV- Sync free from the Google play store by visiting <a class="reference external" href="https://play.google.com/store/apps/details?id=org.dmfs.carddav.sync">this link</a>.
+This app supports auto-configuration.</li>
+</ol>
+<blockquote>
+<div><div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Following the installing, visit carddavs://example.org/remote.php/carddav/ to auto-configure the app.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Enter your login details.</li>
+<li>After the app has checked your login details, select the <tt class="docutils literal"><span class="pre">Sync</span> <span class="pre">from</span> <span class="pre">server</span> <span class="pre">to</span> <span class="pre">phone</span> <span class="pre">only</span></tt> option.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/contact_syncopt.jpg" src="../_images/contact_syncopt.jpg" />
+</div>
+</div>
+<div class="section" id="synchronizing-with-apple-ios">
+<h3>Synchronizing With Apple iOS<a class="headerlink" href="#synchronizing-with-apple-ios" title="Permalink to this headline">¶</a></h3>
+<p>To synchronize with an Apple iOS device:</p>
+<ol class="arabic simple">
+<li>Open the settings application.</li>
+<li>Select Mail &gt; Contacts &gt; Calendars.</li>
+<li>Select <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">Account</span></tt>.</li>
+<li>Select <tt class="docutils literal"><span class="pre">other</span></tt> as the account type.</li>
+<li>Select <tt class="docutils literal"><span class="pre">Add</span> <span class="pre">CardDAV</span> <span class="pre">account</span></tt>.</li>
+<li>For <tt class="docutils literal"><span class="pre">server</span></tt>, enter <a class="reference external" href="http://example.org/remote.php/carddav/principals/username">http://example.org/remote.php/carddav/principals/username</a></li>
+<li>Specify your username and password.</li>
+<li>Select Next.</li>
+<li>If your server does not support SSL, a warning is displayed. Select <tt class="docutils literal"><span class="pre">Continue</span></tt>.</li>
+<li>If the iPhone is unable to verify the account information, perform the following:</li>
+</ol>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Click <tt class="docutils literal"><span class="pre">OK</span></tt>.</li>
+<li>Select <tt class="docutils literal"><span class="pre">advanced</span> <span class="pre">settings</span></tt>.</li>
+<li>Make sure <tt class="docutils literal"><span class="pre">Use</span> <span class="pre">SSL</span></tt> is set to &#8220;OFF&#8221;.</li>
+<li>Change the port to <tt class="docutils literal"><span class="pre">80</span></tt>.</li>
+<li>Return to &#8220;account information&#8221; and click <tt class="docutils literal"><span class="pre">Save</span></tt>.</li>
+</ol>
+<p>Your contacts appear in the address book of your iPhone.</p>
+</div></blockquote>
+</div>
+<div class="section" id="using-other-synchronization-options">
+<h3>Using Other Synchronization Options<a class="headerlink" href="#using-other-synchronization-options" title="Permalink to this headline">¶</a></h3>
+<p>ownCloud provides the following alternative synchronization options:</p>
+<ul class="simple">
+<li>For Android devices, you can use an official Android app.  You can find this
+app <a class="reference external" href="https://owncloud.org/install/">here</a>.</li>
+<li>For iOS (iPhone and iPad) devices, you can use their official app.  You can
+find this app <a class="reference external" href="https://owncloud.org/install/">here</a>.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="special-carddav-urls">
+<h2>Special CardDAV URLs<a class="headerlink" href="#special-carddav-urls" title="Permalink to this headline">¶</a></h2>
+<p>Additionally, the Contacts app is providing an URL for special functions:</p>
+<p><strong>Export an address book as a vCard file</strong></p>
+<blockquote>
+<div><a class="reference external" href="https://ADDRESS/remote.php/carddav/addressbooks/USERNAME/ADDRESSBOOKNAME?export">https://ADDRESS/remote.php/carddav/addressbooks/USERNAME/ADDRESSBOOKNAME?export</a></div></blockquote>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<p>Are you having problems using the app? Have a look at the <a class="reference internal" href="troubleshooting.html"><em>Troubleshooting</em></a>
+and <a class="reference external" href="https://doc.owncloud.org/server/7.0/admin_manual/issues/index.html#troubleshooting-contacts-calendar">Troubleshooting Contacts &amp; Calendar</a> guides.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

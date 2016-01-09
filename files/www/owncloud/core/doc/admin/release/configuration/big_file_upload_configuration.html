@@ -1,0 +1,293 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Uploading big files &gt; 512MB (as set by default) &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Configuration" href="index.html" />
+    <link rel="next" title="Configuring the Collaborative Documents App" href="collaborative_documents_configuration.html" />
+    <link rel="prev" title="Defining Background Jobs" href="background_jobs_configuration.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="activity_configuration.html">Configuring the Activity App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antivirus_configuration.html">Configuring the ClamAV Antivirus Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatic_configuration.html">Automatic Configuration Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background_jobs_configuration.html">Defining Background Jobs</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Uploading big files &gt; 512MB (as set by default)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-configuration">System Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-your-webserver">Configuring Your Webserver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuring-php">Configuring PHP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="collaborative_documents_configuration.html">Configuring the Collaborative Documents App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_sample_php_parameters.html">Config.php Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_client_configuration.html">Custom Client Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database_configuration.html">Database Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_configuration.html">Email Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption_configuration.html">Encryption Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration_gui.html">Configuring External Storage (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration.html">Configuring External Storage (Configuration File)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_sites.html">Linking External Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_sharing_configuration.html">File Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files_locking_enabling.html">Files Locking App Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harden_server.html">Hardening and Security Guidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js_css_asset_management_configuration.html">JavaScript and CSS Asset Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledgebase_configuration.html">Knowledge Base Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_configuration.html">Language Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging_configuration.html">Logging Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occ_command.html">Using the occ Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_tips.html">Performance Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="previews_configuration.html">Previews Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_proxy_configuration.html">Reverse Proxy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search_configuration.html">Enabling Full-Text Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_to_server_configuration.html">Configuring Server-to-Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serving_static_files_configuration.html">Serving Static Files for Better Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty_php_configuration.html">Using Third Party PHP Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ftp_smb_imap.html">User Authentication with IMAP, SMB, and FTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap.html">User Authentication with LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap_cleanup.html">LDAP User Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_configuration.html">User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset_admin_password.html">Resetting a Lost Admin Password</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="uploading-big-files-512mb-as-set-by-default">
+<h1>Uploading big files &gt; 512MB (as set by default)<a class="headerlink" href="#uploading-big-files-512mb-as-set-by-default" title="Permalink to this headline">¶</a></h1>
+<p>The default maximum file size for uploads is 512MB. You can increase this
+limit up to what your filesystem and operating system allows. There are certain
+hard limits that cannot be exceeded:</p>
+<ul class="simple">
+<li>&lt; 2GB on 32Bit OS-architecture</li>
+<li>&lt; 2GB with Server Version 4.5 or older</li>
+<li>&lt; 2GB on Windows (32Bit and 64Bit)</li>
+<li>&lt; 2GB with IE6 - IE8</li>
+<li>&lt; 4GB with IE9 - IE11</li>
+</ul>
+<p>64-bit filesystems have much higher limits; consult the documentation for your
+filesystem.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The ownCloud sync client is not affected by this described upload limits
+as it is uploading files in smaller chunks.</p>
+</div>
+<div class="section" id="system-configuration">
+<h2>System Configuration<a class="headerlink" href="#system-configuration" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Make sure that the latest version of PHP (at least 5.4.9) is installed</li>
+<li>Disable user quotas, which makes them unlimited</li>
+<li>Your temp file or partition has to be big enough to hold multiple
+parallel uploads from multiple users; e.g. if the max upload size is 10GB and
+the average users uploading the same time is 100: temp space has to hold at
+least 10x100 GB</li>
+</ul>
+</div>
+<div class="section" id="configuring-your-webserver">
+<h2>Configuring Your Webserver<a class="headerlink" href="#configuring-your-webserver" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud comes with its own <tt class="docutils literal"><span class="pre">owncloud/.htaccess</span></tt> file. Set the following
+two parameters inside this <tt class="docutils literal"><span class="pre">.htaccess</span></tt> file:</p>
+<div class="highlight-python"><pre>php_value upload_max_filesize = 16G
+php_value post_max_size = 16G</pre>
+</div>
+<p>Adjust these values for your needs. If you see PHP timeouts in your logfiles,
+increase the timeout values, which are in seconds:</p>
+<div class="highlight-python"><pre>php_value max_input_time 3600
+php_value max_execution_time 3600</pre>
+</div>
+<p>The <a class="reference external" href="https://httpd.apache.org/docs/current/mod/mod_reqtimeout.html">mod_reqtimeout</a>
+Apache module could also stop large uploads from completing. If you&#8217;re using this
+module and getting failed uploads of large files either disable it in your Apache
+config or raise the configured <tt class="docutils literal"><span class="pre">RequestReadTimeout</span></tt> timeouts.</p>
+<p>There are also several other configuration option in your webserver config which
+could prevent the upload of larger files. Please see the manual of your webserver
+how to configure those values correctly:</p>
+<div class="section" id="apache">
+<h3>Apache<a class="headerlink" href="#apache" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://httpd.apache.org/docs/current/en/mod/core.html#limitrequestbody">LimitRequestBody</a></li>
+<li><a class="reference external" href="https://httpd.apache.org/docs/current/mod/mod_ssl.html#sslrenegbuffersize">SSLRenegBufferSize</a></li>
+</ul>
+</div>
+<div class="section" id="apache-with-mod-fcgid">
+<h3>Apache with mod_fcgid<a class="headerlink" href="#apache-with-mod-fcgid" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="https://httpd.apache.org/mod_fcgid/mod/mod_fcgid.html#fcgidmaxrequestlen">FcgidMaxRequestLen</a></li>
+</ul>
+</div>
+<div class="section" id="nginx">
+<h3>NginX<a class="headerlink" href="#nginx" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_core_module.html#client_max_body_size">client_max_body_size</a></li>
+</ul>
+</div>
+<div class="section" id="iis">
+<h3>IIS<a class="headerlink" href="#iis" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><a class="reference external" href="http://www.iis.net/configreference/system.webserver/security/requestfiltering/requestlimits#005">maxAllowedContentLength</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="configuring-php">
+<h2>Configuring PHP<a class="headerlink" href="#configuring-php" title="Permalink to this headline">¶</a></h2>
+<p>If you don&#8217;t want to use the ownCloud <tt class="docutils literal"><span class="pre">.htaccess</span></tt> file, you may
+configure PHP instead. Make sure to comment out any lines <tt class="docutils literal"><span class="pre">.htaccess</span></tt>
+pertaining to upload size, if you entered any.</p>
+<p>To view your current PHP configuration and to see the location of your
+<tt class="docutils literal"><span class="pre">php.ini</span></tt> file, create a plain text file named <tt class="docutils literal"><span class="pre">phpinfo.php</span></tt> with just this
+single line of code in it: <tt class="docutils literal"><span class="pre">&lt;?php</span> <span class="pre">phpinfo();</span> <span class="pre">?&gt;</span></tt>. Place this file in your Web
+root, for example <tt class="docutils literal"><span class="pre">/var/www/html</span></tt>, and open it in your Web browser, for
+example <tt class="docutils literal"><span class="pre">http://localhost/phpinfo.php</span></tt>. This will display your complete
+current PHP configuration. Look for the <strong>Loaded Configuration File</strong> section
+to see which <tt class="docutils literal"><span class="pre">php.ini</span></tt> file your server is using. This is the one you want to
+edit.</p>
+<p>If you are running ownCloud on a 32-bit system, any <tt class="docutils literal"><span class="pre">open_basedir</span></tt> directive
+in your <tt class="docutils literal"><span class="pre">php.ini</span></tt> file needs to be commented out</p>
+<p>Set the following two parameters inside <tt class="docutils literal"><span class="pre">php.ini</span></tt>, using your own desired
+file size values:</p>
+<div class="highlight-python"><pre>upload_max_filesize = 16G
+post_max_size = 16G</pre>
+</div>
+<p>Tell PHP which temp file you want it to use:</p>
+<div class="highlight-python"><pre>upload_tmp_dir = /var/big_temp_file/</pre>
+</div>
+<p><strong>Output Buffering</strong> must be turned off in <tt class="docutils literal"><span class="pre">.htaccess</span></tt> or <tt class="docutils literal"><span class="pre">php.ini</span></tt>, or PHP
+will return memory-related errors:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">output_buffering</span> <span class="pre">=</span> <span class="pre">0</span></tt></li>
+</ul>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

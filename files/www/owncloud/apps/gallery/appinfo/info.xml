@@ -1,0 +1,22 @@
+<?xml version="1.0"?> 
+<info>
+	<id>gallery</id>
+	<name>Pictures</name>
+	<licence>AGPL</licence>
+	<author>Robin Appelman</author>
+	<require>4.93</require>
+	<shipped>true</shipped>
+	<description>Picture gallery for ownCloud.
+
+		Provides a dedicated view of all images in a grid, adds image viewing capabilities to the files app and adds a
+		gallery view to public links.</description>
+	<standalone/>
+	<default_enable/>
+	<types>
+		<!-- update thumbnails when saving file -->
+		<filesystem/>
+	</types>
+	<public>
+		<gallery>public.php</gallery>
+	</public>
+</info>

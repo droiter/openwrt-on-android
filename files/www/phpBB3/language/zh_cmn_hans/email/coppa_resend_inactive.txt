@@ -1,0 +1,42 @@
+Subject: 欢迎来到 “{SITENAME}”
+
+{WELCOME_MSG}
+
+根据 COPPA，您的帐号暂时是未激活的。
+
+请打印如下的内容并经您的父母或监护人签字后传真至:
+
+{FAX_INFO}
+
+或邮寄至:
+
+{MAIL_INFO}
+
+------------------------------ 由这里剪下 ------------------------------
+Permission to participate at "{SITENAME}" - {U_BOARD}
+
+Username: {USERNAME}
+Email: {EMAIL_ADDRESS}
+
+I HAVE REVIEWED THE INFORMATION PROVIDED BY MY CHILD AND HEREBY GRANT PERMISSION TO "{SITENAME}" TO STORE THIS INFORMATION. 
+I UNDERSTAND THIS INFORMATION CAN BE CHANGED AT ANY TIME BY ENTERING A PASSWORD. 
+I UNDERSTAND THAT I MAY REQUEST FOR THIS INFORMATION TO BE REMOVED FROM "{SITENAME}" AT ANY TIME.
+
+
+Parent or guardian 
+(print your name here): _____________________
+
+(sign here): __________________ 
+
+Date: _______________
+
+------------------------------ 由这里剪下 ------------------------------
+
+
+一旦管理员通过传真或邮件接收到以上的表单您的帐号将被激活。
+
+请不要遗失自己的密码。 因为用户密码需要编码加密后存入数据库，此过程不可逆，所以我们不能再从中得到您的密码。当然，如果您不慎遗失了自己的密码，您可以申请重置密码。
+
+感谢你的注册。
+
+{EMAIL_SIG}

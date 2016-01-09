@@ -1,0 +1,188 @@
+#container h2 {
+	margin-left: 24px;
+	margin-bottom: 16px;
+}
+
+.activitysubject {
+	display: inline-block;
+	vertical-align: text-bottom;
+	width: 85%;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.activitymessage {
+	font-size:0.8em;
+	color:#666;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#no_activities {
+	position: absolute;
+	text-align: center;
+	top: 40%;
+	width: 100%;
+	padding: 20px;
+}
+
+#no_activities .head, #no_more_activities .head {
+	font-size: 1.5em;
+	color: #333;
+	font-weight: bold;
+	text-shadow: #aaa 0 1px 0;
+}
+
+#no_activities .body {
+	color: #666;
+	margin-top: 10px;
+	font-size: 1em;
+}
+
+#no_more_activities {
+	position: relative;
+	top: 50px;
+	width: 100%;
+	text-align: center;
+	padding: 50px 0;
+
+	z-index: 100;
+	margin: 40px auto;
+	bottom: 20px;
+	color: #555;
+}
+
+#loading_activities {
+	height: 50px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#container {
+  background: #FFF;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  clear: both;
+  -webkit-border-radius: 5px;
+	 -moz-border-radius: 5px;
+		  border-radius: 5px;
+}
+
+.group{
+	clear: both;
+	padding-bottom: 10px;
+}
+
+.box {
+	width: 100%;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.box.loaded{
+	transition: opacity 1s ease;
+	-ms-transition: opacity 1s ease;
+	-moz-transition: opacity 1s ease;
+	-o-transition: opacity 1s ease;
+	-webkit-transition: opacity 1s ease;
+	opacity: 1;
+}
+
+.box.loading{
+	opacity: 0;
+}
+
+.box .header{
+	height: 32px;
+	margin-bottom: 10px;
+}
+
+.box .messagecontainer{
+	width: 100%;
+	display: block;
+	margin-bottom: 20px;
+}
+
+.box .preview{
+	display: block;
+	width: 50px;
+	height: 50px;
+	margin-left: 24px;
+}
+
+.box .preview-dir-icon{
+	width: 32px;
+	height: 32px;
+}
+
+.box .user{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	float: left;
+	display: inline-block;
+	width: 180px;
+}
+
+.box .user{
+	font-weight: bold;
+}
+
+.box .activitytime {
+	float: right;
+	color:#666;
+	font-size: 0.8em;
+}
+
+.box .appname {
+	float: right;
+	color: #333;
+	font-size: 0.8em;
+}
+
+.box .grouped{
+	list-style: none;
+}
+
+.box .grouped .more{
+	cursor: default;
+	color: #666;
+}
+
+/* Style for in event parameters */
+.activity-section a.filename {
+	font-weight: bold;
+}
+
+.activity-section .avatar {
+	vertical-align: middle;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+/* colored icons, in addition to core ones */
+.activity-icon {
+	min-width: 16px;
+	min-height: 16px;
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 2px;
+}
+.icon-add-color {
+	background-image: url('../img/add-color.svg');
+}
+.icon-change {
+	background-image: url('../img/change.svg');
+}
+.icon-delete-color {
+	background-image: url('../img/delete-color.svg');
+}
+/* grey the changed and shared icons so they are less intense */
+.icon-change,
+.icon-share,
+.icon-public {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: .5;
+}

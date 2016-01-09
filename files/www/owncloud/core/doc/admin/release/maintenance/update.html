@@ -1,0 +1,289 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Updating ownCloud with the Updater App &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Maintenance" href="index.html" />
+    <link rel="next" title="Upgrading Your ownCloud Server" href="upgrade.html" />
+    <link rel="prev" title="Backing up ownCloud" href="backup.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Maintenance</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="enable_maintenance.html">Maintenance Mode Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backup.html">Backing up ownCloud</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Updating ownCloud with the Updater App</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#setting-strong-permissions">Setting Strong Permissions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="upgrade.html">Upgrading Your ownCloud Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restore.html">Restoring ownCloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrating.html">Migrating ownCloud Installations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="convert_db.html">Converting From SQLite to MySQL, MariaDB, or PostgreSQL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="updating-owncloud-with-the-updater-app">
+<h1>Updating ownCloud with the Updater App<a class="headerlink" href="#updating-owncloud-with-the-updater-app" title="Permalink to this headline">¶</a></h1>
+<p>The Updater app automates many of the steps of updating an ownCloud
+installation. You should keep your ownCloud server updated and not skip any
+releases. The Updater app is enabled in your ownCloud Server instance by
+default, which you can confirm by looking on your Apps page.</p>
+<p>The Updater App is not required, and it is recommended to use other methods for
+keeping your ownCloud server up-to-date, if possible. (See <a class="reference internal" href="upgrade.html"><em>Upgrading Your ownCloud Server</em></a>.) The
+Updater App is useful for installations that do not have root access, such as
+shared hosting, and for installations with a smaller number of users and data.</p>
+<p>If you installed ownCloud from the <a class="reference external" href="https://software.opensuse.org/download/package?project=isv:ownCloud:community&amp;package=owncloud">openSUSE Build Service repositories</a> or your own Linux distribution repositories, then it is best
+to upgrade ownCloud using your package manager rather than using the
+Updater app or upgrading manually. See the <a class="reference internal" href="upgrade.html"><em>Upgrading Your ownCloud Server</em></a> for instructions on
+maintaining your ownCloud server from packages and upgrading manually.</p>
+<p>You should always maintain regular backups
+(see <a class="reference internal" href="backup.html"><em>Backing up ownCloud</em></a>), and make a backup before every update/upgrade. The Updater app does not backup your database or data directory.</p>
+<p>The Updater app performs these operations:</p>
+<ul class="simple">
+<li>Creates a <tt class="docutils literal"><span class="pre">backup</span></tt> directory under your ownCloud data directory</li>
+<li>Download and extracts updated package content into the
+<tt class="docutils literal"><span class="pre">backup/packageVersion</span></tt> directory</li>
+<li>Makes a copy of your current ownCloud instance, except for your data
+directory, to  <tt class="docutils literal"><span class="pre">backup/currentVersion-randomstring</span></tt></li>
+<li>Moves all directories except <tt class="docutils literal"><span class="pre">data</span></tt>, <tt class="docutils literal"><span class="pre">config</span></tt> and <tt class="docutils literal"><span class="pre">themes</span></tt> from the
+current instance to <tt class="docutils literal"><span class="pre">backup/tmp</span></tt></li>
+<li>Moves all directories from <tt class="docutils literal"><span class="pre">backup/packageVersion</span></tt> to the current version</li>
+<li>Copies your old <tt class="docutils literal"><span class="pre">config.php</span></tt> to the new <tt class="docutils literal"><span class="pre">config/</span></tt> directory</li>
+</ul>
+<p>Using the Updater app to upgrade your ownCloud installation is just a few
+steps:</p>
+<ol class="arabic simple">
+<li>You should see a notification at the top of any ownCloud page when there is
+a new update available:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/updater-1.png" src="../_images/updater-1.png" />
+</div>
+<ol class="arabic simple" start="2">
+<li>Even though the Update app backs up important directories, you should
+always have your own current backups (See <a class="reference internal" href="backup.html"><em>Backing up ownCloud</em></a> for details.)</li>
+<li>Verify that the HTTP user on your system can write to your whole ownCloud
+directory; see <a class="reference internal" href="#setting-strong-permissions"><em>Setting Strong Permissions</em></a>.</li>
+<li>Navigate to your &#8216;Admin&#8217; page and click the &#8216;Update Center&#8217; button under
+Updater:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/updater-2.png" src="../_images/updater-2.png" />
+</div>
+<ol class="arabic simple" start="5">
+<li>This takes you to the Updater control panel.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/updater-3.png" src="../_images/updater-3.png" />
+</div>
+<p>6. Click Update, and carefully read the messages. If there are any problems it
+will tell you. The most common issue is directory permissions; see
+<a class="reference internal" href="#setting-strong-permissions"><em>Setting Strong Permissions</em></a>. Otherwise you will see a message about
+checking your installation, making a backup, and moving files:</p>
+<div class="figure">
+<img alt="../_images/updater-4.png" src="../_images/updater-4.png" />
+</div>
+<ol class="arabic simple" start="8">
+<li>Click Proceed, and then it downloads the updates, which may take a few
+minutes:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/updater-5.png" src="../_images/updater-5.png" />
+</div>
+<ol class="arabic simple" start="7">
+<li>The Update app wants you to be very sure you want to update, and so you must
+click one more button, the Start Update button:</li>
+</ol>
+<div class="figure">
+<img alt="../_images/updater-6.png" src="../_images/updater-6.png" />
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you have a large ownCloud installation, at this point you
+should use the <tt class="docutils literal"><span class="pre">occ</span> <span class="pre">upgrade</span></tt> command, running it as your HTTP user,
+instead of clicking Start Update, in order to avoid PHP timeouts. This
+example is for Ubuntu Linux:</p>
+<div class="highlight-python"><pre>$ sudo -u www-data php occ upgrade</pre>
+</div>
+<p class="last">See <a class="reference internal" href="../configuration/occ_command.html"><em>Using the occ Command</em></a> to learn more about using the
+<tt class="docutils literal"><span class="pre">occ</span></tt> command.</p>
+</div>
+<ol class="arabic simple" start="8">
+<li>It works for a few minutes, and when it is finished displays a success
+message, which disappears after a short time.</li>
+</ol>
+<div class="figure">
+<img alt="../_images/updater-7.png" src="../_images/updater-7.png" />
+</div>
+<p>Refresh your Admin page to verify your new version number.</p>
+<p>If the Updater app fails, then you must update manually. See <a class="reference internal" href="upgrade.html"><em>Upgrading Your ownCloud Server</em></a> to
+learn how to upgrade manually.</p>
+<div class="section" id="setting-strong-permissions">
+<span id="id1"></span><h2>Setting Strong Permissions<a class="headerlink" href="#setting-strong-permissions" title="Permalink to this headline">¶</a></h2>
+<p>For hardened security we  highly recommend setting the permissions on your
+ownCloud directory as strictly as possible. These commands should be executed
+immediately after the initial installation. Please follow the steps in the
+<strong>Setting Strong Directory Permissions</strong> section of
+<a class="reference internal" href="../installation/installation_wizard.html"><em>Installation Wizard</em></a>.</p>
+<p>These strict permissions will prevent the Updater app from working, as it needs
+your whole ownCloud directory to be owned by the HTTP user. The generic command
+to change ownership of all files and subdirectories in a directory to the HTTP
+user is:</p>
+<div class="highlight-python"><pre>chown -R &lt;http-user&gt;:&lt;http-user&gt; /path/to/owncloud/</pre>
+</div>
+<ul>
+<li><p class="first">This example is for Ubuntu 14.04 LTS server:</p>
+<div class="highlight-python"><pre>chown -R www-data:www-data /var/www/owncloud</pre>
+</div>
+</li>
+<li><p class="first">Arch Linux:</p>
+<div class="highlight-python"><pre>chown -R http:http /path/to/owncloud/</pre>
+</div>
+</li>
+<li><p class="first">Fedora:</p>
+<div class="highlight-python"><pre>chown -R apache:apache /path/to/owncloud/</pre>
+</div>
+</li>
+<li><p class="first">openSUSE:</p>
+<div class="highlight-python"><pre>chown -R wwwrun:www /path/to/owncloud/</pre>
+</div>
+</li>
+</ul>
+<p>After the Updater app has run, you should re-apply the strict permissions.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

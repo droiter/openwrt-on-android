@@ -1,0 +1,10 @@
+Subject: 加入用户组的申请
+
+亲爱的 {USERNAME}，
+
+用户 “{REQUEST_USERNAME}” 请求加入您在 “{SITENAME}” 中管理的用户组 “{GROUP_NAME}”。
+如果您需要进行批准或者驳回操作，请使用如下链接:
+
+{U_PENDING}
+
+{EMAIL_SIG}

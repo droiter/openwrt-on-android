@@ -1,0 +1,653 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Configuring External Storage (Configuration File) &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Configuration" href="index.html" />
+    <link rel="next" title="Linking External Sites" href="external_sites.html" />
+    <link rel="prev" title="Configuring External Storage (GUI)" href="external_storage_configuration_gui.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="activity_configuration.html">Configuring the Activity App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antivirus_configuration.html">Configuring the ClamAV Antivirus Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatic_configuration.html">Automatic Configuration Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background_jobs_configuration.html">Defining Background Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="big_file_upload_configuration.html">Uploading big files &gt; 512MB (as set by default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collaborative_documents_configuration.html">Configuring the Collaborative Documents App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_sample_php_parameters.html">Config.php Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_client_configuration.html">Custom Client Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database_configuration.html">Database Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_configuration.html">Email Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption_configuration.html">Encryption Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration_gui.html">Configuring External Storage (GUI)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Configuring External Storage (Configuration File)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-self-signed-certificates">Using self-signed certificates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-files-to-external-storages">Adding files to external storages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#priorities">Priorities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backends">Backends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-storage-password-management">External Storage Password Management</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="external_sites.html">Linking External Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_sharing_configuration.html">File Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files_locking_enabling.html">Files Locking App Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harden_server.html">Hardening and Security Guidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js_css_asset_management_configuration.html">JavaScript and CSS Asset Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledgebase_configuration.html">Knowledge Base Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_configuration.html">Language Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging_configuration.html">Logging Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occ_command.html">Using the occ Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_tips.html">Performance Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="previews_configuration.html">Previews Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_proxy_configuration.html">Reverse Proxy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search_configuration.html">Enabling Full-Text Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_to_server_configuration.html">Configuring Server-to-Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serving_static_files_configuration.html">Serving Static Files for Better Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty_php_configuration.html">Using Third Party PHP Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ftp_smb_imap.html">User Authentication with IMAP, SMB, and FTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap.html">User Authentication with LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap_cleanup.html">LDAP User Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_configuration.html">User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset_admin_password.html">Resetting a Lost Admin Password</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="configuring-external-storage-configuration-file">
+<h1>Configuring External Storage (Configuration File)<a class="headerlink" href="#configuring-external-storage-configuration-file" title="Permalink to this headline">¶</a></h1>
+<p>Since ownCloud 4.0 it is possible to configure the filesystem to mount external
+storage providers into ownCloud&#8217;s virtual file system. You can configure these
+file systems by creating and editing <tt class="file docutils literal"><span class="pre">data/mount.json</span></tt>. This file contains
+all settings in JSON (JavaScript Object Notation) format. At the moment two
+different types of entries exist:</p>
+<ul class="simple">
+<li><strong>Group mounts:</strong> each entry configures a mount for each user in group.</li>
+<li><strong>User mounts:</strong> each entry configures a mount for a single user or for all
+users.</li>
+</ul>
+<p>For each type, there is a JSON array with the user/group name as key, and an
+array of configuration entries as value. Each entry consist of the class name
+of the storage backend and an array of backend specific options and will be
+replaced by the user login. The template <strong>$user</strong> can be used in the mount
+point or backend options. As of writing the following storage backends are
+available for use:</p>
+<ul class="simple">
+<li>Local file system</li>
+<li>FTP (or FTPS)</li>
+<li>SFTP</li>
+<li>SMB</li>
+<li>WebDAV</li>
+<li><a class="reference external" href="http://aws.amazon.com/de/s3/">Amazon S3</a></li>
+<li><a class="reference external" href="https://www.dropbox.com/">Dropbox</a></li>
+<li><a class="reference external" href="https://drive.google.com/start">Google Drive</a></li>
+<li><a class="reference external" href="http://openstack.org/projects/storage/">OpenStack Swift</a></li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You need to enable the <cite>External storage support</cite> app first before you
+can use the examples below. See the section <a class="reference internal" href="external_storage_configuration_gui.html"><em>Configuring External Storage (GUI)</em></a>
+how to do this.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A non-blocking or correctly configured SELinux setup is needed
+for these backends to work. Please refer to the <a class="reference internal" href="../installation/selinux_configuration.html#selinux-config-label"><em>SELinux Configuration</em></a>.</p>
+</div>
+<p>Please keep in mind that some formatting has been applied and carriage returns
+have been added for better readability. In the <tt class="file docutils literal"><span class="pre">data/mount.json</span></tt> all
+values need to be concatenated and written in a row without these modifications!</p>
+<p>It is recommended to use the <a class="reference internal" href="external_storage_configuration_gui.html"><em>Web-GUI</em></a> in the
+administrator panel to add, remove or modify mount options to prevent any problems!</p>
+<div class="section" id="using-self-signed-certificates">
+<h2>Using self-signed certificates<a class="headerlink" href="#using-self-signed-certificates" title="Permalink to this headline">¶</a></h2>
+<p>When using self-signed certificates for external storage mounts the certificate
+needs to be imported in the personal settings of the user. Please refer to <a class="reference external" href="http://ownclouden.blogspot.de/2014/11/owncloud-https-external-mount.html">this</a>
+blogpost for more informations.</p>
+</div>
+<div class="section" id="adding-files-to-external-storages">
+<h2>Adding files to external storages<a class="headerlink" href="#adding-files-to-external-storages" title="Permalink to this headline">¶</a></h2>
+<p>In general it is recommended to configure the background job <tt class="docutils literal"><span class="pre">Webcron</span></tt> or
+<tt class="docutils literal"><span class="pre">Cron</span></tt> as described in <a class="reference internal" href="background_jobs_configuration.html"><em>Defining Background Jobs</em></a>
+so ownCloud is able to detect files added to your external storages without the need
+that a users is browsing your ownCloud installation.</p>
+<p>Please also be aware that ownCloud might not always be able to find out what has been
+changed remotely (files changes without going through ownCloud), especially
+when it&#8217;s very deep in the folder hierarchy of the external storage.</p>
+<p>You might need to setup a cron job that runs <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">-u</span> <span class="pre">www-data</span> <span class="pre">php</span> <span class="pre">occ</span> <span class="pre">files:scan</span> <span class="pre">--all</span></tt>
+(or replace &#8220;&#8211;all&#8221; with the user name, see also <a class="reference internal" href="occ_command.html"><em>Using the occ Command</em></a>)
+to trigger a rescan of the user&#8217;s files periodically (for example every 15 minutes), which includes
+the mounted external storage.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-json"><pre>{"group":{
+    "admin":{
+        "\/$user\/files\/Admin_Stuff":{
+            "class":"\\OC\\Files\\Storage\\Local",
+            "options":{ ... },
+            "priority":150
+            }
+        }
+    }
+ "user":{
+    "all":{
+        "\/$user\/files\/Pictures":{
+            "class":"\\OC\\Files\\Storage\\DAV",
+            "options":{ ... },
+            "priority":100
+            }
+        }
+    "someuser":{
+        "\/someuser\/files\/Music":{
+            "class":"\\OC\\Files\\Storage\\FTP",
+            "options":{ ... },
+            "priority":100
+            }
+        }
+    }
+}</pre>
+</div>
+</div>
+<div class="section" id="priorities">
+<h2>Priorities<a class="headerlink" href="#priorities" title="Permalink to this headline">¶</a></h2>
+<p>An advanced feature is available, only configurable directly in
+<tt class="file docutils literal"><span class="pre">data/mount.json</span></tt>, which allows mount configurations to have an associated
+priority. When two or more valid mount configurations exist for the same mount point,
+the one with the highest priority (defined by the largest number) will take precedence
+and become the active mount for the user.</p>
+<p>Each backend has a default priority, assigned when a mount configuration with that
+backend is created. The default priority will be shown in the example section for
+each backend below. Should a backend not provide a default priority, a value of 100
+will be used.</p>
+<p>There is also a concept of priority types, to preserve compatibility with
+previous mount configuration parsing. Mount configurations are evaluated in the
+following order, with later mount types always overriding a previous mount type:</p>
+<ul class="simple">
+<li>user -&gt; all : global mount configurations</li>
+<li>group : group mount configurations</li>
+<li>user (not all) : per-user mount configurations</li>
+<li><tt class="file docutils literal"><span class="pre">data/$user/mount.json</span></tt> : personal mount configurations</li>
+</ul>
+</div>
+<div class="section" id="backends">
+<h2>Backends<a class="headerlink" href="#backends" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="local-filesystem">
+<h3>Local Filesystem<a class="headerlink" href="#local-filesystem" title="Permalink to this headline">¶</a></h3>
+<p>The local filesystem backend mounts a folder on the server into the virtual
+filesystem, the class to be used is <strong>\OC\Files\Storage\Local</strong> and
+takes the following options:</p>
+<ul class="simple">
+<li><strong>datadir</strong> : the path to the local directory to be mounted</li>
+</ul>
+<div class="section" id="id1">
+<h4>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span> <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\Local&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;options&quot;</span><span class="p">:{</span> <span class="nt">&quot;datadir&quot;</span><span class="p">:</span><span class="s2">&quot;\/mnt\/additional_storage&quot;</span> <span class="p">},</span>
+  <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">150</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must ensure that the web server has sufficient permissions on the folder.</p>
+</div>
+</div>
+</div>
+<div class="section" id="ftp-or-ftps">
+<h3>FTP (or FTPS)<a class="headerlink" href="#ftp-or-ftps" title="Permalink to this headline">¶</a></h3>
+<p>The FTP backend mounts a folder on a remote FTP server into the virtual
+filesystem and is part of the ‘External storage support’ app, the class
+to be used is <strong>\OC\Files\Storage\FTP</strong> and takes the following
+options:</p>
+<ul class="simple">
+<li><strong>host</strong>: the hostname of the ftp server, and optionally the port number</li>
+<li><strong>user</strong>: the username used to login on the ftp server</li>
+<li><strong>password</strong>: the password to login on the ftp server</li>
+<li><strong>secure</strong>: whether to use ftps:// (FTP over TLS) to connect to the ftp
+server instead of ftp:// (optional, defaults to false)</li>
+<li><strong>root</strong>: the folder inside the ftp server to mount (optional, defaults
+to ‘/’)</li>
+</ul>
+<div class="section" id="id2">
+<h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\FTP&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="s2">&quot;ftp.myhost.com:21&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="s2">&quot;\/Videos&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;secure&quot;</span><span class="p">:</span><span class="s2">&quot;false&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">PHP needs to be build with FTP support for this backend to work.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The external storage <tt class="docutils literal"><span class="pre">FTP/FTPS/SFTP</span></tt> needs the <tt class="docutils literal"><span class="pre">allow_url_fopen</span></tt> PHP
+setting to be set to <tt class="docutils literal"><span class="pre">1</span></tt>. When having connection problems make sure that it is
+not set to <tt class="docutils literal"><span class="pre">0</span></tt> in your <tt class="docutils literal"><span class="pre">php.ini</span></tt>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="sftp">
+<h3>SFTP<a class="headerlink" href="#sftp" title="Permalink to this headline">¶</a></h3>
+<p>The SFTP backend mounts a folder on a remote SSH server into the virtual
+filesystem and is part of the ‘External storage support’ app. The class
+to be used is <strong>\OC\Files\Storage\SFTP</strong> and takes the following
+options:</p>
+<ul class="simple">
+<li><strong>host</strong>: the hostname of the SSH server</li>
+<li><strong>user</strong>: the username used to login to the SSH server</li>
+<li><strong>password</strong>: the password to login on the SSH server</li>
+<li><strong>root</strong>: the folder inside the SSH server to mount (optional, defaults
+to ‘/’)</li>
+</ul>
+<div class="section" id="id3">
+<h4>Example<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\SFTP&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="s2">&quot;ssh.myhost.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="s2">&quot;\/Books&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">PHP needs to be build with SFTP support for this backend to work.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The external storage <tt class="docutils literal"><span class="pre">FTP/FTPS/SFTP</span></tt> needs the <tt class="docutils literal"><span class="pre">allow_url_fopen</span></tt> PHP
+setting to be set to <tt class="docutils literal"><span class="pre">1</span></tt>. When having connection problems make sure that it is
+not set to <tt class="docutils literal"><span class="pre">0</span></tt> in your <tt class="docutils literal"><span class="pre">php.ini</span></tt>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="smb">
+<h3>SMB<a class="headerlink" href="#smb" title="Permalink to this headline">¶</a></h3>
+<p>The SMB backend mounts a folder on a remote Samba server, a NAS appliance or
+a Windows machine into the virtual file system. It is part of the ‘External
+storage support’ app, the class to be used is <strong>\OC\Files\Storage\SMB</strong> and
+takes the following options:</p>
+<ul class="simple">
+<li><strong>host</strong>: the host name of the samba server</li>
+<li><strong>user</strong>: the username or domain/username to login on the samba server</li>
+<li><strong>password</strong>: the password to login on the samba server</li>
+<li><strong>share</strong>: the share on the samba server to mount</li>
+<li><strong>root</strong>: the folder inside the samba share to mount (optional, defaults
+to ‘/’) To assign the ownCloud logon username automatically to the subfolder, use <tt class="docutils literal"><span class="pre">$user</span></tt> instead of a particular subfolder name.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The SMB backend requires <strong>smbclient</strong> to be installed on the server.</p>
+</div>
+<div class="section" id="id4">
+<h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>With username only:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\SMB&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="s2">&quot;myhost.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;share&quot;</span><span class="p">:</span><span class="s2">&quot;\/test&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="s2">&quot;\/Pictures&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>With domainname and username:</p>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\SMB&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="s2">&quot;myhost.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;domain\/johndoe&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;share&quot;</span><span class="p">:</span><span class="s2">&quot;\/test&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="s2">&quot;\/Pictures&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="webdav">
+<h3>WebDAV<a class="headerlink" href="#webdav" title="Permalink to this headline">¶</a></h3>
+<p>The WebDAV backend mounts a folder on a remote WebDAV server into the
+virtual filesystem and is part of the ‘External storage support’ app,
+the class to be used is <strong>\OC\Files\Storage\DAV</strong> and takes the
+following options:</p>
+<ul class="simple">
+<li><strong>host</strong>: the hostname of the webdav server.</li>
+<li><strong>user</strong>: the username used to login on the webdav server</li>
+<li><strong>password</strong>: the password to login on the webdav server</li>
+<li><strong>secure</strong>: whether to use <a class="reference external" href="https://">https://</a> to connect to the webdav server
+instead of <a class="reference external" href="http://">http://</a> (optional, defaults to false)</li>
+<li><strong>root</strong>: the folder inside the webdav server to mount (optional,
+defaults to ‘/’)</li>
+</ul>
+<div class="section" id="id5">
+<h4>Example<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\DAV&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="s2">&quot;myhost.com\/webdav.php&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;secure&quot;</span><span class="p">:</span><span class="s2">&quot;true&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="amazon-s3">
+<h3>Amazon S3<a class="headerlink" href="#amazon-s3" title="Permalink to this headline">¶</a></h3>
+<p>The Amazon S3 backend mounts a bucket in the Amazon cloud into the virtual
+filesystem and is part of the ‘External storage support’ app, the class to
+be used is <strong>\OC\Files\Storage\AmazonS3</strong> and takes the following
+options:</p>
+<ul class="simple">
+<li><strong>key</strong>: the key to login to the Amazon cloud</li>
+<li><strong>secret</strong>: the secret to login to the Amazon cloud</li>
+<li><strong>bucket</strong>: the bucket in the Amazon cloud to mount</li>
+</ul>
+<div class="section" id="id6">
+<h4>Example<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\AmazonS3&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;key&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;secret&quot;</span><span class="p">:</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;bucket&quot;</span><span class="p">:</span><span class="s2">&quot;bucket&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="dropbox">
+<h3>Dropbox<a class="headerlink" href="#dropbox" title="Permalink to this headline">¶</a></h3>
+<p>The Dropbox backend mounts a dropbox in the Dropbox cloud into the virtual
+filesystem and is part of the ‘External storage support’ app, the class to
+be used is <strong>\OC\Files\Storage\Dropbox</strong> and takes the following options:</p>
+<ul class="simple">
+<li><strong>configured</strong>: whether the drive has been configured or not (true or false)</li>
+<li><strong>app_key</strong>: the app key to login to your Dropbox</li>
+<li><strong>app_secret</strong>: the app secret to login to your Dropbox</li>
+<li><strong>token</strong>: the OAuth token to login to your Dropbox</li>
+<li><strong>token_secret</strong>: the OAuth secret to login to your Dropbox</li>
+</ul>
+<div class="section" id="id7">
+<h4>Example<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\Dropbox&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;configured&quot;</span><span class="p">:</span><span class="s2">&quot;#configured&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;app_key&quot;</span><span class="p">:</span><span class="s2">&quot;key&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;app_secret&quot;</span><span class="p">:</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;#token&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;token_secret&quot;</span><span class="p">:</span><span class="s2">&quot;#token_secret&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="google-drive">
+<h3>Google Drive<a class="headerlink" href="#google-drive" title="Permalink to this headline">¶</a></h3>
+<p>The Google Drive backend mounts a share in the Google cloud into the virtual
+filesystem and is part of the ‘External storage support’ app, the class to
+be used is <strong>\OC\Files\Storage\Google</strong> and is done via an OAuth2.0 request.
+That means that the App must be registered through the Google APIs Console.
+The result of the registration process is a set of values (incl. client_id, client_secret).
+It takes the following options:</p>
+<ul class="simple">
+<li><strong>configured</strong>: whether the drive has been configured or not (true or false)</li>
+<li><strong>client_id</strong>: the client id to login to the Google drive</li>
+<li><strong>client_secret</strong>: the client secret to login to the Google drive</li>
+<li><strong>token</strong>: a compound value including access and refresh tokens</li>
+</ul>
+<div class="section" id="id8">
+<h4>Example<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\Google&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;configured&quot;</span><span class="p">:</span><span class="s2">&quot;#configured&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;client_id&quot;</span><span class="p">:</span><span class="s2">&quot;#client_id&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;client_secret&quot;</span><span class="p">:</span><span class="s2">&quot;#client_secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;#token&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="openstack-swift">
+<h3>OpenStack Swift<a class="headerlink" href="#openstack-swift" title="Permalink to this headline">¶</a></h3>
+<p>The Swift backend mounts a container on an OpenStack Object Storage server
+into the virtual filesystem and is part of the ‘External storage support’
+app, the class to be used is <strong>\OC\Files\Storage\SWIFT</strong> and takes
+the following options:</p>
+<ul class="simple">
+<li><strong>host</strong>: the hostname of the authentication server for the swift
+storage.</li>
+<li><strong>user</strong>: the username used to login on the swift server</li>
+<li><strong>token</strong>: the authentication token to login on the swift server</li>
+<li><strong>secure</strong>: whether to use ftps:// to connect to the swift server instead
+of ftp:// (optional, defaults to false)</li>
+<li><strong>root</strong>: the container inside the swift server to mount (optional,
+defaults to ‘/’)</li>
+</ul>
+<div class="section" id="id9">
+<h4>Example<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-json"><div class="highlight"><pre><span class="p">{</span>   <span class="nt">&quot;class&quot;</span><span class="p">:</span><span class="s2">&quot;\\OC\\Files\\Storage\\SWIFT&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;options&quot;</span><span class="p">:{</span>
+        <span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="s2">&quot;swift.myhost.com\/auth&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="s2">&quot;johndoe&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;token&quot;</span><span class="p">:</span><span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;root&quot;</span><span class="p">:</span><span class="s2">&quot;\/Videos&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;secure&quot;</span><span class="p">:</span><span class="s2">&quot;true&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;priority&quot;</span><span class="p">:</span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="external-storage-password-management">
+<h2>External Storage Password Management<a class="headerlink" href="#external-storage-password-management" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud handles passwords for external mounts differently than regular
+ownCloud user passwords.</p>
+<p>The regular user and file share passwords (when you use the default ownCloud
+user backend) are stored using a strong cryptographically secure hashing
+mechanism in the database. On a new user account with a new password, the
+password is hashed and stored in the ownCloud database. The plain-text password
+is never stored. When the user logs in, the hash of the password they enter is
+compared with the hash in the database. When the hashes match the user is
+allowed access. These are not recoverable, so when a user loses a password the
+only option is to create a new password.</p>
+<p>Passwords which are used to connect against external storage (e.g.
+SMB or FTP), there we have to differentiate again between different
+implementations:</p>
+<ol class="arabic simple">
+<li><strong>Login with ownCloud credentials</strong></li>
+</ol>
+<p>When a mountpoint has this option, for example <tt class="docutils literal"><span class="pre">SMB</span> <span class="pre">/</span> <span class="pre">CIFS</span> <span class="pre">using</span> <span class="pre">OC</span> <span class="pre">login</span></tt>,
+the password will be intercepted when a user logs in and written to the PHP
+session (which is a file on the filesystem), and written encrypted into the
+session with a key from the configuration file. Every time that password is
+required ownCloud reads it from the PHP session file.</p>
+<p>When you use this option, features such as sharing will not work properly from
+that mountpoint when the user is not logged-in.</p>
+<p>Depending on the implementation of the application, this means that the password
+could get leaked in the <tt class="docutils literal"><span class="pre">ps</span></tt> output, as we use <tt class="docutils literal"><span class="pre">smbclient</span></tt> for SMB storage
+access in the community version. There is a <a class="reference external" href="https://github.com/owncloud/core/issues/6092">bug report on this</a>. Consequently, we&#8217;re currently
+evaluating an alternative approach accessing the library directly, and thus not
+leaking the password anymore. This is already implemented in the Enterprise
+Edition in our Windows Network Drive application, and it will get into the
+community version once we have streamlined the code of the <tt class="docutils literal"><span class="pre">files_external</span></tt>
+application a little bit more.</p>
+<ol class="arabic simple" start="2">
+<li><strong>Stored credentials</strong></li>
+</ol>
+<p>When you enter credentials into the <tt class="docutils literal"><span class="pre">files_external</span></tt> dialog those are stored
+on the filesystem and encrypted with a key stored in <tt class="docutils literal"><span class="pre">config.php</span></tt>. This is
+required since ownCloud needs access to those files and shares even when the
+user is not logged-in to have sharing and other key features properly working.</p>
+<p>To sum up:</p>
+<p>The &#8220;login with ownCloud credentials&#8221; SMB function in the community edition
+exposes the password in the server system&#8217;s process list. If you want to get
+around this limitation without waiting for it to be addressed in CE you can get
+the Enterprise Edition. However, even then the password is stored in the PHP
+session and a malicious admin could access it. You can protect your PHP session
+files using protections available in your filesystem. Stored credentials are
+always accessible to the ownCloud instance.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

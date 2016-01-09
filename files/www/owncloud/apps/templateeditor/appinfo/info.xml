@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<info>
+	<id>templateeditor</id>
+	<name>Mail Template Editor</name>
+	<description>
+	This application enables ownCloud to send custom emails to users. By default, ownCloud can send password reset emails, shared file and share link emails, activity stream notifications and more. By configuring an email server, admins can enable these emails to be sent. By providing an email address on their Personal page, users can receive these emails. By default, all of these emails will contain ownCloud email templates. The template editor allows admins to change email templates for emails sent by the system.
+While it is possible to manually change email templates within ownCloud, this app makes it far simpler by updating this via the ownCloud admin panel. More information is available in the Mail Template Editor documentation.
+
+		
+	</description>
+	<licence>AGPL</licence>
+	<author>Jörn Dreyer</author>
+	<requiremin>7</requiremin>
+	<shipped>true</shipped>
+	<default_enable/>
+</info>

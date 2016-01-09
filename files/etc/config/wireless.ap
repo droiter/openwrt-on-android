@@ -1,0 +1,16 @@
+config wifi-device  radio0
+	option type     mac80211
+	option channel  11
+	option hwmode	11g
+	option path	'platform/hi_mci.3/mmc_host/mmc2/mmc2:0001/mmc2:0001:2/wl18xx'
+	option htmode	HT20
+	# REMOVE THIS LINE TO ENABLE WIFI:
+	#option disabled 1
+
+config wifi-iface
+	option device   radio0
+	option network  lan
+	option mode 'ap'
+	option key 'password'
+	option encryption 'psk+tkip'
+	option ssid 'AndroidAP'

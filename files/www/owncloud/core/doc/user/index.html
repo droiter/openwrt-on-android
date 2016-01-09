@@ -1,0 +1,246 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ownCloud 7.0 User Documentation &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="#" />
+    <link rel="next" title="What’s New for Users in ownCloud 7" href="whats_new.html" />
+    <link rel="prev" title="ownCloud User Manual" href="contents.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">ownCloud 7.0 User Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#web-interface">Web Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#desktop-sync-client">Desktop Sync Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-access-and-management">File Access and Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#contacts-and-calendar">Contacts and Calendar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#documents">Documents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bookmarks">Bookmarks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-storage">External storage</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files/index.html">Files &amp; Synchronization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pim/index.html">Contacts &amp; Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="owncloud-version-user-documentation">
+<span id="index"></span><h1>ownCloud 7.0 User Documentation<a class="headerlink" href="#owncloud-version-user-documentation" title="Permalink to this headline">¶</a></h1>
+<p><strong>Welcome to ownCloud: your self-hosted file sync and share solution.</strong></p>
+<p>ownCloud is open source file sync and share software for everyone from
+individuals operating the free ownCloud Community Edition, to large enterprises
+and service providers operating the ownCloud Enterprise Edition. ownCloud
+provides a safe, secure, and compliant file synchronization and sharing
+solution on servers that you control.</p>
+<p>With ownCloud you can share one or more files and folders on your computer, and
+synchronize them with your ownCloud server. Place files in your local shared
+directories, and those files are immediately synchronized to the server and to
+other devices using the ownCloud Desktop Client. Not near a device running a
+desktop client? No problem! Simply log in using the ownCloud web client and
+manage your files from there. The ownCloud Android and iOS mobile applications
+enable you to browse, download, and upload photos and videos. On Android, you
+can also create, download, edit, and upload any other files, as long as the
+correct software is installed.</p>
+<p>Whether you are using a mobile device, a workstation, or a web client, ownCloud
+provides the ability to put the right files in the right hands at the right
+time on any device with one simple-to-use, secure, private and controlled
+solution. After all, with ownCloud, it’s Your Cloud, Your Data, Your Way.</p>
+<div class="section" id="web-interface">
+<h2>Web Interface<a class="headerlink" href="#web-interface" title="Permalink to this headline">¶</a></h2>
+<p>How to access ownCloud from a Web browser.</p>
+<ul class="simple">
+<li><a class="reference internal" href="webinterface.html"><em>The ownCloud Web Interface</em></a></li>
+</ul>
+</div>
+<div class="section" id="desktop-sync-client">
+<h2>Desktop Sync Client<a class="headerlink" href="#desktop-sync-client" title="Permalink to this headline">¶</a></h2>
+<p>The ownCloud desktop sync client keeps your files synchronized between your PC
+and your ownCloud server. Download the <a class="reference external" href="http://owncloud.org/install/#desktop">desktop sync client for Mac OS X,
+Linux, and Windows</a>, and you may
+wish to refer to the <a class="reference external" href="http://doc.owncloud.org/desktop/1.7/index.html">ownCloud Desktop Client Manual</a> to learn how to set up your
+account, select which files or folders to synchronize or exclude, limit
+bandwidth, and how to use other features.</p>
+</div>
+<div class="section" id="file-access-and-management">
+<h2>File Access and Management<a class="headerlink" href="#file-access-and-management" title="Permalink to this headline">¶</a></h2>
+<p>The following topics contain information about file access and management.</p>
+<ul class="simple">
+<li><a class="reference internal" href="files/configuring_big_file_upload.html"><em>Managing Big Files</em></a></li>
+<li><a class="reference internal" href="files/deletedfiles.html"><em>Managing Deleted Files</em></a></li>
+<li><a class="reference internal" href="files/encryption.html"><em>Encrypting Your ownCloud Files</em></a></li>
+<li><a class="reference internal" href="files/files.html"><em>Accessing ownCloud Files Using WebDAV</em></a></li>
+<li><a class="reference internal" href="files/filesweb.html"><em>Accessing your Files Using the Web Interface</em></a></li>
+<li><a class="reference internal" href="files/quota.html"><em>Storage Quota</em></a></li>
+<li><a class="reference internal" href="files/server_to_server_using.html"><em>Using Server-to-Server Sharing</em></a></li>
+<li><a class="reference internal" href="files/sync.html"><em>Desktop Synchronization</em></a></li>
+<li><a class="reference internal" href="files/versioncontrol.html"><em>Version Control</em></a></li>
+</ul>
+</div>
+<div class="section" id="contacts-and-calendar">
+<h2>Contacts and Calendar<a class="headerlink" href="#contacts-and-calendar" title="Permalink to this headline">¶</a></h2>
+<p>The following topics provide information about the <strong>Contacts</strong> and
+<strong>Calendar</strong> applications, including usage instructions as well as how to
+export, import, and synchronization the ownCloud calendar application with
+different operating system calendars:</p>
+<ul class="simple">
+<li><a class="reference internal" href="pim/calendar.html"><em>Using the Calendar App</em></a></li>
+<li><a class="reference internal" href="pim/contacts.html"><em>Using the Contacts App</em></a></li>
+<li><a class="reference internal" href="pim/sync_ios.html"><em>iOS - Synchronize iPhone/iPad</em></a></li>
+<li><a class="reference internal" href="pim/sync_kde.html"><em>Synchronizing with KDE SC</em></a></li>
+<li><a class="reference internal" href="pim/sync_osx.html"><em>Synchronizing with OS X</em></a></li>
+</ul>
+</div>
+<div class="section" id="documents">
+<h2>Documents<a class="headerlink" href="#documents" title="Permalink to this headline">¶</a></h2>
+<p>The following topic describes how to use the <strong>Documents</strong> application to
+enable multiple users to collaboratively edit rich-text documents
+simultaneously.</p>
+<ul class="simple">
+<li><a class="reference internal" href="documents.html"><em>Collaborative Document Editing</em></a></li>
+</ul>
+</div>
+<div class="section" id="bookmarks">
+<h2>Bookmarks<a class="headerlink" href="#bookmarks" title="Permalink to this headline">¶</a></h2>
+<p>The following topic describes how to use the ownCloud <strong>Bookmarks</strong> application
+to manage your bookmarks:</p>
+<ul class="simple">
+<li><a class="reference internal" href="bookmarks.html"><em>Using the Bookmarks App</em></a></li>
+</ul>
+</div>
+<div class="section" id="external-storage">
+<h2>External storage<a class="headerlink" href="#external-storage" title="Permalink to this headline">¶</a></h2>
+<p>Please see <tt class="docutils literal"><span class="pre">Configuring</span> <span class="pre">External</span> <span class="pre">Storage</span> <span class="pre">(GUI)</span></tt> in the ownCloud
+Administrator&#8217;s manual:</p>
+<p><a class="reference external" href="http://doc.owncloud.org/server/7.0/admin_manual/configuration/custom_mount_config_gui.html">Configuring External Storage (GUI)</a></p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+#preview {
+	background: #fff;
+	text-align: center;
+	margin: 45px auto 0;
+	min-height: 600px;
+}
+
+#preview .notCreatable {
+	display: none;
+}
+
+#noPreview {
+	display:none;
+	padding-top:80px;
+}
+
+footer {
+	margin-top: 65px;
+}
+
+p.info {
+	color: #777;
+	text-align: center;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+p.info a {
+	color:#777;
+	font-weight:700;
+}
+
+#imgframe {
+	height:75%;
+	padding-bottom:32px;
+	padding-top:32px;
+	width:80%;
+	margin:0 auto;
+}
+
+#imgframe img,
+#imgframe video {
+	max-height:100%;
+	max-width:100%;
+}
+
+/* fix multiselect bar offset on shared page */
+thead {
+	left: 0 !important;
+}
+
+#data-upload-form {
+	position: relative;
+	right: 0;
+	height: 32px;
+	overflow: hidden;
+	padding: 0;
+	float: right;
+	display: inline;
+	margin: 0;
+}
+
+
+.directDownload,
+.directLink {
+	margin-bottom: 20px;
+}
+
+/* keep long file names in one line to not overflow download button on mobile */
+.directDownload #download {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 90%;
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.directLink label {
+	font-weight: normal;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+.directLink input {
+	margin-left: 5px;
+	width: 300px;
+	max-width: 90%;
+}
+
+/* within #save */
+#save .save-form {
+	position: relative;
+}
+
+#remote_address {
+	margin: 0;
+	width: 130px;
+	height: 14px;
+	padding: 6px;
+	padding-right: 24px;
+}
+
+.ie8 #remote_address {
+	padding-right: 30px;
+}
+
+#save #save-button,
+#save #save-button-confirm {
+	margin: 0 5px;
+	height: 28px;
+	padding-bottom: 4px;
+	line-height: 14px;
+}
+
+#save-button-confirm {
+	position: absolute;
+	background-color: transparent;
+	border: none;
+	margin: 2px 4px !important;
+	right: 0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+
+.ie8 #save-button-confirm {
+	margin: 2px 0 !important;
+}
+
+#save-button-confirm:hover,
+#save-button-confirm:focus {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}

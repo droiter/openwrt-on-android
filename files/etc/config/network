@@ -1,0 +1,15 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+	option ula_prefix 'fddd:4af3:46a1::/48'
+
+config interface 'wlan0'
+	option proto 'static'
+	option ipaddr '172.16.1.250'
+	option netmask '255.255.255.0'
+

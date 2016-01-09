@@ -1,0 +1,9 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2013 OpenWrt.org
+
+# start after and stop before networking
+STOP=10
+
+stop() {
+	/bin/rm /root/.safeboot
+}

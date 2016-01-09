@@ -1,0 +1,215 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Managing Deleted Files &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Files &amp; Synchronization" href="index.html" />
+    <link rel="next" title="Desktop Synchronization" href="sync.html" />
+    <link rel="prev" title="Using Server-to-Server Sharing" href="server_to_server_using.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Files &amp; Synchronization</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="filesweb.html">Accessing your Files Using the Web Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files.html">Accessing ownCloud Files Using WebDAV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="versioncontrol.html">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_to_server_using.html">Using Server-to-Server Sharing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Managing Deleted Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quotas">Quotas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-happens-when-shared-files-are-deleted">What Happens When Shared Files Are Deleted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-the-deleted-files-app-manages-storage-space">How the Deleted Files app Manages Storage Space</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sync.html">Desktop Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption.html">Encrypting Your ownCloud Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quota.html">Storage Quota</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuring_big_file_upload.html">Managing Big Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../pim/index.html">Contacts &amp; Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="managing-deleted-files">
+<h1>Managing Deleted Files<a class="headerlink" href="#managing-deleted-files" title="Permalink to this headline">¶</a></h1>
+<p>When you delete a file in ownCloud, it is not immediately deleted permanently.
+Instead, it is moved into the trash bin. It is not permanently deleted until
+you manually delete it, or when the Deleted Files app deletes it to make room
+for new files.</p>
+<p>Find your deleted files by clicking on the <strong>Deleted files</strong>
+button on the Files page of the ownCloud Web interface. You&#8217;ll have options to
+either restore or permanently delete files.</p>
+<div class="section" id="quotas">
+<h2>Quotas<a class="headerlink" href="#quotas" title="Permalink to this headline">¶</a></h2>
+<p>Deleted files are not counted against your storage quota. Only files that
+originate with users count against their quotas, not files
+shared with them that originate from other users. (See <a class="reference internal" href="quota.html"><em>Storage Quota</em></a> to learn
+more about quotas.)</p>
+</div>
+<div class="section" id="what-happens-when-shared-files-are-deleted">
+<h2>What Happens When Shared Files Are Deleted<a class="headerlink" href="#what-happens-when-shared-files-are-deleted" title="Permalink to this headline">¶</a></h2>
+<p>Deleting files gets a little complicated when they are shared files, as this
+scenario illustrates:</p>
+<ol class="arabic simple">
+<li>User1 shares a folder &#8220;test&#8221; with User2 and User3</li>
+<li>User2 (the recipient) deletes a file/folder &#8220;sub&#8221; inside of &#8220;test&#8221;</li>
+<li>The folder &#8220;sub&#8221; will be moved to the trashbin of both User1 (owner) and
+User2 (recipient)</li>
+<li>But User3 will not have a copy of &#8220;sub&#8221; in her trash bin</li>
+</ol>
+<p>When User1 deletes &#8220;sub&#8221; then it is moved to User1&#8217;s trash bin. It is
+deleted from User2 and User3, but not placed in their trash bins.</p>
+<p>When you share files, other users may copy, rename, move, and share them with
+other people, just as they can for any computer files; ownCloud does not have
+magic powers to prevent this.</p>
+</div>
+<div class="section" id="how-the-deleted-files-app-manages-storage-space">
+<h2>How the Deleted Files app Manages Storage Space<a class="headerlink" href="#how-the-deleted-files-app-manages-storage-space" title="Permalink to this headline">¶</a></h2>
+<p>To ensure that users doesn&#8217;t run over their storage quotas, the Deleted Files
+app allocates a maximum of 50% of their currently available free space to
+deleted files. If your deleted files exceed this limit, ownCloud deletes the
+oldest files (files with the oldest timestamps from when they were deleted)
+until it meets the memory usage limit again.</p>
+<p>ownCloud checks the age of deleted files every time new files are added to the
+deleted files. By default, deleted files stay in the trash bin for 180 days. The
+ownCloud server administrator can adjust this value in the <tt class="docutils literal"><span class="pre">config.php</span></tt> file
+by setting the <tt class="docutils literal"><span class="pre">trashbin_retention_obligation</span></tt> value. Files older than the
+<tt class="docutils literal"><span class="pre">trashbin_retention_obligation</span></tt> value will be deleted permanently.
+Additionally, ownCloud calculates the maximum available space every time a new
+file is added. If the deleted files exceed the new maximum allowed space
+ownCloud will expire old deleted files until the limit is met once again.
+.. 7.0 replace:: 7.0</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

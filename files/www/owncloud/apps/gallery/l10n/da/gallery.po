@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Anders J. Sørensen, 2013-2014
+# Frederik Lassen <frederiklassen@gmail.com>, 2013
+# Leif Lodahl <leiflodahl@gmail.com>, 2013
+# mikkel_ilu <mikkelbjerglarsen@gmail.com>, 2012
+# Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>, 2012
+# Johannes Hessellund <osos@openeyes.dk>, 2012
+# Thomas Tanghus <thomas@tanghus.net>, 2012
+# Thomas Tanghus <thomas@tanghus.net>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-13 02:18-0400\n"
+"PO-Revision-Date: 2014-06-12 19:15+0000\n"
+"Last-Translator: Anders J. Sørensen\n"
+"Language-Team: Danish (http://www.transifex.com/projects/p/owncloud/language/da/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: appinfo/app.php:36 js/gallery.js:127
+msgid "Pictures"
+msgstr "Billeder"
+
+#: js/public.js:23
+msgid "Picture view"
+msgstr "Billedvisning"
+
+#: js/slideshow.js:338
+msgid "Error loading slideshow template"
+msgstr "Fejl ved indlæsning af diasshow skabelon"
+
+#: templates/index.php:4 templates/index.php:5
+msgid "Share"
+msgstr "Del"
+
+#: templates/index.php:11
+msgid ""
+"No pictures found! If you upload pictures in the files app, they will be "
+"displayed here."
+msgstr "Ingen billeder fundet! Hvis du uploader billeder i fil-app'en, bliver de vist her. "
+
+#: templates/public.php:9
+#, php-format
+msgid "shared by %s"
+msgstr "delt af %s"
+
+#: templates/public.php:20
+msgid "File list"
+msgstr "Filoversigt"

@@ -1,0 +1,95 @@
+
+.oc-addnew {
+        display: block !important;
+        padding: 0 !important;
+}
+.oc-addnew li:first-child {
+        display: block;
+}
+.oc-addnew li:not(:first-child) {
+        display: none;
+}
+.oc-addnew.open li:first-child {
+        display: none;
+}
+.oc-addnew.open li:not(:first-child) {
+        display: block;
+}
+.oc-addnew > li {
+}
+.oc-addnew > li > a.oc-addnew-init {
+}
+.oc-addnew > li > a.oc-addnew-init:before {
+		position: absolute;
+        content: '+';
+        font-weight: bold;
+        font-size: 150%;
+		left: 12px;
+}
+#app-settings .oc-addnew > li > a.oc-addnew-init:before {
+		position: absolute;
+        content: '+';
+        font-weight: bold;
+        font-size: 150%;
+		left: 0;
+}
+#app-settings .oc-addnew > li > a.oc-addnew-init {
+		padding-left: 17px;
+}
+
+#app-navigation .oc-addnew input[type=text] {
+        margin-top: 5px;
+        margin-left: 6px;
+        height: 34px !important;
+}
+
+.oc-addnew select {
+        width: 133px;
+        margin-top: 1px !important;
+        height: 30px;
+        background-color: #eee;
+}
+
+.oc-addnew input,
+.oc-addnew select {
+        margin: 0 0 5px 0;
+        display: inline-block;
+        float: left;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+}
+
+.oc-addnew button {
+        margin: 5px 0;
+        display: inline-block;
+        float: left;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        height: 34px !important;
+}
+
+.oc-addnew .action-button {
+        width: 30px;
+        background-position: center;
+        background-repeat: no-repeat;        
+}
+
+#app-navigation .oc-addnew .new-button {
+		width: 32px;
+        margin-top: 5px;
+		background-size: 16px;
+		background-position: center;
+		background-repeat: no-repeat;
+}
+
+#app-settings .oc-addnew .new-button {
+		margin-left: -8px;
+}
+
+.oc-addnew .create-button {
+        border-radius: 0;
+        background-image: url('../img/checkmark-gray.svg');
+        border-top-right-radius: 5px; 
+        border-bottom-right-radius: 5px; 
+}

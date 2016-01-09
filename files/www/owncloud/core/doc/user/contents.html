@@ -1,0 +1,281 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ownCloud User Manual &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="index.html" />
+    <link rel="next" title="ownCloud 7.0 User Documentation" href="index.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="#">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="#">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="files/index.html">Files &amp; Synchronization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pim/index.html">Contacts &amp; Calendar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="owncloud-user-manual">
+<span id="contents"></span><h1>ownCloud User Manual<a class="headerlink" href="#owncloud-user-manual" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="whats_new.html">What&#8217;s New for Users in ownCloud 7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#no-more-shared-folder">No More Shared Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#selective-sync">Selective Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#server-to-server-sharing">Server to Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#file-and-activity-notifications">File and Activity Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#owncloud-documents-with-word-conversion">ownCloud Documents with Word Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#mobile-web-browser-support">Mobile Web Browser Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#lazy-loading-files">Lazy Loading Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whats_new.html#change-in-share-expiration-date">Change in Share Expiration Date</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="webinterface.html">The ownCloud Web Interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="webinterface.html#accessing-the-owncloud-web-interface">Accessing the ownCloud Web Interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="webinterface.html#navigating-the-main-user-interface">Navigating the Main User Interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="files/index.html">Files &amp; Synchronization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="files/filesweb.html">Accessing your Files Using the Web Interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#previewing-files">Previewing Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#navigating-inside-your-owncloud">Navigating Inside Your ownCloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#overlay-icons-show-sharing-status">Overlay Icons Show Sharing Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#creating-or-uploading-files-and-directories">Creating or Uploading Files and Directories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#selecting-files-or-folders">Selecting Files or Folders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#filtering-the-file-application-view">Filtering the File Application View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#moving-files">Moving Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#sharing-files-locally">Sharing Files Locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#creating-a-public-share">Creating a Public Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/filesweb.html#change-in-share-expiration-date">Change in Share Expiration Date</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="files/files.html">Accessing ownCloud Files Using WebDAV</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="files/files.html#owncloud-desktop-and-mobile-clients">ownCloud Desktop and Mobile Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/files.html#webdav-configuration">WebDAV Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/files.html#accessing-files-using-linux">Accessing Files Using Linux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/files.html#creating-webdav-mounts-on-the-linux-command-line">Creating WebDAV Mounts on the Linux Command Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/files.html#accessing-files-using-mac-os-x">Accessing Files Using Mac OS X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/files.html#accessing-files-using-microsoft-windows">Accessing Files Using Microsoft Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/files.html#accessing-files-using-cyberduck">Accessing Files Using Cyberduck</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/files.html#accessing-files-using-curl">Accessing Files Using cURL</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="files/versioncontrol.html">Version Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files/server_to_server_using.html">Using Server-to-Server Sharing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="files/server_to_server_using.html#creating-a-new-share">Creating a New Share</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/server_to_server_using.html#connecting-to-a-remote-share">Connecting to a Remote Share</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="files/deletedfiles.html">Managing Deleted Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="files/deletedfiles.html#quotas">Quotas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/deletedfiles.html#what-happens-when-shared-files-are-deleted">What Happens When Shared Files Are Deleted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/deletedfiles.html#how-the-deleted-files-app-manages-storage-space">How the Deleted Files app Manages Storage Space</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="files/sync.html">Desktop Synchronization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files/encryption.html">Encrypting Your ownCloud Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="files/encryption.html#using-encryption">Using Encryption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/encryption.html#sharing-encrypted-files">Sharing Encrypted Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/encryption.html#removing-encryption">Removing Encryption</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files/encryption.html#files-not-encrypted">Files Not Encrypted</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="files/quota.html">Storage Quota</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files/configuring_big_file_upload.html">Managing Big Files</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pim/index.html">Contacts &amp; Calendar</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pim/contacts.html">Using the Contacts App</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pim/contacts.html#adding-contacts">Adding Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/contacts.html#managing-address-books">Managing Address Books</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/contacts.html#adding-an-address-book">Adding an Address Book</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/contacts.html#synchronizing-address-books">Synchronizing Address Books</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/contacts.html#special-carddav-urls">Special CardDAV URLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/contacts.html#troubleshooting">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pim/calendar.html">Using the Calendar App</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#creating-a-new-calendar">Creating a New Calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#managing-calendar-settings">Managing Calendar Settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#synchronizing-calendars-using-caldav">Synchronizing Calendars Using CalDAV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#creating-events">Creating Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#sharing-events">Sharing Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#exporting-and-importing-events">Exporting and Importing Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#deleting-an-event">Deleting an Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#special-caldav-urls">Special CalDAV URLs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/calendar.html#calendar-app-faq">Calendar App FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pim/sync_ios.html">iOS - Synchronize iPhone/iPad</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pim/sync_ios.html#calendar">Calendar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pim/sync_ios.html#address-book">Address book</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pim/sync_osx.html">Synchronizing with OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pim/sync_thunderbird.html">Thunderbird - Synchronize Addressbook</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pim/sync_thunderbird.html#addressbook">Addressbook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pim/sync_kde.html">Synchronizing with KDE SC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pim/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pim/troubleshooting.html#blackberry-os-10-2">BlackBerry OS 10.2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="documents.html">Collaborative Document Editing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="documents.html#the-main-interface">The main interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="documents.html#create-or-upload-a-document">Create or Upload a Document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documents.html#edit-a-document">Edit a Document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documents.html#delete-a-document">Delete a Document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="documents.html#share-a-document">Share a Document</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bookmarks.html">Using the Bookmarks App</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bookmarks.html#the-main-interface">The main interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bookmarks.html#add-a-bookmark">Add a bookmark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bookmarks.html#edit-delete-a-bookmark">Edit/Delete a bookmark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bookmarks.html#search">Search</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bookmarks.html#the-bookmarklet">The Bookmarklet</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

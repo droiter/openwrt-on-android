@@ -1,0 +1,23 @@
+
+你好 {TO_USERNAME},
+
+下面是一个通过 “{SITENAME}” 论坛的管理员联系页面，所发给你的 e-mail。
+
+<!-- IF S_IS_REGISTERED -->
+信息来自站上账号。
+用户名: {FROM_USERNAME}
+E-mail地址: {FROM_EMAIL_ADDRESS}
+IP地址: {FROM_IP_ADDRESS}
+资料: {U_FROM_PROFILE}
+<!-- ELSE -->
+信息来自访客:
+名字: {FROM_USERNAME}
+E-mail地址: {FROM_EMAIL_ADDRESS}
+IP地址: {FROM_IP_ADDRESS}
+<!-- ENDIF -->
+
+
+发给你的信息如下
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+{MESSAGE}

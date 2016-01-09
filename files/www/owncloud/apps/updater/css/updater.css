@@ -1,0 +1,58 @@
+
+#upd-progress {
+	margin: 30px 0;
+}
+
+#updater-content p {
+	margin: 10px 0;
+}
+
+#updater-content {
+	width: 640px;
+	margin: 20px 0 20px -180px;
+	padding: 5px 20px 10px 20px;
+	background: #fff;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	cursor: default;
+}
+
+#updater-content table {
+	width: 100%;
+	margin: 20px 0;
+}
+
+#updater-content table th {
+	padding: 5px 10px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+
+#updater-content table td {
+	padding: 10px;
+}
+
+#updater-content .icon-delete {
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	opacity: .5;
+}
+
+.track-progress li {
+	list-style-type: none;
+	display: inline-block;
+	position: relative;
+	margin: 0;
+	padding: 0 20px;
+	text-align: center;
+	line-height: 30px;
+	height: 30px;
+	background-position: right;
+}
+
+.track-progress li.current {
+	font-weight: bold;
+}

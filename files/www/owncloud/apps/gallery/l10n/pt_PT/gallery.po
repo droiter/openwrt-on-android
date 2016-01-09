@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Carlos Moreira <crolidge@gmail.com>, 2013-2014
+# Daniel Pinto <daniel@mouxy.net>, 2013
+# zedascouves <duartegrilo@gmail.com>, 2012
+# Fernando Moura <moura232@gmail.com>, 2014
+# rlameiro <geral@ricardolameiro.pt>, 2012
+# Helder Meneses <helder.meneses@gmail.com>, 2012
+# Helder Meneses <helder.meneses@gmail.com>, 2012
+# Manuela Silva <manuela.silva@sky.com>, 2014
+# Miguel Sousa <migueljorgesousa@sapo.pt>, 2013
+# rjgpp1994 <rjgpp.1994@gmail.com>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-27 02:18-0400\n"
+"PO-Revision-Date: 2014-06-26 21:01+0000\n"
+"Last-Translator: Manuela Silva <manuela.silva@sky.com>\n"
+"Language-Team: Portuguese (Portugal) (http://www.transifex.com/projects/p/owncloud/language/pt_PT/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_PT\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: appinfo/app.php:36 js/gallery.js:127
+msgid "Pictures"
+msgstr "Imagens"
+
+#: js/public.js:23
+msgid "Picture view"
+msgstr "Visualização da Imagem"
+
+#: js/slideshow.js:337
+msgid "Error loading slideshow template"
+msgstr "Erro ao carregar o modelo do diapaorama"
+
+#: templates/index.php:4 templates/index.php:5
+msgid "Share"
+msgstr "Compartilhar"
+
+#: templates/index.php:11
+msgid ""
+"No pictures found! If you upload pictures in the files app, they will be "
+"displayed here."
+msgstr "Não foi encontrada nenhuma foto! Se enviar fotografias nos ficheiros da \"app\", estes serão visualizados aqui."
+
+#: templates/public.php:9
+#, php-format
+msgid "shared by %s"
+msgstr "compartilhada por %s"
+
+#: templates/public.php:20
+msgid "File list"
+msgstr "Lista de Ficheiros"

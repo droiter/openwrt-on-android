@@ -1,0 +1,157 @@
+<?xml version='1.0' standalone='yes'?>
+<entries name="inetOrgPerson">
+	
+  <vcard_entries>
+
+    <vcard_entry property="FN" enabled="true">
+      <!--<ldif_entry name="cn"/>-->
+      <ldif_entry name="displayname" unique="true"/>
+    </vcard_entry>
+    
+    <vcard_entry property="EMAIL" enabled="true">
+      <ldif_entry name="mail" unique="true"/>
+    </vcard_entry>
+    
+    <vcard_entry property="NOTE" enabled="true">
+      <ldif_entry name="description" unique="true"/>
+    </vcard_entry>
+    
+    <vcard_entry property="N" enabled="true">
+      <ldif_entry vcard_position="0" name="sn" unique="true"/>
+      <ldif_entry vcard_position="1" name="givenname"/>
+    </vcard_entry>
+
+		<vcard_entry property="TEL" type="FAX" enabled="true">
+			<ldif_entry name="facsimiletelephonenumber" unique="true"/>
+		</vcard_entry>
+    
+		<vcard_entry property="TEL" type="HOME" enabled="true">
+			<ldif_entry name="telephonenumber" unique="true"/>
+		</vcard_entry>
+    
+		<vcard_entry property="TEL" type="CELL" enabled="true">
+			<ldif_entry name="mobile" unique="true"/>
+		</vcard_entry>
+    
+		<vcard_entry property="PHOTO" image="true" enabled="true">
+			<ldif_entry name="jpegphoto"/>
+		</vcard_entry>
+    
+		<vcard_entry property="ADR" type="HOME" enabled="true">
+			<ldif_entry vcard_position="2" name="street"/>
+			<ldif_entry vcard_position="3" name="l"/>
+			<ldif_entry vcard_position="4" name="st"/>
+			<ldif_entry vcard_position="5" name="postalcode"/>
+			<ldif_entry vcard_position="6" name="c" unique="true"/>
+		</vcard_entry>
+    
+		<vcard_entry property="CATEGORIES" enabled="true">
+			<ldif_entry name="o" unique="true"/>
+		</vcard_entry>
+		
+		<!--<vcard_entry property="" type="" enabled="true">
+      <ldap_entry vcard_position="" unique="" name=""/>
+    </vcard_entry>-->
+    
+  </vcard_entries>
+
+  <ldap_entries>
+		
+		<ldap_core>
+			<object_class name="top" />
+			<object_class name="inetOrgPerson" />
+			<unassigned_vcard_property ldap_name="businessCategory" />
+			<ldap_id name="cn" />
+			<not_null name="sn">
+				<action_switch name="givenname"/>
+				<!--<action_default value="value"/>-->
+			</not_null>
+		</ldap_core>
+    
+    <ldif_entry name="mail" enabled="true">
+      <vcard_entry property="EMAIL" type="HOME">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="description" enabled="true">
+      <vcard_entry property="NOTE">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="displayname" enabled="true">
+      <vcard_entry property="FN">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="sn" enabled="true">
+      <vcard_entry property="N" position="0">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="givenname" enabled="true">
+      <vcard_entry property="N" position="1">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="facsimiletelephonenumber" enabled="true">
+      <vcard_entry property="TEL" type="FAX">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="telephonenumber" enabled="true">
+      <vcard_entry property="TEL" type="HOME">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="mobile" enabled="true">
+      <vcard_entry property="TEL" type="CELL">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="jpegphoto" enabled="true" image="true">
+      <vcard_entry property="PHOTO">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="street" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="2">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="l" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="3">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="st" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="4">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="postalcode" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="5">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="c" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="6">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="o" enabled="true">
+      <vcard_entry property="CATEGORIES">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <ldif_entry name="ou" enabled="true">
+      <vcard_entry property="CATEGORIES">
+      </vcard_entry>
+    </ldif_entry>
+    
+    <!--<ldif_entry name="" enabled="true">
+      <vcard_entry property="" type="" prefix="" position="">
+      </vcard_entry>
+    </ldif_entry>-->
+    
+  </ldap_entries>
+</entries>

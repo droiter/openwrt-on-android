@@ -1,0 +1,19 @@
+Subject: 版面帖子通知 - “{FORUM_NAME}”
+
+你好 {USERNAME}，
+
+您收到此通知是因为您订阅了 “{SITENAME}” 论坛的 “{FORUM_NAME}” 板块。 此论坛收到<!-- IF AUTHOR_NAME !== '' --> 由 {AUTHOR_NAME}<!-- ENDIF -->在主题 “{TOPIC_TITLE}”所发布的一个新的回复。您可以用下面的链接来查看最新未读回复，在您访问该主题之前不会再发送更多的通知。
+
+{U_NEWEST_POST}
+
+如果您想查看这个主题，点击下面的链接：
+{U_TOPIC}
+
+如果您想查看这个版面，点击下面的链接：
+{U_FORUM}
+
+如果您不想再监视这个版面, 您可以在上面的版面中点击 "取消订阅版面" 链接或点击下面的链接:
+
+{U_STOP_WATCHING_FORUM}
+
+{EMAIL_SIG}

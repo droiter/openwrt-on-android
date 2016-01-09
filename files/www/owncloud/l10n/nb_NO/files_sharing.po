@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# vidaren <news@vidartysse.net>, 2014
+# Stein-Aksel Basma <stabasm@hotmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-07-03 01:54-0400\n"
+"PO-Revision-Date: 2014-07-03 05:54+0000\n"
+"Last-Translator: I Robot\n"
+"Language-Team: Norwegian Bokmål (Norway) (http://www.transifex.com/projects/p/owncloud/language/nb_NO/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nb_NO\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ajax/external.php:17
+msgid "Server to server sharing is not enabled on this server"
+msgstr "Server til server-deling er ikke aktivert på denne serveren"
+
+#: ajax/external.php:47
+msgid "Couldn't add remote share"
+msgstr "Klarte ikke å legge til ekstern deling"
+
+#: appinfo/app.php:33 js/app.js:34
+msgid "Shared with you"
+msgstr "Delt med deg"
+
+#: appinfo/app.php:42 js/app.js:53
+msgid "Shared with others"
+msgstr "Delt med andre"
+
+#: appinfo/app.php:51 js/app.js:72
+msgid "Shared by link"
+msgstr "Delt med lenke"
+
+#: js/app.js:35
+msgid "No files have been shared with you yet."
+msgstr "Ingen filer er delt med deg ennå."
+
+#: js/app.js:54
+msgid "You haven't shared any files yet."
+msgstr "Du har ikke delt noen filer ennå."
+
+#: js/app.js:73
+msgid "You haven't shared any files by link yet."
+msgstr "Du har ikke delt noen filer med lenke ennå."
+
+#: js/external.js:45 js/external.js:48
+msgid "Add {name} from {owner}@{remote}"
+msgstr "Legg til {name} fra {owner}@{remote}"
+
+#: js/external.js:46 js/external.js:49
+msgid "Add Share"
+msgstr "Ny deling"
+
+#: js/external.js:49 templates/authenticate.php:10
+#: templates/authenticate.php:12
+msgid "Password"
+msgstr "Passord"
+
+#: js/public.js:203
+msgid "No ownCloud installation found at {remote}"
+msgstr "Ingen ownCloud-installasjon funnet på {remote}"
+
+#: js/public.js:204
+msgid "Invalid ownCloud url"
+msgstr "Ugyldig ownCloud-url"
+
+#: js/share.js:146
+msgid "Shared by {owner}"
+msgstr "Delt av {owner}"
+
+#: js/sharedfilelist.js:128
+msgid "Shared by"
+msgstr "Delt av"
+
+#: templates/authenticate.php:4
+msgid "This share is password-protected"
+msgstr "Denne delingen er passordbeskyttet"
+
+#: templates/authenticate.php:7
+msgid "The password is wrong. Try again."
+msgstr "Passordet er feil. Prøv på nytt."
+
+#: templates/list.php:16
+msgid "Name"
+msgstr "Navn"
+
+#: templates/list.php:20
+msgid "Share time"
+msgstr "Delingstidspunkt"
+
+#: templates/part.404.php:3
+msgid "Sorry, this link doesn’t seem to work anymore."
+msgstr "Beklager, denne lenken ser ikke ut til å virke lenger."
+
+#: templates/part.404.php:4
+msgid "Reasons might be:"
+msgstr "Mulige årsaker:"
+
+#: templates/part.404.php:6
+msgid "the item was removed"
+msgstr "elementet er fjernet"
+
+#: templates/part.404.php:7
+msgid "the link expired"
+msgstr "lenken er utløpt"
+
+#: templates/part.404.php:8
+msgid "sharing is disabled"
+msgstr "deling er deaktivert"
+
+#: templates/part.404.php:10
+msgid "For more info, please ask the person who sent this link."
+msgstr "For mer informasjon, spør personen som sendte lenken."
+
+#: templates/public.php:20
+msgid "Add to your ownCloud"
+msgstr ""
+
+#: templates/public.php:23
+msgid "Save"
+msgstr "Lagre"
+
+#: templates/public.php:28
+msgid "Download"
+msgstr "Last ned"
+
+#: templates/public.php:59
+#, php-format
+msgid "Download %s"
+msgstr "Last ned %s"
+
+#: templates/public.php:63
+msgid "Direct link"
+msgstr "Direkte lenke"
+
+#: templates/settings-admin.php:3
+msgid "Remote Shares"
+msgstr "Ekstern deling"
+
+#: templates/settings-admin.php:7
+msgid "Allow other instances to mount public links shared from this server"
+msgstr "Tillat at andre servere kobler opp offentlige lenker som er delt fra denne serveren"
+
+#: templates/settings-admin.php:11
+msgid "Allow users to mount public link shares"
+msgstr "Tillat at brukere kobler opp offentlige lenke-delinger"

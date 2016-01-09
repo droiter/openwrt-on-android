@@ -1,0 +1,100 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!--
+	Parameters available
+	<import_core>
+	@brief: main parameters
+		<name></name>
+		@brief: Internal name
+		must match the xml file name with the pattern import_<name>_connector.xml
+		
+		<display_name></display_name>
+		@brief: Display name
+		
+		<type></type>
+		@brief: type (csv,vcard,ldif,...)
+		
+		<active></active>
+		@brief: if 0, will not be used
+		
+		<card_begin value=""/>
+		@brief: string delimiter to set the begining of a VCard
+		
+		<card_end value=""/>
+		@brief: string delimiter to set the end of a VCard
+		
+		<replace from="" to="" />
+		@brief: strings to replace in the source card before parsing
+		
+	</import_core>
+	
+		</vcard_entry>
+	</import_entry>
+
+	<import_entry name="" position="" enabled="" separator="" remove="">
+	@brief: vcard property to look for
+	property: property name
+	enabled: import_entry used or not
+	separator: string used to separate multiple values
+	remove: string to remove in the value
+		
+		<group_entry property="" value="">
+		@brief: used to filter property search with group value
+			
+		<vcard_favourites></vcard_favourites>
+		@brief: entry value to look for in order to add the current VCard to the Favourites section
+			
+		<vcard_entry property="" type="" prefix=""/>
+		@brief: VCard entry to add
+		property: VCard property name
+		type: VCard property type
+		prefix: prefix to add to the value
+		
+			<additional_property name="" value="" />
+			@brief: optional parameter to add
+			name: name of the parameter
+			value: value of the parameter
+			
+	</import_entry>
+-->
+<!--
+XML connector for Gmail VCard import
+author: Nicolas Mora mail@babelouest.org
+-->
+<import_entries>
+	
+	<import_core>
+		<name>vcard_yahoo</name>
+		<display_name>Yahoo VCard</display_name>
+		<type>vcard</type>
+		<active>1</active>
+		<card_begin>BEGIN:VCARD</card_begin>
+		<card_end>END:VCARD</card_end>
+		<replace from="http\://" to="http://" />
+		<replace from="https\://" to="https://" />
+	</import_core>
+	
+	<import_entry property="URL" enabled="true">
+		<group_entry property="X-ABLabel" value="_$!&lt;HomePage&gt;!$_">
+		</group_entry>
+		<vcard_entry property="URL" type="HOME">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry property="X-GOOGLE-ID" enabled="true">
+		<vcard_entry property="IMPP" prefix="xmpp:">
+			<additional_property name="X-SERVICE-TYPE" value="googletalk" />
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry property="X-IM" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry property="X-PRIMARY-PHONE" enabled="true">
+		<vcard_entry property="PHONE" type="HOME">
+		</vcard_entry>
+	</import_entry>
+	
+</import_entries>

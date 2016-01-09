@@ -1,0 +1,13 @@
+Subject: 新主题通知 - “{FORUM_NAME}”
+
+亲爱的 {USERNAME} 您好，
+
+你收到此通知是因为你在 “{SITENAME}” 论坛关注了 “{FORUM_NAME}” 板块。此论坛已收到一个<!-- IF AUTHOR_NAME --> 由 {AUTHOR_NAME}所发布的<!-- ENDIF -->新主题， “{TOPIC_TITLE}” 。你可以使用下面链接查看论坛，在你访问论坛之前再没有其他通知。
+
+{U_FORUM}
+
+如果你不想再看到此论坛你可以点论坛上方的 “退订版面” 链接或点下面的链接:
+
+{U_STOP_WATCHING_FORUM}
+
+{EMAIL_SIG}

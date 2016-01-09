@@ -1,0 +1,20 @@
+<div id="contacts_import_dialog">
+	<div class="import-select">
+		<p class="bold" style="text-align:center;">{selectText}</p>
+		<select style="width:100%;" id="import_into" name="addressbooks">
+			<option value="{id}" data-backend="{backend}" data-permissions="{permissions}">{displayname}</option>
+			<option value="-1">{defaultText}</option>
+		</select>
+		<div id="newaddressbookform" style="display: none;">
+			<input type="text" style="width: 97%;" placeholder="<?php p($l->t('Name of new addressbook')); ?>" id="newaddressbook" name="newaddressbook">
+		</div>
+	</div>
+	<div class="import-status hidden">
+		<label id="import-status-text"></label>
+		<div id="import-status-progress"></div>
+		<div id="import_done" style="display: none;">
+			<p style="text-align:center;"></p>
+			<input type="button" value="<?php p($l->t('Close')); ?>" id="import_done_button">
+		</div>
+	</div>
+</div>

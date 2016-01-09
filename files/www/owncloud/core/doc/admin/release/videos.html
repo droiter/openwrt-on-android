@@ -1,0 +1,185 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ownCloud Videos &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="index.html" />
+    <link rel="next" title="What’s New for Admins in ownCloud 7" href="whats_new_admin.html" />
+    <link rel="prev" title="Introduction" href="index.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">ownCloud Videos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#server-to-server-sharing-on-owncloud-7">Server to Server Sharing on ownCloud 7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#introducing-owncloud-7-enterprise-edition">Introducing ownCloud 7 Enterprise Edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#owncloud-for-enterprise-file-sync-and-share">ownCloud for Enterprise File Sync and Share</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/index.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="owncloud-videos">
+<h1>ownCloud Videos<a class="headerlink" href="#owncloud-videos" title="Permalink to this headline">¶</a></h1>
+<p>Please visit our <a class="reference external" href="https://www.youtube.com/user/ownCloudofficial/">YouTube channel</a>
+for howtos, demos, news, and Webinars for both the
+Community and Enterprise versions of ownCloud.</p>
+<div class="section" id="server-to-server-sharing-on-owncloud-7">
+<h2>Server to Server Sharing on ownCloud 7<a class="headerlink" href="#server-to-server-sharing-on-owncloud-7" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=h09ppkkYDNk">Build a Cloud of ownCloud Servers with Server to Server Sharing</a></p>
+<p>Create your own cloud of ownCloud servers with server-to-server sharing.
+Link specific shares to other ownCloud servers and have two-way synchronization.</p>
+</div>
+<div class="section" id="introducing-owncloud-7-enterprise-edition">
+<h2>Introducing ownCloud 7 Enterprise Edition<a class="headerlink" href="#introducing-owncloud-7-enterprise-edition" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=SBn_8uVibLc">ownCloud 7 Enterprise Edition Enterprise File Sync and Share Software</a></p>
+<div class="figure">
+<a class="reference external image-reference" href="https://www.youtube.com/watch?v=SBn_8uVibLc"><img alt="_images/oc-video-2.png" src="_images/oc-video-2.png" /></a>
+</div>
+<p>ownCloud 7 Enterprise Edition introduces Universal File Access, which provides
+a single interface to all of your disparate systems and data silos. Integrate
+Sharepoint libraries, Windows network drives, link ownCloud servers with
+server-to-server sharing, and lots more.</p>
+</div>
+<div class="section" id="owncloud-for-enterprise-file-sync-and-share">
+<h2>ownCloud for Enterprise File Sync and Share<a class="headerlink" href="#owncloud-for-enterprise-file-sync-and-share" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=2HTQcf1zccU">ownCloud for Enterprise File Sync and Share</a></p>
+<div class="figure">
+<a class="reference external image-reference" href="https://www.youtube.com/watch?v=2HTQcf1zccU"><img alt="_images/oc-video-1.png" src="_images/oc-video-1.png" /></a>
+</div>
+<p>ownCloud is an enterprise-grade file sync and share solution that is hosted in your data
+center, on your servers, using your storage. ownCloud integrates seamlessly into your IT
+infrastructure; you can leave data where it lives and still deliver file sharing services
+that meet your data security and compliance policies.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

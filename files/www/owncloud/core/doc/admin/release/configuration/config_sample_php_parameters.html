@@ -1,0 +1,923 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Config.php Parameters &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Configuration" href="index.html" />
+    <link rel="next" title="Custom Client Configuration" href="custom_client_configuration.html" />
+    <link rel="prev" title="Configuring the Collaborative Documents App" href="collaborative_documents_configuration.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="activity_configuration.html">Configuring the Activity App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antivirus_configuration.html">Configuring the ClamAV Antivirus Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatic_configuration.html">Automatic Configuration Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background_jobs_configuration.html">Defining Background Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="big_file_upload_configuration.html">Uploading big files &gt; 512MB (as set by default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collaborative_documents_configuration.html">Configuring the Collaborative Documents App</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Config.php Parameters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#default-parameters">Default Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#default-config-php-examples">Default config.php Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-experience">User Experience</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mail-parameters">Mail Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#proxy-configurations">Proxy Configurations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleted-items-trash-bin">Deleted Items (trash bin)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#owncloud-verifications">ownCloud Verifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logging">Logging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alternate-code-locations">Alternate Code Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#apps">Apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#previews">Previews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ldap">LDAP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maintenance">Maintenance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ssl">SSL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#app-config-options">App config options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="custom_client_configuration.html">Custom Client Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database_configuration.html">Database Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_configuration.html">Email Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption_configuration.html">Encryption Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration_gui.html">Configuring External Storage (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration.html">Configuring External Storage (Configuration File)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_sites.html">Linking External Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_sharing_configuration.html">File Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files_locking_enabling.html">Files Locking App Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="harden_server.html">Hardening and Security Guidance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="js_css_asset_management_configuration.html">JavaScript and CSS Asset Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledgebase_configuration.html">Knowledge Base Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_configuration.html">Language Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging_configuration.html">Logging Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occ_command.html">Using the occ Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_tips.html">Performance Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="previews_configuration.html">Previews Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_proxy_configuration.html">Reverse Proxy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search_configuration.html">Enabling Full-Text Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_to_server_configuration.html">Configuring Server-to-Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serving_static_files_configuration.html">Serving Static Files for Better Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty_php_configuration.html">Using Third Party PHP Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ftp_smb_imap.html">User Authentication with IMAP, SMB, and FTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap.html">User Authentication with LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap_cleanup.html">LDAP User Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_configuration.html">User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset_admin_password.html">Resetting a Lost Admin Password</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="config-php-parameters">
+<h1>Config.php Parameters<a class="headerlink" href="#config-php-parameters" title="Permalink to this headline">¶</a></h1>
+<p>ownCloud uses the <tt class="docutils literal"><span class="pre">config/config.php</span></tt> file to control server operations.
+<tt class="docutils literal"><span class="pre">config/config.sample.php</span></tt> lists all the configurable parameters within
+ownCloud, along with example or default values. This document provides a more
+detailed reference. Most options are configurable on your Admin page, so it
+is usually not necessary to edit <tt class="docutils literal"><span class="pre">config/config.php</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The installer creates a configuration containing the essential parameters.
+Only manually add configuration parameters to <tt class="docutils literal"><span class="pre">config/config.php</span></tt> if you need to
+use a special value for a parameter. <strong>Do not copy everything from
+``config/config.sample.php``. Only enter the parameters you wish to modify!</strong></p>
+</div>
+<div class="section" id="default-parameters">
+<h2>Default Parameters<a class="headerlink" href="#default-parameters" title="Permalink to this headline">¶</a></h2>
+<p>These parameters are configured by the ownCloud installer, and are required
+for your ownCloud server to operate.</p>
+<div class="highlight-python"><pre>'instanceid' =&gt; '',</pre>
+</div>
+<p>This is a unique identifier for your ownCloud installation, created
+automatically by the installer. This example is for documentation only,
+and you should never use it because it will not work. A valid <tt class="docutils literal"><span class="pre">instanceid</span></tt>
+is created when you install ownCloud.</p>
+<p>&#8216;instanceid&#8217; =&gt; &#8216;d3c944a9a&#8217;,</p>
+<div class="highlight-python"><pre>'passwordsalt' =&gt; '',</pre>
+</div>
+<p>The salt used to hash all passwords, auto-generated by the ownCloud
+installer. (There are also per-user salts.) If you lose this salt you lose
+all your passwords. This example is for documentation only,
+and you should never use it.</p>
+<p>&#8216;passwordsalt&#8217; =&gt; &#8216;d3c944a9af095aa08f&#8217;,</p>
+<div class="highlight-python"><pre>'trusted_domains' =&gt;
+  array (
+    'demo.example.org',
+    'otherdomain.example.org',
+  ),</pre>
+</div>
+<p>Your list of trusted domains that users can log into. Specifying trusted
+domains prevents host header poisoning. Do not remove this, as it performs
+necessary security checks.</p>
+<div class="highlight-python"><pre>'datadirectory' =&gt; '/var/www/owncloud/data',</pre>
+</div>
+<p>Where user files are stored; this defaults to <tt class="docutils literal"><span class="pre">data/</span></tt> in the ownCloud
+directory. The SQLite database is also stored here, when you use SQLite. (SQLite is
+available only in ownCloud Community Edition)</p>
+<div class="highlight-python"><pre>'version' =&gt; '',</pre>
+</div>
+<p>The current version number of your ownCloud installation. This is set up
+during installation and update, so you shouldn&#8217;t need to change it.</p>
+<div class="highlight-python"><pre>'dbtype' =&gt; 'sqlite',</pre>
+</div>
+<p>Identifies the database used with this installation. See also config option
+<tt class="docutils literal"><span class="pre">supportedDatabases</span></tt></p>
+<dl class="docutils">
+<dt>Available:</dt>
+<dd><ul class="first last simple">
+<li>sqlite (SQLite3 - Community Edition Only)</li>
+<li>mysql (MySQL/MariaDB)</li>
+<li>pgsql (PostgreSQL)</li>
+<li>oci (Oracle - Enterprise Edition Only)</li>
+<li>mssql (Microsoft SQL Server - Enterprise Edition Only)</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-python"><pre>'dbhost' =&gt; '',</pre>
+</div>
+<p>Your host server name, for example <tt class="docutils literal"><span class="pre">localhost</span></tt>, <tt class="docutils literal"><span class="pre">hostname</span></tt>,
+<tt class="docutils literal"><span class="pre">hostname.example.com</span></tt>, or the IP address. To specify a port use
+<tt class="docutils literal"><span class="pre">hostname:####</span></tt>; to specify a Unix socket use
+<tt class="docutils literal"><span class="pre">localhost:/path/to/socket</span></tt>.</p>
+<div class="highlight-python"><pre>'dbname' =&gt; 'owncloud',</pre>
+</div>
+<p>The name of the ownCloud database, which is set during installation. You
+should not need to change this.</p>
+<div class="highlight-python"><pre>'dbuser' =&gt; '',</pre>
+</div>
+<p>The user that ownCloud uses to write to the database. This must be unique
+across ownCloud instances using the same SQL database. This is set up during
+installation, so you shouldn&#8217;t need to change it.</p>
+<div class="highlight-python"><pre>'dbpassword' =&gt; '',</pre>
+</div>
+<p>The password for the database user. This is set up during installation, so
+you shouldn&#8217;t need to change it.</p>
+<div class="highlight-python"><pre>'dbtableprefix' =&gt; '',</pre>
+</div>
+<p>Prefix for the ownCloud tables in the database.</p>
+<div class="highlight-python"><pre>'dbdriveroptions' =&gt; array(
+        PDO::MYSQL_ATTR_SSL_CA =&gt; '/file/path/to/ca_cert.pem',
+),</pre>
+</div>
+<p>Additional driver options for the database connection, eg. to enable SSL
+encryption in MySQL.</p>
+<div class="highlight-python"><pre>'installed' =&gt; false,</pre>
+</div>
+<p>Indicates whether the ownCloud instance was installed successfully; <tt class="docutils literal"><span class="pre">true</span></tt>
+indicates a successful installation, and <tt class="docutils literal"><span class="pre">false</span></tt> indicates an unsuccessful
+installation.</p>
+</div>
+<div class="section" id="default-config-php-examples">
+<h2>Default config.php Examples<a class="headerlink" href="#default-config-php-examples" title="Permalink to this headline">¶</a></h2>
+<p>When you use SQLite as your ownCloud database, your <tt class="docutils literal"><span class="pre">config.php</span></tt> looks like
+this after installation. The SQLite database is stored in your ownCloud
+<tt class="docutils literal"><span class="pre">data/</span></tt> directory. SQLite is a simple, lightweight embedded database that
+is good for testing and for simple installations, but for production ownCloud
+systems you should use MySQL, MariaDB, or PosgreSQL.</p>
+<div class="highlight-python"><pre>&lt;?php
+$CONFIG = array (
+  'instanceid' =&gt; 'occ6f7365735',
+  'passwordsalt' =&gt; '2c5778476346786306303',
+  'trusted_domains' =&gt;
+  array (
+    0 =&gt; 'localhost',
+    1 =&gt; 'studio',
+  ),
+  'datadirectory' =&gt; '/var/www/owncloud/data',
+  'dbtype' =&gt; 'sqlite3',
+  'version' =&gt; '7.0.2.1',
+  'installed' =&gt; true,
+);</pre>
+</div>
+<p>This example is from a new ownCloud installation using MariaDB:</p>
+<div class="highlight-python"><pre>&lt;?php
+$CONFIG = array (
+  'instanceid' =&gt; 'oc8c0fd71e03',
+  'passwordsalt' =&gt; '515a13302a6b3950a9d0fdb970191a',
+  'trusted_domains' =&gt;
+  array (
+    0 =&gt; 'localhost',
+    1 =&gt; 'studio',
+    2 =&gt; '192.168.10.155'
+  ),
+  'datadirectory' =&gt; '/var/www/owncloud/data',
+  'dbtype' =&gt; 'mysql',
+   'version' =&gt; '7.0.2.1',
+  'dbname' =&gt; 'owncloud',
+  'dbhost' =&gt; 'localhost',
+  'dbtableprefix' =&gt; 'oc_',
+  'dbuser' =&gt; 'oc_carla',
+  'dbpassword' =&gt; '67336bcdf7630dd80b2b81a413d07',
+  'installed' =&gt; true,
+);</pre>
+</div>
+</div>
+<div class="section" id="user-experience">
+<h2>User Experience<a class="headerlink" href="#user-experience" title="Permalink to this headline">¶</a></h2>
+<p>These optional parameters control some aspects of the user interface. Default
+values, where present, are shown.</p>
+<div class="highlight-python"><pre>'default_language' =&gt; 'en',</pre>
+</div>
+<p>This sets the default language on your ownCloud server, using ISO_639-1
+language codes such as <tt class="docutils literal"><span class="pre">en</span></tt> for English, <tt class="docutils literal"><span class="pre">de</span></tt> for German, and <tt class="docutils literal"><span class="pre">fr</span></tt> for
+French. It overrides automatic language detection on public pages like login
+or shared items. User&#8217;s language preferences configured under &#8220;personal -&gt;
+language&#8221; override this setting after they have logged in.</p>
+<div class="highlight-python"><pre>'defaultapp' =&gt; 'files',</pre>
+</div>
+<p>Set the default app to open on login. Use the app names as they appear in the
+URL after clicking them in the Apps menu, such as documents, calendar, and
+gallery. You can use a comma-separated list of app names, so if the first
+app is not enabled for a user then ownCloud will try the second one, and so
+on. If no enabled apps are found it defaults to the Files app.</p>
+<div class="highlight-python"><pre>'knowledgebaseenabled' =&gt; true,</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">true</span></tt> enables the Help menu item in the user menu (top right of the
+ownCloud Web interface). <tt class="docutils literal"><span class="pre">false</span></tt> removes the Help item.</p>
+<div class="highlight-python"><pre>'enable_avatars' =&gt; true,</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">true</span></tt> enables avatars, or user profile photos. These appear on the User
+page, on user&#8217;s Personal pages and are used by some apps (contacts, mail,
+etc). <tt class="docutils literal"><span class="pre">false</span></tt> disables them.</p>
+<div class="highlight-python"><pre>'allow_user_to_change_display_name' =&gt; true,</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">true</span></tt> allows users to change their display names (on their Personal
+pages), and <tt class="docutils literal"><span class="pre">false</span></tt> prevents them from changing their display names.</p>
+<div class="highlight-python"><pre>'remember_login_cookie_lifetime' =&gt; 60*60*24*15,</pre>
+</div>
+<p>Lifetime of the remember login cookie, which is set when the user clicks the
+<tt class="docutils literal"><span class="pre">remember</span></tt> checkbox on the login screen. The default is 15 days, expressed
+in seconds.</p>
+<div class="highlight-python"><pre>'session_lifetime' =&gt; 60 * 60 * 24,</pre>
+</div>
+<p>The lifetime of a session after inactivity; the default is 24 hours,
+expressed in seconds.</p>
+<div class="highlight-python"><pre>'session_keepalive' =&gt; true,</pre>
+</div>
+<p>Enable or disable session keep-alive when a user is logged in to the Web UI.</p>
+<p>Enabling this sends a &#8220;heartbeat&#8221; to the server to keep it from timing out.</p>
+<div class="highlight-python"><pre>'skeletondirectory' =&gt; '/path/to/owncloud/core/skeleton',</pre>
+</div>
+<p>The directory where the skeleton files are located. These files will be
+copied to the data directory of new users. Leave empty to not copy any
+skeleton files.</p>
+<div class="highlight-python"><pre>'user_backends' =&gt; array(
+        array(
+                'class' =&gt; 'OC_User_IMAP',
+                'arguments' =&gt; array('{imap.gmail.com:993/imap/ssl}INBOX')
+        )
+),</pre>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">user_backends</span></tt> app (which needs to be enabled first) allows you to
+configure alternate authentication backends. Supported backends are:
+IMAP (OC_User_IMAP), SMB (OC_User_SMB), and FTP (OC_User_FTP).</p>
+</div>
+<div class="section" id="mail-parameters">
+<h2>Mail Parameters<a class="headerlink" href="#mail-parameters" title="Permalink to this headline">¶</a></h2>
+<p>These configure the email settings for ownCloud notifications and password
+resets.</p>
+<div class="highlight-python"><pre>'mail_domain' =&gt; 'example.com',</pre>
+</div>
+<p>The return address that you want to appear on emails sent by the ownCloud
+server, for example <tt class="docutils literal"><span class="pre">oc-admin&#64;example.com</span></tt>, substituting your own domain,
+of course.</p>
+<div class="highlight-python"><pre>'mail_from_address' =&gt; 'owncloud',</pre>
+</div>
+<p>FROM address that overrides the built-in <tt class="docutils literal"><span class="pre">sharing-noreply</span></tt> and
+<tt class="docutils literal"><span class="pre">lostpassword-noreply</span></tt> FROM addresses.</p>
+<div class="highlight-python"><pre>'mail_smtpdebug' =&gt; false,</pre>
+</div>
+<p>Enable SMTP class debugging.</p>
+<div class="highlight-python"><pre>'mail_smtpmode' =&gt; 'sendmail',</pre>
+</div>
+<p>Which mode to use for sending mail: <tt class="docutils literal"><span class="pre">sendmail</span></tt>, <tt class="docutils literal"><span class="pre">smtp</span></tt>, <tt class="docutils literal"><span class="pre">qmail</span></tt> or
+<tt class="docutils literal"><span class="pre">php</span></tt>.</p>
+<p>If you are using local or remote SMTP, set this to <tt class="docutils literal"><span class="pre">smtp</span></tt>.</p>
+<p>If you are using PHP mail you must have an installed and working email system
+on the server. The program used to send email is defined in the <tt class="docutils literal"><span class="pre">php.ini</span></tt>
+file.</p>
+<p>For the <tt class="docutils literal"><span class="pre">sendmail</span></tt> option you need an installed and working email system on
+the server, with <tt class="docutils literal"><span class="pre">/usr/sbin/sendmail</span></tt> installed on your Unix system.</p>
+<p>For <tt class="docutils literal"><span class="pre">qmail</span></tt> the binary is /var/qmail/bin/sendmail, and it must be installed
+on your Unix system.</p>
+<div class="highlight-python"><pre>'mail_smtphost' =&gt; '127.0.0.1',</pre>
+</div>
+<p>This depends on <tt class="docutils literal"><span class="pre">mail_smtpmode</span></tt>. Specified the IP address of your mail
+server host. This may contain multiple hosts separated by a semi-colon. If
+you need to specify the port number append it to the IP address separated by
+a colon, like this: <tt class="docutils literal"><span class="pre">127.0.0.1:24</span></tt>.</p>
+<div class="highlight-python"><pre>'mail_smtpport' =&gt; 25,</pre>
+</div>
+<p>This depends on <tt class="docutils literal"><span class="pre">mail_smtpmode</span></tt>. Specify the port for sending mail.</p>
+<div class="highlight-python"><pre>'mail_smtptimeout' =&gt; 10,</pre>
+</div>
+<p>This depends on <tt class="docutils literal"><span class="pre">mail_smtpmode</span></tt>. This set an SMTP server timeout, in
+seconds. You may need to increase this if you are running an anti-malware or
+spam scanner.</p>
+<div class="highlight-python"><pre>'mail_smtpsecure' =&gt; '',</pre>
+</div>
+<p>This depends on <tt class="docutils literal"><span class="pre">mail_smtpmode</span></tt>. Specify when you are using <tt class="docutils literal"><span class="pre">ssl</span></tt> or
+<tt class="docutils literal"><span class="pre">tls</span></tt>, or leave empty for no encryption.</p>
+<div class="highlight-python"><pre>'mail_smtpauth' =&gt; false,</pre>
+</div>
+<p>This depends on <tt class="docutils literal"><span class="pre">mail_smtpmode</span></tt>. Change this to <tt class="docutils literal"><span class="pre">true</span></tt> if your mail
+server requires authentication.</p>
+<div class="highlight-python"><pre>'mail_smtpauthtype' =&gt; 'LOGIN',</pre>
+</div>
+<p>This depends on <tt class="docutils literal"><span class="pre">mail_smtpmode</span></tt>. If SMTP authentication is required, choose
+the authentication type as <tt class="docutils literal"><span class="pre">LOGIN</span></tt> (default) or <tt class="docutils literal"><span class="pre">PLAIN</span></tt>.</p>
+<div class="highlight-python"><pre>'mail_smtpname' =&gt; '',</pre>
+</div>
+<p>This depends on <tt class="docutils literal"><span class="pre">mail_smtpauth</span></tt>. Specify the username for authenticating to
+the SMTP server.</p>
+<div class="highlight-python"><pre>'mail_smtppassword' =&gt; '',</pre>
+</div>
+<p>This depends on <tt class="docutils literal"><span class="pre">mail_smtpauth</span></tt>. Specify the password for authenticating to
+the SMTP server.</p>
+</div>
+<div class="section" id="proxy-configurations">
+<h2>Proxy Configurations<a class="headerlink" href="#proxy-configurations" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>'overwritehost' =&gt; '',</pre>
+</div>
+<p>The automatic hostname detection of ownCloud can fail in certain reverse
+proxy and CLI/cron situations. This option allows you to manually override
+the automatic detection; for example <tt class="docutils literal"><span class="pre">www.example.com</span></tt>, or specify the port
+<tt class="docutils literal"><span class="pre">www.example.com:8080</span></tt>.</p>
+<div class="highlight-python"><pre>'overwriteprotocol' =&gt; '',</pre>
+</div>
+<p>When generating URLs, ownCloud attempts to detect whether the server is
+accessed via <tt class="docutils literal"><span class="pre">https</span></tt> or <tt class="docutils literal"><span class="pre">http</span></tt>. However, if ownCloud is behind a proxy
+and the proxy handles the <tt class="docutils literal"><span class="pre">https</span></tt> calls, ownCloud would not know that
+<tt class="docutils literal"><span class="pre">ssl</span></tt> is in use, which would result in incorrect URLs being generated.</p>
+<p>Valid values are <tt class="docutils literal"><span class="pre">http</span></tt> and <tt class="docutils literal"><span class="pre">https</span></tt>.</p>
+<div class="highlight-python"><pre>'overwritewebroot' =&gt; '',</pre>
+</div>
+<p>ownCloud attempts to detect the webroot for generating URLs automatically.</p>
+<p>For example, if <tt class="docutils literal"><span class="pre">www.example.com/owncloud</span></tt> is the URL pointing to the
+ownCloud instance, the webroot is <tt class="docutils literal"><span class="pre">/owncloud</span></tt>. When proxies are in use, it
+may be difficult for ownCloud to detect this parameter, resulting in invalid
+URLs.</p>
+<div class="highlight-python"><pre>'overwritecondaddr' =&gt; '',</pre>
+</div>
+<p>This option allows you to define a manual override condition as a regular
+expression for the remote IP address. For example, defining a range of IP
+addresses starting with <tt class="docutils literal"><span class="pre">10.0.0.</span></tt> and ending with 1 to 3:
+<tt class="docutils literal"><span class="pre">^10\.0\.0\.[1-3]$</span></tt></p>
+<div class="highlight-python"><pre>'overwrite.cli.url' =&gt; '',</pre>
+</div>
+<p>Use this configuration parameter to specify the base url for any urls which
+are generated within ownCloud using any kind of command line tools (cron or
+occ). The value should contain the full base URL:
+<tt class="docutils literal"><span class="pre">https://www.example.com/owncloud</span></tt></p>
+<div class="highlight-python"><pre>'proxy' =&gt; '',</pre>
+</div>
+<p>The URL of your proxy server, for example <tt class="docutils literal"><span class="pre">proxy.example.com:8081</span></tt>.</p>
+<div class="highlight-python"><pre>'proxyuserpwd' =&gt; '',</pre>
+</div>
+<p>The optional authentication for the proxy to use to connect to the internet.</p>
+<p>The format is: <tt class="docutils literal"><span class="pre">username:password</span></tt>.</p>
+</div>
+<div class="section" id="deleted-items-trash-bin">
+<h2>Deleted Items (trash bin)<a class="headerlink" href="#deleted-items-trash-bin" title="Permalink to this headline">¶</a></h2>
+<p>These parameters control the Deleted files app.</p>
+<div class="highlight-python"><pre>'trashbin_retention_obligation' =&gt; 30,</pre>
+</div>
+<p>When the trash bin app is enabled (default), this is the number of days a
+file will be kept in the trash bin. Default is 30 days.</p>
+<div class="highlight-python"><pre>'trashbin_auto_expire' =&gt; true,</pre>
+</div>
+<p>Disable or enable auto-expiration for the trash bin. By default
+auto-expiration is enabled.</p>
+</div>
+<div class="section" id="owncloud-verifications">
+<h2>ownCloud Verifications<a class="headerlink" href="#owncloud-verifications" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud performs several verification checks. There are two options,
+<tt class="docutils literal"><span class="pre">true</span></tt> and <tt class="docutils literal"><span class="pre">false</span></tt>.</p>
+<div class="highlight-python"><pre>'appcodechecker' =&gt; true,</pre>
+</div>
+<p>Check 3rd party apps to make sure they are using the private API and not the
+public API. If the app uses the private API it cannot be installed.</p>
+<div class="highlight-python"><pre>'updatechecker' =&gt; true,</pre>
+</div>
+<p>Check if ownCloud is up-to-date and shows a notification if a new version is
+available.</p>
+<div class="highlight-python"><pre>'has_internet_connection' =&gt; true,</pre>
+</div>
+<p>Is ownCloud connected to the Internet or running in a closed network?</p>
+<div class="highlight-python"><pre>'check_for_working_webdav' =&gt; true,</pre>
+</div>
+<p>Allows ownCloud to verify a working WebDAV connection. This is done by
+attempting to make a WebDAV request from PHP.</p>
+<div class="highlight-python"><pre>'check_for_working_htaccess' =&gt; true,</pre>
+</div>
+<p>This is a crucial security check on Apache servers that should always be set
+to <tt class="docutils literal"><span class="pre">true</span></tt>. This verifies that the <tt class="docutils literal"><span class="pre">.htaccess</span></tt> file is writable and works.</p>
+<p>If it is not, then any options controlled by <tt class="docutils literal"><span class="pre">.htaccess</span></tt>, such as large
+file uploads, will not work. It also runs checks on the <tt class="docutils literal"><span class="pre">data/</span></tt> directory,
+which verifies that it can&#8217;t be accessed directly through the web server.</p>
+<div class="highlight-python"><pre>'config_is_read_only' =&gt; false,</pre>
+</div>
+<p>In certain environments it is desired to have a read-only config file.</p>
+<p>When this switch is set to <tt class="docutils literal"><span class="pre">true</span></tt> ownCloud will not verify whether the
+configuration is writable. However, it will not be possible to configure
+all options via the web-interface. Furthermore, when updating ownCloud
+it is required to make the config file writable again for the update
+process.</p>
+</div>
+<div class="section" id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>'log_type' =&gt; 'owncloud',</pre>
+</div>
+<p>By default the ownCloud logs are sent to the <tt class="docutils literal"><span class="pre">owncloud.log</span></tt> file in the
+default ownCloud data directory. If syslogging is desired, set this parameter
+to <tt class="docutils literal"><span class="pre">syslog</span></tt>.</p>
+<div class="highlight-python"><pre>'logfile' =&gt; 'owncloud.log',</pre>
+</div>
+<p>Change the ownCloud logfile name from <tt class="docutils literal"><span class="pre">owncloud.log</span></tt> to something else.</p>
+<div class="highlight-python"><pre>'loglevel' =&gt; 2,</pre>
+</div>
+<p>Loglevel to start logging at. Valid values are: 0 = Debug, 1 = Info, 2 =
+Warning, 3 = Error. The default value is Warning.</p>
+<div class="highlight-python"><pre>'logdateformat' =&gt; 'F d, Y H:i:s',</pre>
+</div>
+<p>This uses PHP.date formatting; see <a class="reference external" href="http://php.net/manual/en/function.date.php">http://php.net/manual/en/function.date.php</a></p>
+<div class="highlight-python"><pre>'logtimezone' =&gt; 'Europe/Berlin',</pre>
+</div>
+<p>The default timezone for logfiles is UTC. You may change this; see
+<a class="reference external" href="http://php.net/manual/en/timezones.php">http://php.net/manual/en/timezones.php</a></p>
+<div class="highlight-python"><pre>'log_query' =&gt; false,</pre>
+</div>
+<p>Append all database queries and parameters to the log file. Use this only for
+debugging, as your logfile will become huge.</p>
+<div class="highlight-python"><pre>'cron_log' =&gt; true,</pre>
+</div>
+<p>Log successful cron runs.</p>
+<div class="highlight-python"><pre>'log_rotate_size' =&gt; false,</pre>
+</div>
+<p>Enables log rotation and limits the total size of logfiles. The default is 0,
+or no rotation. Specify a size in bytes, for example 104857600 (100 megabytes
+= 100 * 1024 * 1024 bytes). A new logfile is created with a new name when the
+old logfile reaches your limit. The total size of all logfiles is double the
+<tt class="docutils literal"><span class="pre">log_rotate_sizerotation</span></tt> value.</p>
+</div>
+<div class="section" id="alternate-code-locations">
+<h2>Alternate Code Locations<a class="headerlink" href="#alternate-code-locations" title="Permalink to this headline">¶</a></h2>
+<p>Some of the ownCloud code may be stored in alternate locations.</p>
+<div class="highlight-python"><pre>'3rdpartyroot' =&gt; '',</pre>
+</div>
+<p>ownCloud uses some 3rd party PHP components to provide certain functionality.</p>
+<p>These components are shipped as part of the software package and reside in
+<tt class="docutils literal"><span class="pre">owncloud/3rdparty</span></tt>. Use this option to configure a different location.</p>
+<div class="highlight-python"><pre>'3rdpartyurl' =&gt; '',</pre>
+</div>
+<p>If you have an alternate <tt class="docutils literal"><span class="pre">3rdpartyroot</span></tt>, you must also configure the URL as
+seen by a Web browser.</p>
+<div class="highlight-python"><pre>'customclient_desktop' =&gt;
+        'http://owncloud.org/sync-clients/',
+'customclient_android' =&gt;
+        'https://play.google.com/store/apps/details?id=com.owncloud.android',
+'customclient_ios' =&gt;
+        'https://itunes.apple.com/us/app/owncloud/id543672169?mt=8',</pre>
+</div>
+<p>This section is for configuring the download links for ownCloud clients, as
+seen in the first-run wizard and on Personal pages.</p>
+</div>
+<div class="section" id="apps">
+<h2>Apps<a class="headerlink" href="#apps" title="Permalink to this headline">¶</a></h2>
+<p>Options for the Apps folder, Apps store, and App code checker.</p>
+<div class="highlight-python"><pre>'appstoreenabled' =&gt; true,</pre>
+</div>
+<p>When enabled, admins may install apps from the ownCloud app store.</p>
+<p>The app store is disabled by default for ownCloud Enterprise Edition</p>
+<div class="highlight-python"><pre>'appstoreurl' =&gt; 'https://api.owncloud.com/v1',</pre>
+</div>
+<p>The URL of the appstore to use.</p>
+<div class="highlight-python"><pre>'apps_paths' =&gt; array(
+        array(
+                'path'=&gt; '/var/www/owncloud/apps',
+                'url' =&gt; '/apps',
+                'writable' =&gt; true,
+        ),
+),</pre>
+</div>
+<p>Use the <tt class="docutils literal"><span class="pre">apps_paths</span></tt> parameter to set the location of the Apps directory,
+which should be scanned for available apps, and where user-specific apps
+should be installed from the Apps store. The <tt class="docutils literal"><span class="pre">path</span></tt> defines the absolute
+file system path to the app folder. The key <tt class="docutils literal"><span class="pre">url</span></tt> defines the HTTP web path
+to that folder, starting from the ownCloud web root. The key <tt class="docutils literal"><span class="pre">writable</span></tt>
+indicates if a web server can write files to that folder.</p>
+<div class="highlight-python"><pre>'appcodechecker' =&gt; true,</pre>
+</div>
+<p>Check 3rd party apps to make sure they are using the private API and not the
+public API. If the app uses the private API it cannot be installed.</p>
+</div>
+<div class="section" id="previews">
+<h2>Previews<a class="headerlink" href="#previews" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud supports previews of image files, the covers of MP3 files, and text
+files. These options control enabling and disabling previews, and thumbnail
+size.</p>
+<div class="highlight-python"><pre>'enable_previews' =&gt; true,</pre>
+</div>
+<p>By default, ownCloud can generate previews for the following filetypes:</p>
+<ul class="simple">
+<li>Images files</li>
+<li>Covers of MP3 files</li>
+<li>Text documents</li>
+</ul>
+<p>Valid values are <tt class="docutils literal"><span class="pre">true</span></tt>, to enable previews, or
+<tt class="docutils literal"><span class="pre">false</span></tt>, to disable previews</p>
+<div class="highlight-python"><pre>'preview_max_x' =&gt; null,</pre>
+</div>
+<p>The maximum width, in pixels, of a preview. A value of <tt class="docutils literal"><span class="pre">null</span></tt> means there
+is no limit.</p>
+<div class="highlight-python"><pre>'preview_max_y' =&gt; null,</pre>
+</div>
+<p>The maximum height, in pixels, of a preview. A value of <tt class="docutils literal"><span class="pre">null</span></tt> means there
+is no limit.</p>
+<div class="highlight-python"><pre>'preview_max_scale_factor' =&gt; 10,</pre>
+</div>
+<p>If a lot of small pictures are stored on the ownCloud instance and the
+preview system generates blurry previews, you might want to consider setting
+a maximum scale factor. By default, pictures are upscaled to 10 times the
+original size. A value of <tt class="docutils literal"><span class="pre">1</span></tt> or <tt class="docutils literal"><span class="pre">null</span></tt> disables scaling.</p>
+<div class="highlight-python"><pre>'preview_max_filesize_image' =&gt; 50,</pre>
+</div>
+<p>max file size for generating image previews with imagegd (default behaviour)
+If the image is bigger, it&#8217;ll try other preview generators,
+but will most likely show the default mimetype icon</p>
+<p>Value represents the maximum filesize in megabytes
+Default is 50
+Set to -1 for no limit</p>
+<div class="highlight-python"><pre>'preview_libreoffice_path' =&gt; '/usr/bin/libreoffice',</pre>
+</div>
+<p>custom path for LibreOffice/OpenOffice binary</p>
+<div class="highlight-python"><pre>'preview_office_cl_parameters' =&gt;
+        ' --headless --nologo --nofirststartwizard --invisible --norestore '.
+        '-convert-to pdf -outdir ',</pre>
+</div>
+<p>Use this if LibreOffice/OpenOffice requires additional arguments.</p>
+<div class="highlight-python"><pre>'enabledPreviewProviders' =&gt; array(
+        'OC\Preview\Image',
+        'OC\Preview\MP3',
+        'OC\Preview\TXT',
+        'OC\Preview\MarkDown'
+),</pre>
+</div>
+<p>Only register providers that have been explicitly enabled</p>
+<p>The following providers are enabled by default:</p>
+<blockquote>
+<div><ul class="simple">
+<li>OC\Preview\Image</li>
+<li>OC\Preview\MarkDown</li>
+<li>OC\Preview\MP3</li>
+<li>OC\Preview\TXT</li>
+</ul>
+</div></blockquote>
+<p>The following providers are disabled by default due to performance or privacy
+concerns:</p>
+<blockquote>
+<div><ul class="simple">
+<li>OC\Preview\Movie</li>
+<li>OC\Preview\MSOffice2003</li>
+<li>OC\Preview\MSOffice2007</li>
+<li>OC\Preview\MSOfficeDoc</li>
+<li>OC\Preview\OpenDocument</li>
+<li>OC\Preview\PDF</li>
+<li>OC\Preview\StarOffice</li>
+<li>OC\Preview\SVG</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Troubleshooting steps for the MS Word previews are available
+at the <a class="reference internal" href="collaborative_documents_configuration.html"><em>Configuring the Collaborative Documents App</em></a> section
+of the Administrators Manual.</p>
+</div>
+<p>The following providers are not available in Microsoft Windows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>OC\Preview\Movie</li>
+<li>OC\Preview\MSOfficeDoc</li>
+<li>OC\Preview\MSOffice2003</li>
+<li>OC\Preview\MSOffice2007</li>
+<li>OC\Preview\OpenDocument</li>
+<li>OC\Preview\StarOffice</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="ldap">
+<h2>LDAP<a class="headerlink" href="#ldap" title="Permalink to this headline">¶</a></h2>
+<p>Global settings used by LDAP User and Group Backend</p>
+<div class="highlight-python"><pre>'ldapUserCleanupInterval' =&gt; 51,</pre>
+</div>
+<p>defines the interval in minutes for the background job that checks user
+existance and marks them as ready to be cleaned up. The number is always
+minutes. Setting it to 0 disables the feature.</p>
+<p>See command line (occ) methods <a class="reference external" href="ldap:show-remnants">ldap:show-remnants</a> and user:delete</p>
+</div>
+<div class="section" id="maintenance">
+<h2>Maintenance<a class="headerlink" href="#maintenance" title="Permalink to this headline">¶</a></h2>
+<p>These options are for halting user activity when you are performing server
+maintenance.</p>
+<div class="highlight-python"><pre>'maintenance' =&gt; false,</pre>
+</div>
+<p>Enable maintenance mode to disable ownCloud</p>
+<p>If you want to prevent users to login to ownCloud before you start doing some
+maintenance work, you need to set the value of the maintenance parameter to
+true. Please keep in mind that users who are already logged-in are kicked out
+of ownCloud instantly.</p>
+<div class="highlight-python"><pre>'singleuser' =&gt; false,</pre>
+</div>
+<p>When set to <tt class="docutils literal"><span class="pre">true</span></tt>, the ownCloud instance will be unavailable for all users
+who are not in the <tt class="docutils literal"><span class="pre">admin</span></tt> group.</p>
+</div>
+<div class="section" id="ssl">
+<h2>SSL<a class="headerlink" href="#ssl" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>'forcessl' =&gt; false,</pre>
+</div>
+<p>Change this to <tt class="docutils literal"><span class="pre">true</span></tt> to require HTTPS for all connections, and to reject
+HTTP requests.</p>
+<div class="highlight-python"><pre>'openssl' =&gt; array(
+        'config' =&gt; '/absolute/location/of/openssl.cnf',
+),</pre>
+</div>
+<p>Extra SSL options to be used for configuration.</p>
+</div>
+<div class="section" id="miscellaneous">
+<h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>'blacklisted_files' =&gt; array('.htaccess'),</pre>
+</div>
+<p>Blacklist a specific file or files and disallow the upload of files
+with this name. <tt class="docutils literal"><span class="pre">.htaccess</span></tt> is blocked by default.</p>
+<p>WARNING: USE THIS ONLY IF YOU KNOW WHAT YOU ARE DOING.</p>
+<div class="highlight-python"><pre>'share_folder' =&gt; '/',</pre>
+</div>
+<p>Define a default folder for shared files and folders other than root.</p>
+<div class="highlight-python"><pre>'theme' =&gt; '',</pre>
+</div>
+<p>If you are applying a theme to ownCloud, enter the name of the theme here.</p>
+<p>The default location for themes is <tt class="docutils literal"><span class="pre">owncloud/themes/</span></tt>.</p>
+<div class="highlight-python"><pre>'xframe_restriction' =&gt; true,</pre>
+</div>
+<p>X-Frame-Restriction is a header which prevents browsers from showing the site
+inside an iframe. This is be used to prevent clickjacking. It is risky to
+disable this, so leave it set at <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+<div class="highlight-python"><pre>'cipher' =&gt; 'AES-256-CFB',</pre>
+</div>
+<p>The default cipher for encrypting files. Currently AES-128-CFB and
+AES-256-CFB are supported.</p>
+<div class="highlight-python"><pre>'memcached_servers' =&gt; array(
+        // hostname, port and optional weight. Also see:
+        // http://www.php.net/manual/en/memcached.addservers.php
+        // http://www.php.net/manual/en/memcached.addserver.php
+        array('localhost', 11211),
+        //array('other.host.local', 11211),
+),</pre>
+</div>
+<p>Server details for one or more memcached servers to use for memory caching.</p>
+<p>Memcache is only used if other memory cache options (xcache, apc, apcu) are
+not available.</p>
+<div class="highlight-python"><pre>'cache_path' =&gt; '',</pre>
+</div>
+<p>Location of the cache folder, defaults to <tt class="docutils literal"><span class="pre">data/$user/cache</span></tt> where
+<tt class="docutils literal"><span class="pre">$user</span></tt> is the current user. When specified, the format will change to
+<tt class="docutils literal"><span class="pre">$cache_path/$user</span></tt> where <tt class="docutils literal"><span class="pre">$cache_path</span></tt> is the configured cache directory
+and <tt class="docutils literal"><span class="pre">$user</span></tt> is the user.</p>
+<div class="highlight-python"><pre>'quota_include_external_storage' =&gt; false,</pre>
+</div>
+<p>EXPERIMENTAL: option whether to include external storage in quota
+calculation, defaults to false.</p>
+<div class="highlight-python"><pre>'filesystem_check_changes' =&gt; 1,</pre>
+</div>
+<p>Specifies how often the filesystem is checked for changes made outside
+ownCloud.</p>
+<p>0 -&gt; Never check the filesystem for outside changes, provides a performance
+increase when it&#8217;s certain that no changes are made directly to the
+filesystem</p>
+<p>1 -&gt; Check each file or folder at most once per request, recommended for
+general use if outside changes might happen.</p>
+<p>2 -&gt; Check every time the filesystem is used, causes a performance hit when
+using external storages, not recommended for regular use.</p>
+<div class="highlight-python"><pre>'asset-pipeline.enabled' =&gt; false,</pre>
+</div>
+<p>All css and js files will be served by the web server statically in one js
+file and one css file if this is set to <tt class="docutils literal"><span class="pre">true</span></tt>.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Test this thoroughly on production systems as it should work reliably
+with core apps, but you may encounter problems with community/third-party apps.</p>
+</div>
+<div class="highlight-python"><pre>'mount_file' =&gt; 'data/mount.json',</pre>
+</div>
+<p>Where <tt class="docutils literal"><span class="pre">mount.json</span></tt> file should be stored, defaults to <tt class="docutils literal"><span class="pre">data/mount.json</span></tt></p>
+<div class="highlight-python"><pre>'filesystem_cache_readonly' =&gt; false,</pre>
+</div>
+<p>When <tt class="docutils literal"><span class="pre">true</span></tt>, prevent ownCloud from changing the cache due to changes in the
+filesystem for all storage.</p>
+<div class="highlight-python"><pre>'objectstore' =&gt; array(
+        'class' =&gt; 'OC\\Files\\ObjectStore\\Swift',
+        'arguments' =&gt; array(
+                // trystack will user your facebook id as the user name
+                'username' =&gt; 'facebook100000123456789',
+                // in the trystack dashboard go to user -&gt; settings -&gt; API Password to
+                // generate a password
+                'password' =&gt; 'Secr3tPaSSWoRdt7',
+                // must already exist in the objectstore, name can be different
+                'container' =&gt; 'owncloud',
+                // create the container if it does not exist. default is false
+                'autocreate' =&gt; true,
+                // required, dev-/trystack defaults to 'RegionOne'
+                'region' =&gt; 'RegionOne',
+                // The Identity / Keystone endpoint
+                'url' =&gt; 'http://8.21.28.222:5000/v2.0',
+                // required on dev-/trystack
+                'tenantName' =&gt; 'facebook100000123456789',
+                // dev-/trystack uses swift by default, the lib defaults to 'cloudFiles'
+                // if omitted
+                'serviceName' =&gt; 'swift',
+        ),
+),</pre>
+</div>
+<p>The example below shows how to configure ownCloud to store all files in a
+swift object storage.</p>
+<p>It is important to note that ownCloud in object store mode will expect
+exclusive access to the object store container because it only stores the
+binary data for each file. The metadata is currently kept in the local
+database for performance reasons.</p>
+<p>WARNING: The current implementation is incompatible with any app that uses
+direct file IO and circumvents our virtual filesystem. That includes
+Encryption and Gallery. Gallery will store thumbnails directly in the
+filesystem and encryption will cause severe overhead because key files need
+to be fetched in addition to any requested file.</p>
+<p>One way to test is applying for a trystack account at <a class="reference external" href="http://trystack.org/">http://trystack.org/</a></p>
+<div class="highlight-python"><pre>'supportedDatabases' =&gt; array(
+        'sqlite',
+        'mysql',
+        'pgsql',
+        'oci',
+        'mssql'
+),</pre>
+</div>
+<p>Database types that are supported for installation.</p>
+<dl class="docutils">
+<dt>Available:</dt>
+<dd><ul class="first last simple">
+<li>sqlite (SQLite3 - Community Edition Only)</li>
+<li>mysql (MySQL)</li>
+<li>pgsql (PostgreSQL)</li>
+<li>oci (Oracle - Enterprise Edition Only)</li>
+<li>mssql (Microsoft SQL Server - Enterprise Edition Only)</li>
+</ul>
+</dd>
+</dl>
+<div class="highlight-python"><pre>'custom_csp_policy' =&gt;
+        "default-src 'self'; script-src 'self' 'unsafe-eval'; ".
+        "style-src 'self' 'unsafe-inline'; frame-src *; img-src *; ".
+        "font-src 'self' data:; media-src *",</pre>
+</div>
+<p>Custom CSP policy, changing this will overwrite the standard policy</p>
+<div class="highlight-python"><pre>'secret' =&gt; 'ICertainlyShouldHaveChangedTheDefaultSecret',</pre>
+</div>
+<p>Secret used by ownCloud for various purposes, e.g. to encrypt data. If you
+lose this string there will be data corruption.</p>
+</div>
+<div class="section" id="app-config-options">
+<h2>App config options<a class="headerlink" href="#app-config-options" title="Permalink to this headline">¶</a></h2>
+<p>Retention for activities of the activity app:</p>
+<div class="highlight-python"><pre>'activity_expire_days' =&gt; 365,</pre>
+</div>
+<p>Every day a cron job is ran, which deletes all activities for all users
+which are older then the number of days that is set for <tt class="docutils literal"><span class="pre">activity_expire_days</span></tt></p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

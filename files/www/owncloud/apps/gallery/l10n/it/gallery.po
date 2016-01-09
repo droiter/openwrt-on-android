@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# formalist <formalist@email.it>, 2012
+# ufic <marco@carnazzo.it>, 2012
+# Michele <michele.mastropietro@gmail.com>, 2014
+# Paolo Velati <paolo.velati@gmail.com>, 2013
+# Vincenzo Reale <vinx.reale@gmail.com>, 2012-2014
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-15 02:18-0400\n"
+"PO-Revision-Date: 2014-06-14 07:40+0000\n"
+"Last-Translator: Vincenzo Reale <vinx.reale@gmail.com>\n"
+"Language-Team: Italian (http://www.transifex.com/projects/p/owncloud/language/it/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: appinfo/app.php:36 js/gallery.js:127
+msgid "Pictures"
+msgstr "Immagini"
+
+#: js/public.js:23
+msgid "Picture view"
+msgstr "Vista immagini"
+
+#: js/slideshow.js:338
+msgid "Error loading slideshow template"
+msgstr "Errore durante il caricamento del modello di presentazione"
+
+#: templates/index.php:4 templates/index.php:5
+msgid "Share"
+msgstr "Condividi"
+
+#: templates/index.php:11
+msgid ""
+"No pictures found! If you upload pictures in the files app, they will be "
+"displayed here."
+msgstr "Nessuna immagine trovata. Se carichi immagini nell'applicazione dei file, esse saranno visualizzate qui."
+
+#: templates/public.php:9
+#, php-format
+msgid "shared by %s"
+msgstr "condiviso da %s"
+
+#: templates/public.php:20
+msgid "File list"
+msgstr "Elenco dei file"

@@ -1,0 +1,197 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Synchronizing with OS X &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Contacts &amp; Calendar" href="index.html" />
+    <link rel="next" title="Thunderbird - Synchronize Addressbook" href="sync_thunderbird.html" />
+    <link rel="prev" title="iOS - Synchronize iPhone/iPad" href="sync_ios.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">Files &amp; Synchronization</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contacts &amp; Calendar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contacts.html">Using the Contacts App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Using the Calendar App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_ios.html">iOS - Synchronize iPhone/iPad</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Synchronizing with OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_thunderbird.html">Thunderbird - Synchronize Addressbook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_kde.html">Synchronizing with KDE SC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="synchronizing-with-os-x">
+<h1>Synchronizing with OS X<a class="headerlink" href="#synchronizing-with-os-x" title="Permalink to this headline">¶</a></h1>
+<p>To use ownCloud with iCal you will need to use the following URL:</p>
+<div class="highlight-python"><pre>http://ADDRESS/remote.php/caldav/principals/username/</pre>
+</div>
+<p>The setup is basically the same as with iOS using the path <strong>ADDRESS/remote.php/caldav/principals/username/</strong> to sync with ownCloud. For OS X 10.7 Lion and 10.8 Mountain Lion everything works fine, but OS X 10.6 (Snow Leopard) and older needs some fiddling to work. A user contributed the following:</p>
+<ol class="arabic">
+<li><p class="first">Make sure, addressbook is not running. If it is, select the windows and press Command + Q to terminate it.</p>
+</li>
+<li><p class="first">Navigate to <strong>/Users/YOUR_USERNAME/Library/Application Support/AddressBook/Sources</strong>. If you have all ready some kind of addressbook setup, it is likely you will see some folders named like this <strong>BEA92826-FBF3-4E53-B5C6-ED7C2B454430</strong>. Note down what folders there are now and leave the window open.</p>
+</li>
+<li><p class="first">Open addressbook and try to add a new CardDav addressbook. At this point, it does not matter what information you enter. It will come up with the same error message you mentioned before when you click &#8220;Create&#8221;. Ignore it and click &#8220;Create&#8221; again. A non-functional addressbook will be added.</p>
+</li>
+<li><p class="first">Close addressbook again using Command + Q</p>
+</li>
+<li><p class="first">Go back to the folder window from step 2. You will now see a newly created folder with another long string as its name.</p>
+</li>
+<li><p class="first">Navigate to the newly created folder and edit the <strong>Configuration.plist</strong> with your favorite text editor.</p>
+</li>
+<li><p class="first">Search for a section looking like this:</p>
+<div class="highlight-python"><pre>&lt;key&gt;servername&lt;/key&gt; &lt;string&gt;http://:0(null)&lt;/string&gt; &lt;key&gt;username&lt;/key&gt; &lt;string&gt;Whatever_you_entered_before&lt;/string&gt;</pre>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="8">
+<li><p class="first">Make it look like this. Please note that the :80 after <strong>YOUR_DOMAIN</strong> is important:</p>
+<div class="highlight-python"><pre>&lt;key&gt;servername&lt;/key &lt;string&gt;http://YOUR_DOMAIN:80/owncloud/remote.php/carddav/principals/username&lt;/string&gt; &lt;key&gt;username&lt;/key &lt;string&gt;username&lt;/string&gt;</pre>
+</div>
+</li>
+<li><p class="first">Save the file and open addressbook again. It will not work yet.</p>
+</li>
+<li><p class="first">Open the preferences for your ownCloud CardDAV-Account and enter your password.</p>
+</li>
+<li><p class="first">You may have to restart addressbook once more. After this, it should work.</p>
+</li>
+</ol>
+<p>If it&#8217;s still not working, have a look at the <a class="reference internal" href="troubleshooting.html"><em>Troubleshooting</em></a>
+and <a class="reference external" href="https://doc.owncloud.org/server/7.0/admin_manual/issues/index.html#troubleshooting-contacts-calendar">Troubleshooting Contacts &amp; Calendar</a> guides.</p>
+<p>There is also an easy <a class="reference external" href="http://forum.owncloud.org/viewtopic.php?f=3&amp;t=132">HOWTO</a> in the forum.</p>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

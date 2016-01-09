@@ -1,0 +1,164 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!--
+	Parameters available
+	<import_core>
+	@brief: main parameters
+		<name></name>
+		@brief: Internal name
+		must match the xml file name with the pattern import_<name>_connector.xml
+		
+		<display_name></display_name>
+		@brief: Display name
+		
+		<type></type>
+		@brief: type (csv,vcard,ldif,...)
+		
+		<active></active>
+		@brief: if 0, will not be used
+		
+		<card_begin value=""/>
+		@brief: string delimiter to set the begining of a VCard
+		
+		<card_end value=""/>
+		@brief: string delimiter to set the end of a VCard
+		
+		<replace from="" to="" />
+		@brief: strings to replace in the source card before parsing
+		
+	</import_core>
+	
+		</vcard_entry>
+	</import_entry>
+
+	<import_entry property="" enabled="" separator="" remove="">
+	@brief: vcard property to look for
+	property: property name
+	enabled: import_entry used or not
+	separator: string used to separate multiple values
+	remove: string to remove in the value
+		
+		<group_entry property="" value="">
+		@brief: used to filter property search with group value
+		
+		<vcard_favourites></vcard_favourites>
+		@brief: entry value to look for in order to add the current VCard to the Favourites section
+
+		<vcard_entry property="" type="" prefix=""/>
+		@brief: VCard entry to add
+		property: VCard property name
+		type: VCard property type
+		prefix: prefix to add to the value
+		
+			<additional_property name="" value="" />
+			@brief: optional parameter to add
+			name: name of the parameter
+			value: value of the parameter
+			
+	</import_entry>
+-->
+<!--
+XML connector for Gmail VCard import
+author: Nicolas Mora mail@babelouest.org
+-->
+<import_entries>
+	
+	<import_core>
+		<name>ldif_phpldapadmin</name>
+		<display_name>PHPLdapAdmin ldif Export</display_name>
+		<type>ldif</type>
+		<active>1</active>
+	</import_core>
+	
+    <import_entry name="displayname" enabled="true">
+      <vcard_entry property="FN">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="mail" enabled="true">
+      <vcard_entry property="EMAIL" type="HOME">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="description" enabled="true">
+      <vcard_entry property="NOTE">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="displayname" enabled="true">
+      <vcard_entry property="FN">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="sn" enabled="true">
+      <vcard_entry property="N" position="0">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="givenname" enabled="true">
+      <vcard_entry property="N" position="1">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="facsimiletelephonenumber" enabled="true">
+      <vcard_entry property="TEL" type="FAX">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="telephonenumber" enabled="true">
+      <vcard_entry property="TEL" type="HOME">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="mobile" enabled="true">
+      <vcard_entry property="TEL" type="CELL">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="jpegphoto" enabled="true" image="true">
+      <vcard_entry property="PHOTO">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="street" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="2">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="l" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="3">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="st" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="4">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="postalcode" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="5">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="vcardcountry" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="6">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="c" enabled="true">
+      <vcard_entry property="ADR" type="HOME" position="6">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="o" enabled="true" separator="," remove="*">
+		<vcard_favourites>Starred</vcard_favourites>
+      <vcard_entry property="CATEGORIES">
+      </vcard_entry>
+    </import_entry>
+    
+    <import_entry name="ou" enabled="true">
+      <vcard_entry property="CATEGORIES">
+      </vcard_entry>
+    </import_entry>
+	
+</import_entries>

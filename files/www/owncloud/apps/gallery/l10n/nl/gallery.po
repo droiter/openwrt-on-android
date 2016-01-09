@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# André Koot <meneer@tken.net>, 2013-2014
+# Erik Bent <hj.bent.60@gmail.com>, 2012
+# jgelauff <jos@gelauff.net>, 2012
+# Richard Bos <radoeka@gmail.com>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-13 02:18-0400\n"
+"PO-Revision-Date: 2014-06-12 20:00+0000\n"
+"Last-Translator: André Koot <meneer@tken.net>\n"
+"Language-Team: Dutch (http://www.transifex.com/projects/p/owncloud/language/nl/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: appinfo/app.php:36 js/gallery.js:127
+msgid "Pictures"
+msgstr "Afbeeldingen"
+
+#: js/public.js:23
+msgid "Picture view"
+msgstr "Afbeeldingenoverzicht"
+
+#: js/slideshow.js:338
+msgid "Error loading slideshow template"
+msgstr "Fout bij laden diashow sjabloon"
+
+#: templates/index.php:4 templates/index.php:5
+msgid "Share"
+msgstr "Delen"
+
+#: templates/index.php:11
+msgid ""
+"No pictures found! If you upload pictures in the files app, they will be "
+"displayed here."
+msgstr "Geen afbeeldingen gevonden! Als u afbeeldingen upload in de bestandsapp, worden ze hier getoond."
+
+#: templates/public.php:9
+#, php-format
+msgid "shared by %s"
+msgstr "gedeeld door %s"
+
+#: templates/public.php:20
+msgid "File list"
+msgstr "Bestandenlijst"

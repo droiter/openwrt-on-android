@@ -1,0 +1,7 @@
+Subject: 举报已删除 - “{PM_SUBJECT}”
+
+你好 {USERNAME}，
+
+您在 “{SITENAME}” 上对于私人短信 “{PM_SUBJECT}” 的举报已经被版主或管理员删除。 
+
+{EMAIL_SIG}

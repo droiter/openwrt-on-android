@@ -1,0 +1,854 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# akaplan <ahmet_kaplan@hotmail.com>, 2012
+# Aranel Surion <aranel@aranelsurion.org>, 2011, 2012
+# Caner Başaran <basaran.caner@gmail.com>, 2012-2013
+# Emre Saraçoğlu <emresaracoglu@live.com>, 2012
+# Alper <info@beyboo.de>, 2012
+# Mesut Güngör <mesutgungor@iyte.edu.tr>, 2012
+# Murat Bişkin <murat@muratbiskin.com.tr>, 2012
+# Necdet Yücel <necdetyucel@gmail.com>, 2012
+# Volkan Gezer <volkangezer@gmail.com>, 2013-2014
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-07-01 01:46-0400\n"
+"PO-Revision-Date: 2014-07-01 00:20+0000\n"
+"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/projects/p/owncloud/language/tr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ajax/cache/status.php:19
+msgid "Not all calendars are completely cached"
+msgstr "Bütün takvimler tamamen önbelleğe alınmadı"
+
+#: ajax/cache/status.php:21
+msgid "Everything seems to be completely cached"
+msgstr "Her şey tamamen önbelleğe alınmış görünüyor"
+
+#: ajax/categories/rescan.php:29
+msgid "No calendars found."
+msgstr "Takvim bulunamadı."
+
+#: ajax/categories/rescan.php:37
+msgid "No events found."
+msgstr "Etkinlik bulunamadı."
+
+#: ajax/event/edit.form.php:21
+msgid "Wrong calendar"
+msgstr "Yanlış takvim"
+
+#: ajax/event/edit.form.php:226 lib/object.php:209 lib/object.php:245
+msgid "You do not have the permissions to edit this event."
+msgstr "Bu etkinliği düzeltme yetkisine sahip değilsiniz."
+
+#: ajax/import/dropimport.php:29 ajax/import/import.php:66
+msgid ""
+"The file contained either no events or all events are already saved in your "
+"calendar."
+msgstr "Dosya ya hiçbir etkinlik içermiyor ya da bütün etkinlikler takviminize zaten kaydedilmiş."
+
+#: ajax/import/dropimport.php:31 ajax/import/import.php:69
+msgid "events have been saved in the new calendar"
+msgstr "etkinlikler yeni takvimde saklandı"
+
+#: ajax/import/import.php:58
+msgid "Import failed"
+msgstr "İçeri aktarma başarısız"
+
+#: ajax/import/import.php:71
+msgid "events have been saved in your calendar"
+msgstr "etkinlikler takviminizde saklandı"
+
+#: ajax/settings/guesstimezone.php:26
+msgid "New Timezone:"
+msgstr "Yeni Zaman Dilimi:"
+
+#: ajax/settings/settimezone.php:23
+msgid "Timezone changed"
+msgstr "Zaman dilimi değiştirildi"
+
+#: ajax/settings/settimezone.php:25
+msgid "Invalid request"
+msgstr "Geçersiz istek"
+
+#: appinfo/app.php:38 js/l10n.php:87 templates/part.eventform.php:20
+#: templates/part.showevent.php:37
+msgid "Calendar"
+msgstr "Takvim"
+
+#: js/calendar.js:223
+msgid "Deletion failed"
+msgstr "Silme başarısız oldu"
+
+#: js/calendar.js:317
+msgid "ddd d MMMM[ yyyy]{ - [ddd d] MMMM yyyy}"
+msgstr "ddd d MMMM[ yyyy]{ - [ddd d] MMMM yyyy}"
+
+#: js/calendar.js:319
+msgid "ddd d MMMM[ yyyy] HH:mm{ - [ ddd d MMMM yyyy] HH:mm}"
+msgstr "ddd d MMMM[ yyyy] HH:mm{ - [ ddd d MMMM yyyy] HH:mm}"
+
+#: js/calendar.js:732
+msgid "group"
+msgstr "grup"
+
+#: js/calendar.js:734 templates/part.share.php:46 templates/part.share.php:81
+msgid "can edit"
+msgstr "düzenleyebilir"
+
+#: js/calendar.js:735 templates/part.share.php:50 templates/part.share.php:87
+msgid "can share"
+msgstr "paylaşabilir"
+
+#: js/calendar.js:1003
+msgid "ddd"
+msgstr "ddd"
+
+#: js/calendar.js:1004
+msgid "ddd M/d"
+msgstr "d.M ddd"
+
+#: js/calendar.js:1005
+msgid "dddd M/d"
+msgstr "d.M dddd"
+
+#: js/calendar.js:1008
+msgid "MMMM yyyy"
+msgstr "MMMM yyyy"
+
+#: js/calendar.js:1010
+msgid "MMM d[ yyyy]{ '–'[ MMM] d yyyy}"
+msgstr "d [ MMM] [ yyyy]{ '–' d MMM yyyy}"
+
+#: js/calendar.js:1012
+msgid "dddd, MMM d, yyyy"
+msgstr "d MMM yyyy dddd"
+
+#: js/l10n.php:77 lib/object.php:610 templates/calendar.php:93
+msgid "Sunday"
+msgstr "Pazar"
+
+#: js/l10n.php:77 lib/object.php:604 templates/calendar.php:92
+msgid "Monday"
+msgstr "Pazartesi"
+
+#: js/l10n.php:77 lib/object.php:605
+msgid "Tuesday"
+msgstr "Salı"
+
+#: js/l10n.php:77 lib/object.php:606
+msgid "Wednesday"
+msgstr "Çarşamba"
+
+#: js/l10n.php:77 lib/object.php:607
+msgid "Thursday"
+msgstr "Perşembe"
+
+#: js/l10n.php:77 lib/object.php:608
+msgid "Friday"
+msgstr "Cuma"
+
+#: js/l10n.php:77 lib/object.php:609 templates/calendar.php:94
+msgid "Saturday"
+msgstr "Cumartesi"
+
+#: js/l10n.php:78
+msgid "Sun."
+msgstr "Paz."
+
+#: js/l10n.php:78
+msgid "Mon."
+msgstr "Pzt."
+
+#: js/l10n.php:78
+msgid "Tue."
+msgstr "Sal."
+
+#: js/l10n.php:78
+msgid "Wed."
+msgstr "Çar."
+
+#: js/l10n.php:78
+msgid "Thu."
+msgstr "Per."
+
+#: js/l10n.php:78
+msgid "Fri."
+msgstr "Cum."
+
+#: js/l10n.php:78
+msgid "Sat."
+msgstr "Cmt."
+
+#: js/l10n.php:79 lib/object.php:660
+msgid "January"
+msgstr "Ocak"
+
+#: js/l10n.php:79 lib/object.php:661
+msgid "February"
+msgstr "Şubat"
+
+#: js/l10n.php:79 lib/object.php:662
+msgid "March"
+msgstr "Mart"
+
+#: js/l10n.php:79 lib/object.php:663
+msgid "April"
+msgstr "Nisan"
+
+#: js/l10n.php:79 lib/object.php:664
+msgid "May"
+msgstr "Mayıs"
+
+#: js/l10n.php:79 lib/object.php:665
+msgid "June"
+msgstr "Haziran"
+
+#: js/l10n.php:79 lib/object.php:666
+msgid "July"
+msgstr "Temmuz"
+
+#: js/l10n.php:79 lib/object.php:667
+msgid "August"
+msgstr "Ağustos"
+
+#: js/l10n.php:79 lib/object.php:668
+msgid "September"
+msgstr "Eylül"
+
+#: js/l10n.php:79 lib/object.php:669
+msgid "October"
+msgstr "Ekim"
+
+#: js/l10n.php:79 lib/object.php:670
+msgid "November"
+msgstr "Kasım"
+
+#: js/l10n.php:79 lib/object.php:671
+msgid "December"
+msgstr "Aralık"
+
+#: js/l10n.php:80
+msgid "Jan."
+msgstr "Oca."
+
+#: js/l10n.php:80
+msgid "Feb."
+msgstr "Şbt."
+
+#: js/l10n.php:80
+msgid "Mar."
+msgstr "Mar."
+
+#: js/l10n.php:80
+msgid "Apr."
+msgstr "Nis"
+
+#: js/l10n.php:80
+msgid "May."
+msgstr "May."
+
+#: js/l10n.php:80
+msgid "Jun."
+msgstr "Haz."
+
+#: js/l10n.php:80
+msgid "Jul."
+msgstr "Tem."
+
+#: js/l10n.php:80
+msgid "Aug."
+msgstr "Ağu."
+
+#: js/l10n.php:80
+msgid "Sep."
+msgstr "Eyl."
+
+#: js/l10n.php:80
+msgid "Oct."
+msgstr "Eki."
+
+#: js/l10n.php:80
+msgid "Nov."
+msgstr "Kas."
+
+#: js/l10n.php:80
+msgid "Dec."
+msgstr "Ara."
+
+#: js/l10n.php:83
+msgid "All day"
+msgstr "Tüm gün"
+
+#: js/l10n.php:84 lib/import.php:216 templates/calendar.php:21
+msgid "New Calendar"
+msgstr "Yeni Takvim"
+
+#: js/l10n.php:85
+msgid "Missing or invalid fields"
+msgstr "Eksik veya geçersiz alan"
+
+#: js/l10n.php:86 templates/part.showevent.php:11
+msgid "Title"
+msgstr "Başlık"
+
+#: js/l10n.php:88
+msgid "From Date"
+msgstr "Bu Tarihten"
+
+#: js/l10n.php:89
+msgid "From Time"
+msgstr "Bu Saatten"
+
+#: js/l10n.php:90
+msgid "To Date"
+msgstr "Bu Tarihe"
+
+#: js/l10n.php:91
+msgid "To Time"
+msgstr "Bu Saate"
+
+#: js/l10n.php:92
+msgid "The event ends before it starts"
+msgstr "Etkinlik başlamadan önce bitiyor"
+
+#: js/l10n.php:93
+msgid "There was a database fail"
+msgstr "Bir veritabanı başarısızlığı oluştu"
+
+#: js/l10n.php:94
+msgid "Interval is not valid. It must be a positive integer!"
+msgstr "Aralık geçerli değil. Pozitif bir tam sayı olmalı!"
+
+#: lib/app.php:121
+msgid "Birthday"
+msgstr "Doğum günü"
+
+#: lib/app.php:122
+msgid "Business"
+msgstr "İş"
+
+#: lib/app.php:123
+msgid "Call"
+msgstr "Arama"
+
+#: lib/app.php:124
+msgid "Clients"
+msgstr "Müşteriler"
+
+#: lib/app.php:125
+msgid "Deliverer"
+msgstr "Teslimatçı"
+
+#: lib/app.php:126
+msgid "Holidays"
+msgstr "Tatil günleri"
+
+#: lib/app.php:127
+msgid "Ideas"
+msgstr "Fikirler"
+
+#: lib/app.php:128
+msgid "Journey"
+msgstr "Seyahat"
+
+#: lib/app.php:129
+msgid "Jubilee"
+msgstr "Yıl dönümü"
+
+#: lib/app.php:130
+msgid "Meeting"
+msgstr "Toplantı"
+
+#: lib/app.php:131
+msgid "Other"
+msgstr "Diğer"
+
+#: lib/app.php:132 lib/calendar.php:142
+msgid "Personal"
+msgstr "Kişisel"
+
+#: lib/app.php:133
+msgid "Projects"
+msgstr "Projeler"
+
+#: lib/app.php:134
+msgid "Questions"
+msgstr "Sorular"
+
+#: lib/app.php:135
+msgid "Work"
+msgstr "İş"
+
+#: lib/app.php:423
+msgid "by"
+msgstr "oluşturan"
+
+#: lib/app.php:486
+msgid "unnamed"
+msgstr "isimsiz"
+
+#: lib/calendar.php:190 lib/calendar.php:223
+msgid "You do not have the permissions to update this calendar."
+msgstr "Bu takvimi güncelleme yetkisine sahip değilsiniz."
+
+#: lib/calendar.php:258
+msgid "You do not have the permissions to delete this calendar."
+msgstr "Bu takvimi silme yetkisine sahip değilsiniz."
+
+#: lib/calendar.php:292
+msgid "You do not have the permissions to add to this calendar."
+msgstr "Bu takvime ekleme yetkisine sahip değilsiniz."
+
+#: lib/object.php:122 lib/object.php:163 lib/object.php:329
+msgid "You do not have the permissions to add events to this calendar."
+msgstr "Bu takvime etkinlik ekleme yetkisine sahip değilsiniz."
+
+#: lib/object.php:175
+msgid "You cannot add non-public events to a shared calendar."
+msgstr "Paylaşılmış bir takvime gizli etkinlik ekleyemezsiniz."
+
+#: lib/object.php:279 lib/object.php:309
+msgid "You do not have the permissions to delete this event."
+msgstr "Bu etkinliği silme yetkisine sahip değilsiniz."
+
+#: lib/object.php:503
+msgid "Busy"
+msgstr "Meşgul"
+
+#: lib/object.php:553
+msgid "Show full event"
+msgstr "Tam etkinliği göster"
+
+#: lib/object.php:554
+msgid "Show only busy"
+msgstr "Sadece meşgulleri göster"
+
+#: lib/object.php:555
+msgid "Hide event"
+msgstr "Etkinliği gizle"
+
+#: lib/object.php:565
+msgid "Does not repeat"
+msgstr "Tekrar etmiyor"
+
+#: lib/object.php:566
+msgid "Daily"
+msgstr "Her gün"
+
+#: lib/object.php:567
+msgid "Weekly"
+msgstr "Her hafta"
+
+#: lib/object.php:568
+msgid "Every Weekday"
+msgstr "Hafta içi her gün"
+
+#: lib/object.php:569
+msgid "Bi-Weekly"
+msgstr "İki haftada bir"
+
+#: lib/object.php:570
+msgid "Monthly"
+msgstr "Her ay"
+
+#: lib/object.php:571
+msgid "Yearly"
+msgstr "Her yıl"
+
+#: lib/object.php:581
+msgid "never"
+msgstr "asla"
+
+#: lib/object.php:582
+msgid "by occurrences"
+msgstr "sıklığa göre"
+
+#: lib/object.php:583
+msgid "by date"
+msgstr "tarihe göre"
+
+#: lib/object.php:593
+msgid "by monthday"
+msgstr "ay günlerine göre"
+
+#: lib/object.php:594
+msgid "by weekday"
+msgstr "hafta günlerine göre"
+
+#: lib/object.php:620
+msgid "events week of month"
+msgstr "ayın etkinlikler haftası"
+
+#: lib/object.php:621
+msgid "first"
+msgstr "birinci"
+
+#: lib/object.php:622
+msgid "second"
+msgstr "ikinci"
+
+#: lib/object.php:623
+msgid "third"
+msgstr "üçüncü"
+
+#: lib/object.php:624
+msgid "fourth"
+msgstr "dördüncü"
+
+#: lib/object.php:625
+msgid "fifth"
+msgstr "beşinci"
+
+#: lib/object.php:626
+msgid "last"
+msgstr "sonuncu"
+
+#: lib/object.php:681
+msgid "by events date"
+msgstr "etkinlik tarihine göre"
+
+#: lib/object.php:682
+msgid "by yearday(s)"
+msgstr "yıl günlerine göre"
+
+#: lib/object.php:683
+msgid "by weeknumber(s)"
+msgstr "hafta sayılarına göre"
+
+#: lib/object.php:684
+msgid "by day and month"
+msgstr "gün ve aya göre"
+
+#: lib/sabre/backend.php:75
+msgid "Contact birthdays"
+msgstr "Kişi doğum günleri"
+
+#: lib/search.php:35 lib/search.php:37 lib/search.php:40
+msgid "Date"
+msgstr "Tarih"
+
+#: lib/search.php:43
+msgid "Cal."
+msgstr "Takv."
+
+#: templates/calendar.php:16
+msgid "Day"
+msgstr "Gün"
+
+#: templates/calendar.php:16
+msgid "Week"
+msgstr "Hafta"
+
+#: templates/calendar.php:16
+msgid "Month"
+msgstr "Ay"
+
+#: templates/calendar.php:17
+msgid "Today"
+msgstr "Bugün"
+
+#: templates/calendar.php:42 templates/part.choosecalendar.rowfields.php:28
+msgid "CalDav Link"
+msgstr "CalDav Bağlantısı"
+
+#: templates/calendar.php:55
+msgid "Timezone"
+msgstr "Zaman dilimi"
+
+#: templates/calendar.php:80
+msgid "Update timezone automatically"
+msgstr "Zaman dilimini otomatik güncelle"
+
+#: templates/calendar.php:83
+msgid "Time format"
+msgstr "Saat biçimi"
+
+#: templates/calendar.php:85
+msgid "24h"
+msgstr "24s"
+
+#: templates/calendar.php:86
+msgid "12h"
+msgstr "12s"
+
+#: templates/calendar.php:90
+msgid "Start week on"
+msgstr "Haftanın ilk günü"
+
+#: templates/calendar.php:98
+msgid "Cache"
+msgstr "Önbellek"
+
+#: templates/calendar.php:99
+msgid "Clear cache for repeating events"
+msgstr "Tekrar eden etkinlikler için önbelleği temizle"
+
+#: templates/calendar.php:102
+msgid "Primary CalDAV address"
+msgstr "Birincil CalDAV adresi"
+
+#: templates/calendar.php:106
+msgid "iOS/OS X CalDAV address"
+msgstr "iOS/OS X CalDAV adresi"
+
+#: templates/part.choosecalendar.rowfields.php:15
+msgid "Share Calendar"
+msgstr "Takvimi Paylaş"
+
+#: templates/part.choosecalendar.rowfields.php:32
+msgid "Download"
+msgstr "İndir"
+
+#: templates/part.choosecalendar.rowfields.php:38
+msgid "Edit"
+msgstr "Düzenle"
+
+#: templates/part.choosecalendar.rowfields.php:45
+msgid "Delete"
+msgstr "Sil"
+
+#: templates/part.editcalendar.php:9
+msgid "New calendar"
+msgstr "Yeni takvim"
+
+#: templates/part.editcalendar.php:9
+msgid "Edit calendar"
+msgstr "Takvimi düzenle"
+
+#: templates/part.editevent.php:1
+msgid "Edit event"
+msgstr "Etkinliği düzenle"
+
+#: templates/part.editevent.php:8
+msgid "Save event"
+msgstr "Etkinliği kaydet"
+
+#: templates/part.editevent.php:9
+msgid "Delete event"
+msgstr "Etkinliği sil"
+
+#: templates/part.eventform.php:5 templates/part.showevent.php:3
+msgid "Eventinfo"
+msgstr "Etkinlik bilgisi"
+
+#: templates/part.eventform.php:6 templates/part.showevent.php:4
+msgid "Repeating"
+msgstr "Tekrarlama"
+
+#: templates/part.eventform.php:7 templates/part.showevent.php:5
+msgid "Alarm"
+msgstr "Alarm"
+
+#: templates/part.eventform.php:8 templates/part.showevent.php:6
+msgid "Attendees"
+msgstr "Katılanlar"
+
+#: templates/part.eventform.php:10
+msgid "Share"
+msgstr "Paylaş"
+
+#: templates/part.eventform.php:15
+msgid "Title of the Event"
+msgstr "Etkinlik Başlığı"
+
+#: templates/part.eventform.php:41
+msgid "from"
+msgstr "başlangıç"
+
+#: templates/part.eventform.php:46
+msgid "to"
+msgstr "bitiş"
+
+#: templates/part.eventform.php:54 templates/part.showevent.php:66
+msgid "All Day Event"
+msgstr "Tüm Gün Etkinliği"
+
+#: templates/part.eventform.php:57 templates/part.showevent.php:86
+msgid "Advanced options"
+msgstr "Gelişmiş seçenekler"
+
+#: templates/part.eventform.php:61 templates/part.showevent.php:91
+msgid "Location"
+msgstr "Konum"
+
+#: templates/part.eventform.php:66
+msgid "Categories (separate by comma)"
+msgstr "Kategoriler (virgül ile ayırın)"
+
+#: templates/part.eventform.php:68 templates/part.eventform.php:69
+msgid "Edit categories"
+msgstr "Kategorileri düzenle"
+
+#: templates/part.eventform.php:71 templates/part.showevent.php:99
+msgid "Description"
+msgstr "Açıklama"
+
+#: templates/part.eventform.php:74
+msgid "Export event"
+msgstr "Etkinliği dışa aktar"
+
+#: templates/part.eventform.php:82 templates/part.showevent.php:109
+msgid "Repeat"
+msgstr "Tekrar"
+
+#: templates/part.eventform.php:89 templates/part.showevent.php:116
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: templates/part.eventform.php:133 templates/part.showevent.php:160
+msgid "Select weekdays"
+msgstr "Hafta günlerini seçin"
+
+#: templates/part.eventform.php:146 templates/part.eventform.php:159
+#: templates/part.showevent.php:173 templates/part.showevent.php:186
+msgid "Select days"
+msgstr "Günleri seçin"
+
+#: templates/part.eventform.php:151 templates/part.showevent.php:178
+msgid "and the events day of year."
+msgstr "ve yılın etkinlikler günü."
+
+#: templates/part.eventform.php:164 templates/part.showevent.php:191
+msgid "and the events day of month."
+msgstr "ve ayın etkinlikler günü."
+
+#: templates/part.eventform.php:172 templates/part.showevent.php:199
+msgid "Select months"
+msgstr "Ayları seç"
+
+#: templates/part.eventform.php:185 templates/part.showevent.php:212
+msgid "Select weeks"
+msgstr "Haftaları seç"
+
+#: templates/part.eventform.php:190 templates/part.showevent.php:217
+msgid "and the events week of year."
+msgstr "ve yılın etkinlikler haftası."
+
+#: templates/part.eventform.php:196 templates/part.showevent.php:223
+msgid "Interval"
+msgstr "Aralık"
+
+#: templates/part.eventform.php:202 templates/part.showevent.php:229
+msgid "End"
+msgstr "Son"
+
+#: templates/part.eventform.php:215 templates/part.showevent.php:242
+msgid "occurrences"
+msgstr "tekrar"
+
+#: templates/part.eventform.php:234
+msgid "Visibility to people shared with"
+msgstr "Paylaşılan insanlara görünürlük"
+
+#: templates/part.import.php:14
+msgid "create a new calendar"
+msgstr "yeni bir takvim oluştur"
+
+#: templates/part.import.php:17
+msgid "Import a calendar file"
+msgstr "Takvim dosyasını içeri aktar"
+
+#: templates/part.import.php:24
+msgid "Please choose a calendar"
+msgstr "Lütfen bir takvim seçin"
+
+#: templates/part.import.php:36
+msgid "Name of new calendar"
+msgstr "Yeni takvimin adı"
+
+#: templates/part.import.php:44
+msgid "Take an available name!"
+msgstr "Mümkün olan bir isim alın!"
+
+#: templates/part.import.php:45
+msgid ""
+"A Calendar with this name already exists. If you continue anyhow, these "
+"calendars will be merged."
+msgstr "Bu isimde bir takvim zaten mevcut. Yine de devam ederseniz bu takvimler birleştirilecektir."
+
+#: templates/part.import.php:48
+msgid "Remove all events from the selected calendar"
+msgstr "Seçilen bir takvimdeki tüm etkinlikleri kaldır"
+
+#: templates/part.import.php:50
+msgid "Import"
+msgstr "İçe Al"
+
+#: templates/part.import.php:59
+msgid "Close Dialog"
+msgstr "Pencereyi Kapat"
+
+#: templates/part.newevent.php:1
+msgid "Create a new event"
+msgstr "Yeni bir etkinlik oluştur"
+
+#: templates/part.newevent.php:8
+msgid "Create event"
+msgstr "Etkinlik oluştur"
+
+#: templates/part.share.php:32
+msgid "Share with user or group"
+msgstr "Kullanıcı veya grup ile paylaş"
+
+#: templates/part.share.php:53
+msgid "Unshare"
+msgstr "Paylaşmayı Kaldır"
+
+#: templates/part.share.php:59
+msgid "Not shared with anyone"
+msgstr "Kimseyle paylaşılmamış"
+
+#: templates/part.share.php:63
+msgid "Send Email"
+msgstr "E-posta Gönder"
+
+#: templates/part.share.php:67
+msgid "Shared via calendar"
+msgstr "Takvim aracılığıyla paylaşıldı"
+
+#: templates/part.share.php:94
+msgid "Not shared with anyone via calendar"
+msgstr "Takvim aracılığıyla kimseyle paylaşılmamış"
+
+#: templates/part.showevent.php:1
+msgid "View an event"
+msgstr "Bir etkinlik görüntüle"
+
+#: templates/part.showevent.php:19
+msgid "Category"
+msgstr "Kategori"
+
+#: templates/part.showevent.php:23
+msgid "No categories selected"
+msgstr "Kategori seçilmedi"
+
+#: templates/part.showevent.php:41
+#, php-format
+msgid "%s of %s"
+msgstr "%s, kullanıcı: %s"
+
+#: templates/part.showevent.php:50
+msgid "Access Class"
+msgstr "Erişim Sınıfı"
+
+#: templates/part.showevent.php:70
+msgid "From"
+msgstr "Başlangıç"
+
+#: templates/part.showevent.php:73 templates/part.showevent.php:81
+msgid "at"
+msgstr "saat"
+
+#: templates/part.showevent.php:78
+msgid "To"
+msgstr "Bitiş"

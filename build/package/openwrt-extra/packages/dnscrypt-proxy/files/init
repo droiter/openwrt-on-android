@@ -1,0 +1,51 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2014 nanpuyue <nanpuyue@gmail.com>
+
+START=60
+SERVICE_WRITE_PID=1
+SERVICE_DAEMONIZE=1
+SERVICE_UID='nobody'
+
+OPTIONS=""
+
+append_args() {
+	[ -n "$2" ] && OPTIONS="$OPTIONS $1 $2"
+}
+
+trans_args() {
+	case "$1" in
+		'local_address'		) append_args '-a' "$2";;
+		'edns_payload_size'	) append_args '-e' "$2";;
+		'provider_key'		) append_args '-k' "$2";;
+		'logfile'		) append_args '-l' "$2";;
+		'loglevel'		) append_args '-m' "$2";;
+		'max_active_requests'	) append_args '-n' "$2";;
+		'resolver_address'	) append_args '-r' "$2";;
+		'provider_name'		) append_args '-N' "$2";;
+		'user'			) SERVICE_UID="$2";;
+		'tcp_only'		) [ "$2" -eq '1' ] && OPTIONS="$OPTIONS -T";;
+	esac
+}
+
+option_cb() {
+	trans_args "$1" "$2"
+}
+
+section_enabled() {
+	local result
+	config_get_bool result "$1" 'enabled' 0
+	[ $result -eq 1 ]
+}
+
+start_instance() {
+	section_enabled "$1" && service_start /usr/sbin/dnscrypt-proxy $OPTIONS
+}
+
+start() {
+	config_load 'dnscrypt-proxy'
+	config_foreach start_instance 'dnscrypt-proxy'
+}
+
+stop() {
+	service_stop /usr/sbin/dnscrypt-proxy
+}

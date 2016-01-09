@@ -1,0 +1,855 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Ngo Duy Khanh <khanhnd@kenhgiaiphap.vn>, 2012
+# Ngo Duy Khanh <khanhnd@kenhgiaiphap.vn>, 2012
+# Nguyễn Hữu Tài <mattheu.9x@gmail.com>, 2012
+# Nguyễn Hữu Tài <mattheu.9x@gmail.com>, 2012,2014
+# Nguyễn Hữu Tài <mattheu.9x@gmail.com>, 2012
+# Nguyễn Hữu Tài <mattheu.9x@gmail.com>, 2014
+# Nguyễn Tiến Trình <tunglam062000@gmail.com>, 2014
+# sao sang <saosangmo@yahoo.com>, 2013
+# sao sang <saosangmo@yahoo.com>, 2013
+# Sơn Nguyễn <sonnghit@gmail.com>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-30 01:46-0400\n"
+"PO-Revision-Date: 2014-06-30 05:46+0000\n"
+"Last-Translator: I Robot\n"
+"Language-Team: Vietnamese (http://www.transifex.com/projects/p/owncloud/language/vi/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ajax/cache/status.php:19
+msgid "Not all calendars are completely cached"
+msgstr "Không phải tất cả các lịch là hoàn toàn được lưu trong bộ nhớ cache"
+
+#: ajax/cache/status.php:21
+msgid "Everything seems to be completely cached"
+msgstr "Mọi thứ dường như là hoàn toàn được lưu trong bộ nhớ cache"
+
+#: ajax/categories/rescan.php:29
+msgid "No calendars found."
+msgstr "Không tìm thấy lịch."
+
+#: ajax/categories/rescan.php:37
+msgid "No events found."
+msgstr "Không tìm thấy sự kiện nào"
+
+#: ajax/event/edit.form.php:21
+msgid "Wrong calendar"
+msgstr "Sai lịch"
+
+#: ajax/event/edit.form.php:226 lib/object.php:209 lib/object.php:245
+msgid "You do not have the permissions to edit this event."
+msgstr "Bạn không có quyền chỉnh sửa sự kiện này."
+
+#: ajax/import/dropimport.php:29 ajax/import/import.php:66
+msgid ""
+"The file contained either no events or all events are already saved in your "
+"calendar."
+msgstr "Các tập tin có hay không có sự kiện hoặc tất cả các sự kiện đã được lưu trong lịch của bạn."
+
+#: ajax/import/dropimport.php:31 ajax/import/import.php:69
+msgid "events have been saved in the new calendar"
+msgstr ""
+
+#: ajax/import/import.php:58
+msgid "Import failed"
+msgstr "Nhập vào thất bại"
+
+#: ajax/import/import.php:71
+msgid "events have been saved in your calendar"
+msgstr ""
+
+#: ajax/settings/guesstimezone.php:26
+msgid "New Timezone:"
+msgstr "Múi giờ mới :"
+
+#: ajax/settings/settimezone.php:23
+msgid "Timezone changed"
+msgstr "Thay đổi múi giờ"
+
+#: ajax/settings/settimezone.php:25
+msgid "Invalid request"
+msgstr "Yêu cầu không hợp lệ"
+
+#: appinfo/app.php:38 js/l10n.php:87 templates/part.eventform.php:20
+#: templates/part.showevent.php:37
+msgid "Calendar"
+msgstr "Lịch"
+
+#: js/calendar.js:223
+msgid "Deletion failed"
+msgstr "Xóa thất bại"
+
+#: js/calendar.js:317
+msgid "ddd d MMMM[ yyyy]{ - [ddd d] MMMM yyyy}"
+msgstr "ddd d MMMM[ yyyy]{ - [ddd d] MMMM yyyy}"
+
+#: js/calendar.js:319
+msgid "ddd d MMMM[ yyyy] HH:mm{ - [ ddd d MMMM yyyy] HH:mm}"
+msgstr "ddd d MMMM[ yyyy] HH:mm{ - [ ddd d MMMM yyyy] HH:mm}"
+
+#: js/calendar.js:732
+msgid "group"
+msgstr "nhóm"
+
+#: js/calendar.js:734 templates/part.share.php:46 templates/part.share.php:81
+msgid "can edit"
+msgstr "có thể chỉnh sửa"
+
+#: js/calendar.js:735 templates/part.share.php:50 templates/part.share.php:87
+msgid "can share"
+msgstr "có thể chia sẽ"
+
+#: js/calendar.js:1003
+msgid "ddd"
+msgstr "ddd"
+
+#: js/calendar.js:1004
+msgid "ddd M/d"
+msgstr "ddd M/d"
+
+#: js/calendar.js:1005
+msgid "dddd M/d"
+msgstr "dddd M/d"
+
+#: js/calendar.js:1008
+msgid "MMMM yyyy"
+msgstr "MMMM yyyy"
+
+#: js/calendar.js:1010
+msgid "MMM d[ yyyy]{ '–'[ MMM] d yyyy}"
+msgstr "MMM d[ yyyy]{ '–'[ MMM] d yyyy}"
+
+#: js/calendar.js:1012
+msgid "dddd, MMM d, yyyy"
+msgstr "dddd, MMM d, yyyy"
+
+#: js/l10n.php:77 lib/object.php:610 templates/calendar.php:93
+msgid "Sunday"
+msgstr "Chủ nhật"
+
+#: js/l10n.php:77 lib/object.php:604 templates/calendar.php:92
+msgid "Monday"
+msgstr "Thứ 2"
+
+#: js/l10n.php:77 lib/object.php:605
+msgid "Tuesday"
+msgstr "Thứ 3"
+
+#: js/l10n.php:77 lib/object.php:606
+msgid "Wednesday"
+msgstr "Thứ 4"
+
+#: js/l10n.php:77 lib/object.php:607
+msgid "Thursday"
+msgstr "Thứ 5"
+
+#: js/l10n.php:77 lib/object.php:608
+msgid "Friday"
+msgstr "Thứ "
+
+#: js/l10n.php:77 lib/object.php:609 templates/calendar.php:94
+msgid "Saturday"
+msgstr "Thứ 7"
+
+#: js/l10n.php:78
+msgid "Sun."
+msgstr "Chủ nhật"
+
+#: js/l10n.php:78
+msgid "Mon."
+msgstr "Thứ hai"
+
+#: js/l10n.php:78
+msgid "Tue."
+msgstr "Thứ ba"
+
+#: js/l10n.php:78
+msgid "Wed."
+msgstr "Thứ tư"
+
+#: js/l10n.php:78
+msgid "Thu."
+msgstr "Thứ năm"
+
+#: js/l10n.php:78
+msgid "Fri."
+msgstr "Thứ sáu"
+
+#: js/l10n.php:78
+msgid "Sat."
+msgstr "Thứ bảy"
+
+#: js/l10n.php:79 lib/object.php:660
+msgid "January"
+msgstr "Tháng 1"
+
+#: js/l10n.php:79 lib/object.php:661
+msgid "February"
+msgstr "Tháng 2"
+
+#: js/l10n.php:79 lib/object.php:662
+msgid "March"
+msgstr "Tháng 3"
+
+#: js/l10n.php:79 lib/object.php:663
+msgid "April"
+msgstr "Tháng 4"
+
+#: js/l10n.php:79 lib/object.php:664
+msgid "May"
+msgstr "Tháng 5"
+
+#: js/l10n.php:79 lib/object.php:665
+msgid "June"
+msgstr "Tháng 6"
+
+#: js/l10n.php:79 lib/object.php:666
+msgid "July"
+msgstr "Tháng 7"
+
+#: js/l10n.php:79 lib/object.php:667
+msgid "August"
+msgstr "Tháng 8"
+
+#: js/l10n.php:79 lib/object.php:668
+msgid "September"
+msgstr "Tháng 9"
+
+#: js/l10n.php:79 lib/object.php:669
+msgid "October"
+msgstr "Tháng 10"
+
+#: js/l10n.php:79 lib/object.php:670
+msgid "November"
+msgstr "Tháng 11"
+
+#: js/l10n.php:79 lib/object.php:671
+msgid "December"
+msgstr "Tháng 12"
+
+#: js/l10n.php:80
+msgid "Jan."
+msgstr "Tháng 1"
+
+#: js/l10n.php:80
+msgid "Feb."
+msgstr "Tháng 2"
+
+#: js/l10n.php:80
+msgid "Mar."
+msgstr "Tháng 3"
+
+#: js/l10n.php:80
+msgid "Apr."
+msgstr "Tháng 4"
+
+#: js/l10n.php:80
+msgid "May."
+msgstr "Tháng 5"
+
+#: js/l10n.php:80
+msgid "Jun."
+msgstr "Tháng 6"
+
+#: js/l10n.php:80
+msgid "Jul."
+msgstr "Tháng 7"
+
+#: js/l10n.php:80
+msgid "Aug."
+msgstr "Tháng 8"
+
+#: js/l10n.php:80
+msgid "Sep."
+msgstr "Tháng 9"
+
+#: js/l10n.php:80
+msgid "Oct."
+msgstr "Tháng 10"
+
+#: js/l10n.php:80
+msgid "Nov."
+msgstr "Tháng 11"
+
+#: js/l10n.php:80
+msgid "Dec."
+msgstr "Tháng 12"
+
+#: js/l10n.php:83
+msgid "All day"
+msgstr "Tất cả các ngày"
+
+#: js/l10n.php:84 lib/import.php:216 templates/calendar.php:21
+msgid "New Calendar"
+msgstr "Lịch mới"
+
+#: js/l10n.php:85
+msgid "Missing or invalid fields"
+msgstr "Thông tin thiếu hoặc không hợp lệ"
+
+#: js/l10n.php:86 templates/part.showevent.php:11
+msgid "Title"
+msgstr "Tiêu đề"
+
+#: js/l10n.php:88
+msgid "From Date"
+msgstr "Từ ngày"
+
+#: js/l10n.php:89
+msgid "From Time"
+msgstr "Từ thời gian"
+
+#: js/l10n.php:90
+msgid "To Date"
+msgstr "Tới ngày"
+
+#: js/l10n.php:91
+msgid "To Time"
+msgstr "Tới thời gian"
+
+#: js/l10n.php:92
+msgid "The event ends before it starts"
+msgstr "Sự kiện này kết thúc trước khi nó bắt đầu"
+
+#: js/l10n.php:93
+msgid "There was a database fail"
+msgstr "Lỗi truy xuất cơ sở dữ liệu"
+
+#: js/l10n.php:94
+msgid "Interval is not valid. It must be a positive integer!"
+msgstr ""
+
+#: lib/app.php:121
+msgid "Birthday"
+msgstr "Ngày sinh nhật"
+
+#: lib/app.php:122
+msgid "Business"
+msgstr "Công việc"
+
+#: lib/app.php:123
+msgid "Call"
+msgstr "Số điện thoại"
+
+#: lib/app.php:124
+msgid "Clients"
+msgstr "Máy trạm"
+
+#: lib/app.php:125
+msgid "Deliverer"
+msgstr "Giao"
+
+#: lib/app.php:126
+msgid "Holidays"
+msgstr "Ngày lễ"
+
+#: lib/app.php:127
+msgid "Ideas"
+msgstr "Ý tưởng"
+
+#: lib/app.php:128
+msgid "Journey"
+msgstr "Cuộc hành trình"
+
+#: lib/app.php:129
+msgid "Jubilee"
+msgstr "Lễ kỷ niệm"
+
+#: lib/app.php:130
+msgid "Meeting"
+msgstr "Hội nghị"
+
+#: lib/app.php:131
+msgid "Other"
+msgstr "Khác"
+
+#: lib/app.php:132 lib/calendar.php:142
+msgid "Personal"
+msgstr "Cá nhân"
+
+#: lib/app.php:133
+msgid "Projects"
+msgstr "Dự án"
+
+#: lib/app.php:134
+msgid "Questions"
+msgstr "Câu hỏi"
+
+#: lib/app.php:135
+msgid "Work"
+msgstr "Công việc"
+
+#: lib/app.php:423
+msgid "by"
+msgstr "bởi"
+
+#: lib/app.php:486
+msgid "unnamed"
+msgstr "Không tên"
+
+#: lib/calendar.php:190 lib/calendar.php:223
+msgid "You do not have the permissions to update this calendar."
+msgstr "Bạn không có quyền cập nhật lịch này"
+
+#: lib/calendar.php:258
+msgid "You do not have the permissions to delete this calendar."
+msgstr "Bạn không có quyền xóa lịch này"
+
+#: lib/calendar.php:292
+msgid "You do not have the permissions to add to this calendar."
+msgstr "Bạn không có quyền thêm lịch này"
+
+#: lib/object.php:122 lib/object.php:163 lib/object.php:329
+msgid "You do not have the permissions to add events to this calendar."
+msgstr "Bạn không có quyền thêm các sự kiện vào lịch này."
+
+#: lib/object.php:175
+msgid "You cannot add non-public events to a shared calendar."
+msgstr "Bạn không thể thêm sự kiện không phải công cộng để chia sẻ lịch."
+
+#: lib/object.php:279 lib/object.php:309
+msgid "You do not have the permissions to delete this event."
+msgstr "Bạn không có quyền xóa sự kiện này."
+
+#: lib/object.php:503
+msgid "Busy"
+msgstr "Bận"
+
+#: lib/object.php:553
+msgid "Show full event"
+msgstr "Hiển thị đầy đủ sự kiện"
+
+#: lib/object.php:554
+msgid "Show only busy"
+msgstr "Hiển thị bận"
+
+#: lib/object.php:555
+msgid "Hide event"
+msgstr "Ẩn sự kiện"
+
+#: lib/object.php:565
+msgid "Does not repeat"
+msgstr "Không lặp lại"
+
+#: lib/object.php:566
+msgid "Daily"
+msgstr "Hàng ngày"
+
+#: lib/object.php:567
+msgid "Weekly"
+msgstr "Hàng tuần"
+
+#: lib/object.php:568
+msgid "Every Weekday"
+msgstr "Mỗi ngày trong tuần"
+
+#: lib/object.php:569
+msgid "Bi-Weekly"
+msgstr "Hai tuần một lần"
+
+#: lib/object.php:570
+msgid "Monthly"
+msgstr "Hàng tháng"
+
+#: lib/object.php:571
+msgid "Yearly"
+msgstr "Hàng năm"
+
+#: lib/object.php:581
+msgid "never"
+msgstr "không thay đổi"
+
+#: lib/object.php:582
+msgid "by occurrences"
+msgstr "bởi sự kiện"
+
+#: lib/object.php:583
+msgid "by date"
+msgstr "bởi ngày"
+
+#: lib/object.php:593
+msgid "by monthday"
+msgstr "bởi ngày trong tháng"
+
+#: lib/object.php:594
+msgid "by weekday"
+msgstr "bởi ngày trong tuần"
+
+#: lib/object.php:620
+msgid "events week of month"
+msgstr "sự kiện trong tuần của tháng"
+
+#: lib/object.php:621
+msgid "first"
+msgstr "đầu tiên"
+
+#: lib/object.php:622
+msgid "second"
+msgstr "Thứ hai"
+
+#: lib/object.php:623
+msgid "third"
+msgstr "Thứ ba"
+
+#: lib/object.php:624
+msgid "fourth"
+msgstr "Thứ tư"
+
+#: lib/object.php:625
+msgid "fifth"
+msgstr "Thứ năm"
+
+#: lib/object.php:626
+msgid "last"
+msgstr "sau"
+
+#: lib/object.php:681
+msgid "by events date"
+msgstr "Theo ngày tháng sự kiện"
+
+#: lib/object.php:682
+msgid "by yearday(s)"
+msgstr "Theo ngày trong năm"
+
+#: lib/object.php:683
+msgid "by weeknumber(s)"
+msgstr "Theo số tuần"
+
+#: lib/object.php:684
+msgid "by day and month"
+msgstr "Theo ngày, tháng"
+
+#: lib/sabre/backend.php:75
+msgid "Contact birthdays"
+msgstr "Danh sách sinh nhật"
+
+#: lib/search.php:35 lib/search.php:37 lib/search.php:40
+msgid "Date"
+msgstr "Ngày"
+
+#: lib/search.php:43
+msgid "Cal."
+msgstr "Cal."
+
+#: templates/calendar.php:16
+msgid "Day"
+msgstr "Ngày"
+
+#: templates/calendar.php:16
+msgid "Week"
+msgstr "Tuần"
+
+#: templates/calendar.php:16
+msgid "Month"
+msgstr "Tháng"
+
+#: templates/calendar.php:17
+msgid "Today"
+msgstr "Hôm nay"
+
+#: templates/calendar.php:42 templates/part.choosecalendar.rowfields.php:28
+msgid "CalDav Link"
+msgstr "Liên kết CalDav "
+
+#: templates/calendar.php:55
+msgid "Timezone"
+msgstr "Múi giờ"
+
+#: templates/calendar.php:80
+msgid "Update timezone automatically"
+msgstr "Tự động cập nhập múi giờ"
+
+#: templates/calendar.php:83
+msgid "Time format"
+msgstr "Định dạng thời gian"
+
+#: templates/calendar.php:85
+msgid "24h"
+msgstr "24h"
+
+#: templates/calendar.php:86
+msgid "12h"
+msgstr "12h"
+
+#: templates/calendar.php:90
+msgid "Start week on"
+msgstr "Ngày bắt đầu trong tuần"
+
+#: templates/calendar.php:98
+msgid "Cache"
+msgstr "Bộ đệm"
+
+#: templates/calendar.php:99
+msgid "Clear cache for repeating events"
+msgstr "Xóa bộ nhớ đệm cho các sự kiện trùng nhau"
+
+#: templates/calendar.php:102
+msgid "Primary CalDAV address"
+msgstr ""
+
+#: templates/calendar.php:106
+msgid "iOS/OS X CalDAV address"
+msgstr ""
+
+#: templates/part.choosecalendar.rowfields.php:15
+msgid "Share Calendar"
+msgstr "Chia sẻ lịch"
+
+#: templates/part.choosecalendar.rowfields.php:32
+msgid "Download"
+msgstr "Tải về"
+
+#: templates/part.choosecalendar.rowfields.php:38
+msgid "Edit"
+msgstr "Chỉnh sửa"
+
+#: templates/part.choosecalendar.rowfields.php:45
+msgid "Delete"
+msgstr "Xóa"
+
+#: templates/part.editcalendar.php:9
+msgid "New calendar"
+msgstr "Lịch mới"
+
+#: templates/part.editcalendar.php:9
+msgid "Edit calendar"
+msgstr "sửa Lịch"
+
+#: templates/part.editevent.php:1
+msgid "Edit event"
+msgstr "Sửa sự kiện"
+
+#: templates/part.editevent.php:8
+msgid "Save event"
+msgstr "Lưu sự kiện"
+
+#: templates/part.editevent.php:9
+msgid "Delete event"
+msgstr "Xóa sự kiện"
+
+#: templates/part.eventform.php:5 templates/part.showevent.php:3
+msgid "Eventinfo"
+msgstr "Thông tin sự kiện"
+
+#: templates/part.eventform.php:6 templates/part.showevent.php:4
+msgid "Repeating"
+msgstr "Lặp"
+
+#: templates/part.eventform.php:7 templates/part.showevent.php:5
+msgid "Alarm"
+msgstr "Nhắc nhở"
+
+#: templates/part.eventform.php:8 templates/part.showevent.php:6
+msgid "Attendees"
+msgstr "Người tham gia"
+
+#: templates/part.eventform.php:10
+msgid "Share"
+msgstr "Chia sẻ"
+
+#: templates/part.eventform.php:15
+msgid "Title of the Event"
+msgstr "Tên sự kiện"
+
+#: templates/part.eventform.php:41
+msgid "from"
+msgstr "từ"
+
+#: templates/part.eventform.php:46
+msgid "to"
+msgstr "đến"
+
+#: templates/part.eventform.php:54 templates/part.showevent.php:66
+msgid "All Day Event"
+msgstr "Sự kiện trong ngày"
+
+#: templates/part.eventform.php:57 templates/part.showevent.php:86
+msgid "Advanced options"
+msgstr "Tùy chọn nâng cao"
+
+#: templates/part.eventform.php:61 templates/part.showevent.php:91
+msgid "Location"
+msgstr "Nơi"
+
+#: templates/part.eventform.php:66
+msgid "Categories (separate by comma)"
+msgstr "Thể loại (phân cách bằng dấu phẩy)"
+
+#: templates/part.eventform.php:68 templates/part.eventform.php:69
+msgid "Edit categories"
+msgstr "Sửa chuyên mục"
+
+#: templates/part.eventform.php:71 templates/part.showevent.php:99
+msgid "Description"
+msgstr "Mô tả"
+
+#: templates/part.eventform.php:74
+msgid "Export event"
+msgstr "Trích xuất sự kiện"
+
+#: templates/part.eventform.php:82 templates/part.showevent.php:109
+msgid "Repeat"
+msgstr "Lặp lại"
+
+#: templates/part.eventform.php:89 templates/part.showevent.php:116
+msgid "Advanced"
+msgstr "Nâng cao"
+
+#: templates/part.eventform.php:133 templates/part.showevent.php:160
+msgid "Select weekdays"
+msgstr "Chọn ngày trong tuần"
+
+#: templates/part.eventform.php:146 templates/part.eventform.php:159
+#: templates/part.showevent.php:173 templates/part.showevent.php:186
+msgid "Select days"
+msgstr "Chọn ngày"
+
+#: templates/part.eventform.php:151 templates/part.showevent.php:178
+msgid "and the events day of year."
+msgstr "và sự kiện của ngày trong năm"
+
+#: templates/part.eventform.php:164 templates/part.showevent.php:191
+msgid "and the events day of month."
+msgstr "và sự kiện của một ngày trong năm"
+
+#: templates/part.eventform.php:172 templates/part.showevent.php:199
+msgid "Select months"
+msgstr "Chọn tháng"
+
+#: templates/part.eventform.php:185 templates/part.showevent.php:212
+msgid "Select weeks"
+msgstr "Chọn tuần"
+
+#: templates/part.eventform.php:190 templates/part.showevent.php:217
+msgid "and the events week of year."
+msgstr "và sự kiện của tuần trong năm."
+
+#: templates/part.eventform.php:196 templates/part.showevent.php:223
+msgid "Interval"
+msgstr "Khoảng từ"
+
+#: templates/part.eventform.php:202 templates/part.showevent.php:229
+msgid "End"
+msgstr "Kết thúc"
+
+#: templates/part.eventform.php:215 templates/part.showevent.php:242
+msgid "occurrences"
+msgstr "Sự kiện"
+
+#: templates/part.eventform.php:234
+msgid "Visibility to people shared with"
+msgstr "Hiển thị với những người chia sẻ"
+
+#: templates/part.import.php:14
+msgid "create a new calendar"
+msgstr "Tạo lịch mới"
+
+#: templates/part.import.php:17
+msgid "Import a calendar file"
+msgstr "Nhập lịch từ tập tin"
+
+#: templates/part.import.php:24
+msgid "Please choose a calendar"
+msgstr "Vui lòng chọn lịch"
+
+#: templates/part.import.php:36
+msgid "Name of new calendar"
+msgstr "Tên lịch mới"
+
+#: templates/part.import.php:44
+msgid "Take an available name!"
+msgstr "Chọn một tên tồn tại"
+
+#: templates/part.import.php:45
+msgid ""
+"A Calendar with this name already exists. If you continue anyhow, these "
+"calendars will be merged."
+msgstr "Đã tồn tại một lịch với tên này. Nếu bạn tiếp tục, những lịch này sẽ trộn với nhau."
+
+#: templates/part.import.php:48
+msgid "Remove all events from the selected calendar"
+msgstr "Xóa tất cả những sự kiện đã chọn trong calendar"
+
+#: templates/part.import.php:50
+msgid "Import"
+msgstr "Nhập vào"
+
+#: templates/part.import.php:59
+msgid "Close Dialog"
+msgstr "Đóng hộp thoại"
+
+#: templates/part.newevent.php:1
+msgid "Create a new event"
+msgstr "Tạo một sự kiện mới"
+
+#: templates/part.newevent.php:8
+msgid "Create event"
+msgstr "Tạo sự kiện"
+
+#: templates/part.share.php:32
+msgid "Share with user or group"
+msgstr "Chia sẽ với người dùng hoặc nhóm"
+
+#: templates/part.share.php:53
+msgid "Unshare"
+msgstr "Bỏ chia sẻ"
+
+#: templates/part.share.php:59
+msgid "Not shared with anyone"
+msgstr "Không chia sẽ với bất cứ ai"
+
+#: templates/part.share.php:63
+msgid "Send Email"
+msgstr "Gửi thư"
+
+#: templates/part.share.php:67
+msgid "Shared via calendar"
+msgstr "Được chia sẻ qua lịch"
+
+#: templates/part.share.php:94
+msgid "Not shared with anyone via calendar"
+msgstr "Không chia sẽ với bất cứ ai qua lịch"
+
+#: templates/part.showevent.php:1
+msgid "View an event"
+msgstr "Xem một sự kiện"
+
+#: templates/part.showevent.php:19
+msgid "Category"
+msgstr "Danh mục"
+
+#: templates/part.showevent.php:23
+msgid "No categories selected"
+msgstr "Không danh sách nào được chọn"
+
+#: templates/part.showevent.php:41
+#, php-format
+msgid "%s of %s"
+msgstr ""
+
+#: templates/part.showevent.php:50
+msgid "Access Class"
+msgstr "Mức truy cập"
+
+#: templates/part.showevent.php:70
+msgid "From"
+msgstr "Từ"
+
+#: templates/part.showevent.php:73 templates/part.showevent.php:81
+msgid "at"
+msgstr "tại"
+
+#: templates/part.showevent.php:78
+msgid "To"
+msgstr "Tới"

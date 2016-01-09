@@ -1,0 +1,14 @@
+
+你好 {TO_USERNAME}，
+
+您在 “{SITENAME}” 上的帐号收到了来自 {FROM_USERNAME} 的新email， 下面是email的内容。 如果是垃圾邮件或其他对您产生冒犯的内容请联系论坛的管理员，通过如下的地址:
+
+{BOARD_CONTACT}
+
+在反馈中请包含完整的email内容 (特别是邮件头)。
+请注意这个email的回复地址已经被设置为帐号 {FROM_USERNAME}。
+
+以下是发送给您的内容
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+{MESSAGE}

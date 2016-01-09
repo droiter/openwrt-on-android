@@ -1,0 +1,20 @@
+Subject: 主题回复通知 - “{TOPIC_TITLE}”
+
+你好 {USERNAME}，
+
+你收到此通知是因为你在 “{SITENAME}” 论坛所收藏的一个主题 “{TOPIC_TITLE}” ，收到一个新回复。你可以使用下面的链接查看，在你访问该主题前不会再有其他通知。
+
+如果你想查看从上次访问以来的最新帖子，点下面的链接:
+{U_NEWEST_POST}
+
+如果你想查看主题，点下面的链接:
+{U_TOPIC}
+
+如果你想查看论坛，点下面的链接:
+{U_FORUM}
+
+如果你不想再收到回复更新，请更新你的通知设置:
+
+{U_NOTIFICATION_SETTINGS}
+
+{EMAIL_SIG}

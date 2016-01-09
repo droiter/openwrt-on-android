@@ -1,0 +1,7 @@
+Subject: 举报已关闭 - “{PM_SUBJECT}”
+
+你好 {USERNAME}，
+
+您在 “{SITENAME}” 上对于私人短信 “{PM_SUBJECT}” 的举报已由版主或管理员处理后关闭。 如果您有任何问题，请站内联系 {CLOSER_NAME}。
+
+{EMAIL_SIG}

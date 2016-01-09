@@ -1,0 +1,251 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!--
+	Parameters available
+	<import_core>
+	@brief: main parameters
+		<name></name>
+		@brief: Internal name
+		must match the xml file name with the pattern import_<name>_connector.xml
+		
+		<display_name></display_name>
+		@brief: Display name
+		
+		<type></type>
+		@brief: type (csv,vcard,ldif,...)
+		
+		<active></active>
+		@brief: if 0, will not be used
+		
+		<ignore_first_line><ignore_first_line/>
+		@brief: If the first line has titles (1 or true)
+		
+		<delimiter></delimiter>
+		@brief: if empty, automatic search between ',', ';' and '\t'
+		
+		<base_parsing></base_parsing>
+		@brief: parse by column name or column position
+		
+		<expected_columns></expected_columns>
+		@brief: if parse by column position, how many columns are expected (use for automatic import)
+	</import_core>
+
+	<import_entry name="" position="" enabled="" separator="" remove="">
+	@brief: csv entry to look for
+	name: property name (if base_parsing is name)
+	position: property position (if base_parsing is position)
+	enabled: import_entry used or not
+	separator: string used to separate multiple values
+	remove: string to remove in the value
+		
+		<altname lang=""></altname>
+		@brief: alternate property name
+		lang: language
+		value: other property name (if base_parsing is name)
+		
+		<vcard_favourites></vcard_favourites>
+		@brief: entry value to look for in order to add the current VCard to the Favourites section
+			
+		<vcard_entry property="" type="" prefix="" position="" group="" value="" separator="">
+		</vcard_entry>
+		@brief: VCard entry to add
+		property: VCard property name
+		type: VCard property type
+		prefix: prefix to add to the value
+		position: position of the element in the value
+		group: VCard group value
+		value: forced value
+		separator: separator string if position is set
+		
+		<vcard_parameter property="" parameter="">
+		</vcard_parameter>
+		@brief: additional parameter for the VCard property
+		property: property name to add parameter to
+		parameter: parameter name
+		
+	</import_entry>
+-->
+<!--
+XML connector for Thunderbird csv import
+author: Nicolas Mora mail@babelouest.org
+-->
+<import_entries>
+	
+	<import_core>
+		<name>csv_thunderbird</name>
+		<display_name>Thunderbird CSV</display_name>
+		<type>csv</type>
+		<active>1</active>
+		<ignore_first_line>1</ignore_first_line>
+		<base_parsing>position</base_parsing>
+		<expected_columns>38</expected_columns>
+	</import_core>
+	
+	<import_entry position="0" enabled="true">
+		<vcard_entry property="N" position="1">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="1" enabled="true">
+		<vcard_entry property="N" position="0">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="2" enabled="true">
+		<vcard_entry property="FN" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="3" enabled="true">
+		<vcard_entry property="NICKNAME" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="4" enabled="true">
+		<vcard_entry property="EMAIL" type="HOME">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="5" enabled="true">
+		<vcard_entry property="EMAIL" type="WORK">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="7" enabled="true">
+		<vcard_entry property="TEL" type="WORK" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="8" enabled="true">
+		<vcard_entry property="TEL" type="HOME" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="9" enabled="true">
+		<vcard_entry property="TEL" type="FAX" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="10" enabled="true">
+		<vcard_entry property="TEL" type="PAGER" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="11" enabled="true">
+		<vcard_entry property="TEL" type="CELL" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="12" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="3" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="13" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="4" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="14" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="5" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="15" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="6" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="16" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="7" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="17" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="8" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="18" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="3" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="19" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="4" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="20" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="5" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="21" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="6" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="22" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="7" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="23" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="8" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="24" enabled="true">
+		<vcard_entry property="TITLE" >
+		</vcard_entry>
+	</import_entry>
+	
+	<!-- 'Service' not found
+	<import_entry position="25" enabled="true">
+		<vcard_entry property="" >
+		</vcard_entry>
+	</import_entry>
+	-->
+	
+	<import_entry position="26" enabled="true">
+		<vcard_entry property="ORG" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="27" enabled="true">
+		<vcard_entry property="URL" type="WORK" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="28" enabled="true">
+		<vcard_entry property="URL" type="HOME" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="29" enabled="true">
+		<vcard_entry property="BDAY" position="0" separator="-" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="30" enabled="true">
+		<vcard_entry property="BDAY" position="1" separator="-" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="31" enabled="true">
+		<vcard_entry property="BDAY" position="2" separator="-" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry position="36" enabled="true">
+		<vcard_entry property="NOTE" >
+		</vcard_entry>
+	</import_entry>
+	
+	<!--<import_entry property="" type="" prefix="" position="" enabled="true">
+		<vcard_entry property="" type="" prefix="" position="" image="">
+		</vcard_entry>
+	</import_entry>-->
+	
+</import_entries>

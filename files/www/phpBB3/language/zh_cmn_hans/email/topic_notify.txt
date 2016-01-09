@@ -1,0 +1,19 @@
+Subject: 主题回复通知 - “{TOPIC_TITLE}”
+
+您好 {USERNAME}，
+
+您收到此通知是因为您在“{SITENAME}”论坛，订阅了主题, "{TOPIC_TITLE}"  此主题收到一个新回复<!-- IF AUTHOR_NAME !== '' --> 由 {AUTHOR_NAME}<!-- ENDIF --> 。 您可以用下面的链接来查看回复，在您访问该主题之前不会再发送更多的通知。
+
+如果您希望查看最新的帖子，点击下面的链接：
+{U_NEWEST_POST}
+
+如果您想查看这个主题，点击下面的链接：
+{U_TOPIC}
+
+如果您想查看这个版面，点击下面的链接；
+{U_FORUM}
+
+如果您不希望再订阅这个主题，您可以点击主题浏览页面中的“退订主题”链接，或者点击下面的链接:
+{U_STOP_WATCHING_TOPIC}
+
+{EMAIL_SIG}

@@ -1,0 +1,18 @@
+<phpunit
+	bootstrap="bootstrap.php"
+	convertErrorsToExceptions="true"
+	convertNoticesToExceptions="true"
+	convertWarningsToExceptions="true"
+	strict="true"
+	verbose="true"
+	colors="true"
+	>
+	<testsuites>
+		<testsuite name="unit-tests">
+			<directory suffix="_test.php">lib</directory>
+		</testsuite>
+		<testsuite name="app-tests">
+			<directory suffix="_app.php">lib</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>

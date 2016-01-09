@@ -1,0 +1,384 @@
+<?xml version='1.0' standalone='yes'?>
+<!--
+	Parameters available
+	<import_core>
+	@brief: main parameters
+		<name></name>
+		@brief: Internal name
+		must match the xml file name with the pattern import_<name>_connector.xml
+		
+		<display_name></display_name>
+		@brief: Display name
+		
+		<type></type>
+		@brief: type (csv,vcard,ldif,...)
+		
+		<active></active>
+		@brief: if 0, will not be used
+		
+		<ignore_first_line><ignore_first_line/>
+		@brief: If the first line has titles (1 or true)
+		
+		<delimiter></delimiter>
+		@brief: if empty, automatic search between ',', ';' and '\t'
+		
+		<base_parsing></base_parsing>
+		@brief: parse by column name or column position
+		
+		<expected_columns></expected_columns>
+		@brief: if parse by column position, how many columns are expected (use for automatic import)
+	</import_core>
+
+	<import_entry name="" position="" enabled="" separator="" remove="">
+	@brief: csv entry to look for
+	name: property name (if base_parsing is name)
+	position: property position (if base_parsing is position)
+	enabled: import_entry used or not
+	separator: string used to separate multiple values
+	remove: string to remove in the value
+		
+		<altname lang=""></altname>
+		@brief: alternate property name
+		lang: language
+		value: other property name (if base_parsing is name)
+		
+		<vcard_favourites></vcard_favourites>
+		@brief: entry value to look for in order to add the current VCard to the Favourites section
+			
+		<vcard_entry property="" type="" prefix="" position="" group="" value="" separator="">
+		</vcard_entry>
+		@brief: VCard entry to add
+		property: VCard property name
+		type: VCard property type
+		prefix: prefix to add to the value
+		position: position of the element in the value
+		group: VCard group value
+		value: forced value
+		separator: separator string if position is set
+		
+		<vcard_parameter property="" parameter="">
+		</vcard_parameter>
+		@brief: additional parameter for the VCard property
+		property: property name to add parameter to
+		parameter: parameter name
+		
+	</import_entry>
+-->
+<!--
+XML connector for MS outlook csv import
+author: Nicolas Mora mail@babelouest.org
+-->
+<import_entries>
+	
+	<import_core>
+		<name>csv_outlook</name>
+		<display_name>Outlook CSV</display_name>
+		<type>csv</type>
+		<active>1</active>
+		<ignore_first_line>1</ignore_first_line>
+		<base_parsing>name</base_parsing>
+	</import_core>
+	
+	<import_entry name="Last Name" enabled="true">
+		<altname lang="fr">Nom</altname>
+		<vcard_entry property="N" position="0">
+		</vcard_entry>
+		<vcard_entry property="FN" position="1" separator=" ">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="First Name" enabled="true">
+		<altname lang="fr">Prénom</altname>
+		<vcard_entry property="N" position="1">
+		</vcard_entry>
+		<vcard_entry property="FN" position="0" separator=" ">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Middle Name" enabled="true">
+		<altname lang="fr">Deuxième prénom</altname>
+		<vcard_entry property="N" position="2">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Title" enabled="true">
+		<altname lang="fr">Titre</altname>
+		<vcard_entry property="N" position="3">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Suffix" enabled="true">
+		<altname lang="fr">Suffixe</altname>
+		<vcard_entry property="N" position="4">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Company" enabled="true">
+		<altname lang="fr">Société</altname>
+		<vcard_entry property="ORG" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Job Title" enabled="true">
+		<altname lang="fr">Profession</altname>
+		<vcard_entry property="TITLE" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business Address PO Box" enabled="true">
+		<altname lang="fr">B.P. professionnelle</altname>
+		<vcard_entry property="ADR" type="WORK" position="1" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business Street" enabled="true">
+		<altname lang="fr">Rue (bureau)</altname>
+		<vcard_entry property="ADR" type="WORK" position="2" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business City" enabled="true">
+		<altname lang="fr">Ville (bureau)</altname>
+		<vcard_entry property="ADR" type="WORK" position="3" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business State" enabled="true">
+		<altname lang="fr">Dép/Région (bureau)</altname>
+		<vcard_entry property="ADR" type="WORK" position="4" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business Postal Code" enabled="true">
+		<altname lang="fr">Code postal (bureau)</altname>
+		<vcard_entry property="ADR" type="WORK" position="5" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business Country" enabled="true">
+		<altname lang="fr">Pays/Région (bureau)</altname>
+		<vcard_entry property="ADR" type="WORK" position="6" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Address PO Box" enabled="true">
+		<altname lang="fr">Boîte postale du domicile</altname>
+		<vcard_entry property="ADR" type="HOME" position="1" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Street" enabled="true">
+		<altname lang="fr">Rue (domicile)</altname>
+		<vcard_entry property="ADR" type="HOME" position="2" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home City" enabled="true">
+		<altname lang="fr">Ville (domicile)</altname>
+		<vcard_entry property="ADR" type="HOME" position="3" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home State" enabled="true">
+		<altname lang="fr">Dép/Région (domicile)</altname>
+		<vcard_entry property="ADR" type="HOME" position="4" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Postal Code" enabled="true">
+		<altname lang="fr">Code postal (domicile)</altname>
+		<vcard_entry property="ADR" type="HOME" position="5" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Country" enabled="true">
+		<altname lang="fr">Pays/Région (domicile)</altname>
+		<vcard_entry property="ADR" type="HOME" position="6" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business Fax" enabled="true">
+		<altname lang="fr">Télécopie (bureau)</altname>
+		<vcard_entry property="TEL" type="WORK,FAX">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business Phone" enabled="true">
+		<altname lang="fr">Téléphone (bureau)</altname>
+		<vcard_entry property="TEL" type="WORK">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business Phone 2" enabled="true">
+		<altname lang="fr">Téléphone 2 (bureau)</altname>
+		<vcard_entry property="TEL" type="WORK" group="businessphone2">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Callback" enabled="true">
+		<altname lang="fr">Rappel</altname>
+		<vcard_entry property="TEL" type="CALLBACK">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Car Phone" enabled="true">
+		<altname lang="fr">Téléphone (voiture)</altname>
+		<vcard_entry property="TEL" type="CAR">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Company Main Phone" enabled="true">
+		<altname lang="fr">Téléphone société</altname>
+		<vcard_entry property="TEL" type="WORK" group="companymainphone">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Fax" enabled="true">
+		<altname lang="fr">Télécopie (domicile)</altname>
+		<vcard_entry property="TEL" type="HOME,FAX">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Phone" enabled="true">
+		<altname lang="fr">Téléphone (domicile)</altname>
+		<vcard_entry property="TEL" type="HOME" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Phone 2" enabled="true">
+		<altname lang="fr">Téléphone 2 (domicile)</altname>
+		<vcard_entry property="TEL" type="HOME" group="homephone2">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="ISDN" enabled="true">
+		<altname lang="fr">RNIS</altname>
+		<vcard_entry property="TEL" type="ISDN" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Mobile Phone" enabled="true">
+		<altname lang="fr">Tél. mobile</altname>
+		<vcard_entry property="TEL" type="CELL" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Other Fax" enabled="true">
+		<altname lang="fr">Télécopie (autre)</altname>
+		<vcard_entry property="TEL" type="FAX,OTHER" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Other Phone" enabled="true">
+		<altname lang="fr">Téléphone (autre)</altname>
+		<vcard_entry property="TEL" type="HOME,OTHER" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Pager" enabled="true">
+		<altname lang="fr">Récepteur de radiomessagerie</altname>
+		<vcard_entry property="TEL" type="PAGER" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Primary Phone" enabled="true">
+		<altname lang="fr">Téléphone principal</altname>
+		<vcard_entry property="TEL" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Anniversary" enabled="true">
+		<altname lang="fr">Anniversaire de mariage ou fête</altname>
+		<vcard_entry property="ANNIVERSARY" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Assistant's Name" enabled="true">
+		<vcard_entry property="RELATED" type="assistant">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Manager's Name" enabled="true">
+		<altname lang="fr">Responsable</altname>
+		<vcard_entry property="RELATED" type="manager">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Birthday" enabled="true">
+		<altname lang="fr">Anniversaire</altname>
+		<vcard_entry property="BDAY" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Categories" enabled="true">
+		<altname lang="fr">Catégories</altname>
+		<vcard_entry property="CATEGORIES" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Children" enabled="true">
+		<altname lang="fr">Enfants</altname>
+		<vcard_entry property="RELATED" type="child" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Spouse" enabled="true">
+		<altname lang="fr">Conjoint(e)</altname>
+		<vcard_entry property="RELATED" type="spouse" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="E-mail Address" enabled="true">
+		<altname lang="fr">Adresse de messagerie</altname>
+		<vcard_entry property="EMAIL" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="E-mail 2 Address" enabled="true">
+		<altname lang="fr">Adresse de messagerie 2</altname>
+		<vcard_entry property="EMAIL" group="email2" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="E-mail 3 Address" enabled="true">
+		<altname lang="fr">Adresse de messagerie 3</altname>
+		<vcard_entry property="EMAIL" group="email3" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Gender" enabled="true">
+		<vcard_entry property="GENDER" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Initials" enabled="true">
+		<altname lang="fr">Initiales</altname>
+		<vcard_parameter property="N" parameter="initials">
+		</vcard_parameter>
+	</import_entry>
+	
+	<import_entry name="Language" enabled="true">
+		<altname lang="fr">Langue</altname>
+		<vcard_parameter property="LANG" >
+		</vcard_parameter>
+	</import_entry>
+	
+	<import_entry name="Notes" enabled="true">
+		<vcard_parameter property="NOTE" >
+		</vcard_parameter>
+	</import_entry>
+	
+	<import_entry name="User 2" enabled="true">
+		<altname lang="fr">Utilisateur 2</altname>
+		<vcard_entry property="IMPP" prefix="msn:">
+			<additional_property name="X-SERVICE-TYPE" value="msn" />
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Website" enabled="true">
+		<altname lang="fr">Page Web</altname>
+		<vcard_entry property="URL" >
+		</vcard_entry>
+	</import_entry>
+	
+</import_entries>

@@ -1,0 +1,32 @@
+{
+	"name": "owncloud/3rdparty",
+	"description": "All 3rdparty components",
+	"license": "MIT",
+	"config": {
+		"vendor-dir": "."
+	},
+	"repositories": [
+		{
+			"type":"package",
+			"package": {
+				"name": "mcnetic/phpzipstreamer",
+				"version":"master",
+				"source": {
+					"url": "https://github.com/McNetic/PHPZipStreamer.git",
+					"type": "git",
+					"reference":"master"
+				}
+			}
+		}
+	],
+	"require": {
+		"sabre/dav" : "1.8.12",
+		"mcnetic/phpzipstreamer": "dev-master",
+		"kriswallsmith/assetic": "1.2.*@dev",
+		"phpmailer/phpmailer": "v5.2.8",
+		"phpseclib/phpseclib": "*",
+		"rackspace/php-opencloud": "v1.9.2",
+		"james-heinrich/getid3": "dev-master"
+	}
+}
+

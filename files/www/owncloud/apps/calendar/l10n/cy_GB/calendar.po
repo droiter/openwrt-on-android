@@ -1,0 +1,846 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Owen Llywelyn <owen.llywelyn@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-30 01:46-0400\n"
+"PO-Revision-Date: 2014-06-30 05:46+0000\n"
+"Last-Translator: I Robot\n"
+"Language-Team: Welsh (United Kingdom) (http://www.transifex.com/projects/p/owncloud/language/cy_GB/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cy_GB\n"
+"Plural-Forms: nplurals=4; plural=(n==1) ? 0 : (n==2) ? 1 : (n != 8 && n != 11) ? 2 : 3;\n"
+
+#: ajax/cache/status.php:19
+msgid "Not all calendars are completely cached"
+msgstr "Nid yw storfa pob calendr yn llawn"
+
+#: ajax/cache/status.php:21
+msgid "Everything seems to be completely cached"
+msgstr "Mae storfa popeth i weld yn iawn"
+
+#: ajax/categories/rescan.php:29
+msgid "No calendars found."
+msgstr "Heb ganfod calendrau."
+
+#: ajax/categories/rescan.php:37
+msgid "No events found."
+msgstr "Heb ganfod digwyddiadau."
+
+#: ajax/event/edit.form.php:21
+msgid "Wrong calendar"
+msgstr "Calendr anghywir"
+
+#: ajax/event/edit.form.php:226 lib/object.php:209 lib/object.php:245
+msgid "You do not have the permissions to edit this event."
+msgstr "Nid oes gennych ganiatâd i olygu'r digwyddiad hwn."
+
+#: ajax/import/dropimport.php:29 ajax/import/import.php:66
+msgid ""
+"The file contained either no events or all events are already saved in your "
+"calendar."
+msgstr "Naill ai doedd dim digwyddiadau yn y ffeil, neu mae'r digwyddiadau eisoes wedi eu cadw yn eich calendr."
+
+#: ajax/import/dropimport.php:31 ajax/import/import.php:69
+msgid "events have been saved in the new calendar"
+msgstr ""
+
+#: ajax/import/import.php:58
+msgid "Import failed"
+msgstr "Methwyd mewnforio"
+
+#: ajax/import/import.php:71
+msgid "events have been saved in your calendar"
+msgstr ""
+
+#: ajax/settings/guesstimezone.php:26
+msgid "New Timezone:"
+msgstr "Cylchfa amser newydd:"
+
+#: ajax/settings/settimezone.php:23
+msgid "Timezone changed"
+msgstr "Newidiwyd cylchfa amser"
+
+#: ajax/settings/settimezone.php:25
+msgid "Invalid request"
+msgstr "Cais annilys"
+
+#: appinfo/app.php:38 js/l10n.php:87 templates/part.eventform.php:20
+#: templates/part.showevent.php:37
+msgid "Calendar"
+msgstr "Calendr"
+
+#: js/calendar.js:223
+msgid "Deletion failed"
+msgstr "Methwyd dileu"
+
+#: js/calendar.js:317
+msgid "ddd d MMMM[ yyyy]{ - [ddd d] MMMM yyyy}"
+msgstr "ddd d MMMM[ yyyy]{ - [ddd d] MMMM yyyy}"
+
+#: js/calendar.js:319
+msgid "ddd d MMMM[ yyyy] HH:mm{ - [ ddd d MMMM yyyy] HH:mm}"
+msgstr "ddd d MMMM[ yyyy] HH:mm{ - [ ddd d MMMM yyyy] HH:mm}"
+
+#: js/calendar.js:732
+msgid "group"
+msgstr "grŵp"
+
+#: js/calendar.js:734 templates/part.share.php:46 templates/part.share.php:81
+msgid "can edit"
+msgstr "yn gallu golygu"
+
+#: js/calendar.js:735 templates/part.share.php:50 templates/part.share.php:87
+msgid "can share"
+msgstr ""
+
+#: js/calendar.js:1003
+msgid "ddd"
+msgstr "ddd"
+
+#: js/calendar.js:1004
+msgid "ddd M/d"
+msgstr "ddd M/d"
+
+#: js/calendar.js:1005
+msgid "dddd M/d"
+msgstr "dddd M/d"
+
+#: js/calendar.js:1008
+msgid "MMMM yyyy"
+msgstr "MMMM yyyy"
+
+#: js/calendar.js:1010
+msgid "MMM d[ yyyy]{ '–'[ MMM] d yyyy}"
+msgstr ""
+
+#: js/calendar.js:1012
+msgid "dddd, MMM d, yyyy"
+msgstr "dddd, MMM d, yyyy"
+
+#: js/l10n.php:77 lib/object.php:610 templates/calendar.php:93
+msgid "Sunday"
+msgstr "Sul"
+
+#: js/l10n.php:77 lib/object.php:604 templates/calendar.php:92
+msgid "Monday"
+msgstr "Llun"
+
+#: js/l10n.php:77 lib/object.php:605
+msgid "Tuesday"
+msgstr "Mawrth"
+
+#: js/l10n.php:77 lib/object.php:606
+msgid "Wednesday"
+msgstr "Mercher"
+
+#: js/l10n.php:77 lib/object.php:607
+msgid "Thursday"
+msgstr "Iau"
+
+#: js/l10n.php:77 lib/object.php:608
+msgid "Friday"
+msgstr "Gwener"
+
+#: js/l10n.php:77 lib/object.php:609 templates/calendar.php:94
+msgid "Saturday"
+msgstr "Sadwrn"
+
+#: js/l10n.php:78
+msgid "Sun."
+msgstr "Sul."
+
+#: js/l10n.php:78
+msgid "Mon."
+msgstr "Llun."
+
+#: js/l10n.php:78
+msgid "Tue."
+msgstr "Maw."
+
+#: js/l10n.php:78
+msgid "Wed."
+msgstr "Mer."
+
+#: js/l10n.php:78
+msgid "Thu."
+msgstr "Iau."
+
+#: js/l10n.php:78
+msgid "Fri."
+msgstr "Gwe."
+
+#: js/l10n.php:78
+msgid "Sat."
+msgstr "Sad."
+
+#: js/l10n.php:79 lib/object.php:660
+msgid "January"
+msgstr "Ionawr"
+
+#: js/l10n.php:79 lib/object.php:661
+msgid "February"
+msgstr "Chwefror"
+
+#: js/l10n.php:79 lib/object.php:662
+msgid "March"
+msgstr "Mawrth"
+
+#: js/l10n.php:79 lib/object.php:663
+msgid "April"
+msgstr "Ebrill"
+
+#: js/l10n.php:79 lib/object.php:664
+msgid "May"
+msgstr "Mai"
+
+#: js/l10n.php:79 lib/object.php:665
+msgid "June"
+msgstr "Mehefin"
+
+#: js/l10n.php:79 lib/object.php:666
+msgid "July"
+msgstr "Gorffennaf"
+
+#: js/l10n.php:79 lib/object.php:667
+msgid "August"
+msgstr "Awst"
+
+#: js/l10n.php:79 lib/object.php:668
+msgid "September"
+msgstr "Medi"
+
+#: js/l10n.php:79 lib/object.php:669
+msgid "October"
+msgstr "Hydref"
+
+#: js/l10n.php:79 lib/object.php:670
+msgid "November"
+msgstr "Tachwedd"
+
+#: js/l10n.php:79 lib/object.php:671
+msgid "December"
+msgstr "Rhagfyr"
+
+#: js/l10n.php:80
+msgid "Jan."
+msgstr "Ion."
+
+#: js/l10n.php:80
+msgid "Feb."
+msgstr "Chwe."
+
+#: js/l10n.php:80
+msgid "Mar."
+msgstr "Maw."
+
+#: js/l10n.php:80
+msgid "Apr."
+msgstr "Ebr."
+
+#: js/l10n.php:80
+msgid "May."
+msgstr "Mai."
+
+#: js/l10n.php:80
+msgid "Jun."
+msgstr "Meh."
+
+#: js/l10n.php:80
+msgid "Jul."
+msgstr "Gor."
+
+#: js/l10n.php:80
+msgid "Aug."
+msgstr "Aws."
+
+#: js/l10n.php:80
+msgid "Sep."
+msgstr "Med."
+
+#: js/l10n.php:80
+msgid "Oct."
+msgstr "Hyd."
+
+#: js/l10n.php:80
+msgid "Nov."
+msgstr "Tach."
+
+#: js/l10n.php:80
+msgid "Dec."
+msgstr "Rhag."
+
+#: js/l10n.php:83
+msgid "All day"
+msgstr "Drwy'r dydd"
+
+#: js/l10n.php:84 lib/import.php:216 templates/calendar.php:21
+msgid "New Calendar"
+msgstr "Calendr Newydd"
+
+#: js/l10n.php:85
+msgid "Missing or invalid fields"
+msgstr "Meysydd gwag neu annilys"
+
+#: js/l10n.php:86 templates/part.showevent.php:11
+msgid "Title"
+msgstr "Teitl"
+
+#: js/l10n.php:88
+msgid "From Date"
+msgstr "Dyddiad cychwyn"
+
+#: js/l10n.php:89
+msgid "From Time"
+msgstr "Amser cychwyn"
+
+#: js/l10n.php:90
+msgid "To Date"
+msgstr "Dyddiad gorffen"
+
+#: js/l10n.php:91
+msgid "To Time"
+msgstr "Amser gorffen"
+
+#: js/l10n.php:92
+msgid "The event ends before it starts"
+msgstr "Mae'r digwyddiad yn gorffen cyn iddo gychwyn"
+
+#: js/l10n.php:93
+msgid "There was a database fail"
+msgstr "Methiant gyda'r gronfa ddata"
+
+#: js/l10n.php:94
+msgid "Interval is not valid. It must be a positive integer!"
+msgstr ""
+
+#: lib/app.php:121
+msgid "Birthday"
+msgstr "Penblwydd"
+
+#: lib/app.php:122
+msgid "Business"
+msgstr "Busnes"
+
+#: lib/app.php:123
+msgid "Call"
+msgstr "Galwad"
+
+#: lib/app.php:124
+msgid "Clients"
+msgstr "Cleientiaid"
+
+#: lib/app.php:125
+msgid "Deliverer"
+msgstr "Nwyddau"
+
+#: lib/app.php:126
+msgid "Holidays"
+msgstr "Gwyliau"
+
+#: lib/app.php:127
+msgid "Ideas"
+msgstr "Syniadau"
+
+#: lib/app.php:128
+msgid "Journey"
+msgstr "Siwrnau"
+
+#: lib/app.php:129
+msgid "Jubilee"
+msgstr "Jiwbilî"
+
+#: lib/app.php:130
+msgid "Meeting"
+msgstr "Cyfarfod"
+
+#: lib/app.php:131
+msgid "Other"
+msgstr "Arall"
+
+#: lib/app.php:132 lib/calendar.php:142
+msgid "Personal"
+msgstr "Personol"
+
+#: lib/app.php:133
+msgid "Projects"
+msgstr "Prosiectau"
+
+#: lib/app.php:134
+msgid "Questions"
+msgstr "Cwestiynau"
+
+#: lib/app.php:135
+msgid "Work"
+msgstr "Gwaith"
+
+#: lib/app.php:423
+msgid "by"
+msgstr "gan"
+
+#: lib/app.php:486
+msgid "unnamed"
+msgstr "heb enw"
+
+#: lib/calendar.php:190 lib/calendar.php:223
+msgid "You do not have the permissions to update this calendar."
+msgstr "Nid oes gennych ganiatâd i ddiweddaru'r calendr hwn."
+
+#: lib/calendar.php:258
+msgid "You do not have the permissions to delete this calendar."
+msgstr "Nid oes gennych ganiatâd i ddileu'r calendr hwn."
+
+#: lib/calendar.php:292
+msgid "You do not have the permissions to add to this calendar."
+msgstr "Nid oes gennych ganiatâd i ychwanegu at y calendr hwn."
+
+#: lib/object.php:122 lib/object.php:163 lib/object.php:329
+msgid "You do not have the permissions to add events to this calendar."
+msgstr "Nid oes gennych ganiatâd i ychwanegu digwyddiadau i'r calendr hwn."
+
+#: lib/object.php:175
+msgid "You cannot add non-public events to a shared calendar."
+msgstr ""
+
+#: lib/object.php:279 lib/object.php:309
+msgid "You do not have the permissions to delete this event."
+msgstr "Nid oes gennych ganiatâd i ddileu'r digwyddiad hwn."
+
+#: lib/object.php:503
+msgid "Busy"
+msgstr "Prysur"
+
+#: lib/object.php:553
+msgid "Show full event"
+msgstr ""
+
+#: lib/object.php:554
+msgid "Show only busy"
+msgstr ""
+
+#: lib/object.php:555
+msgid "Hide event"
+msgstr ""
+
+#: lib/object.php:565
+msgid "Does not repeat"
+msgstr "Ddim yn ailadrodd"
+
+#: lib/object.php:566
+msgid "Daily"
+msgstr "Dyddiol"
+
+#: lib/object.php:567
+msgid "Weekly"
+msgstr "Wythnosol"
+
+#: lib/object.php:568
+msgid "Every Weekday"
+msgstr "Bod dydd o'r wythnos"
+
+#: lib/object.php:569
+msgid "Bi-Weekly"
+msgstr "Eil-wythnosol"
+
+#: lib/object.php:570
+msgid "Monthly"
+msgstr "Misol"
+
+#: lib/object.php:571
+msgid "Yearly"
+msgstr "Blynyddol"
+
+#: lib/object.php:581
+msgid "never"
+msgstr "byth"
+
+#: lib/object.php:582
+msgid "by occurrences"
+msgstr "yn ôl digwyddiadau"
+
+#: lib/object.php:583
+msgid "by date"
+msgstr "yn ôl dyddiad"
+
+#: lib/object.php:593
+msgid "by monthday"
+msgstr "yn ôl diwrnod o'r mis"
+
+#: lib/object.php:594
+msgid "by weekday"
+msgstr "yn ôl diwrnod o'r wythnos"
+
+#: lib/object.php:620
+msgid "events week of month"
+msgstr "digwyddiadau wythnos o'r mis"
+
+#: lib/object.php:621
+msgid "first"
+msgstr "cyntaf"
+
+#: lib/object.php:622
+msgid "second"
+msgstr "ail"
+
+#: lib/object.php:623
+msgid "third"
+msgstr "trydydd"
+
+#: lib/object.php:624
+msgid "fourth"
+msgstr "pedwerydd"
+
+#: lib/object.php:625
+msgid "fifth"
+msgstr "pumed"
+
+#: lib/object.php:626
+msgid "last"
+msgstr "olaf"
+
+#: lib/object.php:681
+msgid "by events date"
+msgstr "yn ôl dyddiad digwyddiadau"
+
+#: lib/object.php:682
+msgid "by yearday(s)"
+msgstr "yn ôl diwrnodau'r flwyddyn"
+
+#: lib/object.php:683
+msgid "by weeknumber(s)"
+msgstr "yn ôl rhif yr wythnos"
+
+#: lib/object.php:684
+msgid "by day and month"
+msgstr "yn ôl dydd a mis"
+
+#: lib/sabre/backend.php:75
+msgid "Contact birthdays"
+msgstr ""
+
+#: lib/search.php:35 lib/search.php:37 lib/search.php:40
+msgid "Date"
+msgstr "Dyddiad"
+
+#: lib/search.php:43
+msgid "Cal."
+msgstr "Cal."
+
+#: templates/calendar.php:16
+msgid "Day"
+msgstr ""
+
+#: templates/calendar.php:16
+msgid "Week"
+msgstr "Wythnos"
+
+#: templates/calendar.php:16
+msgid "Month"
+msgstr "Mis"
+
+#: templates/calendar.php:17
+msgid "Today"
+msgstr "Heddiw"
+
+#: templates/calendar.php:42 templates/part.choosecalendar.rowfields.php:28
+msgid "CalDav Link"
+msgstr "Dolen CalDav"
+
+#: templates/calendar.php:55
+msgid "Timezone"
+msgstr "Cylchfa Amser"
+
+#: templates/calendar.php:80
+msgid "Update timezone automatically"
+msgstr "Diweddaru cylchfa amser yn awtomatig"
+
+#: templates/calendar.php:83
+msgid "Time format"
+msgstr "Fformat amser"
+
+#: templates/calendar.php:85
+msgid "24h"
+msgstr "24a"
+
+#: templates/calendar.php:86
+msgid "12h"
+msgstr "12a"
+
+#: templates/calendar.php:90
+msgid "Start week on"
+msgstr "Wythnos yn dechrau ar"
+
+#: templates/calendar.php:98
+msgid "Cache"
+msgstr "Storfa"
+
+#: templates/calendar.php:99
+msgid "Clear cache for repeating events"
+msgstr "Clirio'r storfa ar gyfer digwyddiadau sy'n ailadrodd"
+
+#: templates/calendar.php:102
+msgid "Primary CalDAV address"
+msgstr ""
+
+#: templates/calendar.php:106
+msgid "iOS/OS X CalDAV address"
+msgstr ""
+
+#: templates/part.choosecalendar.rowfields.php:15
+msgid "Share Calendar"
+msgstr "Rhannu Calendr"
+
+#: templates/part.choosecalendar.rowfields.php:32
+msgid "Download"
+msgstr "Llwytho i lawr"
+
+#: templates/part.choosecalendar.rowfields.php:38
+msgid "Edit"
+msgstr "Golygu"
+
+#: templates/part.choosecalendar.rowfields.php:45
+msgid "Delete"
+msgstr "Dileu"
+
+#: templates/part.editcalendar.php:9
+msgid "New calendar"
+msgstr "Calendr newydd"
+
+#: templates/part.editcalendar.php:9
+msgid "Edit calendar"
+msgstr "Golygu calendr"
+
+#: templates/part.editevent.php:1
+msgid "Edit event"
+msgstr ""
+
+#: templates/part.editevent.php:8
+msgid "Save event"
+msgstr ""
+
+#: templates/part.editevent.php:9
+msgid "Delete event"
+msgstr ""
+
+#: templates/part.eventform.php:5 templates/part.showevent.php:3
+msgid "Eventinfo"
+msgstr "Gwybodaeth digwyddiad"
+
+#: templates/part.eventform.php:6 templates/part.showevent.php:4
+msgid "Repeating"
+msgstr "Yn ailadrodd"
+
+#: templates/part.eventform.php:7 templates/part.showevent.php:5
+msgid "Alarm"
+msgstr "Larwm"
+
+#: templates/part.eventform.php:8 templates/part.showevent.php:6
+msgid "Attendees"
+msgstr "Mynychwyr"
+
+#: templates/part.eventform.php:10
+msgid "Share"
+msgstr "Rhannu"
+
+#: templates/part.eventform.php:15
+msgid "Title of the Event"
+msgstr "Teitl y digwyddiad"
+
+#: templates/part.eventform.php:41
+msgid "from"
+msgstr ""
+
+#: templates/part.eventform.php:46
+msgid "to"
+msgstr ""
+
+#: templates/part.eventform.php:54 templates/part.showevent.php:66
+msgid "All Day Event"
+msgstr "Digwyddiad Drwy'r Dydd"
+
+#: templates/part.eventform.php:57 templates/part.showevent.php:86
+msgid "Advanced options"
+msgstr "Gosodiadau uwch"
+
+#: templates/part.eventform.php:61 templates/part.showevent.php:91
+msgid "Location"
+msgstr "Lleoliad"
+
+#: templates/part.eventform.php:66
+msgid "Categories (separate by comma)"
+msgstr ""
+
+#: templates/part.eventform.php:68 templates/part.eventform.php:69
+msgid "Edit categories"
+msgstr "Golygu categorïau"
+
+#: templates/part.eventform.php:71 templates/part.showevent.php:99
+msgid "Description"
+msgstr "Disgrifiad"
+
+#: templates/part.eventform.php:74
+msgid "Export event"
+msgstr ""
+
+#: templates/part.eventform.php:82 templates/part.showevent.php:109
+msgid "Repeat"
+msgstr "Ailadrodd"
+
+#: templates/part.eventform.php:89 templates/part.showevent.php:116
+msgid "Advanced"
+msgstr "Uwch"
+
+#: templates/part.eventform.php:133 templates/part.showevent.php:160
+msgid "Select weekdays"
+msgstr "Dewis diwrnodau'r wythnos"
+
+#: templates/part.eventform.php:146 templates/part.eventform.php:159
+#: templates/part.showevent.php:173 templates/part.showevent.php:186
+msgid "Select days"
+msgstr "Dewis diwrnodau"
+
+#: templates/part.eventform.php:151 templates/part.showevent.php:178
+msgid "and the events day of year."
+msgstr "a diwrnod o'r flwyddyn digwyddiadau."
+
+#: templates/part.eventform.php:164 templates/part.showevent.php:191
+msgid "and the events day of month."
+msgstr "a diwrnod o'r mis digwyddiadau."
+
+#: templates/part.eventform.php:172 templates/part.showevent.php:199
+msgid "Select months"
+msgstr "Dewisiwch misoedd"
+
+#: templates/part.eventform.php:185 templates/part.showevent.php:212
+msgid "Select weeks"
+msgstr "Dewisiwch wythnosau"
+
+#: templates/part.eventform.php:190 templates/part.showevent.php:217
+msgid "and the events week of year."
+msgstr "ac wythnos o'r flwyddyn digwyddiadau."
+
+#: templates/part.eventform.php:196 templates/part.showevent.php:223
+msgid "Interval"
+msgstr "Ysbaid"
+
+#: templates/part.eventform.php:202 templates/part.showevent.php:229
+msgid "End"
+msgstr "Diwedd"
+
+#: templates/part.eventform.php:215 templates/part.showevent.php:242
+msgid "occurrences"
+msgstr "digwyddiadau"
+
+#: templates/part.eventform.php:234
+msgid "Visibility to people shared with"
+msgstr ""
+
+#: templates/part.import.php:14
+msgid "create a new calendar"
+msgstr "creu calendr newydd"
+
+#: templates/part.import.php:17
+msgid "Import a calendar file"
+msgstr "Mewnforio ffeil calendr"
+
+#: templates/part.import.php:24
+msgid "Please choose a calendar"
+msgstr "Dewisiwch galendr"
+
+#: templates/part.import.php:36
+msgid "Name of new calendar"
+msgstr "Enw'r calendr newydd"
+
+#: templates/part.import.php:44
+msgid "Take an available name!"
+msgstr "Cymrwch enw sydd ar gael!"
+
+#: templates/part.import.php:45
+msgid ""
+"A Calendar with this name already exists. If you continue anyhow, these "
+"calendars will be merged."
+msgstr "Mae Calendr gyda'r enw hwn eisoes yn bodoli. Os wnewch chi barhau, bydd y calendrau yma'n cael eu cyfuno."
+
+#: templates/part.import.php:48
+msgid "Remove all events from the selected calendar"
+msgstr "Tynnu pob digwyddiad o'r calendr ddewisiwyd"
+
+#: templates/part.import.php:50
+msgid "Import"
+msgstr "Mewnforio"
+
+#: templates/part.import.php:59
+msgid "Close Dialog"
+msgstr "Cau Deialog"
+
+#: templates/part.newevent.php:1
+msgid "Create a new event"
+msgstr "Creu digwyddiad newydd"
+
+#: templates/part.newevent.php:8
+msgid "Create event"
+msgstr ""
+
+#: templates/part.share.php:32
+msgid "Share with user or group"
+msgstr ""
+
+#: templates/part.share.php:53
+msgid "Unshare"
+msgstr "Dad-rannu"
+
+#: templates/part.share.php:59
+msgid "Not shared with anyone"
+msgstr ""
+
+#: templates/part.share.php:63
+msgid "Send Email"
+msgstr ""
+
+#: templates/part.share.php:67
+msgid "Shared via calendar"
+msgstr "Rhannwyd drwy'r calendr"
+
+#: templates/part.share.php:94
+msgid "Not shared with anyone via calendar"
+msgstr ""
+
+#: templates/part.showevent.php:1
+msgid "View an event"
+msgstr "Gweld digwyddiad"
+
+#: templates/part.showevent.php:19
+msgid "Category"
+msgstr "Categori"
+
+#: templates/part.showevent.php:23
+msgid "No categories selected"
+msgstr "Dim categorïau wedi'u dewis"
+
+#: templates/part.showevent.php:41
+#, php-format
+msgid "%s of %s"
+msgstr ""
+
+#: templates/part.showevent.php:50
+msgid "Access Class"
+msgstr "Dosbarth Mynediad"
+
+#: templates/part.showevent.php:70
+msgid "From"
+msgstr "O"
+
+#: templates/part.showevent.php:73 templates/part.showevent.php:81
+msgid "at"
+msgstr "yn"
+
+#: templates/part.showevent.php:78
+msgid "To"
+msgstr "I"

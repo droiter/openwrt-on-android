@@ -1,0 +1,10 @@
+Subject: 主题已批准 - “{TOPIC_TITLE}”
+
+你好 {USERNAME}，
+
+你收到此通知是因为你在 “{SITENAME}” 论坛所发表的主题 “{TOPIC_TITLE}” 被版主或管理员批准。
+
+如果你想查看主题，点下面的链接:
+{U_VIEW_TOPIC}
+
+{EMAIL_SIG}

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<info>
+	<id>firstrunwizard</id>
+	<name>First Run Wizard</name>
+	<description>
+		This application enables a pop-up window when a user first logs into ownCloud. This window welcomes new users to ownCloud, and contains links to the standard ownCloud desktop client, Google Play store app, and the Apple App Store app. The window also shows a link for accessing ownCloud via webdav. At any time, a user can click on a first run wizard button in their personal page to cause the app to reappear.
+The First Run Wizard can be customized to meet specific design goals, or to change links and messages. Create an appropriate theme following the Theming documentation, and changes to the look and feel of this Wizard are simple. More information is available in the First Run Wizard documentation, as well as the theming documentation.
+
+	</description>
+	<licence>AGPL</licence>
+	<author>Frank Karlitschek</author>
+	<require>4.9</require>
+	<shipped>true</shipped>
+	<default_enable/>
+	<ocsid>166055</ocsid>
+</info>

@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Marián Hvolka <marian.hvolka@stuba.sk>, 2013-2014
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-07-03 01:54-0400\n"
+"PO-Revision-Date: 2014-07-03 05:54+0000\n"
+"Last-Translator: I Robot\n"
+"Language-Team: Slovak (Slovakia) (http://www.transifex.com/projects/p/owncloud/language/sk_SK/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sk_SK\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: ajax/external.php:17
+msgid "Server to server sharing is not enabled on this server"
+msgstr "Zdieľanie server-server nie je na tomto serveri povolené"
+
+#: ajax/external.php:47
+msgid "Couldn't add remote share"
+msgstr "Nemožno pridať vzdialené zdieľanie"
+
+#: appinfo/app.php:33 js/app.js:34
+msgid "Shared with you"
+msgstr "Zdieľané s vami"
+
+#: appinfo/app.php:42 js/app.js:53
+msgid "Shared with others"
+msgstr "Zdieľané s ostanými"
+
+#: appinfo/app.php:51 js/app.js:72
+msgid "Shared by link"
+msgstr "Zdieľané pomocou odkazu"
+
+#: js/app.js:35
+msgid "No files have been shared with you yet."
+msgstr "Zatiaľ s vami nikto žiadne súbory nezdieľal."
+
+#: js/app.js:54
+msgid "You haven't shared any files yet."
+msgstr "Zatiaľ ste nezdieľali žiadne súbory."
+
+#: js/app.js:73
+msgid "You haven't shared any files by link yet."
+msgstr "Zatiaľ ste pomocou odkazu nezdieľali žiaden súbor."
+
+#: js/external.js:45 js/external.js:48
+msgid "Add {name} from {owner}@{remote}"
+msgstr "Pridať {name} z {owner}@{remote}"
+
+#: js/external.js:46 js/external.js:49
+msgid "Add Share"
+msgstr ""
+
+#: js/external.js:49 templates/authenticate.php:10
+#: templates/authenticate.php:12
+msgid "Password"
+msgstr "Heslo"
+
+#: js/public.js:203
+msgid "No ownCloud installation found at {remote}"
+msgstr "Žiadna ownCloud inštancia na {remote}"
+
+#: js/public.js:204
+msgid "Invalid ownCloud url"
+msgstr "Chybná ownCloud url"
+
+#: js/share.js:146
+msgid "Shared by {owner}"
+msgstr "Zdieľa {owner}"
+
+#: js/sharedfilelist.js:128
+msgid "Shared by"
+msgstr "Zdieľa"
+
+#: templates/authenticate.php:4
+msgid "This share is password-protected"
+msgstr "Toto zdieľanie je chránené heslom"
+
+#: templates/authenticate.php:7
+msgid "The password is wrong. Try again."
+msgstr "Heslo je chybné. Skúste to znova."
+
+#: templates/list.php:16
+msgid "Name"
+msgstr "Názov"
+
+#: templates/list.php:20
+msgid "Share time"
+msgstr "Čas zdieľania"
+
+#: templates/part.404.php:3
+msgid "Sorry, this link doesn’t seem to work anymore."
+msgstr "To je nepríjemné, ale tento odkaz už nie je funkčný."
+
+#: templates/part.404.php:4
+msgid "Reasons might be:"
+msgstr "Možné dôvody:"
+
+#: templates/part.404.php:6
+msgid "the item was removed"
+msgstr "položka bola presunutá"
+
+#: templates/part.404.php:7
+msgid "the link expired"
+msgstr "linke vypršala platnosť"
+
+#: templates/part.404.php:8
+msgid "sharing is disabled"
+msgstr "zdieľanie je zakázané"
+
+#: templates/part.404.php:10
+msgid "For more info, please ask the person who sent this link."
+msgstr "Pre viac informácií kontaktujte osobu, ktorá vám poslala tento odkaz."
+
+#: templates/public.php:20
+msgid "Add to your ownCloud"
+msgstr ""
+
+#: templates/public.php:23
+msgid "Save"
+msgstr "Uložiť"
+
+#: templates/public.php:28
+msgid "Download"
+msgstr "Sťahovanie"
+
+#: templates/public.php:59
+#, php-format
+msgid "Download %s"
+msgstr "Stiahnuť %s"
+
+#: templates/public.php:63
+msgid "Direct link"
+msgstr "Priama linka"
+
+#: templates/settings-admin.php:3
+msgid "Remote Shares"
+msgstr ""
+
+#: templates/settings-admin.php:7
+msgid "Allow other instances to mount public links shared from this server"
+msgstr "Povoliť ďalším inštanciám pripojiť verejné odkazy zdieľané z tohto servera"
+
+#: templates/settings-admin.php:11
+msgid "Allow users to mount public link shares"
+msgstr "Povoliť používateľom pripojiť sa na zdieľané verejné odkazy"

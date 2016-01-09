@@ -1,0 +1,30 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2011 OpenWrt.org
+# SyncY Author: wishinlife
+# QQ: 57956720
+# E-Mail: wishinlife@gmail.com, wishinlife@qq.com
+# Web Home: http://www.syncy.cn
+
+START=99
+STOP=10
+
+start() {
+        /usr/bin/syncy.py &
+}
+
+stop() {
+        [ -e /var/run/syncy.pid ] && {
+        	sypid=$(cat /var/run/syncy.pid)
+        	kill $sypid
+        }
+}
+
+restart() {
+	[ -e /var/run/syncy.pid ] && {
+		sypid=$(cat /var/run/syncy.pid)
+		kill $sypid
+	}
+	sleep 1
+	/usr/bin/syncy.py &
+}
+

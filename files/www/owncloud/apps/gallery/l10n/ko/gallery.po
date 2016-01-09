@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# youlmu <cessnagi@gmail.com>, 2012
+# youlmu <cessnagi@gmail.com>, 2012
+# yunhye <limonade83@gmail.com>, 2012
+# Shinjo Park <kde@peremen.name>, 2013
+# Park Shinjo <peremen@gmail.com>, 2013
+# Shinjo Park <kde@peremen.name>, 2012-2013
+# yunhye <limonade83@gmail.com>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-12 02:18-0400\n"
+"PO-Revision-Date: 2014-06-12 06:18+0000\n"
+"Last-Translator: I Robot\n"
+"Language-Team: Korean (http://www.transifex.com/projects/p/owncloud/language/ko/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ko\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: appinfo/app.php:36 js/gallery.js:127
+msgid "Pictures"
+msgstr "사진"
+
+#: js/public.js:23
+msgid "Picture view"
+msgstr "사진 보기"
+
+#: js/slideshow.js:338
+msgid "Error loading slideshow template"
+msgstr "슬라이드 쇼 템플릿을 불러오는 중 오류 발생"
+
+#: templates/index.php:4 templates/index.php:5
+msgid "Share"
+msgstr "공유"
+
+#: templates/index.php:11
+msgid ""
+"No pictures found! If you upload pictures in the files app, they will be "
+"displayed here."
+msgstr ""
+
+#: templates/public.php:9
+#, php-format
+msgid "shared by %s"
+msgstr ""
+
+#: templates/public.php:20
+msgid "File list"
+msgstr "파일 목록"

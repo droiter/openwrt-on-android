@@ -1,0 +1,11 @@
+@media only screen and (max-width: 768px) {
+
+
+/* hide search function on mobile to prevent wrap of elements */
+#editorsearchval,
+#editor_save+label {
+	display: none !important;
+}
+
+
+}

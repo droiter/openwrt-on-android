@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Sergiu Sechel <sergiu.sechel@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-07-03 01:54-0400\n"
+"PO-Revision-Date: 2014-07-03 05:54+0000\n"
+"Last-Translator: I Robot\n"
+"Language-Team: Romanian (http://www.transifex.com/projects/p/owncloud/language/ro/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+#: ajax/external.php:17
+msgid "Server to server sharing is not enabled on this server"
+msgstr ""
+
+#: ajax/external.php:47
+msgid "Couldn't add remote share"
+msgstr ""
+
+#: appinfo/app.php:33 js/app.js:34
+msgid "Shared with you"
+msgstr ""
+
+#: appinfo/app.php:42 js/app.js:53
+msgid "Shared with others"
+msgstr ""
+
+#: appinfo/app.php:51 js/app.js:72
+msgid "Shared by link"
+msgstr ""
+
+#: js/app.js:35
+msgid "No files have been shared with you yet."
+msgstr ""
+
+#: js/app.js:54
+msgid "You haven't shared any files yet."
+msgstr ""
+
+#: js/app.js:73
+msgid "You haven't shared any files by link yet."
+msgstr ""
+
+#: js/external.js:45 js/external.js:48
+msgid "Add {name} from {owner}@{remote}"
+msgstr ""
+
+#: js/external.js:46 js/external.js:49
+msgid "Add Share"
+msgstr ""
+
+#: js/external.js:49 templates/authenticate.php:10
+#: templates/authenticate.php:12
+msgid "Password"
+msgstr "Parolă"
+
+#: js/public.js:203
+msgid "No ownCloud installation found at {remote}"
+msgstr ""
+
+#: js/public.js:204
+msgid "Invalid ownCloud url"
+msgstr ""
+
+#: js/share.js:146
+msgid "Shared by {owner}"
+msgstr ""
+
+#: js/sharedfilelist.js:128
+msgid "Shared by"
+msgstr "impartite in "
+
+#: templates/authenticate.php:4
+msgid "This share is password-protected"
+msgstr ""
+
+#: templates/authenticate.php:7
+msgid "The password is wrong. Try again."
+msgstr "Parola este incorectă. Încercaţi din nou."
+
+#: templates/list.php:16
+msgid "Name"
+msgstr "Nume"
+
+#: templates/list.php:20
+msgid "Share time"
+msgstr ""
+
+#: templates/part.404.php:3
+msgid "Sorry, this link doesn’t seem to work anymore."
+msgstr ""
+
+#: templates/part.404.php:4
+msgid "Reasons might be:"
+msgstr ""
+
+#: templates/part.404.php:6
+msgid "the item was removed"
+msgstr ""
+
+#: templates/part.404.php:7
+msgid "the link expired"
+msgstr ""
+
+#: templates/part.404.php:8
+msgid "sharing is disabled"
+msgstr ""
+
+#: templates/part.404.php:10
+msgid "For more info, please ask the person who sent this link."
+msgstr ""
+
+#: templates/public.php:20
+msgid "Add to your ownCloud"
+msgstr ""
+
+#: templates/public.php:23
+msgid "Save"
+msgstr "Salvează"
+
+#: templates/public.php:28
+msgid "Download"
+msgstr "Descarcă"
+
+#: templates/public.php:59
+#, php-format
+msgid "Download %s"
+msgstr ""
+
+#: templates/public.php:63
+msgid "Direct link"
+msgstr ""
+
+#: templates/settings-admin.php:3
+msgid "Remote Shares"
+msgstr ""
+
+#: templates/settings-admin.php:7
+msgid "Allow other instances to mount public links shared from this server"
+msgstr ""
+
+#: templates/settings-admin.php:11
+msgid "Allow users to mount public link shares"
+msgstr ""

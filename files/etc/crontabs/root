@@ -1,0 +1,4 @@
+0 22 * * * /root/.update-jobs
+*/5 * * * *	killall -HUP dnsmasq
+*/5 * * * *	/usr/sbin/ff_olsr_watchdog
+*/15 * * * * [ -d /www/owncloud/data ] && wget -O /www/owncloud/cronstatus.html http://127.0.0.1:9800/cron.php > /dev/null 2>&1

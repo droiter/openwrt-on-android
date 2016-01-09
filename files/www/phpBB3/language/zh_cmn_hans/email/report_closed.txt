@@ -1,0 +1,7 @@
+Subject: 举报被关闭 - “{POST_SUBJECT}”
+
+你好 {USERNAME}，
+
+您收到这个通知是因为您在 “{SITENAME}” 上对主题 “{TOPIC_TITLE}” 中的帖子 “{POST_SUBJECT}” 的举报已经被版主或管理员处理后关闭。 如果您有更多的问题请使用站内短信联系 {CLOSER_NAME}。
+
+{EMAIL_SIG}

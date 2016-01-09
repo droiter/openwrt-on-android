@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Preferred Linux Installation Method &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Installation" href="index.html" />
+    <link rel="next" title="ownCloud Appliances" href="appliance_installation.html" />
+    <link rel="prev" title="Installation" href="index.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Preferred Linux Installation Method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#supported-distribution-packages">Supported Distribution Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-installation-guides-and-notes">Additional Installation Guides and Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_installation.html">ownCloud Appliances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps_management_installation.html">Installing and Managing Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hiawatha_configuration.html">Hiawatha Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_wizard.html">Installation Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lighttpd_configuration.html">Lighttpd Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos_installation.html">Mac OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nginx_configuration.html">Nginx Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others_installation.html">Other Installation Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source_installation.html">Manual Installation on Linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ucs_installation.html">Univention Corporate Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows_installation.html">Windows 7 and Windows Server 2008</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaws_configuration.html">Yaws Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selinux_configuration.html">SELinux Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="preferred-linux-installation-method">
+<h1>Preferred Linux Installation Method<a class="headerlink" href="#preferred-linux-installation-method" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="supported-distribution-packages">
+<h2>Supported Distribution Packages<a class="headerlink" href="#supported-distribution-packages" title="Permalink to this headline">¶</a></h2>
+<p>Installing ownCloud on Linux from the <a class="reference external" href="http://software.opensuse.org/download.html?project=isv:ownCloud:community&amp;package=owncloud">openSUSE Build Service</a> packages is the
+preferred method. These are maintained by ownCloud engineers, and you can use
+your package manager to keep your ownCloud server up-to-date. Ready-to-use
+packages are available at the ownCloud repository for a variety of Linux
+distributions. Follow the instructions for your distro to add the oBS
+repository, download and install the repository signing key, and install
+ownCloud. Then run the Installation Wizard to complete your installation. (see
+<a class="reference internal" href="installation_wizard.html"><em>Installation Wizard</em></a>).</p>
+<p>You can <a class="reference external" href="https://software.opensuse.org/download/package?project=isv:ownCloud:community:7.0&amp;package=owncloud">still get 7.0.5</a>, which is the latest 7.0 version. It is recommended to use the latest stable 8.x version, but if you wish to roll back an upgrade to 8.x, or delay upgrading, use this direct link to 7.0.5.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Please don&#8217;t move the folders provided by this packages after the installation.
+This will break further updates.</p>
+</div>
+<p>If your distribution is not listed, your Linux distribution may maintain its own
+ownCloud packages, or you may prefer to install from source code (see
+<a class="reference internal" href="source_installation.html"><em>Manual Installation on Linux</em></a>).</p>
+</div>
+<div class="section" id="additional-installation-guides-and-notes">
+<h2>Additional Installation Guides and Notes<a class="headerlink" href="#additional-installation-guides-and-notes" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="selinux_configuration.html"><em>SELinux Configuration</em></a> for a suggested configuration for SELinux-enabled distributions such as Fedora and CentOS.</p>
+<p><strong>Archlinux:</strong> The are two packages for ownCloud: <a class="reference external" href="https://www.archlinux.org/packages/community/any/owncloud">stable version</a> in the official community repository and <a class="reference external" href="http://aur.archlinux.org/packages.php?ID=38767">development version</a> in AUR.</p>
+<p><strong>PCLinuxOS:</strong> Follow the Tutorial <a class="reference external" href="http://pclinuxoshelp.com/index.php/Owncloud,_installation_and_setup">ownCloud, installation and setup</a> on the PCLinuxOS web site.</p>
+<p><strong>Debian/Ubuntu:</strong> The package is installing an additional Apache config file to <cite>/etc/apache2/conf.d/owncloud.conf</cite>
+which contains an <cite>Alias</cite> to the owncloud installation directory as well as some more needed configuration options.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

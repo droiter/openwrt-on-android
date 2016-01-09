@@ -1,0 +1,13 @@
+Subject: 帖子报告 - “{TOPIC_TITLE}”
+
+你好 {USERNAME}，
+
+你收到此通知是因为帖子在 “{SITENAME}” 上的帖子 “{POST_SUBJECT}”  被报告。
+
+如果你想查看报告，点下面的链接:
+{U_VIEW_REPORT}
+
+如果你想查看帖子，点下面的链接:
+{U_VIEW_POST}
+
+{EMAIL_SIG}

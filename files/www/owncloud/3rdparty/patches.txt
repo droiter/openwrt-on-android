@@ -1,0 +1,5 @@
+Patches:
+
+- remove dompdf from phpdocx, because we already ship dompdf in the 3rdparty's root folder (see 3ae4904 and e1e3207)
+- some external entity patches from https://github.com/owncloud/3rdparty/pull/74 - they should get superseeded by updating the affected libraries.
+- Doctrine: fix postgres column escaping when using reserved keyword: https://github.com/doctrine/dbal/pull/627

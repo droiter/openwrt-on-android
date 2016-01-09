@@ -1,0 +1,344 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!--
+	Parameters available
+	<import_core>
+	@brief: main parameters
+		<name></name>
+		@brief: Internal name
+		must match the xml file name with the pattern import_<name>_connector.xml
+		
+		<display_name></display_name>
+		@brief: Display name
+		
+		<type></type>
+		@brief: type (csv,vcard,ldif,...)
+		
+		<active></active>
+		@brief: if 0, will not be used
+		
+		<ignore_first_line><ignore_first_line/>
+		@brief: If the first line has titles (1 or true)
+		
+		<delimiter></delimiter>
+		@brief: if empty, automatic search between ',', ';' and '\t'
+		
+		<base_parsing></base_parsing>
+		@brief: parse by column name or column position
+		
+		<expected_columns></expected_columns>
+		@brief: if parse by column position, how many columns are expected (use for automatic import)
+	</import_core>
+
+	<import_entry name="" position="" enabled="" separator="" remove="">
+	@brief: csv entry to look for
+	name: property name (if base_parsing is name)
+	position: property position (if base_parsing is position)
+	enabled: import_entry used or not
+	separator: string used to separate multiple values
+	remove: string to remove in the value
+		
+		<altname lang=""></altname>
+		@brief: alternate property name
+		lang: language
+		value: other property name (if base_parsing is name)
+		
+		<vcard_favourites></vcard_favourites>
+		@brief: entry value to look for in order to add the current VCard to the Favourites section
+			
+		<vcard_entry property="" type="" prefix="" position="" group="" value="" separator="">
+		</vcard_entry>
+		@brief: VCard entry to add
+		property: VCard property name
+		type: VCard property type
+		prefix: prefix to add to the value
+		position: position of the element in the value
+		group: VCard group value
+		value: forced value
+		separator: separator string if position is set
+		
+		<vcard_parameter property="" parameter="">
+		</vcard_parameter>
+		@brief: additional parameter for the VCard property
+		property: property name to add parameter to
+		parameter: parameter name
+		
+	</import_entry>
+-->
+<!--
+XML connector for gmail csv import
+author: Nicolas Mora mail@babelouest.org
+-->
+<import_entries>
+	
+	<import_core>
+		<name>csv_yahoo</name>
+		<display_name>Yahoo CSV</display_name>
+		<type>csv</type>
+		<active>1</active>
+		<ignore_first_line>1</ignore_first_line>
+		<base_parsing>name</base_parsing>
+	</import_core>
+	
+	<import_entry name="First" enabled="true">
+		<vcard_entry property="FN" position="0" separator=" ">
+		</vcard_entry>
+		<vcard_entry property="N" position="0">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Middle" enabled="true">
+		<vcard_entry property="N" position="2">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Last" enabled="true">
+		<vcard_entry property="FN" position="1" separator=" ">
+		</vcard_entry>
+		<vcard_entry property="N" position="1">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Nickname" enabled="true">
+		<vcard_entry property="NICKNAME">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Email" enabled="true">
+		<vcard_entry property="EMAIL" type="HOME">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Category" enabled="true">
+		<vcard_entry property="CATEGORIES">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home" enabled="true">
+		<vcard_entry property="PHONE" type="HOME">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Work" enabled="true">
+		<vcard_entry property="PHONE" type="WORK">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Pager" enabled="true">
+		<vcard_entry property="PHONE" type="PAGER">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Fax" enabled="true">
+		<vcard_entry property="PHONE" type="FAX">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Mobile" enabled="true">
+		<vcard_entry property="PHONE" type="CELL">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Other" enabled="true">
+		<vcard_entry property="PHONE" type="OTHER">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Yahoo Phone" enabled="true">
+		<vcard_entry property="PHONE" type="OTHER,YAHOO">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Primary" enabled="true">
+		<vcard_entry property="EMAIL" type="HOME">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Alternate Email 1" enabled="true">
+		<vcard_entry property="EMAIL" group="alternate1">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Alternate Email 2" enabled="true">
+		<vcard_entry property="EMAIL" group="alternate2">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Personal Website" enabled="true">
+		<vcard_entry property="URL" type="HOME" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Business Website" enabled="true">
+		<vcard_entry property="URL" type="WORK" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Title" enabled="true">
+		<vcard_entry property="TITLE" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Company" enabled="true">
+		<vcard_entry property="ORG" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Work Address" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="2">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Work City" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="3">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Work State" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="4">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Work ZIP" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="5">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Work Country" enabled="true">
+		<vcard_entry property="ADR" type="WORK" position="6">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Address" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="2">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home City" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="3">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home State" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="4">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home ZIP" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="5">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Home Country" enabled="true">
+		<vcard_entry property="ADR" type="HOME" position="6">
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Birthday" enabled="true">
+		<vcard_entry property="BDAY" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Anniversary" enabled="true">
+		<vcard_entry property="ANNIVERSARY" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Comments" enabled="true">
+		<vcard_entry property="NOTE" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID1" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID2" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID3" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID4" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID5" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID6" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID7" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID8" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Messenger ID9" enabled="true">
+		<vcard_entry property="IMPP" >
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Skype ID" enabled="true">
+		<vcard_entry property="IMPP" prefix="skype:">
+			<additional_property name="X-SERVICE-TYPE" value="skype" />
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="IRC ID" enabled="true">
+		<vcard_entry property="IMPP" prefix="irc:">
+			<additional_property name="X-SERVICE-TYPE" value="irc" />
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="ICQ ID" enabled="true">
+		<vcard_entry property="IMPP" prefix="icq:">
+			<additional_property name="X-SERVICE-TYPE" value="icq" />
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="Google ID" enabled="true">
+		<vcard_entry property="IMPP" prefix="xmpp:">
+			<additional_property name="X-SERVICE-TYPE" value="googletalk" />
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="MSN ID" enabled="true">
+		<vcard_entry property="IMPP" prefix="msn:">
+			<additional_property name="X-SERVICE-TYPE" value="msn" />
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="AIM ID" enabled="true">
+		<vcard_entry property="IMPP" prefix="aim:">
+			<additional_property name="X-SERVICE-TYPE" value="aim" />
+		</vcard_entry>
+	</import_entry>
+	
+	<import_entry name="QQ ID" enabled="true">
+		<vcard_entry property="IMPP" prefix="x-apple:">
+			<additional_property name="X-SERVICE-TYPE" value="qq" />
+		</vcard_entry>
+	</import_entry>
+	
+	<!--<import_entry property="" type="" prefix="" position="" enabled="true">
+		<vcard_entry property="" type="" prefix="" position="" image="">
+		</vcard_entry>
+	</import_entry>-->
+	
+</import_entries>

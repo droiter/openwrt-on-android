@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Ahmed Waqar Shah <mrshah_300@yahoo.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-12 02:18-0400\n"
+"PO-Revision-Date: 2014-06-12 06:18+0000\n"
+"Last-Translator: I Robot\n"
+"Language-Team: Urdu (Pakistan) (http://www.transifex.com/projects/p/owncloud/language/ur_PK/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ur_PK\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: appinfo/app.php:36 js/gallery.js:127
+msgid "Pictures"
+msgstr "تصاویر"
+
+#: js/public.js:23
+msgid "Picture view"
+msgstr "منظر تصویر"
+
+#: js/slideshow.js:338
+msgid "Error loading slideshow template"
+msgstr "سلائیڈ شو ٹمپلیٹ لوڈ ہونے میں خرابی"
+
+#: templates/index.php:4 templates/index.php:5
+msgid "Share"
+msgstr "تقسیم"
+
+#: templates/index.php:11
+msgid ""
+"No pictures found! If you upload pictures in the files app, they will be "
+"displayed here."
+msgstr ""
+
+#: templates/public.php:9
+#, php-format
+msgid "shared by %s"
+msgstr "%s سے اشتراک شدہ"
+
+#: templates/public.php:20
+msgid "File list"
+msgstr "فہرست فائل"

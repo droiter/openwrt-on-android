@@ -1,0 +1,910 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# astalush <astalush@yahoo.com>, 2014
+# corneliu.e <corneliueva@yahoo.com>, 2013
+# Dumitru Ursu <dima@ceata.org>, 2013
+# Popescu Ionut <ripkid666@gmail.com>, 2013
+# Sergiu Sechel <sergiu.sechel@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-07-03 01:54-0400\n"
+"PO-Revision-Date: 2014-07-02 21:21+0000\n"
+"Last-Translator: astalush <astalush@yahoo.com>\n"
+"Language-Team: Romanian (http://www.transifex.com/projects/p/owncloud/language/ro/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ro\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+#: ajax/share.php:90
+msgid "Expiration date is in the past."
+msgstr "Data de expirare este în trecut."
+
+#: ajax/share.php:122 ajax/share.php:164
+#, php-format
+msgid "Couldn't send mail to following users: %s "
+msgstr ""
+
+#: ajax/update.php:10
+msgid "Turned on maintenance mode"
+msgstr ""
+
+#: ajax/update.php:13
+msgid "Turned off maintenance mode"
+msgstr ""
+
+#: ajax/update.php:16
+msgid "Updated database"
+msgstr "Bază de date actualizată"
+
+#: ajax/update.php:19
+msgid "Checked database schema update"
+msgstr ""
+
+#: ajax/update.php:27
+#, php-format
+msgid "Disabled incompatible apps: %s"
+msgstr ""
+
+#: avatar/controller.php:69
+msgid "No image or file provided"
+msgstr ""
+
+#: avatar/controller.php:86
+msgid "Unknown filetype"
+msgstr "Tip fișier necunoscut"
+
+#: avatar/controller.php:90
+msgid "Invalid image"
+msgstr "Imagine invalidă"
+
+#: avatar/controller.php:120 avatar/controller.php:147
+msgid "No temporary profile picture available, try again"
+msgstr ""
+
+#: avatar/controller.php:140
+msgid "No crop data provided"
+msgstr ""
+
+#: js/config.php:45
+msgid "Sunday"
+msgstr "Duminică"
+
+#: js/config.php:46
+msgid "Monday"
+msgstr "Luni"
+
+#: js/config.php:47
+msgid "Tuesday"
+msgstr "Marți"
+
+#: js/config.php:48
+msgid "Wednesday"
+msgstr "Miercuri"
+
+#: js/config.php:49
+msgid "Thursday"
+msgstr "Joi"
+
+#: js/config.php:50
+msgid "Friday"
+msgstr "Vineri"
+
+#: js/config.php:51
+msgid "Saturday"
+msgstr "Sâmbătă"
+
+#: js/config.php:56
+msgid "January"
+msgstr "Ianuarie"
+
+#: js/config.php:57
+msgid "February"
+msgstr "Februarie"
+
+#: js/config.php:58
+msgid "March"
+msgstr "Martie"
+
+#: js/config.php:59
+msgid "April"
+msgstr "Aprilie"
+
+#: js/config.php:60
+msgid "May"
+msgstr "Mai"
+
+#: js/config.php:61
+msgid "June"
+msgstr "Iunie"
+
+#: js/config.php:62
+msgid "July"
+msgstr "Iulie"
+
+#: js/config.php:63
+msgid "August"
+msgstr "August"
+
+#: js/config.php:64
+msgid "September"
+msgstr "Septembrie"
+
+#: js/config.php:65
+msgid "October"
+msgstr "Octombrie"
+
+#: js/config.php:66
+msgid "November"
+msgstr "Noiembrie"
+
+#: js/config.php:67
+msgid "December"
+msgstr "Decembrie"
+
+#: js/js.js:501
+msgid "Settings"
+msgstr "Setări"
+
+#: js/js.js:590
+msgid "File"
+msgstr "Fişier "
+
+#: js/js.js:591
+msgid "Folder"
+msgstr "Dosar"
+
+#: js/js.js:592
+msgid "Image"
+msgstr ""
+
+#: js/js.js:593
+msgid "Audio"
+msgstr ""
+
+#: js/js.js:607
+msgid "Saving..."
+msgstr "Se salvează..."
+
+#: js/js.js:1276
+msgid "seconds ago"
+msgstr "secunde în urmă"
+
+#: js/js.js:1277
+msgid "%n minute ago"
+msgid_plural "%n minutes ago"
+msgstr[0] "acum %n minut"
+msgstr[1] "acum %n minute"
+msgstr[2] "acum %n minute"
+
+#: js/js.js:1278
+msgid "%n hour ago"
+msgid_plural "%n hours ago"
+msgstr[0] "acum %n oră"
+msgstr[1] "acum %n ore"
+msgstr[2] "acum %n ore"
+
+#: js/js.js:1279
+msgid "today"
+msgstr "astăzi"
+
+#: js/js.js:1280
+msgid "yesterday"
+msgstr "ieri"
+
+#: js/js.js:1281
+msgid "%n day ago"
+msgid_plural "%n days ago"
+msgstr[0] "acum %n zi"
+msgstr[1] "acum %n zile"
+msgstr[2] "acum %n zile"
+
+#: js/js.js:1282
+msgid "last month"
+msgstr "ultima lună"
+
+#: js/js.js:1283
+msgid "%n month ago"
+msgid_plural "%n months ago"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: js/js.js:1284
+msgid "last year"
+msgstr "ultimul an"
+
+#: js/js.js:1285
+msgid "years ago"
+msgstr "ani în urmă"
+
+#: js/lostpassword.js:3 lostpassword/controller/lostcontroller.php:175
+msgid "Couldn't send reset email. Please contact your administrator."
+msgstr ""
+
+#: js/lostpassword.js:5
+msgid ""
+"The link to reset your password has been sent to your email. If you do not "
+"receive it within a reasonable amount of time, check your spam/junk "
+"folders.<br>If it is not there ask your local administrator."
+msgstr ""
+
+#: js/lostpassword.js:7
+msgid ""
+"Your files are encrypted. If you haven't enabled the recovery key, there "
+"will be no way to get your data back after your password is reset.<br />If "
+"you are not sure what to do, please contact your administrator before you "
+"continue. <br />Do you really want to continue?"
+msgstr ""
+
+#: js/lostpassword.js:10
+msgid "I know what I'm doing"
+msgstr ""
+
+#: js/lostpassword.js:13 lostpassword/templates/resetpassword.php:9
+msgid "Reset password"
+msgstr "Resetează parola"
+
+#: js/lostpassword.js:16
+msgid "Password can not be changed. Please contact your administrator."
+msgstr ""
+
+#: js/oc-dialogs.js:109 js/oc-dialogs.js:257
+msgid "Yes"
+msgstr "Da"
+
+#: js/oc-dialogs.js:119 js/oc-dialogs.js:267
+msgid "No"
+msgstr "Nu"
+
+#: js/oc-dialogs.js:204
+msgid "Choose"
+msgstr "Alege"
+
+#: js/oc-dialogs.js:231
+msgid "Error loading file picker template: {error}"
+msgstr ""
+
+#: js/oc-dialogs.js:284
+msgid "Ok"
+msgstr "Ok"
+
+#: js/oc-dialogs.js:304
+msgid "Error loading message template: {error}"
+msgstr ""
+
+#: js/oc-dialogs.js:432
+msgid "{count} file conflict"
+msgid_plural "{count} file conflicts"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#: js/oc-dialogs.js:446
+msgid "One file conflict"
+msgstr "Un conflict de fișier"
+
+#: js/oc-dialogs.js:452
+msgid "New Files"
+msgstr ""
+
+#: js/oc-dialogs.js:453
+msgid "Already existing files"
+msgstr ""
+
+#: js/oc-dialogs.js:455
+msgid "Which files do you want to keep?"
+msgstr "Ce fișiere vrei să păstrezi?"
+
+#: js/oc-dialogs.js:456
+msgid ""
+"If you select both versions, the copied file will have a number added to its"
+" name."
+msgstr "Dacă alegi ambele versiuni, fișierul copiat va avea un număr atașat la denumirea sa."
+
+#: js/oc-dialogs.js:464
+msgid "Cancel"
+msgstr "Anulare"
+
+#: js/oc-dialogs.js:474
+msgid "Continue"
+msgstr "Continuă"
+
+#: js/oc-dialogs.js:521 js/oc-dialogs.js:534
+msgid "(all selected)"
+msgstr ""
+
+#: js/oc-dialogs.js:524 js/oc-dialogs.js:538
+msgid "({count} selected)"
+msgstr ""
+
+#: js/oc-dialogs.js:546
+msgid "Error loading file exists template"
+msgstr ""
+
+#: js/setup.js:92
+msgid "Very weak password"
+msgstr "Parolă foarte slabă"
+
+#: js/setup.js:93
+msgid "Weak password"
+msgstr "Parolă slabă"
+
+#: js/setup.js:94
+msgid "So-so password"
+msgstr ""
+
+#: js/setup.js:95
+msgid "Good password"
+msgstr ""
+
+#: js/setup.js:96
+msgid "Strong password"
+msgstr ""
+
+#: js/share.js:116 js/share.js:206
+msgid "Shared"
+msgstr "Partajat"
+
+#: js/share.js:209
+msgid "Shared by {owner}"
+msgstr ""
+
+#: js/share.js:212
+msgid "Shared with {recipients}"
+msgstr ""
+
+#: js/share.js:218
+msgid "Share"
+msgstr "Partajează"
+
+#: js/share.js:278 js/share.js:292 js/share.js:299 js/share.js:945
+#: templates/installation.php:10
+msgid "Error"
+msgstr "Eroare"
+
+#: js/share.js:280 js/share.js:1008
+msgid "Error while sharing"
+msgstr "Eroare la partajare"
+
+#: js/share.js:292
+msgid "Error while unsharing"
+msgstr "Eroare la anularea partajării"
+
+#: js/share.js:299
+msgid "Error while changing permissions"
+msgstr "Eroare la modificarea permisiunilor"
+
+#: js/share.js:309
+msgid "Shared with you and the group {group} by {owner}"
+msgstr "Distribuie cu tine si grupul {group} de {owner}"
+
+#: js/share.js:311
+msgid "Shared with you by {owner}"
+msgstr "Distribuie cu tine de {owner}"
+
+#: js/share.js:335
+msgid "Share with user or group …"
+msgstr ""
+
+#: js/share.js:341
+msgid "Share link"
+msgstr ""
+
+#: js/share.js:347
+msgid ""
+"The public link will expire no later than {days} days after it is created"
+msgstr ""
+
+#: js/share.js:349
+msgid "By default the public link will expire after {days} days"
+msgstr ""
+
+#: js/share.js:354
+msgid "Password protect"
+msgstr "Protejare cu parolă"
+
+#: js/share.js:356
+msgid "Choose a password for the public link"
+msgstr ""
+
+#: js/share.js:362
+msgid "Allow Public Upload"
+msgstr "Permiteţi încărcarea publică."
+
+#: js/share.js:366
+msgid "Email link to person"
+msgstr "Expediază legătura prin poșta electronică"
+
+#: js/share.js:367
+msgid "Send"
+msgstr "Expediază"
+
+#: js/share.js:372
+msgid "Set expiration date"
+msgstr "Specifică data expirării"
+
+#: js/share.js:373
+msgid "Expiration date"
+msgstr "Data expirării"
+
+#: js/share.js:411
+msgid "Share via email:"
+msgstr "Distribuie prin email:"
+
+#: js/share.js:414
+msgid "No people found"
+msgstr "Nici o persoană găsită"
+
+#: js/share.js:463 js/share.js:531
+msgid "group"
+msgstr "grup"
+
+#: js/share.js:496
+msgid "Resharing is not allowed"
+msgstr "Repartajarea nu este permisă"
+
+#: js/share.js:547
+msgid "Shared in {item} with {user}"
+msgstr "Distribuie in {item} si {user}"
+
+#: js/share.js:569
+msgid "Unshare"
+msgstr "Anulare partajare"
+
+#: js/share.js:577
+msgid "notify by email"
+msgstr ""
+
+#: js/share.js:580
+msgid "can share"
+msgstr "se poate partaja"
+
+#: js/share.js:583
+msgid "can edit"
+msgstr "poate edita"
+
+#: js/share.js:585
+msgid "access control"
+msgstr "control acces"
+
+#: js/share.js:588
+msgid "create"
+msgstr "creare"
+
+#: js/share.js:591
+msgid "update"
+msgstr "actualizare"
+
+#: js/share.js:594
+msgid "delete"
+msgstr "ștergere"
+
+#: js/share.js:926
+msgid "Password protected"
+msgstr "Protejare cu parolă"
+
+#: js/share.js:945
+msgid "Error unsetting expiration date"
+msgstr "Eroare la anularea datei de expirare"
+
+#: js/share.js:966
+msgid "Error setting expiration date"
+msgstr "Eroare la specificarea datei de expirare"
+
+#: js/share.js:995
+msgid "Sending ..."
+msgstr "Se expediază..."
+
+#: js/share.js:1006
+msgid "Email sent"
+msgstr "Mesajul a fost expediat"
+
+#: js/share.js:1030
+msgid "Warning"
+msgstr "Atenție"
+
+#: js/tags.js:8
+msgid "The object type is not specified."
+msgstr "Tipul obiectului nu este specificat."
+
+#: js/tags.js:19
+msgid "Enter new"
+msgstr "Introducere nou"
+
+#: js/tags.js:33
+msgid "Delete"
+msgstr "Șterge"
+
+#: js/tags.js:43
+msgid "Add"
+msgstr "Adaugă"
+
+#: js/tags.js:57
+msgid "Edit tags"
+msgstr ""
+
+#: js/tags.js:75
+msgid "Error loading dialog template: {error}"
+msgstr ""
+
+#: js/tags.js:288
+msgid "No tags selected for deletion."
+msgstr ""
+
+#: js/update.js:30
+msgid "Updating {productName} to version {version}, this may take a while."
+msgstr ""
+
+#: js/update.js:43
+msgid "Please reload the page."
+msgstr ""
+
+#: js/update.js:52
+msgid "The update was unsuccessful."
+msgstr ""
+
+#: js/update.js:61
+msgid "The update was successful. Redirecting you to ownCloud now."
+msgstr "Actualizare reușită. Ești redirecționat către ownCloud."
+
+#: lostpassword/controller/lostcontroller.php:110
+msgid "Couldn't reset password because the token is invalid"
+msgstr ""
+
+#: lostpassword/controller/lostcontroller.php:136
+msgid "Couldn't send reset email. Please make sure your username is correct."
+msgstr ""
+
+#: lostpassword/controller/lostcontroller.php:151
+msgid ""
+"Couldn't send reset email because there is no email address for this "
+"username. Please contact your administrator."
+msgstr ""
+
+#: lostpassword/controller/lostcontroller.php:168
+#, php-format
+msgid "%s password reset"
+msgstr "%s resetare parola"
+
+#: lostpassword/templates/email.php:2
+msgid "Use the following link to reset your password: {link}"
+msgstr "Folosește următorul link pentru a reseta parola: {link}"
+
+#: lostpassword/templates/lostpassword.php:6
+msgid "You will receive a link to reset your password via Email."
+msgstr "Vei primi un mesaj prin care vei putea reseta parola via email."
+
+#: lostpassword/templates/lostpassword.php:8
+#: lostpassword/templates/lostpassword.php:9 templates/installation.php:51
+#: templates/installation.php:54 templates/login.php:31 templates/login.php:35
+msgid "Username"
+msgstr "Nume utilizator"
+
+#: lostpassword/templates/lostpassword.php:13
+msgid ""
+"Your files are encrypted. If you haven't enabled the recovery key, there "
+"will be no way to get your data back after your password is reset. If you "
+"are not sure what to do, please contact your administrator before you "
+"continue. Do you really want to continue?"
+msgstr "Fișierele tale sunt criptate. Dacă nu ai activat o cheie de recuperare, nu va mai exista nici o metodă prin care să îți recuperezi datele după resetarea parole. Dacă nu ești sigur în privința la ce ai de făcut, contactează un administrator înainte să continuii. Chiar vrei să continui?"
+
+#: lostpassword/templates/lostpassword.php:15
+msgid "Yes, I really want to reset my password now"
+msgstr "Da, eu chiar doresc să îmi resetez parola acum"
+
+#: lostpassword/templates/lostpassword.php:18
+msgid "Reset"
+msgstr "Resetare"
+
+#: lostpassword/templates/resetpassword.php:5
+msgid "New password"
+msgstr "Noua parolă"
+
+#: lostpassword/templates/resetpassword.php:6
+msgid "New Password"
+msgstr ""
+
+#: setup/controller.php:140
+#, php-format
+msgid ""
+"Mac OS X is not supported and %s will not work properly on this platform. "
+"Use it at your own risk! "
+msgstr ""
+
+#: setup/controller.php:144
+msgid ""
+"For the best results, please consider using a GNU/Linux server instead."
+msgstr ""
+
+#: strings.php:5
+msgid "Personal"
+msgstr "Personal"
+
+#: strings.php:6
+msgid "Users"
+msgstr "Utilizatori"
+
+#: strings.php:7 templates/layout.user.php:53 templates/layout.user.php:117
+msgid "Apps"
+msgstr "Aplicații"
+
+#: strings.php:8
+msgid "Admin"
+msgstr "Administrator"
+
+#: strings.php:9
+msgid "Help"
+msgstr "Ajutor"
+
+#: tags/controller.php:22
+msgid "Error loading tags"
+msgstr ""
+
+#: tags/controller.php:48
+msgid "Tag already exists"
+msgstr ""
+
+#: tags/controller.php:64
+msgid "Error deleting tag(s)"
+msgstr ""
+
+#: tags/controller.php:75
+msgid "Error tagging"
+msgstr ""
+
+#: tags/controller.php:86
+msgid "Error untagging"
+msgstr ""
+
+#: tags/controller.php:97
+msgid "Error favoriting"
+msgstr ""
+
+#: tags/controller.php:108
+msgid "Error unfavoriting"
+msgstr ""
+
+#: templates/403.php:12
+msgid "Access forbidden"
+msgstr "Acces restricționat"
+
+#: templates/404.php:15
+msgid "Cloud not found"
+msgstr "Nu s-a găsit"
+
+#: templates/altmail.php:2
+#, php-format
+msgid ""
+"Hey there,\n"
+"\n"
+"just letting you know that %s shared %s with you.\n"
+"View it: %s\n"
+"\n"
+msgstr ""
+
+#: templates/altmail.php:4 templates/mail.php:17
+#, php-format
+msgid "The share will expire on %s."
+msgstr ""
+
+#: templates/altmail.php:7 templates/mail.php:20
+msgid "Cheers!"
+msgstr ""
+
+#: templates/installation.php:25 templates/installation.php:32
+#: templates/installation.php:39
+msgid "Security Warning"
+msgstr "Avertisment de securitate"
+
+#: templates/installation.php:26
+msgid "Your PHP version is vulnerable to the NULL Byte attack (CVE-2006-7243)"
+msgstr "Versiunea dvs. PHP este vulnerabilă la un atac cu un octet NULL  (CVE-2006-7243)"
+
+#: templates/installation.php:27
+#, php-format
+msgid "Please update your PHP installation to use %s securely."
+msgstr "Te rog actualizează versiunea PHP pentru a utiliza %s în mod securizat."
+
+#: templates/installation.php:33
+msgid ""
+"No secure random number generator is available, please enable the PHP "
+"OpenSSL extension."
+msgstr "Nu este disponibil niciun generator securizat de numere aleatoare, vă rog activați extensia PHP OpenSSL."
+
+#: templates/installation.php:34
+msgid ""
+"Without a secure random number generator an attacker may be able to predict "
+"password reset tokens and take over your account."
+msgstr "Fără generatorul securizat de numere aleatoare , un atacator poate anticipa simbolurile de resetare a parolei și poate prelua controlul asupra contului tău."
+
+#: templates/installation.php:40
+msgid ""
+"Your data directory and files are probably accessible from the internet "
+"because the .htaccess file does not work."
+msgstr "Directorul tău de date și fișiere sunt probabil accesibile de pe Internet, deoarece fișierul .htaccess nu funcționează."
+
+#: templates/installation.php:42
+#, php-format
+msgid ""
+"For information how to properly configure your server, please see the <a "
+"href=\"%s\" target=\"_blank\">documentation</a>."
+msgstr "Pentru informații despre cum să configurezi serverul, vezi <a href=\"%s\" target=\"_blank\">documentația</a>."
+
+#: templates/installation.php:48
+msgid "Create an <strong>admin account</strong>"
+msgstr "Crează un <strong>cont de administrator</strong>"
+
+#: templates/installation.php:59 templates/installation.php:62
+#: templates/login.php:41 templates/login.php:44
+msgid "Password"
+msgstr "Parolă"
+
+#: templates/installation.php:72
+msgid "Storage & database"
+msgstr ""
+
+#: templates/installation.php:79
+msgid "Data folder"
+msgstr "Director date"
+
+#: templates/installation.php:92
+msgid "Configure the database"
+msgstr "Configurează baza de date"
+
+#: templates/installation.php:96
+#, php-format
+msgid "Only %s is available."
+msgstr ""
+
+#: templates/installation.php:111 templates/installation.php:113
+msgid "Database user"
+msgstr "Utilizatorul bazei de date"
+
+#: templates/installation.php:119 templates/installation.php:122
+msgid "Database password"
+msgstr "Parola bazei de date"
+
+#: templates/installation.php:127 templates/installation.php:129
+msgid "Database name"
+msgstr "Numele bazei de date"
+
+#: templates/installation.php:137 templates/installation.php:139
+msgid "Database tablespace"
+msgstr "Tabela de spațiu a bazei de date"
+
+#: templates/installation.php:146 templates/installation.php:148
+msgid "Database host"
+msgstr "Bază date"
+
+#: templates/installation.php:157
+msgid ""
+"SQLite will be used as database. For larger installations we recommend to "
+"change this."
+msgstr ""
+
+#: templates/installation.php:159
+msgid "Finish setup"
+msgstr "Finalizează instalarea"
+
+#: templates/installation.php:159
+msgid "Finishing …"
+msgstr ""
+
+#: templates/layout.user.php:40
+msgid ""
+"This application requires JavaScript to be enabled for correct operation.  "
+"Please <a href=\"http://enable-javascript.com/\" target=\"_blank\">enable "
+"JavaScript</a> and re-load this interface."
+msgstr ""
+
+#: templates/layout.user.php:44
+#, php-format
+msgid "%s is available. Get more information on how to update."
+msgstr "%s este disponibil. Vezi mai multe informații despre procesul de actualizare."
+
+#: templates/layout.user.php:80 templates/singleuser.user.php:8
+msgid "Log out"
+msgstr "Ieșire"
+
+#: templates/login.php:11
+msgid "Automatic logon rejected!"
+msgstr "Autentificare automată respinsă!"
+
+#: templates/login.php:12
+msgid ""
+"If you did not change your password recently, your account may be "
+"compromised!"
+msgstr "Dacă nu ți-ai schimbat parola recent, contul tău ar putea fi compromis!"
+
+#: templates/login.php:14
+msgid "Please change your password to secure your account again."
+msgstr "Te rog schimbă-ți parola pentru a-ți securiza din nou contul."
+
+#: templates/login.php:19
+msgid "Server side authentication failed!"
+msgstr ""
+
+#: templates/login.php:20
+msgid "Please contact your administrator."
+msgstr ""
+
+#: templates/login.php:50
+msgid "Forgot your password? Reset it!"
+msgstr ""
+
+#: templates/login.php:55
+msgid "remember"
+msgstr "amintește"
+
+#: templates/login.php:59
+msgid "Log in"
+msgstr "Autentificare"
+
+#: templates/login.php:65
+msgid "Alternative Logins"
+msgstr "Conectări alternative"
+
+#: templates/mail.php:15
+#, php-format
+msgid ""
+"Hey there,<br><br>just letting you know that %s shared <strong>%s</strong> "
+"with you.<br><a href=\"%s\">View it!</a><br><br>"
+msgstr ""
+
+#: templates/singleuser.user.php:3
+msgid "This ownCloud instance is currently in single user mode."
+msgstr ""
+
+#: templates/singleuser.user.php:4
+msgid "This means only administrators can use the instance."
+msgstr ""
+
+#: templates/singleuser.user.php:5 templates/update.user.php:5
+msgid ""
+"Contact your system administrator if this message persists or appeared "
+"unexpectedly."
+msgstr ""
+
+#: templates/singleuser.user.php:7 templates/update.user.php:6
+msgid "Thank you for your patience."
+msgstr ""
+
+#: templates/update.admin.php:3
+#, php-format
+msgid "%s will be updated to version %s."
+msgstr ""
+
+#: templates/update.admin.php:7
+msgid "The following apps will be disabled:"
+msgstr ""
+
+#: templates/update.admin.php:17
+#, php-format
+msgid "The theme %s has been disabled."
+msgstr ""
+
+#: templates/update.admin.php:21
+msgid ""
+"Please make sure that the database, the config folder and the data folder "
+"have been backed up before proceeding."
+msgstr ""
+
+#: templates/update.admin.php:23
+msgid "Start update"
+msgstr ""
+
+#: templates/update.user.php:3
+msgid ""
+"This ownCloud instance is currently being updated, which may take a while."
+msgstr ""
+
+#: templates/update.user.php:4
+msgid "Please reload this page after a short time to continue using ownCloud."
+msgstr ""

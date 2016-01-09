@@ -1,0 +1,17 @@
+Subject: “{SITENAME}” - 给朋友发送email
+
+你好 {TO_USERNAME}，
+
+这个email由 {FROM_USERNAME} 从 "{SITENAME}" 寄送给您，  他/她觉得您可能会对这些内容感兴趣:
+
+{TOPIC_NAME}
+
+您可以在如下链接中浏览:
+
+{U_TOPIC}
+
+ {FROM_USERNAME} 发送的邮件内容如下，请注意这些内容并没有经过论坛管理员批准或审查。 如果您对这类邮件表示不满，请联系论坛管理员 {BOARD_CONTACT}。请在邮件中包含这个邮件的邮件头内容。
+
+----------
+
+{MESSAGE}

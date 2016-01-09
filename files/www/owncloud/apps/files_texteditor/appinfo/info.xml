@@ -1,0 +1,16 @@
+<?xml version="1.0"?> 
+<info>
+	<id>files_texteditor</id>
+	<name>Text Editor</name>
+	<description>
+		This application enables ownCloud users to open, save and edit text files in the web browser. If enabled, an entry in the New button at the top of the web browser the Text file entry appears. When clicked, a new text file opens in the browser and the file can be saved into the current ownCloud directory. Further, when a text file is clicked in the web browser, it will be opened and editable. If the privileges allow, a user can also edit shared files and save these changes back into the web browser.
+More information is available in the Text Editor documentation.
+
+	</description>
+	<licence>AGPL</licence>
+	<author>Tom Needham</author>
+	<require>4.93</require>
+	<shipped>true</shipped>
+	<default_enable/>
+	<ocsid>166051</ocsid>
+</info>

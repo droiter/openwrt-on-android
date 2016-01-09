@@ -1,0 +1,10 @@
+Subject: 私信报告 - “{TOPIC_TITLE}”
+
+你好 {USERNAME}，
+
+你收到此通知是因为在 “{SITENAME}” 论坛上，“{AUTHOR_NAME}” 所发的一条私信被报告， 私信标题为 “{SUBJECT}”。
+
+如果你想查看报告，点下面的链接:
+{U_VIEW_REPORT}
+
+{EMAIL_SIG}

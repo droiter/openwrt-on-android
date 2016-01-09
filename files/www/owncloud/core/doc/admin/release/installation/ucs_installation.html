@@ -1,0 +1,418 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Univention Corporate Server &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Installation" href="index.html" />
+    <link rel="next" title="Windows 7 and Windows Server 2008" href="windows_installation.html" />
+    <link rel="prev" title="Manual Installation on Linux" href="source_installation.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Installation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux_installation.html">Preferred Linux Installation Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="appliance_installation.html">ownCloud Appliances</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps_management_installation.html">Installing and Managing Apps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hiawatha_configuration.html">Hiawatha Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation_wizard.html">Installation Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lighttpd_configuration.html">Lighttpd Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos_installation.html">Mac OS X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nginx_configuration.html">Nginx Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="others_installation.html">Other Installation Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="source_installation.html">Manual Installation on Linux</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Univention Corporate Server</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-configuration">Pre configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#postconfiguration-optional">Postconfiguration (optional)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-owncloud">Using ownCloud</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="windows_installation.html">Windows 7 and Windows Server 2008</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaws_configuration.html">Yaws Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="selinux_configuration.html">SELinux Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration/index.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="univention-corporate-server">
+<h1>Univention Corporate Server<a class="headerlink" href="#univention-corporate-server" title="Permalink to this headline">¶</a></h1>
+<p>Subscribers to the ownCloud Enterprise edition can also integrate with
+<abbr title="Univention Corporate Server">UCS</abbr>.</p>
+<div class="section" id="pre-configuration">
+<span id="preconfig"></span><h2>Pre configuration<a class="headerlink" href="#pre-configuration" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud makes use of the UCR, the Univention Configuration Registry. The values
+are being read during installation, most of them can be changed later, too.
+Changes done directly via ownCloud are not taken over to UCR. We think we found
+sane defaults, nevertheless you might have your own requirements. The
+installation script will listen to the UCR keys listed below. In case you want
+to override any default setting, simply add the key in question to the UCR and
+assign your required value.</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="20%" />
+<col width="30%" />
+<col width="30%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Default</th>
+<th class="head">Description</th>
+<th class="head">Introduced</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>owncloud/directory/data</td>
+<td>/var/lib/owncloud</td>
+<td>Specifies where the file storage will be placed</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-odd"><td>owncloud/db/name</td>
+<td>owncloud</td>
+<td>Name of the MySQL database. ownCloud will create an own user for it.</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-even"><td>owncloud/user/quota</td>
+<td>(empty)</td>
+<td>The default quota, when a user is being added. Assign values in human readable strings, e.g. “2 GB”. Unlimited if empty.</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-odd"><td>owncloud/user/enabled</td>
+<td>0</td>
+<td>Whether a new user is allowed to use ownCloud by default.</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-even"><td>owncloud/group/enabled</td>
+<td>0</td>
+<td>Whether a new group is allowed to be used in ownCloud by default.</td>
+<td>2012.4.0.4</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/base/users</td>
+<td>cn=users,$ldap_base</td>
+<td>The users-subtree in the LDAP directory. If left blank it will fall back to the LDAP base.</td>
+<td>2012.4.0.4</td>
+</tr>
+<tr class="row-even"><td>owncloud/ldap/base/groups</td>
+<td>cn=groups,$ldap_base</td>
+<td>The groups-subtree in the LDAP directory. If left blank it will fall back to the LDAP base.</td>
+<td>2012.4.0.4</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/groupMemberAssoc</td>
+<td>uniqueMember</td>
+<td>The LDAP attribute showing the group-member relationship. Possible values: uniqueMember, memberUid and member</td>
+<td>2012.4.0.4</td>
+</tr>
+<tr class="row-even"><td>owncloud/ldap/tls</td>
+<td>1</td>
+<td>Whether to talk to the LDAP server via TLS.</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/disableMainServer</td>
+<td>0</td>
+<td>Deactivates the (first) LDAP Configuration</td>
+<td>5.0.9</td>
+</tr>
+<tr class="row-even"><td>owncloud/ldap/cacheTTL</td>
+<td>600</td>
+<td>Lifetime of the ownCloud LDAP Cache in seconds</td>
+<td>5.0.9</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/UUIDAttribute</td>
+<td>(empty)</td>
+<td>Attribute that provides a unique value for each user and group entry. Empty value for autodetection.</td>
+<td>5.0.9</td>
+</tr>
+<tr class="row-even"><td>owncloud/ldap/loginFilter</td>
+<td>(&amp;(|(&amp;(objectClass=posixAccount) (objectClass=shadowAccount)) (objectClass=univentionMail) (objectClass=sambaSamAccount) (objectClass=simpleSecurityObject) (&amp;(objectClass=person) (objectClass=organizationalPerson) (objectClass=inetOrgPerson))) (!(uidNumber=0)) (!(uid=*$)) (&amp;(uid=%uid) (ownCloudEnabled=1)))</td>
+<td>The LDAP filter that shall be used when a user tries to log in.</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/userlistFilter</td>
+<td>(&amp;(|(&amp;(objectClass=posixAccount) (objectClass=shadowAccount)) (objectClass=univentionMail) (objectClass=sambaSamAccount) (objectClass=simpleSecurityObject) (&amp;(objectClass=person) (objectClass=organizationalPerson) (objectClass=inetOrgPerson))) (!(uidNumber=0))(!(uid=*$)) (&amp;(ownCloudEnabled=1)))</td>
+<td>The LDAP filter that shall be used when the user list is being retrieved (e.g. for sharing)</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-even"><td>owncloud/ldap/groupFilter</td>
+<td>(&amp;(objectClass=posixGroup) (ownCloudEnabled=1))</td>
+<td>The LDAP filter that shall be used when the group list is being retrieved (e.g. for sharing)</td>
+<td>2012.4.0.4</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/internalNameAttribute</td>
+<td>uid</td>
+<td>Attribute that should be used to create the user&#8217;s owncloud internal name</td>
+<td>5.0.9</td>
+</tr>
+<tr class="row-even"><td>owncloud/ldap/displayName</td>
+<td>uid</td>
+<td>The LDAP attribute that should be displayed as name in ownCloud</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/user/searchAttributes</td>
+<td>uid,givenName,sn,description,employeeNumber,mailPrimaryAddress</td>
+<td>Attributes taken into consideration when searching for users (comma separated)</td>
+<td>5.0.9</td>
+</tr>
+<tr class="row-even"><td>owncloud/ldap/user/quotaAttribute</td>
+<td>ownCloudQuota</td>
+<td>Name of the quota attribute. The default attribute is provided by owncloud-schema.</td>
+<td>5.0.9</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/user/homeAttribute</td>
+<td>(empty)</td>
+<td>Attribute that should be used to create the user&#8217;s owncloud internal home folder</td>
+<td>5.0.9</td>
+</tr>
+<tr class="row-even"><td>owncloud/ldap/group/displayName</td>
+<td>cn</td>
+<td>The LDAP attribute that should be used as groupname in ownCloud</td>
+<td>2012.4.0.4</td>
+</tr>
+<tr class="row-odd"><td>owncloud/ldap/group/searchAttributes</td>
+<td>cn,description, mailPrimaryAddress</td>
+<td>Attributes taken into consideration when searching for groups (comma separated)</td>
+<td>5.0.9</td>
+</tr>
+<tr class="row-even"><td>owncloud/join/users/update</td>
+<td>yes</td>
+<td>Wether ownCloud LDAP schema should be applied to existing users</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-odd"><td>owncloud/group/enableDomainUsers</td>
+<td>1</td>
+<td>Wether the group “Domain Users” shall be enabled for ownCloud on install</td>
+<td>2012.4.0.4</td>
+</tr>
+<tr class="row-even"><td>owncloud/join/users/filter</td>
+<td>(&amp;(|(&amp;(objectClass=posixAccount) (objectClass=shadowAccount)) (objectClass=univentionMail) (objectClass=sambaSamAccount) (objectClass=simpleSecurityObject) (&amp;(objectClass=person) (objectClass=organizationalPerson) (objectClass=inetOrgPerson))) (!(uidNumber=0)) (!(|(uid=*$) (uid=owncloudsystemuser) (uid=join-backup) (uid=join-slave))) (!(objectClass=ownCloudUser)))</td>
+<td>Filters, on which LDAP users the ownCloud schema should be applied to. The default excludes system users and already ownCloudUsers.</td>
+<td>2012.0.1</td>
+</tr>
+<tr class="row-odd"><td>owncloud/join/groups/filter</td>
+<td>(empty)</td>
+<td>Filters which LDAP groups will be en/disabled for ownCloud when running the script /usr/share/owncloud/update-groups.sh</td>
+<td>2012.4.0.4</td>
+</tr>
+</tbody>
+</table>
+<p>If you want to override the default settings, simply create the key in
+question in the UCR and assign your required value, for example:</p>
+<div class="highlight-python"><pre>ucr set owncloud/user/enabled=1</pre>
+</div>
+<p>or via UMC:</p>
+<img alt="../_images/ucsint2.png" src="../_images/ucsint2.png" />
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>Now, we are ready to install ownCloud. This can be either done through the UCS
+App Center (recommended) or by downloading the packages.</p>
+<div class="section" id="ucs-app-center">
+<h3>UCS App Center<a class="headerlink" href="#ucs-app-center" title="Permalink to this headline">¶</a></h3>
+<p>Open the Univention Management Console and choose the App Center module. You
+will see a variety of available applications, including ownCloud.</p>
+<img alt="../_images/ucs-app-center-module.png" src="../_images/ucs-app-center-module.png" />
+<p>Click on ownCloud 5 and follow the instructions.</p>
+<img alt="../_images/ucs-app-center-install.png" src="../_images/ucs-app-center-install.png" />
+<p>In the UCS App Center, you can also upgrade from ownCloud 4.5 by installing
+ownCloud 5.0. They are provided as separate apps. It is only possible to have
+one version of ownCloud installed.</p>
+</div>
+<div class="section" id="manually-by-download">
+<h3>Manually by download<a class="headerlink" href="#manually-by-download" title="Permalink to this headline">¶</a></h3>
+<p>Download the integration packages <a class="reference external" href="https://owncloud.com/download">from our website</a> and install them from
+within your download folder (note: the package owncloud-unsupported is
+optional) via command line:</p>
+<div class="highlight-python"><pre>dpkg -i owncloud*.deb</pre>
+</div>
+<p>ownCloud will be configured to fully work with LDAP.</p>
+</div>
+<div class="section" id="reinstallation">
+<h3>Reinstallation<a class="headerlink" href="#reinstallation" title="Permalink to this headline">¶</a></h3>
+<p>When ownCloud was installed before and uninstalled via AppCenter or via command
+line using apt-get remove, ownCloud can be simply installed again. The old
+configuration will be used again.</p>
+<p>When an older ownCloud was installed and has been purged (only possible via
+command line using apt-get purge) the old configuration is gone, but data is
+left. This blocks an installation. You can either install the old version and
+upgrade to ownCloud 5 or (re)move the old data. This is done by removing the
+MySQL database &#8220;ownCloud&#8221; using the command line:</p>
+<div class="highlight-python"><pre>mysql -u root -e "DROP DATABASE owncloud" -p`tail /etc/mysql.secret</pre>
+</div>
+<p>In this case you probably also want to remove the data directory
+<strong>/var/lib/owncloud</strong> although this is not mandatory.</p>
+</div>
+</div>
+<div class="section" id="postconfiguration-optional">
+<h2>Postconfiguration (optional)<a class="headerlink" href="#postconfiguration-optional" title="Permalink to this headline">¶</a></h2>
+<p>There is only one local admin user “owncloudadmin”, you can find his password in
+<cite>/etc/owncloudadmin.secret</cite>. Use this account, if you want to change basic
+ownCloud settings.</p>
+<p>In the installation process a virtual host is set up (Apache is required
+therefore). If you want to modify the settings, edit
+<tt class="file docutils literal"><span class="pre">/etc/apache2/sites-available/owncloud</span></tt> and restart the web server. You
+might want to do it to enable HTTPS connections. Besides that, you can edit the
+<strong>.htaccess-File in /var/www/owncloud/</strong>. In the latter file there are also the
+PHP limits for file transfer specified.</p>
+</div>
+<div class="section" id="using-owncloud">
+<h2>Using ownCloud<a class="headerlink" href="#using-owncloud" title="Permalink to this headline">¶</a></h2>
+<p>If you decided to enable every user by default to use ownCloud, simply
+open up <a class="reference external" href="http://myserver.com/owncloud/">http://myserver.com/owncloud/</a> and log in with your LDAP
+credentials and enjoy.</p>
+<p>If you did not, go to the UMC and enable the users who shall have access
+(see picture below). Then, login at <a class="reference external" href="http://myserver.com/owncloud/">http://myserver.com/owncloud/</a> with
+your LDAP credentials.</p>
+<img alt="../_images/ucsint1.png" src="../_images/ucsint1.png" />
+<p>Updating users can also be done by the script
+<tt class="file docutils literal"><span class="pre">/usr/share/owncloud/update-users.sh</span></tt> . It takes the following UCR
+variables as parameters: <strong>owncloud/user/enabled</strong> for enabling or disabling,
+<strong>owncloud/user/quota</strong> as the Quota value and <strong>owncloud/join/users/filter</strong> as
+LDAP filter to select the users to update.</p>
+<div class="section" id="groups-2012-4-0-4">
+<h3>Groups 2012.4.0.4<a class="headerlink" href="#groups-2012-4-0-4" title="Permalink to this headline">¶</a></h3>
+<p>Since ownCloud Enterprise 2012.4.0.4 group support is enabled. Groups,
+that are activated for ownCloud usage, can be used to share files to
+instead of single users, for example. It is also important to note, that
+users can only share within groups where they belong to. Groups can be
+enabled and disabled via UCM as shown in the screen shot below.</p>
+<img alt="../_images/ucsint.png" src="../_images/ucsint.png" />
+<p>Another way to enable or disable groups is to use the script
+<tt class="file docutils literal"><span class="pre">/usr/share/owncloud/update-groups.sh</span></tt>. Currently, it takes an argument
+which can be 1=enable groups or 0=disable groups. The filter applied is being
+taken from the UCR variable <strong>owncloud/join/groups/filter</strong>. In case it is
+empty, a message will be displayed.</p>
+</div>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,3 @@
+FLUSH PRIVILEGES;
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('asdf1234');
+create database phpbb;

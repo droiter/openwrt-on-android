@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# André <lokal_profil@hotmail.com>, 2013
+# Patrik Nilsson <asavartzeth@gmail.com>, 2014
+# Christer Eriksson <post@hceriksson.com>, 2012
+# Magnus Höglund <magnus@linux.com>, 2012
+# Magnus Höglund <magnus@linux.com>, 2012
+# Juho Ojala, 2013
+# Daniel Sandman <revoltism@gmail.com>, 2012
+# Stefan Gagner <stefan@mei-ya.se>, 2014
+# tscooter <tscooter@hotmail.com>, 2012
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2014-06-17 02:18-0400\n"
+"PO-Revision-Date: 2014-06-16 10:20+0000\n"
+"Last-Translator: Stefan Gagner <stefan@mei-ya.se>\n"
+"Language-Team: Swedish (http://www.transifex.com/projects/p/owncloud/language/sv/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: appinfo/app.php:36 js/gallery.js:127
+msgid "Pictures"
+msgstr "Bilder"
+
+#: js/public.js:23
+msgid "Picture view"
+msgstr "Bild vy"
+
+#: js/slideshow.js:338
+msgid "Error loading slideshow template"
+msgstr "Fel vid laddning av mallen för bildspelet"
+
+#: templates/index.php:4 templates/index.php:5
+msgid "Share"
+msgstr "Dela"
+
+#: templates/index.php:11
+msgid ""
+"No pictures found! If you upload pictures in the files app, they will be "
+"displayed here."
+msgstr "Kan inte hitta några bilder! Om du har laddat upp bilderna med fil-appen, kan de visas här senare."
+
+#: templates/public.php:9
+#, php-format
+msgid "shared by %s"
+msgstr "delad av %s"
+
+#: templates/public.php:20
+msgid "File list"
+msgstr "Fil lista"

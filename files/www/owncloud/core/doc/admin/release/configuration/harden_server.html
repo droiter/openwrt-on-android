@@ -1,0 +1,354 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Hardening and Security Guidance &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Configuration" href="index.html" />
+    <link rel="next" title="JavaScript and CSS Asset Management" href="js_css_asset_management_configuration.html" />
+    <link rel="prev" title="Files Locking App Configuration" href="files_locking_enabling.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../whats_new_admin.html">What&#8217;s New for Admins in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/index.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Configuration</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="activity_configuration.html">Configuring the Activity App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="antivirus_configuration.html">Configuring the ClamAV Antivirus Scanner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatic_configuration.html">Automatic Configuration Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="background_jobs_configuration.html">Defining Background Jobs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="big_file_upload_configuration.html">Uploading big files &gt; 512MB (as set by default)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collaborative_documents_configuration.html">Configuring the Collaborative Documents App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_sample_php_parameters.html">Config.php Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom_client_configuration.html">Custom Client Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="database_configuration.html">Database Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email_configuration.html">Email Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="encryption_configuration.html">Encryption Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration_gui.html">Configuring External Storage (GUI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_storage_configuration.html">Configuring External Storage (Configuration File)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="external_sites.html">Linking External Sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_sharing_configuration.html">File Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="files_locking_enabling.html">Files Locking App Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Hardening and Security Guidance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#limit-on-password-length">Limit on Password Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#operating-system">Operating system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deployment">Deployment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-https">Use HTTPS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-a-dedicated-domain-for-owncloud">Use a dedicated domain for ownCloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#serve-security-related-headers-by-the-web-server">Serve security related Headers by the web server</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="js_css_asset_management_configuration.html">JavaScript and CSS Asset Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knowledgebase_configuration.html">Knowledge Base Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="language_configuration.html">Language Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logging_configuration.html">Logging Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occ_command.html">Using the occ Command</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_tips.html">Performance Tips</a></li>
+<li class="toctree-l2"><a class="reference internal" href="previews_configuration.html">Previews Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reverse_proxy_configuration.html">Reverse Proxy Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="search_configuration.html">Enabling Full-Text Search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server_to_server_configuration.html">Configuring Server-to-Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serving_static_files_configuration.html">Serving Static Files for Better Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="thirdparty_php_configuration.html">Using Third Party PHP Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ftp_smb_imap.html">User Authentication with IMAP, SMB, and FTP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap.html">User Authentication with LDAP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_auth_ldap_cleanup.html">LDAP User Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user_configuration.html">User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reset_admin_password.html">Resetting a Lost Admin Password</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="hardening-and-security-guidance">
+<h1>Hardening and Security Guidance<a class="headerlink" href="#hardening-and-security-guidance" title="Permalink to this headline">¶</a></h1>
+<p>ownCloud aims to ship with secure defaults that do not need to get modified by
+administrators. However, in some cases some additional security hardening can
+only be applied in scenarios were the administrator have complete control over
+the ownCloud instance.</p>
+<p>This document lists some security hardenings which require manual interaction by
+administrators. The whole document content is based on the assumption that you
+run ownCloud Server on Apache2 on a Linux environment.</p>
+<div class="section" id="limit-on-password-length">
+<h2>Limit on Password Length<a class="headerlink" href="#limit-on-password-length" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud uses the bcrypt algorithm and thus for security and performance reasons, e.g. Denial of Service as CPU demand increases exponentially, it only verifies the first 72 characters of passwords. This applies to all passwords that you use in ownCloud: user passwords, passwords on link shares, and passwords on external shares.</p>
+</div>
+<div class="section" id="operating-system">
+<h2>Operating system<a class="headerlink" href="#operating-system" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="give-php-read-accesss-to-dev-urandom">
+<h3>Give PHP read accesss to <tt class="docutils literal"><span class="pre">/dev/urandom</span></tt><a class="headerlink" href="#give-php-read-accesss-to-dev-urandom" title="Permalink to this headline">¶</a></h3>
+<p>ownCloud uses a <a class="reference external" href="https://tools.ietf.org/html/rfc4086#section-5.2">RFC 4086 (&#8220;Randomness Requirements for Security&#8221;)</a> compliant
+mixer to generate cryptographically secure pseudo-random numbers. This means
+that when generating a random number ownCloud will request multiple random
+numbers from different sources and derive from these the final random number.</p>
+<p>The random number generation also tries to request random numbers from
+<tt class="docutils literal"><span class="pre">/dev/urandom</span></tt>, thus it is highly recommended to configure your setup in such
+a way that PHP is able to read random data from it.</p>
+</div>
+<div class="section" id="enable-hardening-modules-such-as-selinux">
+<h3>Enable hardening modules such as SELinux<a class="headerlink" href="#enable-hardening-modules-such-as-selinux" title="Permalink to this headline">¶</a></h3>
+<p>It is highly recommend to enable hardening modules such as SELinux where
+possible. See <a class="reference internal" href="../installation/selinux_configuration.html"><em>SELinux Configuration</em></a> to learn more about
+SELinux.</p>
+</div>
+</div>
+<div class="section" id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="move-data-directory-outside-of-the-web-root">
+<h3>Move data directory outside of the web root<a class="headerlink" href="#move-data-directory-outside-of-the-web-root" title="Permalink to this headline">¶</a></h3>
+<p>It is highly recommended to move the data directory (where ownCloud stores its
+data) outside of the web root (i.e. outside of <tt class="docutils literal"><span class="pre">/var/www</span></tt>) It is possible to
+do this by moving the folder manually, and then adjusting the
+<tt class="docutils literal"><span class="pre">'datadirectory'</span></tt> parameter in <tt class="docutils literal"><span class="pre">config.php</span></tt>.</p>
+</div>
+<div class="section" id="disable-preview-image-generation">
+<h3>Disable preview image generation<a class="headerlink" href="#disable-preview-image-generation" title="Permalink to this headline">¶</a></h3>
+<p>ownCloud is able to generate preview images of common filetypes such as images
+or text files. By default the preview generation for some file types that we
+consider secure enough for deployment is enabled by default. However,
+administrators should be aware that these previews are generated using PHP
+libraries written in C which might be vulnerable to vulnerable attack vectors.</p>
+<p>For high security deployments we recommend disabling the preview generation by
+setting the <tt class="docutils literal"><span class="pre">enable_previews</span></tt> switch to <tt class="docutils literal"><span class="pre">false</span></tt> in <tt class="docutils literal"><span class="pre">config.php</span></tt>. As an
+administrator you are also able to manage which preview providers are enabled by
+modifying the <tt class="docutils literal"><span class="pre">enabledPreviewProviders</span></tt> option switch.</p>
+</div>
+</div>
+<div class="section" id="use-https">
+<h2>Use HTTPS<a class="headerlink" href="#use-https" title="Permalink to this headline">¶</a></h2>
+<p>Using ownCloud without using an encrypted HTTPS connection might allow attackers
+in a man-in-the-middle (MITM) situation to intercept your users data and
+passwords. Thus ownCloud always recommends to setup ownCloud behind HTTPS.</p>
+<p>How to setup HTTPS on your web server depends on your setup, we recommend to
+check your distribution&#8217;s vendor information on how to configure and setup
+HTTPS.</p>
+<div class="section" id="redirect-all-unencrypted-traffic-to-https">
+<h3>Redirect all unencrypted traffic to HTTPS<a class="headerlink" href="#redirect-all-unencrypted-traffic-to-https" title="Permalink to this headline">¶</a></h3>
+<p>To redirect all HTTP traffic to HTTPS administrators are encouraged to issue a
+permanent redirect using the 301 status code, when using Apache this can be
+achieved by a setting such as the following in the Apache VirtualHosts config:</p>
+<div class="highlight-none"><div class="highlight"><pre>&lt;VirtualHost *:80&gt;
+   ServerName cloud.owncloud.com
+   Redirect permanent / https://cloud.owncloud.com/
+&lt;/VirtualHost&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="enable-http-strict-transport-security">
+<h3>Enable HTTP Strict Transport Security<a class="headerlink" href="#enable-http-strict-transport-security" title="Permalink to this headline">¶</a></h3>
+<p>While redirecting all traffic to HTTPS is already a good start it will often not
+completely prevent man-in-the-middle attacks for a regular user. Thus
+administrators are encouraged to set the HTTP Strict Transport Security header
+which will instruct browsers to not allow any connection to the ownCloud
+instance anymore using HTTPS and a invalid certificate warning will often not be
+able to get bypassed.</p>
+<p>This can be achieved by setting the following settings within the Apache
+VirtualHost file:</p>
+<div class="highlight-none"><div class="highlight"><pre>&lt;VirtualHost *:443&gt;
+   ServerName cloud.owncloud.com
+   Header always add Strict-Transport-Security &quot;max-age=15768000&quot;
+&lt;/VirtualHost&gt;
+</pre></div>
+</div>
+<p>It shall be noted that this requires that the <tt class="docutils literal"><span class="pre">mod_headers</span></tt> extension to be installed.</p>
+</div>
+<div class="section" id="proper-ssl-configuration">
+<h3>Proper SSL configuration<a class="headerlink" href="#proper-ssl-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Default SSL configurations by web servers are often not state of the art and
+require fine-tuning for an optimal performance and security experience. The
+available SSL ciphers and options depends completely on your environment and
+thus giving a generic recommendation is not really possible.</p>
+<p>We recommend to use the <a class="reference external" href="https://mozilla.github.io/server-side-tls/ssl-config-generator/">Mozilla SSL Configuration Generator</a> to generate a
+suitable configuration suited for your environment, furthermore the free <a class="reference external" href="https://www.ssllabs.com/ssltest/">Qualys
+SSL Labs Tests</a> give a good guidance whether the SSL server was correctly
+configured.</p>
+</div>
+</div>
+<div class="section" id="use-a-dedicated-domain-for-owncloud">
+<h2>Use a dedicated domain for ownCloud<a class="headerlink" href="#use-a-dedicated-domain-for-owncloud" title="Permalink to this headline">¶</a></h2>
+<p>Administrators are encouraged to install ownCloud on a dedicated domain such as
+cloud.domain.tld instead of domain.tld to gain all the benefits offered by the
+Same-Origin-Policy.</p>
+</div>
+<div class="section" id="serve-security-related-headers-by-the-web-server">
+<h2>Serve security related Headers by the web server<a class="headerlink" href="#serve-security-related-headers-by-the-web-server" title="Permalink to this headline">¶</a></h2>
+<p>Basic security headers are served by ownCloud already in a default environment. These includes:</p>
+<ul>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">X-Content-Type-Options:</span> <span class="pre">nosniff</span></tt></dt>
+<dd><ul class="first last simple">
+<li>Instructs some browsers to not sniff the mimetype of files. This is used for example to prevent browsers to interpret text files as JavaScript.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">X-XSS-Protection:</span> <span class="pre">1;</span> <span class="pre">mode=block</span></tt></dt>
+<dd><ul class="first last simple">
+<li>Enforces the browsers to enable their browser side Cross-Site-Scripting filter.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">X-Robots-Tag:</span> <span class="pre">none</span></tt></dt>
+<dd><ul class="first last simple">
+<li>Instructs search machines to not index these page.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">X-Frame-Options:</span> <span class="pre">SAMEORIGIN</span></tt></dt>
+<dd><ul class="first last simple">
+<li>Prevents to embed the ownCloud instance within an iframe from other domains to prevent Clickjacking and other similiar attacks.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>However, these headers are added by the applications code in PHP and thus not
+served on static resources and rely on the fact that there is no way to bypass
+the intended response code path.</p>
+<p>For optimal security administrators are encouraged to serve these basic HTTP
+headers by the web server to enforce them on response. To do this Apache has to
+be configured to use the <tt class="docutils literal"><span class="pre">.htaccess</span></tt> file as well as the following Apache
+modules needs to be enabled:</p>
+<ul class="simple">
+<li>mod_headers</li>
+<li>mod_env</li>
+</ul>
+<p>Administrators can verify whether this security change is active by accessing a
+static resource served by the web server and verify that above mentioned
+security headers are shipped.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

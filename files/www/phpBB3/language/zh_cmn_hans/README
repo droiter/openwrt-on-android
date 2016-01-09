@@ -1,0 +1,45 @@
+phpBB Mandarin Chinese Simplified Language Pack v15.3
+for phpBB 3.1.6
+
+*** TABLE OF CONTENT ***
+AUTHORS
+CHANGELOG
+DOWNLOAD AND INSTALL
+
+
+*** DETAILS ***
+
+AUTHORS
+David Yin @binghuiyin (twitter) Since 2015.10
+Thanks to yoshika, rexkyo, wang5555, tabwe
+
+CHANGELOG
+Version 15.3
+2015.11.6
+* Added README
+* Fixed the missing variable
+* Improved translation of email folder, including translation and punctuation
+
+Version 15.2
+2015.11.1
+* Updated some translation
+* Changed date and time for all files to be same
+
+Version 15.1
+2015.10.27
+* Made the first version for phpBB 3.1.6
+* Based on the previous language pake for phpBB 3.1.1 and the Traditional Script.
+
+
+
+
+DOWNLOAD AND INSTALL
+* The official download URL
+https://www.phpbb.com/customise/db/translation/mandarin_chinese_simplified_script/
+
+* The latest version can be downloaded here
+http://forum.g2soft.net/viewforum.php?f=29
+
+* Installation Guide
+https://www.phpbb.com/support/docs/en/3.1/ug/adminguide/customise_language/
+

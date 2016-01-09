@@ -1,0 +1,11 @@
+config system
+	option hostname	localhost
+	option timezone	UTC
+
+config timeserver ntp
+	list server	0.openwrt.pool.ntp.org
+	list server	1.asia.pool.ntp.org
+	list server	2.cn.pool.ntp.org
+	list server	3.openwrt.pool.ntp.org
+	option enabled 1
+	option enable_server 0

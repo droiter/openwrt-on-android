@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Thunderbird - Synchronize Addressbook &mdash; ownCloud User Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud User Manual 7.0 documentation" href="../index.html" />
+    <link rel="up" title="Contacts &amp; Calendar" href="index.html" />
+    <link rel="next" title="Synchronizing with KDE SC" href="sync_kde.html" />
+    <link rel="prev" title="Synchronizing with OS X" href="sync_osx.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="../contents.html">ownCloud User Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="../contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">ownCloud 7.0 User Documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../whats_new.html">What&#8217;s New for Users in ownCloud 7</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../webinterface.html">The ownCloud Web Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../files/index.html">Files &amp; Synchronization</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Contacts &amp; Calendar</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contacts.html">Using the Contacts App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calendar.html">Using the Calendar App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_ios.html">iOS - Synchronize iPhone/iPad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sync_osx.html">Synchronizing with OS X</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Thunderbird - Synchronize Addressbook</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#addressbook">Addressbook</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sync_kde.html">Synchronizing with KDE SC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../documents.html">Collaborative Document Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bookmarks.html">Using the Bookmarks App</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../userpreferences.html">Setting Your Preferences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../external_storage/google_drive.html">Configuring External Storage</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="thunderbird-synchronize-addressbook">
+<h1>Thunderbird - Synchronize Addressbook<a class="headerlink" href="#thunderbird-synchronize-addressbook" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="addressbook">
+<h2>Addressbook<a class="headerlink" href="#addressbook" title="Permalink to this headline">¶</a></h2>
+<p>As someone who is new to ownCloud, New to SoGo Connector, and new to Thunderbird Addressbook... here is what you need in excruciating pithy detail you need to make this work (for all the other lost souls out there):</p>
+<ol class="arabic simple">
+<li><a class="reference external" href="http://www.mozilla.org/en-US/thunderbird/">Thunderbird</a> for your OS unless it comes with your OS distribution (Linux)</li>
+<li><a class="reference external" href="http://www.sogo.nu/english/downloads/frontends.html">Sogo Connector</a> (latest release)</li>
+<li><a class="reference external" href="https://addons.mozilla.org/en-US/thunderbird/addon/lightning/">Lightning</a> (a Thunderbird calendar add-on. At the time (Aug 14), syncing your contacts only works with this add-on installed.)</li>
+</ol>
+<p>With an installed Thunderbird mailtool, an installed SoGo Connector, and an installed Lightning add-on:</p>
+<ol class="arabic simple">
+<li>Thunderbird Addressbook is in the Thunderbird &#8220;Tools&#8221; Menu</li>
+<li>In the Thunderbird Addressbook application:<ul>
+<li>&#8220;File &gt; New &gt; <strong>Remote Addressbook</strong>&#8221; (SoGo Connector added this)</li>
+<li>&#8220;<strong>Name:</strong>&#8221; is the name you want to give your Addressbook in the Thunderbird addressbook bar area</li>
+<li>&#8220;<strong>URL:</strong>&#8221; is found in your ownCloud Contacts area, that little Gear symbol</li>
+</ul>
+</li>
+</ol>
+<img alt="../_images/contact_thunderbird-Symbol_Gear.jpg" src="../_images/contact_thunderbird-Symbol_Gear.jpg" />
+<p>in the -bottom left- of the Contacts View (same symbol as found in the -top right- in the Calendar view). Then look for a little impeller symbol</p>
+<img alt="../_images/contact_thunderbird-Symbol_Impeller.jpg" src="../_images/contact_thunderbird-Symbol_Impeller.jpg" />
+<p>which will display the URL you need for your installation to work.</p>
+<img alt="../_images/contact_thunderbird-URL_config.jpg" src="../_images/contact_thunderbird-URL_config.jpg" />
+<p>Once installed, synchronize (right click on your newly made remote address book and select &#8220;Synchronize&#8221;).
+You&#8217;ll see your address book populate from ownCloud! Don&#8217;t click &#8220;read only&#8221; above unless you don&#8217;t want to
+modify your ownCloud server addressbook, like it contains a listing of corporate contacts and is shared with
+lots of people, and you don&#8217;t want a new user dragging it somewhere unintended.</p>
+<p>The rest of the details of dealing with Thunderbird addressbook are left to the reader... First thing I learned
+is dragging a contact to a different addressbook is a &#8220;move&#8221; operation. If you are worried about losing the
+contact, save it to a VCF file using ownCloud (Or LDIF using Thunderbird Addressbook) first! Like dragging
+from &#8220;ownCloud Addressbook&#8221; to &#8220;Personal Address Book&#8221; removes the contact from ownCloud Server
+(<em>deleting it from all the other synchronized installations</em>) and puts it in your Local Machine -only-
+Address Book. So be careful or you&#8217;ll have unintended consequences where you might have intended a &#8220;copy&#8221; operation.</p>
+<p>Contact <em>Pictures</em> are also sync&#8217;ed!</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

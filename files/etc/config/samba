@@ -1,0 +1,14 @@
+
+config samba
+	option name 'andwrt'
+	option workgroup 'WORKGROUP'
+	option description 'OpenWrt'
+	option homes '1'
+
+config sambashare
+	option name 'root'
+	option path '/'
+	option users 'root'
+	option read_only 'no'
+	option guest_ok 'no'
+

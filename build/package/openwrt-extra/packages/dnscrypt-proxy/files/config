@@ -1,0 +1,39 @@
+#
+# Available options:
+#
+# enabled		<0|1>
+#	enable the dnscrypt-proxy service or not.
+# local_address		<ip>[:port]
+#	what local IP the daemon will listen to, with an optional port. 
+# edns_payload_size	<bytes>
+#	transparently add an OPT pseudo-RR to outgoing  queries  in  order
+#	to enable the EDNS0 extension mechanism. The payload size  is  the
+#	size of the largest response we accept from  the  resolver  before
+#	retrying over TCP. This feature is enabled by default, with a pay-
+#	load size of 1252 bytes. Any value below 512 disables it.
+# provider_key		<key>
+#	specify the provider public key.
+# logfile		<file>
+#	log events to this file instead of the standard output.
+# loglevel		<level>
+#	don't log events with priority above this level after the  service
+#	has been started up. Default is the value for LOG_INFO.
+# max_active_requests	<count>
+#	set the  maximum  number  of  simultaneous  active  requests.  The 
+#	default value is 250.
+# resolver_address	<ip>[:port]
+#	a DNSCrypt-capable resolver IP address with an optional  port. The
+#	default port is 443.
+# user			<username>
+#	run the dnscrypt-proxy service as the user, default is "nobody".
+# provider_name		<FQDN>
+#	the fully-qualified name of the dnscrypt certificate provider.
+# tcp_only		<0|1>
+#	always use TCP. A connection made using UDP will get  a  truncated
+#	response, so that the (stub) resolver retries using TCP.
+#
+
+config dnscrypt-proxy
+	option enabled '1'
+	option local_address '127.0.0.1:5300'
+	option max_active_requests '64'

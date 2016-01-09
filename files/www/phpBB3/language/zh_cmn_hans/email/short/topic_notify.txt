@@ -1,0 +1,20 @@
+Subject: 主题回复通知 - “{TOPIC_TITLE}”
+
+你好 {USERNAME}，
+
+你收到此通知是因为你在 “{SITENAME}” 论坛订阅了主题 “{TOPIC_TITLE}”。此主题收到了一个<!-- IF AUTHOR_NAME --> {AUTHOR_NAME} 的<!-- ENDIF -->回复。你可以使用下面的链接查看回复，在你访问主题前没有别的通知了。
+
+如果你想查看最新帖子，点下面的链接:
+{U_NEWEST_POST}
+
+如果你想查看主题，点下面的链接:
+{U_TOPIC}
+
+如果你想查看论坛，点下面的链接:
+{U_FORUM}
+
+如果你不想再查看此主题你可以点主题下面的 "退订主题" 链接或点下面的链接:
+
+{U_STOP_WATCHING_TOPIC}
+
+{EMAIL_SIG}

@@ -1,0 +1,38 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2013 OpenWrt.org
+
+# start after and stop before networking
+
+START=99
+STOP=10
+
+start() {
+	/usr/sbin/iptables -t nat -N REDIRSOCKS  
+	/usr/sbin/iptables -t nat -A PREROUTING -i wlan0 -p tcp -j REDIRSOCKS  
+	#/usr/sbin/iptables -t nat -A PREROUTING -i wlan0 -p udp -j REDIRSOCKS
+	  
+	/usr/sbin/iptables -t nat -A REDIRSOCKS -d 127.0.0.0/8 -j RETURN
+	/usr/sbin/iptables -t nat -A REDIRSOCKS -d 192.168.0.0/16 -j RETURN
+	/usr/sbin/iptables -t nat -A REDIRSOCKS -d 10.8.0.0/16 -j RETURN
+	/usr/sbin/iptables -t nat -A REDIRSOCKS -d 224.0.0.0/4 -j RETURN
+	/usr/sbin/iptables -t nat -A REDIRSOCKS -d 240.0.0.0/4 -j RETURN
+	  
+	/usr/sbin/iptables -t nat -A REDIRSOCKS -p tcp -j REDIRECT --to-ports 61080  
+	#/usr/sbin/iptables -t nat -A REDIRSOCKS -p udp -j REDIRECT --to-ports 61080  
+}
+
+stop() {
+	/usr/sbin/iptables -t nat -D PREROUTING -i wlan0 -p tcp -j REDIRSOCKS  
+	#/usr/sbin/iptables -t nat -D PREROUTING -i wlan0 -p udp -j REDIRSOCKS
+	  
+	/usr/sbin/iptables -t nat -D REDIRSOCKS -d 127.0.0.0/8 -j RETURN
+	/usr/sbin/iptables -t nat -D REDIRSOCKS -d 192.168.0.0/16 -j RETURN
+	/usr/sbin/iptables -t nat -D REDIRSOCKS -d 10.8.0.0/16 -j RETURN
+	/usr/sbin/iptables -t nat -D REDIRSOCKS -d 224.0.0.0/4 -j RETURN
+	/usr/sbin/iptables -t nat -D REDIRSOCKS -d 240.0.0.0/4 -j RETURN
+	  
+	/usr/sbin/iptables -t nat -D REDIRSOCKS -p tcp -j REDIRECT --to-ports 61080  
+	#/usr/sbin/iptables -t nat -D REDIRSOCKS -p udp -j REDIRECT --to-ports 61080  
+
+	/usr/sbin/iptables -t nat -X REDIRSOCKS  
+}

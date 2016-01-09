@@ -1,0 +1,277 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>What’s New for Admins in ownCloud 7 &mdash; ownCloud Administrators Manual 7.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '7.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bootstrap.js"></script>
+    <link rel="top" title="ownCloud Administrators Manual 7.0 documentation" href="index.html" />
+    <link rel="next" title="ownCloud 7.0 Release Notes" href="release_notes.html" />
+    <link rel="prev" title="ownCloud Videos" href="videos.html" />
+<script type="text/javascript">
+(function () {
+  /**
+   * Patch TOC list.
+   *
+   * Will mutate the underlying span to have a correct ul for nav.
+   *
+   * @param $span: Span containing nested UL's to mutate.
+   * @param minLevel: Starting level for nested lists. (1: global, 2: local).
+   */
+  var patchToc = function ($ul, minLevel) {
+    var findA;
+
+    // Find all a "internal" tags, traversing recursively.
+    findA = function ($elem, level) {
+      var level = level || 0,
+        $items = $elem.find("> li > a.internal, > ul, > li > ul");
+
+      // Iterate everything in order.
+      $items.each(function (index, item) {
+        var $item = $(item),
+          tag = item.tagName.toLowerCase(),
+          pad = 15 + ((level - minLevel) * 10);
+
+        if (tag === 'a' && level >= minLevel) {
+          // Add to existing padding.
+          $item.css('padding-left', pad + "px");
+          console.log(level, $item, 'padding-left', pad + "px");
+        } else if (tag === 'ul') {
+          // Recurse.
+          findA($item, level + 1);
+        }
+      });
+    };
+
+    console.log("HERE");
+    findA($ul);
+  };
+
+  $(document).ready(function () {
+    // Add styling, structure to TOC's.
+    $(".dropdown-menu").each(function () {
+      $(this).find("ul").each(function (index, item){
+        var $item = $(item);
+        $item.addClass('unstyled');
+      });
+      $(this).find("li").each(function () {
+        $(this).parent().append(this);
+      });
+    });
+
+    // Patch in level.
+    patchToc($("ul.globaltoc"), 2);
+    patchToc($("ul.localtoc"), 2);
+
+    // Enable dropdown.
+    $('.dropdown-toggle').dropdown();
+  });
+}());
+</script>
+
+  </head>
+  <body>
+  
+
+<div class="container">
+  <div class="content">
+    <div class="page-header">
+      <h1><a href="contents.html">ownCloud Administrators Manual</a></h1>
+
+    </div>
+    
+			<div class="row">
+				<div class="span3">
+					<div class="sidebar">
+						<div class="well">
+							<div class="menu-support-container">
+								<ul id="menu-support" class="menu">
+									<ul>
+										<li><a href="contents.html">Table of Contents</a></li>
+									</ul>
+                  <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="videos.html">ownCloud Videos</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">What&#8217;s New for Admins in ownCloud 7</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#new-user-management">New User Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#external-storage">External Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#object-stores-as-primary-storage">Object Stores as Primary Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#server-to-server-sharing">Server to Server Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sharepoint-integration-enterprise-edition-only">SharePoint Integration (Enterprise Edition only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#windows-network-drive-integration-enterprise-edition-only">Windows Network Drive Integration (Enterprise Edition only)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sharing">Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#email-configuration-wizard">Email Configuration Wizard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editable-email-templates">Editable Email Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#active-directory-and-ldap-enhancements">Active Directory and LDAP Enhancements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">ownCloud 7.0 Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/index.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/index.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maintenance/index.html">Maintenance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="issues/index.html">Issues and Troubleshooting</a></li>
+</ul>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+        
+
+				<div class="span9">
+					<div class="page-content">
+						
+  <div class="section" id="what-s-new-for-admins-in-owncloud-7">
+<h1>What&#8217;s New for Admins in ownCloud 7<a class="headerlink" href="#what-s-new-for-admins-in-owncloud-7" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="new-user-management">
+<h2>New User Management<a class="headerlink" href="#new-user-management" title="Permalink to this headline">¶</a></h2>
+<p>Admins can now view all ownCloud users in a single scrolling window, filter user
+lists by group, and search by user display name using the new text filter. User
+attributes have also been added, included the file storage location for each
+user and the last time they logged in. New groups can be added with a click of
+a button.</p>
+</div>
+<div class="section" id="external-storage">
+<h2>External Storage<a class="headerlink" href="#external-storage" title="Permalink to this headline">¶</a></h2>
+<p>Major improvements to the external storage app include support for FTP, Dropbox,
+Google Drive, SFTP, Swift, S3, WebDAV, SMB/CIFS and more storage locations to
+the ownCloud instance. You can control which storage types your users can set up
+in their Personal tabs. Further performance improvements have made externally
+mounted storage faster and more responsive.</p>
+</div>
+<div class="section" id="object-stores-as-primary-storage">
+<h2>Object Stores as Primary Storage<a class="headerlink" href="#object-stores-as-primary-storage" title="Permalink to this headline">¶</a></h2>
+<p>Primary storage in ownCloud is where all files and folders are stored by
+default. In contrast to secondary storage, primary storage is completely managed
+by the ownCloud application. With ownCloud 7, ownCloud can now leverage SWIFT
+and S3 (S3 is enterprise only) object stores as primary storage for ownCloud
+files. Now admins can choose the best option for their specific need, including
+local storage, network file system mounts, and object stores.</p>
+</div>
+<div class="section" id="server-to-server-sharing">
+<h2>Server to Server Sharing<a class="headerlink" href="#server-to-server-sharing" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud 7 servers can now connect shares with each other. With just a
+few clicks you can easily and securely create public shares that are available
+to other ownCloud 7 users on remote servers, and optionally allow your users to
+also create their own public shares.</p>
+</div>
+<div class="section" id="sharepoint-integration-enterprise-edition-only">
+<h2>SharePoint Integration (Enterprise Edition only)<a class="headerlink" href="#sharepoint-integration-enterprise-edition-only" title="Permalink to this headline">¶</a></h2>
+<p>Native SharePoint support has been added to ownCloud 7 Enterprise Edition as a
+secondary storage location for SharePoint 2007, 2010 and 2013. When this is
+enabled, users can access and sync all of their SharePoint content via ownCloud,
+whether in the desktop sync, mobile or Web interfaces. Updated files are
+bi-directionally synced automatically. SharePoint shares are created by the
+ownCloud admin, and optionally by any users who have SharePoint credentials.
+ownCloud preserves SharePoint ACLs to ensure content is restricted per
+SharePoint rules.</p>
+</div>
+<div class="section" id="windows-network-drive-integration-enterprise-edition-only">
+<h2>Windows Network Drive Integration (Enterprise Edition only)<a class="headerlink" href="#windows-network-drive-integration-enterprise-edition-only" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud has always supported mounting Windows network drives, and in OC7 EE it
+is easier than ever for the administrator to mount Windows Network Drives
+for a user, a group or the entire ownCloud instance, and allow each user to
+access the network drives and preserve their ACLs. The network drives appear as
+normal folders and files, and changes are bi-directionally synced between user
+devices and the Windows network drives.</p>
+</div>
+<div class="section" id="sharing">
+<h2>Sharing<a class="headerlink" href="#sharing" title="Permalink to this headline">¶</a></h2>
+<p>Sharing has been dramatically enhanced and streamlined, making it more flexible,
+faster and accessible. Improvements include:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>Force Password:</dt>
+<dd><p class="first last">Admins can now force users to set a password when they create shared
+links. This ensures that files shared outside of ownCloud via a link
+are properly secured by users.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Share Link Default and Max Expiration:</dt>
+<dd><p class="first last">When sharing a file with a link, admins can now require users to set a
+specific expiration duration for the link.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Antivirus Action Updates:</dt>
+<dd><p class="first last">The Antivirus app has been enhanced to allow – with some minor
+customization – the use of external virus scanners (rather than the
+default ClamAV) in scanning files as they arrive on the server.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>The Shared folder has been removed from new installations of ownCloud 7:</dt>
+<dd><p class="first last">Shared files now appear in the top level of your file tree on your Files
+page, and you can change the default shared folder to any folder with the
+<tt class="docutils literal"><span class="pre">'share_folder'</span></tt> directive in <tt class="docutils literal"><span class="pre">config.php</span></tt>. If you are upgrading from
+older ownCloud versions you will still have your old Shared folder.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Local shares do not expire with public shares:</dt>
+<dd><p class="first last">In older versions of ownCloud, you could set an expiration date on both local
+and public shares. Now you can set an expiration date only on public shares,
+and local shares do not expire when public shares expire.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="email-configuration-wizard">
+<h2>Email Configuration Wizard<a class="headerlink" href="#email-configuration-wizard" title="Permalink to this headline">¶</a></h2>
+<p>The new graphical Email configuration wizard connects to your mail server in
+just a few clicks, so that ownCloud can send automated messages to users.
+ownCloud connects via PHP, Sendmail, or standard SMTP.</p>
+</div>
+<div class="section" id="editable-email-templates">
+<h2>Editable Email Templates<a class="headerlink" href="#editable-email-templates" title="Permalink to this headline">¶</a></h2>
+<p>ownCloud admins can now edit the email templates that ownCloud uses for
+automatic notifications on the Admin page.</p>
+</div>
+<div class="section" id="active-directory-and-ldap-enhancements">
+<h2>Active Directory and LDAP Enhancements<a class="headerlink" href="#active-directory-and-ldap-enhancements" title="Permalink to this headline">¶</a></h2>
+<p>Several improvements have been made to the LDAP and Active Directory plug-in
+application, improving both the performance of the application as well as the
+compatibility with OpenLDAP and Active Directory.</p>
+</div>
+</div>
+
+
+					</div>
+				</div>
+			</div>
+    
+  </div>
+</div>
+  </body>
+</html>

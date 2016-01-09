@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<info>
+	<id>activity</id>
+	<name>Activity</name>
+	<description>
+		This application enables users to view actions related to their files in ownCloud. Once enabled, users will see a new icon “Activity” in their apps menu. When clicked, a new page appears for users to track the activity related to files – from new files, to deleted files, move, rename, updates and shared activity. The user can configure their individual activity settings in their personal menu. This sets the type of activity to record, as well as whether to the user sees their own activities, whether these are only available online, and whether they get an email digest on a regular basis. More information is available in the Activity documentation.
+	</description>
+	<licence>AGPL</licence>
+	<author>Frank Karlitschek</author>
+	<shipped>true</shipped>
+	<default_enable/>
+	<require>4.9</require>
+	<types>
+	<filesystem/>
+	</types>
+</info>
