@@ -51,7 +51,7 @@ How to build android openwrt ipk.
    ./scripts/feeds install –a
 
 
-3. Override openwrt source code with files in "build" directory
+3. Overwrite openwrt source code with files in "build" directory
 
 
 4. make ARCH=arm menuconfig
