@@ -20,7 +20,7 @@ Directory description:
 apk
 
 
---android-large.apk, transmission, aria2/yaaw, owncloud, phpBB, minidlna, samba, xunlei, baidu
+--android-large.apk, transmission, aria2/yaaw, owncloud(port 9800), phpBB(port 58888), minidlna, samba, xunlei, baidu
 
 
 --android-small.apk, same as larger one except owncloud, phpBB
@@ -58,4 +58,15 @@ How to build android openwrt ipk.
 
 
 5. make V=s
+
+
+-----------------------------------------------------
+Security issues
+
+1. Security is traded for convenience, all account password is initialize as "root“ and "asdf1234" in login/samba/mysqld etc.
+
+2. Please change the password, or use it with your own risk.
+
+3. There's a cron background job try to update everyday, you might stop it
+
 
