@@ -1,6 +1,8 @@
 # openwrt-on-android
 Openwrt on Android
 
+https://www.youtube.com/watch?v=_ReqlwvR5_0
+
 -----------------------------------------------------
 
 Email: android_openwrt@sina.com
