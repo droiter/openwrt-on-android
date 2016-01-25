@@ -33,3 +33,8 @@ https://www.youtube.com/watch?v=_ReqlwvR5_0
 1. Security is traded for convenience, all account password is initialize as "root“ and "asdf1234" in login/wifi/samba/mysqld etc.
 2. Please change the password, or use it with your own risk.
 3. There's a cron background job try to update everyday, you might stop it
+
+## 中文博客
+
+http://blog.sina.com.cn/u/5384121684
+
