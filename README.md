@@ -4,10 +4,10 @@
 ##### One look is worth a thousand words：
 https://www.youtube.com/watch?v=_ReqlwvR5_0
 
-
-  - Email: android_openwrt@sina.com
+####
   - QQ:    3080001935
   - Skype: android_openwrt
+  - Email: android_openwrt@sina.com
 
 ## Directory description:
 #### apk
