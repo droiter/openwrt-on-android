@@ -4,9 +4,11 @@
 https://www.youtube.com/watch?v=_ReqlwvR5_0
 
 -----------------------------------------------------
+
   - Email: android_openwrt@sina.com
   - QQ:    3080001935
   - Skype: android_openwrt
+
 -----------------------------------------------------
 ## Directory description:
 #### apk
@@ -24,6 +26,7 @@ https://www.youtube.com/watch?v=_ReqlwvR5_0
 4. Overwrite openwrt source code with files in "build" directory
 5. make ARCH=arm menuconfig
 6. make V=s
+
 -----------------------------------------------------
 ## Security issues
 
