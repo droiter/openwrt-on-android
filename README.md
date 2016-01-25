@@ -1,4 +1,4 @@
-# Droiter --- Openwrt on Android
+# Droiter -- Openwrt on Android
 
     
 ##### One look is worth a thousand words：
@@ -34,7 +34,7 @@ https://www.youtube.com/watch?v=_ReqlwvR5_0
 2. Please change the password, or use it with your own risk.
 3. There's a cron background job try to update everyday, you might stop it
 
-## 中文博客
+# 中文博客
 
 http://blog.sina.com.cn/u/5384121684
 
