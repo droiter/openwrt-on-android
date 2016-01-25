@@ -13,8 +13,10 @@ https://www.youtube.com/watch?v=_ReqlwvR5_0
 #### apk
 - android-large.apk, transmission, aria2/yaaw, owncloud(port 9800), phpBB(port 58888), minidlna, samba, xunlei, baidu
 - android-small.apk, same as larger one except owncloud, phpBB
+
 #### build
 - Files needed while build android openwrt image
+
 #### files
 - Files that modified or add to android openwrt image
 
