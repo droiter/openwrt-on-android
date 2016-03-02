@@ -4,6 +4,10 @@
 ##### One look is worth a thousand words：
 https://www.youtube.com/watch?v=_ReqlwvR5_0
 
+##### Google Play store：
+https://play.google.com/store/apps/details?id=org.andwrt
+
+
 ####
   - QQ:    3080001935
   - Skype: android_openwrt
