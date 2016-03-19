@@ -34,7 +34,7 @@ https://play.google.com/store/apps/details?id=org.andwrt
 
 ## Security issues
 
-1. Security is traded for convenience, all account password is initialize as "root“ and "asdf1234" in login/wifi/samba/mysqld etc.
+1. Security is traded for convenience, all account password is initialized as "root“ and "asdf1234" in login/wifi/samba/mysqld etc.
 2. Please change the password, or use it with your own risk.
 3. There's a cron background job try to update everyday, you might stop it
 
