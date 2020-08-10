@@ -44,5 +44,7 @@ https://herabox.org
 
 # 中文博客
 
+https://herabox.org/zh/
+
 http://blog.sina.com.cn/u/5384121684
 
