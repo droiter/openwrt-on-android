@@ -1,5 +1,6 @@
 # Droiter -- Openwrt on Android
 
+Support Android 9.0 magisk now.
     
 ##### One look is worth a thousand words：
 https://www.youtube.com/watch?v=_ReqlwvR5_0
