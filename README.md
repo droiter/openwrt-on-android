@@ -1,6 +1,6 @@
 # Droiter -- Openwrt on Android
 
-Support Android 9.0 magisk now.
+Support Android 9.0 magisk now, you can download latest version from github release section.
     
 ##### One look is worth a thousand words：
 https://www.youtube.com/watch?v=_ReqlwvR5_0
@@ -38,6 +38,9 @@ https://play.google.com/store/apps/details?id=org.andwrt
 1. Security is traded for convenience, all account password is initialized as "root“ and "asdf1234" in login/wifi/samba/mysqld etc.
 2. Please change the password, or use it with your own risk.
 3. There's a cron background job try to update everyday, you might stop it
+
+# Blog
+https://herabox.org
 
 # 中文博客
 
