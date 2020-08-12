@@ -3,7 +3,10 @@
 Support Android 9.0 magisk now, you can download latest version from github release section.
     
 ##### One look is worth a thousand words：
-https://www.youtube.com/watch?v=_ReqlwvR5_0
+https://herabox.org/android-openwrt-features-demo-video/
+https://herabox.org/amazing-performance-of-transmission-on-android-openwrt/
+https://herabox.org/the-one-and-only-western-digital-password-unlock-utility-for-android/
+https://herabox.org/releases-of-android-openwrt/
 
 ##### Google Play store：
 https://play.google.com/store/apps/details?id=org.andwrt
