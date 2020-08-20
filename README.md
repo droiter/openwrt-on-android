@@ -14,11 +14,22 @@ https://herabox.org/releases-of-android-openwrt/
 ##### Google Play store：
 https://play.google.com/store/apps/details?id=org.andwrt
 
+##### Latest Release:
+https://github.com/droiter/openwrt-on-android/releases
 
 ####
   - QQ:    3080001935
   - Skype: android_openwrt
   - Email: android_openwrt@sina.com
+
+# Blog
+https://herabox.org
+
+# 中文博客
+
+https://herabox.org/zh/
+
+http://blog.sina.com.cn/u/5384121684
 
 ## Directory description:
 #### apk
@@ -45,12 +56,4 @@ https://play.google.com/store/apps/details?id=org.andwrt
 2. Please change the password, or use it with your own risk.
 3. There's a cron background job try to update everyday, you might stop it
 
-# Blog
-https://herabox.org
-
-# 中文博客
-
-https://herabox.org/zh/
-
-http://blog.sina.com.cn/u/5384121684
 
