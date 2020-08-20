@@ -11,10 +11,10 @@ https://herabox.org/the-one-and-only-western-digital-password-unlock-utility-for
 
 https://herabox.org/releases-of-android-openwrt/
 
-##### Google Play store：
+##### Google Play store：(Only small version)
 https://play.google.com/store/apps/details?id=org.andwrt
 
-##### Latest Release:
+##### Latest Release: (Include large and small version)
 https://github.com/droiter/openwrt-on-android/releases
 
 ####
